@@ -1,0 +1,14 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/mcp-servers.json",
+  "mcpServers": {
+    "example-server": {
+      "description": "Example MCP server configuration",
+      "command": "node",
+      "args": ["path/to/mcp-server.js"],
+      "env": {
+        "API_KEY": "${API_KEY}"
+      },
+      "disabled": true
+    }
+  }
+}

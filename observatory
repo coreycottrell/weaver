@@ -1,0 +1,9 @@
+#!/bin/bash
+# Collective Observatory - Quick launcher script
+
+# Get script directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Activate virtual environment and launch dashboard
+cd "$SCRIPT_DIR"
+exec .venv/bin/python .claude/observatory/dashboard.py

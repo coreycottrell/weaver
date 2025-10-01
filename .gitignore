@@ -1,0 +1,36 @@
+# Session-specific runtime data
+.claude/memory/session-context.json
+
+# User-specific preferences
+.claude/memory/user-preferences.md
+
+# Observatory state (runtime data)
+.claude/observatory/dashboard-state.json
+.claude/observatory/config.json
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
