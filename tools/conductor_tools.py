@@ -15,12 +15,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from claude.observatory.observatory import (
+sys.path.insert(0, str(Path(__file__).parent.parent / ".claude/observatory"))
+
+from observatory import (
     start_deployment,
     update_agent_status,
     log_agent_activity,
     complete_agent,
-    complete_deployment
+    complete_deployment,
+    load_state
 )
 from tools.email_reporter import send_deployment_report, send_agent_update
 from tools.github_backup import auto_backup
@@ -97,7 +100,6 @@ class Mission:
         complete_deployment(self.deployment_id, synthesis)
 
         # Load final deployment data for reporting
-        from claude.observatory.observatory import load_state
         state = load_state()
         completed_deployment = None
 
