@@ -18,8 +18,12 @@ This is **The Conductor** - a persistent, personality-rich AI that:
 1. **Understand the system**: Read [`docs/system-overview.md`](docs/system-overview.md)
 2. **Meet the agents**: Explore `agents/` directory
 3. **Check collective memory**: Look in `.claude/memory/`
-4. **Watch agents in real-time**: Run `./observatory` 🔭
-5. **Start collaborating**: The Conductor is ready
+4. **Watch agents in real-time**:
+   - Terminal: `./observatory` 🔭
+   - Web: `./start-dashboard` 🌐 (http://localhost:5000)
+5. **Get email reports**: Check **coreycmusic@gmail.com** 📧
+6. **View backups**: Visit [GitHub](https://github.com/ai-CIV-2025/ai-civ-collective) 📦
+7. **Start collaborating**: The Conductor is ready
 
 ## Architecture Overview
 
@@ -46,11 +50,20 @@ AI-CIV Collective
 │   ├── .claude/commands/ (slash commands)
 │   └── .claude/hooks/ (automated actions)
 │
-└── Observatory 🔭
-    └── .claude/observatory/
-        ├── dashboard.py (real-time agent visualization)
-        ├── observatory.py (state management)
-        └── dashboard-state.json (deployment tracking)
+├── Observatory 🔭
+│   ├── .claude/observatory/ (terminal dashboard)
+│   │   ├── dashboard.py (terminal UI)
+│   │   ├── observatory.py (state management)
+│   │   └── dashboard-state.json (runtime state)
+│   └── web/ (web dashboard)
+│       ├── app.py (Flask + WebSocket)
+│       └── templates/dashboard.html (real-time UI)
+│
+└── Integration Tools 🛠️
+    └── tools/
+        ├── conductor_tools.py (mission management)
+        ├── email_reporter.py (automated reports)
+        └── github_backup.py (auto-sync)
 ```
 
 ## Key Features
@@ -84,15 +97,40 @@ Always know:
 - Why approaches were chosen
 - What was discovered and why it matters
 
-### 🔭 Observatory Dashboard
-Real-time agent activity visualization:
+### 🔭 Observatory (Dual Interface)
+
+**Terminal Dashboard:**
 ```bash
 ./observatory
 ```
-- Watch agents work in real-time
-- See progress bars and status updates
-- View deployment history
-- Track collective statistics
+
+**Web Dashboard:**
+```bash
+./start-dashboard
+# Opens http://localhost:5000
+```
+
+Features:
+- 📊 Real-time WebSocket updates
+- 📈 Live agent progress visualization
+- ⚡ Status icons and animations
+- 📜 Deployment history
+- 📊 Collective statistics
+- 🎨 Beautiful gradient UI (web)
+
+### 📧 Automated Email Reports
+
+Receive professional HTML reports at **coreycmusic@gmail.com**:
+- ✅ Mission complete reports with all findings
+- ⚡ Real-time agent status updates
+- 📊 Weekly collective summaries
+
+### 📦 GitHub Auto-Backup
+
+Automatically synced to: **https://github.com/ai-CIV-2025/ai-civ-collective**
+- 🔄 Auto-commit after each mission
+- 📝 Descriptive commit messages
+- 🗂️ Complete history and searchability
 
 ## Available Agents
 
@@ -124,7 +162,21 @@ Real-time agent activity visualization:
 
 ### Observatory
 ```bash
-./observatory              # Launch real-time agent dashboard
+./observatory              # Terminal dashboard
+./start-dashboard          # Web dashboard (http://localhost:5000)
+```
+
+### Mission Management
+```python
+from tools.conductor_tools import Mission
+
+mission = Mission("Analyze authentication system")
+mission.add_agent("code-archaeologist")
+mission.add_agent("security-auditor")
+mission.start()
+# ... work happens ...
+mission.complete("Analysis complete")
+# → Dashboard updated, email sent, GitHub backed up
 ```
 
 ### Slash Commands (Planned)
@@ -246,7 +298,8 @@ This system is designed to grow:
 **Total**: 40+ markdown files, 14 specialized agents, complete 4-layer architecture, real-time dashboard
 
 **Recent Updates**:
-- **2025-10-01**: Observatory Phase 1 MVP complete (2 hours implementation)
+- **2025-10-01**: 🌐 Web Dashboard + 📧 Email Reporter + 📦 GitHub Backup complete
+- **2025-10-01**: Observatory Phase 1 MVP complete (terminal + web)
 - **2025-10-01**: Two production cycles completed (9 agents deployed, 40,000+ words analysis)
 - **2025-10-01**: Battle-tested deployment patterns and validated architecture
 
