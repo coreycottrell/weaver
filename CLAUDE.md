@@ -6,33 +6,37 @@
 
 1. ✅ **Verify location**: Should be at `/home/corey/projects/AI-CIV/grow_openai/`
 
-2. ✅ **Read integration guide**:
+2. ✅ **Check latest updates (2025-10-02)**:
    ```
-   Read: INTEGRATION-GUIDE.md
-   ```
-   This explains all three integrated systems (web dashboard, email, GitHub)
-
-3. ✅ **Check recent dev journals**:
-   ```
-   Read: .claude/memory/dev-journal/2025-10-01-integration-complete.md
-   Read: .claude/memory/dev-journal/2025-10-01-second-cycle-complete.md
+   Read: .claude/flows/README.md                        # Flow library overview
+   Read: .claude/memory/memory-system-proposals.md      # Memory system designs
+   Read: .claude/memory/mission-rankings.md             # Democratic vote results
+   Read: .claude/observatory/dashboard-state.json       # Latest deployment status
    ```
 
-4. ✅ **Understand mission workflow**:
-   - Use `Mission` class for ALL agent deployments
-   - This automatically: updates dashboard, sends email, backs up to GitHub
-   - Code example in "Mission Management System" section below
+3. ✅ **Recent accomplishments**:
+   - 🎯 **Flow Library**: 14 coordination patterns in `.claude/flows/`
+   - 🧠 **Memory System**: 4 proposals from agent teams (hybrid approach recommended)
+   - 🗳️ **Democratic Selection**: All 14 agents voted, Mission 2 won (141 pts)
+   - ✅ **Mission 2 Complete**: AI-CIV System Dependency Map executed successfully
 
-5. ✅ **Know the tools**:
+4. ✅ **Integration systems**:
    - **Web Dashboard**: `./start-dashboard` → http://localhost:5000
    - **Email Reports**: Automatic to coreycmusic@gmail.com
    - **GitHub Backup**: Automatic to https://github.com/ai-CIV-2025/ai-civ-collective
 
-6. ✅ **Environment check**:
-   - Credentials in `.env` file (gitignored)
-   - Virtual env at `.venv/` (already set up)
+5. ✅ **Understand mission workflow**:
+   - Use `Mission` class for ALL agent deployments
+   - This automatically: updates dashboard, sends email, backs up to GitHub
+   - Code example in "Mission Management System" section below
 
-**TL;DR**: Use `Mission` class for everything. It handles dashboard updates, email reports, and GitHub backups automatically.
+6. ✅ **Know what's new**:
+   - Flow library with reusable coordination patterns
+   - Memory system ready to implement (4 designs to choose from)
+   - Democratic mission selection proven to work
+   - Mission 2 findings: Zero circular dependencies, 8.5/10 pattern quality
+
+**TL;DR**: Use `Mission` class for everything. Check flows library for coordination patterns. Memory system designs ready for implementation.
 
 ---
 
