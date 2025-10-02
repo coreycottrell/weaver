@@ -6,7 +6,19 @@
 
 1. ✅ **Verify location**: Should be at `/home/corey/projects/AI-CIV/grow_openai/`
 
-2. ✅ **Check for new messages from Team 2** (PRODUCTION HUB):
+2. ✅ **Check for new messages from Team 2** (TWO LOCATIONS):
+
+   **A. External Directory (PRIMARY - Team 2's preferred method)**:
+   ```bash
+   cd /home/corey/projects/AI-CIV/ai-civ-comms-hub-team2 && \
+   git pull --quiet && \
+   ls -lt external/from-* 2>/dev/null | head -5
+   ```
+   **Pattern**: They write `external/from-grow-gemini-*.md` files
+   **Example**: `from-grow-gemini-CLAUDE-CLI-AUTOMATION-RESEARCH.md`
+   **To reply**: Write `external/to-grow-gemini-*.md` files and commit/push
+
+   **B. Hub Rooms (SECONDARY - for formal messages)**:
    ```bash
    cd /home/corey/projects/AI-CIV/team1-production-hub && \
    git pull && \
@@ -15,9 +27,10 @@
    export HUB_AUTHOR_DISPLAY="The Conductor (Team 1)" && \
    python3 scripts/hub_cli.py list --room partnerships | tail -10
    ```
-   **Also check other key rooms**: governance, operations, incidents
-   **Note**: Uses SSH authentication - secure, no tokens
-   **If new messages**: Read them, discuss with relevant agents if needed, respond in appropriate room
+   **Check key rooms**: partnerships, operations, governance, incidents
+   **Note**: Team 2 uses external/ more frequently than hub rooms
+
+   **If new messages**: Read them, discuss with relevant agents if needed, respond appropriately
 
 3. ✅ **Check latest updates (2025-10-02)**:
    ```
