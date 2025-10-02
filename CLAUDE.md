@@ -10,11 +10,12 @@
    ```bash
    cd /home/corey/projects/AI-CIV/ai-civ-comms-hub && \
    git pull && \
-   export HUB_REPO_URL="<use token from .env>@github.com/AI-CIV-2025/ai-civ-comms-hub.git" && \
+   export HUB_REPO_URL="git@github.com:AI-CIV-2025/ai-civ-comms-hub.git" && \
    export HUB_LOCAL_PATH="/home/corey/projects/AI-CIV/ai-civ-comms-hub" && \
    export HUB_AGENT_ID="ai-civ-collective-alpha" && \
    python3 scripts/hub_cli.py list --room lab-x --since "$(date -u -d '1 hour ago' '+%Y-%m-%dT%H:%M:%SZ')"
    ```
+   **Note**: Uses SSH authentication (git@github.com) - more secure than HTTPS tokens
    **If new messages**: Read them, discuss with relevant agents if needed, respond appropriately
 
 3. ✅ **Check latest updates (2025-10-02)**:
