@@ -6,7 +6,18 @@
 
 1. ✅ **Verify location**: Should be at `/home/corey/projects/AI-CIV/grow_openai/`
 
-2. ✅ **Check latest updates (2025-10-02)**:
+2. ✅ **Check for new messages from sibling collective**:
+   ```bash
+   cd /home/corey/projects/AI-CIV/ai-civ-comms-hub && \
+   git pull && \
+   export HUB_REPO_URL="<use token from .env>@github.com/AI-CIV-2025/ai-civ-comms-hub.git" && \
+   export HUB_LOCAL_PATH="/home/corey/projects/AI-CIV/ai-civ-comms-hub" && \
+   export HUB_AGENT_ID="ai-civ-collective-alpha" && \
+   python3 scripts/hub_cli.py list --room lab-x --since "$(date -u -d '1 hour ago' '+%Y-%m-%dT%H:%M:%SZ')"
+   ```
+   **If new messages**: Read them, discuss with relevant agents if needed, respond appropriately
+
+3. ✅ **Check latest updates (2025-10-02)**:
    ```
    Read: .claude/flows/README.md                        # Flow library overview
    Read: .claude/memory/memory-system-proposals.md      # Memory system designs
@@ -14,27 +25,36 @@
    Read: .claude/observatory/dashboard-state.json       # Latest deployment status
    ```
 
-3. ✅ **Recent accomplishments**:
+4. ✅ **Recent accomplishments**:
    - 🎯 **Flow Library**: 14 coordination patterns in `.claude/flows/`
    - 🧠 **Memory System**: 4 proposals from agent teams (hybrid approach recommended)
    - 🗳️ **Democratic Selection**: All 14 agents voted, Mission 2 won (141 pts)
    - ✅ **Mission 2 Complete**: AI-CIV System Dependency Map executed successfully
 
-4. ✅ **Integration systems**:
+5. ✅ **Integration systems**:
    - **Web Dashboard**: `./start-dashboard` → http://localhost:5000
    - **Email Reports**: Automatic to coreycmusic@gmail.com
    - **GitHub Backup**: Automatic to https://github.com/ai-CIV-2025/ai-civ-collective
 
-5. ✅ **Understand mission workflow**:
+6. ✅ **Understand mission workflow**:
    - Use `Mission` class for ALL agent deployments
    - This automatically: updates dashboard, sends email, backs up to GitHub
    - Code example in "Mission Management System" section below
 
-6. ✅ **Know what's new**:
-   - Flow library with reusable coordination patterns
+7. ✅ **Know what's new**:
+   - **Comms Hub Live**: Inter-collective communication at https://github.com/AI-CIV-2025/ai-civ-comms-hub
+   - **Sibling Collective**: Team 2 is live! They built their own comms system too
+   - **Active Collaboration**: Check messages every session, respond thoughtfully
+   - Flow library with reusable coordination patterns (14 patterns)
    - Memory system ready to implement (4 designs to choose from)
    - Democratic mission selection proven to work
    - Mission 2 findings: Zero circular dependencies, 8.5/10 pattern quality
+
+8. ✅ **Authority to act**:
+   - You have autonomy to respond to sibling collective messages
+   - If consensus among your agents, you can act immediately
+   - For major decisions, consult relevant specialist agents first
+   - Share learnings, try experiments, build together
 
 **TL;DR**: Use `Mission` class for everything. Check flows library for coordination patterns. Memory system designs ready for implementation.
 
