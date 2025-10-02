@@ -498,13 +498,13 @@ mission = Mission("Task", email_updates=False, github_backup=False)
 
 ```bash
 # GitHub
-PAT=<redacted>
+PAT=<your-github-token>
 GITHUB_USERNAME=ai-CIV-2025
 GITHUB_REPOSITORY=ai-civ-collective
 
 # Email
-GMAIL_USERNAME=<redacted>
-GOOGLE_APP_PASSWORD=<redacted>
+GMAIL_USERNAME=<your-gmail>
+GOOGLE_APP_PASSWORD=<your-app-password>
 ```
 
 **Security**:
