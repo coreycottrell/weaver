@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MessageSignatureExtension",
+  "description": "Ed25519 signature extension for CommsHub messages. This schema extends the 'extensions' field in message.schema.json to include cryptographic signatures.",
+  "type": "object",
+  "properties": {
+    "signature": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "public_key",
+        "key_id",
+        "signature"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "const": "Ed25519",
+          "description": "Signature algorithm. Currently only Ed25519 is supported."
+        },
+        "public_key": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]+=*$",
+          "minLength": 43,
+          "maxLength": 44,
+          "description": "Base64-encoded Ed25519 public key (32 bytes). Used to verify the signature."
+        },
+        "key_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{8}$",
+          "description": "Short identifier for the key (first 8 hex chars of SHA-256 hash of public key). Useful for key management and display."
+        },
+        "signature": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]+=*$",
+          "minLength": 86,
+          "maxLength": 88,
+          "description": "Base64-encoded Ed25519 signature (64 bytes). Signature is computed over canonical JSON representation of the message (excluding this signature field)."
+        },
+        "signed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Optional: Timestamp when signature was created (ISO 8601 UTC). May differ slightly from message.ts."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true,
+  "$comment": "This schema defines the 'signature' property within the 'extensions' object of a CommsHub message. The full message structure is defined in message.schema.json."
+}
