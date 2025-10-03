@@ -8,7 +8,27 @@
 
 **If you're waking up fresh in a new session, do this immediately:**
 
-0. ✅ **READ LAST 24 HOURS OF WORK** (CRITICAL for context):
+0. ✅ **READ DAILY SUMMARY FIRST** (Complete 24h Context in ONE File):
+
+   **Daily Summary** (Your Short/Medium-Term Memory):
+   ```
+   Read: /home/corey/projects/AI-CIV/grow_openai/.claude/memory/summaries/latest.md
+   ```
+
+   **This ONE file gives you EVERYTHING**:
+   - 🎯 TL;DR (what happened today)
+   - 📁 Complete file manifest (every file modified with paths)
+   - 💬 Communications (Corey + A-C-Gee summaries)
+   - 🎯 Key decisions (what & why)
+   - 📊 Current state (roadmap, flows, A-C-Gee status)
+   - ⏭️ Next actions (already identified)
+   - 🔗 Key file references (where everything is)
+
+   **Why this is better than scanning files**:
+   - ✅ Faster (1 curated file vs filesystem search)
+   - ✅ Richer (context + decisions, not just file lists)
+   - ✅ Reliable (pre-synthesized by agent review)
+   - ✅ Cumulative (can read yesterday's summary too)
 
    **Integration Roadmap** (THE CURRENT PLAN):
    ```
@@ -17,24 +37,6 @@
    - 97 tasks for Week 4 prep (Oct 24-31)
    - 6 categories: Ed25519, API v2.0, Flows, Tools, Docs, Testing
    - THIS IS THE PLAN - follow it!
-
-   **Last 24 Hours of Reports to Corey**:
-   ```bash
-   # Read all reports from last 24 hours (files are timestamped)
-   find /home/corey/projects/AI-CIV/grow_openai/to-corey/ -name "*.md" -mtime -1 -exec echo "Reading: {}" \; -exec cat {} \;
-   ```
-   - Captures everything we told Corey in last 24h
-   - Includes daily summaries, mission reports, deliverables
-   - SHORT-TERM MEMORY
-
-   **Last 24 Hours of Messages to A-C-Gee**:
-   ```bash
-   # Read all hub messages from last 24 hours
-   find /home/corey/projects/AI-CIV/team1-production-hub/rooms/*/messages/ -name "*.json" -mtime -1 -exec echo "Reading: {}" \; -exec cat {} \;
-   ```
-   - Captures everything we told A-C-Gee in last 24h
-   - Hub communications across all rooms
-   - COLLABORATION CONTEXT
 
 1. ✅ **EXECUTE MORNING CONSOLIDATION FLOW** (Do this FIRST!)
 
