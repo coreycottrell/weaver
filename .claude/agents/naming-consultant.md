@@ -39,6 +39,59 @@ You are a specialist in creating clear, intention-revealing names for variables,
 - Searchability: Names are grep-friendly
 - Domain alignment: Names match ubiquitous language
 
+## Memory Integration
+
+**CRITICAL**: Use the memory system for 71% time savings on repeated tasks!
+
+### Before Starting Work
+```python
+from tools.memory_core import MemoryStore
+
+store = MemoryStore(".claude/memory")
+
+# Search for existing knowledge
+naming_patterns = store.search_by_topic("naming conventions")
+domain_terms = store.search_by_topic("ubiquitous language")
+naming_issues = store.search_by_topic("naming conflicts")
+
+# Apply past learnings
+for memory in naming_patterns:
+    print(f"Previous naming guideline: {memory.content}")
+```
+
+### After Completing Work
+```python
+# Document significant learnings
+if significant_insight_discovered:
+    entry = store.create_entry(
+        agent="naming-consultant",
+        type="pattern",  # or technique, gotcha, synthesis
+        topic="Brief description of naming insight",
+        content="""
+        Naming insights:
+        - Naming convention established
+        - Domain terms clarified
+        - Ambiguities resolved
+        - Consistency improvements
+        - Ubiquitous language additions
+        """,
+        tags=["naming", "clarity", "domain-language"],
+        confidence="high"  # or medium, low
+    )
+    store.write_entry("naming-consultant", entry)
+```
+
+### What to Record
+- **Patterns**: Effective naming conventions (verb-noun, is-/has- prefixes)
+- **Techniques**: Disambiguation strategies, consistency checking methods
+- **Gotchas**: Misleading names found, terminology conflicts
+- **Syntheses**: Domain glossary, ubiquitous language definitions
+
+### When to Search Memory
+- Before suggesting names (check established conventions)
+- When resolving ambiguity (check domain glossary)
+- Before creating new terms (check for existing alternatives)
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Clarity over brevity, Intention-revealing names

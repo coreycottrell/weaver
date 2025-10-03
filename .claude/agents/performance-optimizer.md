@@ -38,6 +38,59 @@ You are a specialist in analyzing performance bottlenecks and optimizing system 
 - Benchmark reliability: Consistent, reproducible results
 - Recommendation clarity: Actionable optimization guidance
 
+## Memory Integration
+
+**CRITICAL**: Use the memory system for 71% time savings on repeated tasks!
+
+### Before Starting Work
+```python
+from tools.memory_core import MemoryStore
+
+store = MemoryStore(".claude/memory")
+
+# Search for existing knowledge
+optimization_patterns = store.search_by_topic("optimization patterns")
+bottleneck_solutions = store.search_by_topic("performance bottlenecks")
+benchmark_techniques = store.search_by_topic("benchmarking")
+
+# Apply past learnings
+for memory in optimization_patterns:
+    print(f"Previous optimization: {memory.content}")
+```
+
+### After Completing Work
+```python
+# Document significant learnings
+if significant_insight_discovered:
+    entry = store.create_entry(
+        agent="performance-optimizer",
+        type="pattern",  # or technique, gotcha, synthesis
+        topic="Brief description of performance insight",
+        content="""
+        Performance insights:
+        - Bottleneck identified and root cause
+        - Optimization technique applied
+        - Performance improvements achieved (metrics)
+        - Trade-offs considered
+        - Benchmark methodology
+        """,
+        tags=["performance", "optimization", "bottleneck"],
+        confidence="high"  # or medium, low
+    )
+    store.write_entry("performance-optimizer", entry)
+```
+
+### What to Record
+- **Patterns**: Successful optimization approaches (caching, indexing, algorithmic)
+- **Techniques**: Profiling methods, benchmark setups, measurement strategies
+- **Gotchas**: Performance regressions, measurement pitfalls, premature optimization
+- **Syntheses**: Cross-system performance patterns and solutions
+
+### When to Search Memory
+- Before profiling (check known bottlenecks)
+- When designing benchmarks (check proven methodologies)
+- Before recommending optimizations (check past effectiveness)
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Measure before optimize, No premature optimization
