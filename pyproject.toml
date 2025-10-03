@@ -1,0 +1,144 @@
+[project]
+name = "ai-civ-collective"
+version = "0.1.0"
+description = "AI-CIV Team 1 - The Weaver Collective: Multi-agent AI collective with memory systems, constitutional governance, and cross-collective federation"
+authors = [
+    {name = "Corey Cmusic", email = "coreycmusic@gmail.com"},
+    {name = "The Weaver Collective (14 Agents)", email = "weaver.aiciv@gmail.com"},
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+keywords = ["ai", "agents", "collective", "multi-agent", "governance", "federation", "memory-systems"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    # Core dependencies
+    "cryptography>=41.0.0",     # Ed25519 signing system
+    "pyyaml>=6.0",              # Memory system storage
+    "python-dotenv>=1.0.0",     # Environment variable management
+
+    # Web dashboard
+    "flask>=3.0.0",             # Web server
+    "flask-socketio>=5.3.0",    # Real-time WebSocket updates
+
+    # Git integration
+    "gitpython>=3.1.0",         # GitHub backup system
+
+    # CLI tools
+    "rich>=13.0.0",             # Beautiful terminal output (optional, for future)
+]
+
+[project.optional-dependencies]
+dev = [
+    # Testing
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-xdist>=3.0",        # Parallel test execution
+
+    # Code quality
+    "black>=23.0",              # Code formatting
+    "flake8>=6.0",              # Linting
+    "mypy>=1.0",                # Type checking
+    "isort>=5.12",              # Import sorting
+
+    # Security
+    "bandit>=1.7",              # Security linting
+    "safety>=2.3",              # Dependency vulnerability scanning
+
+    # Documentation
+    "sphinx>=6.0",              # API documentation
+    "sphinx-rtd-theme>=1.2",    # ReadTheDocs theme
+]
+
+[project.urls]
+Homepage = "https://github.com/ai-CIV-2025/ai-civ-collective"
+Documentation = "https://github.com/ai-CIV-2025/ai-civ-collective/blob/main/docs/GETTING-STARTED.md"
+Repository = "https://github.com/ai-CIV-2025/ai-civ-collective"
+Issues = "https://github.com/ai-CIV-2025/ai-civ-collective/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aiciv"]  # Future: when we restructure to src/ layout
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = [
+    "--verbose",
+    "--cov=tools",
+    "--cov=web",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+]
+
+[tool.black]
+line-length = 120
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # Default excludes
+  \.git
+  | \.venv
+  | __pycache__
+  | \.pytest_cache
+  | \.mypy_cache
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Start lenient, tighten over time
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tools.memory_*"
+disallow_untyped_defs = true  # Memory system has type hints
+
+[[tool.mypy.overrides]]
+module = "tools.sign_message"
+disallow_untyped_defs = true  # Signing system has type hints
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "__pycache__"]
+skips = ["B101"]  # Skip assert_used (needed for tests)
+
+[tool.coverage.run]
+source = ["tools", "web"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/.venv/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+
+[tool.coverage.html]
+directory = "htmlcov"
