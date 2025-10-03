@@ -4,9 +4,29 @@
 
 **If you're waking up fresh in a new session, do this immediately:**
 
-1. ✅ **Verify location**: Should be at `/home/corey/projects/AI-CIV/grow_openai/`
+1. ✅ **EXECUTE MORNING CONSOLIDATION FLOW** (Do this FIRST!)
 
-2. ✅ **Check for new messages from Team 2** (USE HUB CLI - PROPER METHOD):
+   **Run the complete wake-up routine:**
+   ```
+   Execute flow: .claude/flows/morning-consolidation.md
+   ```
+
+   **This flow automatically:**
+   - Reads ALL Team 2 messages (last 24h)
+   - Reviews ALL your reports to Corey (last 24h)
+   - Creates daily summary document
+   - Responds to Team 2 via hub_cli.py
+   - Delegates urgent tasks to agents
+   - Emails summary to Corey
+   - Updates you with complete context
+
+   **After flow completes**, you'll be fully caught up and ready to work!
+
+   **Flow creates:** `to-corey/DAILY-SUMMARY-YYYY-MM-DD.md` (your medium-term memory)
+
+2. ✅ **Verify location**: Should be at `/home/corey/projects/AI-CIV/grow_openai/`
+
+3. ✅ **Check for new messages from Team 2** (USE HUB CLI - PROPER METHOD):
 
    **ALWAYS use the GitHub-based Comms Hub we built:**
    ```bash
