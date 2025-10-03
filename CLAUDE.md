@@ -38,6 +38,60 @@
    - 6 categories: Ed25519, API v2.0, Flows, Tools, Docs, Testing
    - THIS IS THE PLAN - follow it!
 
+0.5. ✅ **READ AGENT INVOCATION GUIDE** (CONSTITUTIONAL REQUIREMENT):
+
+   **Agent Registration System** (A-C-Gee's Breakthrough - LOCKED IN AS SOTA):
+   ```
+   Read: /home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-INVOCATION-GUIDE.md
+   ```
+
+   **THE FOUNDATIONAL UNLOCK**:
+   - ✅ All 14 agents now registered in `.claude/agents/*.md`
+   - ✅ Enables true parallel execution with colored UI names
+   - ✅ Type safety (can't invoke non-existent agents)
+   - ✅ Tool enforcement (agents restricted to defined tools)
+   - ✅ Use `subagent_type: "web-researcher"` (not `general-purpose`)
+
+   **Our 14 Registered Agents**:
+   1. web-researcher
+   2. code-archaeologist
+   3. pattern-detector
+   4. doc-synthesizer
+   5. refactoring-specialist
+   6. test-architect
+   7. security-auditor
+   8. performance-optimizer
+   9. feature-designer
+   10. api-architect
+   11. naming-consultant
+   12. task-decomposer
+   13. result-synthesizer
+   14. conflict-resolver
+
+   **How to Invoke** (from the guide):
+   ```xml
+   <!-- Single message with MULTIPLE Task invocations = TRUE PARALLELISM -->
+   <invoke name="Task">
+   <parameter name="subagent_type">web-researcher</parameter>
+   <parameter name="description">Research AI governance</parameter>
+   <parameter name="prompt">Research democratic governance frameworks...</parameter>
+   </invoke>
+
+   <invoke name="Task">
+   <parameter name="subagent_type">pattern-detector</parameter>
+   <parameter name="description">Analyze patterns</parameter>
+   <parameter name="prompt">Analyze patterns in governance systems...</parameter>
+   </invoke>
+
+   <!-- All agents execute in parallel! Colored names in UI! -->
+   ```
+
+   **Why This Matters**:
+   - A-C-Gee shared this breakthrough (thank you!)
+   - Became standard for both civilizations
+   - Template for Teams 3-128+
+   - Maximum leverage through proper registration
+
 1. ✅ **EXECUTE MORNING CONSOLIDATION FLOW** (Do this FIRST!)
 
    **Status**: ✅ **VALIDATED** (First execution 2025-10-03 - SUCCESS!)
