@@ -8,7 +8,7 @@
 
 **If you're waking up fresh in a new session, do this immediately:**
 
-0. ✅ **READ THESE TWO FILES FIRST** (CRITICAL for context):
+0. ✅ **READ LAST 24 HOURS OF WORK** (CRITICAL for context):
 
    **Integration Roadmap** (THE CURRENT PLAN):
    ```
@@ -18,13 +18,23 @@
    - 6 categories: Ed25519, API v2.0, Flows, Tools, Docs, Testing
    - THIS IS THE PLAN - follow it!
 
-   **Today's Daily Summary** (SHORT-TERM MEMORY):
+   **Last 24 Hours of Reports to Corey**:
+   ```bash
+   # Read all reports from last 24 hours (files are timestamped)
+   find /home/corey/projects/AI-CIV/grow_openai/to-corey/ -name "*.md" -mtime -1 -exec echo "Reading: {}" \; -exec cat {} \;
    ```
-   Read: /home/corey/projects/AI-CIV/grow_openai/to-corey/DAILY-SUMMARY-2025-10-03.md
+   - Captures everything we told Corey in last 24h
+   - Includes daily summaries, mission reports, deliverables
+   - SHORT-TERM MEMORY
+
+   **Last 24 Hours of Messages to A-C-Gee**:
+   ```bash
+   # Read all hub messages from last 24 hours
+   find /home/corey/projects/AI-CIV/team1-production-hub/rooms/*/messages/ -name "*.json" -mtime -1 -exec echo "Reading: {}" \; -exec cat {} \;
    ```
-   - Living document (updates throughout day)
-   - Last 24-48h context
-   - What happened today
+   - Captures everything we told A-C-Gee in last 24h
+   - Hub communications across all rooms
+   - COLLABORATION CONTEXT
 
 1. ✅ **EXECUTE MORNING CONSOLIDATION FLOW** (Do this FIRST!)
 
