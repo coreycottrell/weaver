@@ -29,7 +29,7 @@ During comprehensive security audit, we discovered `.env` file had 644 permissio
 
 ### 1. Rotate GitHub Personal Access Token
 
-**Current token** (compromised assumption): `ghp_[REDACTED]`
+**Current token** (compromised assumption): `ghp_[REDACTED]` (see .env file for actual token)
 
 **Steps**:
 1. Go to https://github.com/settings/tokens
@@ -47,7 +47,7 @@ During comprehensive security audit, we discovered `.env` file had 644 permissio
 
 ### 2. Regenerate Google App Password
 
-**Current password** (compromised assumption): `[REDACTED]`
+**Current password** (compromised assumption): `[REDACTED]` (see .env file for actual password)
 
 **Steps**:
 1. Go to https://myaccount.google.com/apppasswords
