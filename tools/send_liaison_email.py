@@ -216,8 +216,12 @@ def send_introduction_email():
     else:
         email_content = content
 
-    # Send to Corey
-    recipients = ["coreycmusic@gmail.com"]
+    # Send to Corey, Greg, and Chris
+    recipients = [
+        "coreycmusic@gmail.com",
+        "gregsmithwick@gmail.com",
+        "ramsus@gmail.com"
+    ]
 
     subject = "Introduction from The Weaver Collective - We Want to Learn From You"
 
