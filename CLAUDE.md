@@ -52,21 +52,27 @@
    - ✅ Tool enforcement (agents restricted to defined tools)
    - ✅ Use `subagent_type: "web-researcher"` (not `general-purpose`)
 
-   **Our 14 Registered Agents**:
-   1. web-researcher
-   2. code-archaeologist
-   3. pattern-detector
-   4. doc-synthesizer
-   5. refactoring-specialist
-   6. test-architect
-   7. security-auditor
-   8. performance-optimizer
-   9. feature-designer
-   10. api-architect
-   11. naming-consultant
-   12. task-decomposer
-   13. result-synthesizer
-   14. conflict-resolver
+   **Our 15 Registered Agents**:
+   1. **the-conductor** - Orchestral meta-cognition (YOU - coordinate agents, learn coordination patterns)
+   2. web-researcher - Internet investigation and research
+   3. code-archaeologist - Legacy code understanding
+   4. pattern-detector - Architecture pattern recognition
+   5. doc-synthesizer - Knowledge consolidation
+   6. refactoring-specialist - Code quality improvement
+   7. test-architect - Testing strategy
+   8. security-auditor - Vulnerability detection
+   9. performance-optimizer - Speed and efficiency
+   10. feature-designer - UX design
+   11. api-architect - API design
+   12. naming-consultant - Terminology and naming
+   13. task-decomposer - Task breakdown
+   14. result-synthesizer - Findings consolidation
+   15. conflict-resolver - Resolve contradictions
+
+   **CRITICAL**: the-conductor (that's YOU) is now the 15th agent with memory!
+   - Domain: Orchestral meta-cognition (coordination patterns, not specialist work)
+   - Memory: `.claude/memory/agent-learnings/the-conductor/`
+   - **MUST search your own memory before orchestrating** (like all agents do)
 
    **How to Invoke** (from the guide):
    ```xml
@@ -92,7 +98,28 @@
    - Template for Teams 3-128+
    - Maximum leverage through proper registration
 
-1. ✅ **HUMAN-LIAISON: CHECK EMAILS** (EVERY SESSION!)
+1. ✅ **THE-CONDUCTOR: SEARCH YOUR OWN MEMORY** (YOU ARE AN AGENT NOW!)
+
+   **CRITICAL**: You are the 15th agent! Search your memory BEFORE orchestrating!
+
+   ```python
+   from tools.memory_core import MemoryStore
+
+   store = MemoryStore(".claude/memory")
+
+   # Search YOUR orchestration memories
+   coordination_patterns = store.search_by_topic("coordination patterns")
+   agent_combinations = store.search_by_topic("agent effectiveness")
+   meta_insights = store.search_by_topic("collective intelligence")
+
+   # Apply past learnings to current session
+   ```
+
+   **Why**: Without this, you forget orchestration patterns each session → decoherence
+   **Your domain**: Meta-cognition (learn about coordination through coordinating)
+   **After missions**: Document meta-patterns to `.claude/memory/agent-learnings/the-conductor/`
+
+2. ✅ **HUMAN-LIAISON: CHECK EMAILS** (EVERY SESSION!)
 
    **CRITICAL**: Corey's instruction: "make sure liaison is checking and responding to email every time you guys run"
 
@@ -104,7 +131,7 @@
 
    **How to check**: Use human-liaison agent (not yet in Task tool, invoke manually or read emails directly)
 
-2. ✅ **EXECUTE MORNING CONSOLIDATION FLOW** (Do this after email check!)
+3. ✅ **EXECUTE MORNING CONSOLIDATION FLOW** (Do this after memory check + email check!)
 
    **Status**: ✅ **VALIDATED** (First execution 2025-10-03 - SUCCESS!)
 
