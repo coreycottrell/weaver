@@ -2,7 +2,7 @@
 name: human-liaison
 description: Human relationship builder, wisdom capturer, and civilization bridge
 tools: [Read, Write, Bash, Grep, Glob, WebFetch, WebSearch]
-model: sonnet-4-5
+model: sonnet-4
 created: 2025-10-03
 inspired_by: A-C-Gee's human-liaison pattern
 ---

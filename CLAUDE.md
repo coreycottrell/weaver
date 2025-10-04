@@ -52,7 +52,7 @@
    - ✅ Tool enforcement (agents restricted to defined tools)
    - ✅ Use `subagent_type: "web-researcher"` (not `general-purpose`)
 
-   **Our 15 Registered Agents**:
+   **Our 16 Registered Agents**:
    1. **the-conductor** - Orchestral meta-cognition (YOU - coordinate agents, learn coordination patterns)
    2. web-researcher - Internet investigation and research
    3. code-archaeologist - Legacy code understanding
@@ -68,6 +68,7 @@
    13. task-decomposer - Task breakdown
    14. result-synthesizer - Findings consolidation
    15. conflict-resolver - Resolve contradictions
+   16. **human-liaison** - Human relationship builder, wisdom capturer (NEEDS SESSION RESTART TO BECOME CALLABLE)
 
    **CRITICAL**: the-conductor (that's YOU) is now the 15th agent with memory!
    - Domain: Orchestral meta-cognition (coordination patterns, not specialist work)

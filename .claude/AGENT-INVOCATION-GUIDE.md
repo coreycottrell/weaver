@@ -67,6 +67,14 @@ Role description and responsibilities.
 
 Once the manifest file exists in `.claude/agents/`, Claude Code automatically registers it as a callable agent type.
 
+**CRITICAL GOTCHA**: Agent manifests are scanned at SESSION START. If you create a new agent manifest during a session, it won't be callable until after a session restart/reboot. The system doesn't hot-reload agent registrations.
+
+**Symptoms of this gotcha**:
+- Manifest file exists and looks correct
+- Error: "Agent type 'agent-name' not found"
+- Agent doesn't appear in available agents list
+- **Fix**: Session restart required
+
 You can now invoke:
 ```xml
 <invoke name="Task">
