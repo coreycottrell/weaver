@@ -8,7 +8,7 @@ set -euo pipefail
 # Configuration
 ###############################################################################
 
-TMUX_SESSION="claude"
+TMUX_SESSION="3"
 TMUX_PANE="${TMUX_SESSION}.0"
 PROMPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/prompts" && pwd)"
 STATE_FILE="$(dirname "${BASH_SOURCE[0]}")/injection-state.json"
@@ -19,9 +19,12 @@ LOG_FILE="$(dirname "${BASH_SOURCE[0]}")/injection.log"
 ROTATION_SCHEDULE=(
     "5:01-simple-encouragement.txt"      # Every 5min: simple encouragement
     "15:02-constitutional-refresh.txt"   # Every 15min: re-read constitution
-    "30:03-full-protocol.txt"            # Every 30min: full protocol check
-    "60:04-session-health-check.txt"     # Every 60min: health check
-    "120:05-end-of-session.txt"          # Every 2hrs: wrap-up suggestion
+    "30:08-full-comms-check.txt"         # Every 30min: FULL COMMS (liaison + hub)
+    "45:07-integration-check.txt"        # Every 45min: integration & protocol check
+    "60:03-full-protocol.txt"            # Every 60min: full protocol check
+    "90:04-session-health-check.txt"     # Every 90min: health check
+    "120:06-deep-ceremony.txt"           # Every 2hrs: deep ceremony
+    "240:09-session-report.txt"          # Every 4hrs: generate & email session report
 )
 
 ###############################################################################

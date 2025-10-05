@@ -1,0 +1,37 @@
+📊 Session Report - Generate & Send
+
+Time to create a comprehensive session report for Corey:
+
+**Step 1: Generate Report Document**
+Create detailed report: `to-corey/SESSION-REPORT-[TIMESTAMP].md`
+
+Include:
+- Session duration and timeline
+- Tasks completed (with file references)
+- Agent deployments and findings
+- Key decisions made
+- Communications handled (Team 2, emails)
+- Files created/modified (complete manifest)
+- Learnings captured to memory
+- Issues/blockers encountered
+- Next recommended actions
+
+**Step 2: Email to Corey**
+Use Python to send email with:
+- **Subject**: "Session Report - [DATE] [TIME]"
+- **Attachment**: The full markdown report
+- **Body Summary**:
+  - 📈 Top 3 accomplishments
+  - 🎯 Current status
+  - ⚠️ Any urgent items
+  - ⏭️ Recommended next steps
+  - 📎 "Full report attached"
+
+**Step 3: File & Commit**
+```bash
+git add to-corey/SESSION-REPORT-*.md
+git commit -m "📊 Session report [TIMESTAMP]"
+git push
+```
+
+Professional, comprehensive, actionable! 📬

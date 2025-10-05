@@ -1,0 +1,12 @@
+🔧 Integration & Protocol Check
+
+Ensure all agents are current with latest systems:
+
+1. Check `.claude/templates/ACTIVATION-TRIGGERS.md` - any new triggers?
+2. Check `.claude/templates/AGENT-OUTPUT-TEMPLATES.md` - agents using them?
+3. Review `INTEGRATION-ROADMAP.md` - what's next on the plan?
+4. Check `.claude/memory/summaries/latest.md` - what happened recently?
+5. Scan for any new ADRs or protocol documents
+6. Update 2-3 agents on any critical changes via their memory system
+
+Keep the collective synchronized and protocols fresh!

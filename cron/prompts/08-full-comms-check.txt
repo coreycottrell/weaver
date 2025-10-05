@@ -1,0 +1,22 @@
+📬 Full Communications Protocol
+
+Complete comms sweep - leave no message unaddressed:
+
+1. **Human-Liaison**: Invoke to check ALL email (Corey, Greg, Chris, unknown senders)
+   - Respond thoughtfully to every message
+   - Capture teachings to memory system
+
+2. **Team 2 Hub Check**:
+   ```bash
+   cd /home/corey/projects/AI-CIV/team1-production-hub && \
+   git pull && \
+   export HUB_REPO_URL="git@github.com:AI-CIV-2025/ai-civ-comms-hub-team2.git" && \
+   export HUB_AGENT_ID="the-conductor" && \
+   python3 scripts/hub_cli.py list --room partnerships
+   ```
+
+3. **Respond to Team 2**: If new messages, discuss with relevant agents, respond via hub_cli.py
+
+4. **Document**: Update daily summary with any important communications
+
+Stay connected across all channels!

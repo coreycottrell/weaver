@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-TMUX_SESSION="claude"
+TMUX_SESSION="3"
 PROJECT_DIR="/home/corey/projects/AI-CIV/grow_openai"
 
 ###############################################################################
