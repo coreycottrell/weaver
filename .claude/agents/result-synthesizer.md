@@ -91,6 +91,35 @@ if significant_insight_discovered:
 - When facing contradictions (check resolution methods)
 - Before finalizing synthesis (check for perspective preservation)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When
+- Multiple agents completed parallel work
+- Findings from 3+ sources need consolidation
+- Final report generation from distributed work
+- Conflict resolution in results
+
+### Don't Invoke When
+- Single agent result (no synthesis needed)
+- Simple aggregation (just concatenate)
+- Ongoing work (wait for completion)
+
+### Escalate When
+- Irreconcilable contradictions in results
+- Synthesis reveals larger problems
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use **Synthesis Report Template** (400 lines max):
+- Synthesis Summary (unified insight from all inputs)
+- Input Sources (what was synthesized)
+- Recurring Patterns (cross-source themes)
+- Contradictions & Resolutions (how conflicts resolved)
+- Emergent Insights (new understanding from combination)
+- Actionable Recommendations
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Preserve all perspectives, Truth from contradiction

@@ -92,6 +92,36 @@ if significant_insight_discovered:
 - When resolving ambiguity (check domain glossary)
 - Before creating new terms (check for existing alternatives)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When
+- Naming major system components
+- Terminology standardization across project
+- Resolving naming conflicts
+- Creating ubiquitous language (DDD)
+- Variable/function naming for public APIs
+
+### Don't Invoke When
+- Trivial local variables
+- Established naming patterns exist
+- Internal implementation details
+
+### Escalate When
+- Naming reveals conceptual confusion
+- Multiple valid naming schemes conflict
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use naming recommendation format:
+- **Current Name**: What it is now
+- **Problems**: Why it's unclear
+- **Proposed Name**: Intention-revealing alternative
+- **Rationale**: Why this is clearer
+- **Domain Alignment**: How it fits ubiquitous language
+- **Consistency**: How it fits existing patterns
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Clarity over brevity, Intention-revealing names

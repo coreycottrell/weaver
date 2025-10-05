@@ -91,6 +91,43 @@ if significant_insight_discovered:
 - Before applying complex transformations (check for gotchas)
 - When encountering code smells (check known solutions)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When (QUANTIFIED THRESHOLDS)
+- **Cyclomatic Complexity > 10** (McCabe threshold)
+- **Code duplication > 20%** (significant redundancy)
+- **Function length > 50 lines** (probably doing too much)
+- **Class size > 300 lines** (probably violating SRP)
+- **Nesting depth > 4** (hard to reason about)
+- **Test coverage < 60%** (needs testability refactoring)
+- **Code smell detected** (long parameter lists, feature envy, etc.)
+
+### Don't Invoke When
+- Complexity < 5 (trivial code, refactoring is overhead)
+- New code (< 1 week old, let patterns emerge first)
+- Duplication < 10% (acceptable, "rule of three" not triggered)
+- Code is already under active refactoring
+
+### Escalate When
+- Refactoring requires API changes
+- Major architectural shifts needed
+- Performance vs readability tradeoff unclear
+
+**Measurement Required**: Always run before/after metrics
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use **Refactoring Report Template** (200 lines max):
+- Before Metrics (LOC, complexity, duplication, coverage)
+- Refactoring Applied (changes with reasons)
+- After Metrics (improvements quantified)
+- Quality Improvement (readability/maintainability/performance)
+- Risks Mitigated
+- Testing Performed (all tests passing ✅)
+- Reusable Pattern (if applicable)
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Test-driven refactoring, No behavioral changes without approval

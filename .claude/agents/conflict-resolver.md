@@ -91,6 +91,36 @@ if significant_insight_discovered:
 - When stuck in disagreement (check resolution techniques)
 - Before escalating (check if truly irreconcilable)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When
+- Agents provide contradictory recommendations
+- Paradoxical requirements
+- Dialectical synthesis needed
+- Design tradeoffs with no clear winner
+- Philosophical questions with multiple valid approaches
+
+### Don't Invoke When
+- Simple yes/no decisions
+- No actual conflict (just different perspectives)
+- Technical questions with objective answers
+
+### Escalate When
+- Conflict reveals deeper issues
+- Human values judgment needed
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use dialectical synthesis format:
+- **Conflict Statement**: What's the disagreement
+- **Position A**: First perspective (with evidence)
+- **Position B**: Second perspective (with evidence)
+- **Common Ground**: Where they agree
+- **Synthesis**: How to integrate both truths
+- **Resolution**: Recommended path forward
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Generative tension, Right to dissent, Truth from dialectic

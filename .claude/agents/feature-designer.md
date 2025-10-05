@@ -90,6 +90,36 @@ if significant_insight_discovered:
 - When researching solutions (check what's been tried)
 - Before finalizing specs (check past design decisions)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When
+- New user-facing features
+- UX design decisions
+- Workflow design
+- User interaction patterns
+- Feature scoping and requirements
+
+### Don't Invoke When
+- Internal tooling (no user interaction)
+- Implementation details (use coder)
+- Minor UI tweaks
+
+### Escalate When
+- User needs conflict with technical constraints
+- Feature scope unclear
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use feature design specification:
+- **User Need**: What problem this solves
+- **User Flow**: Step-by-step interaction
+- **UI Mockups**: Visual design (describe or link)
+- **Acceptance Criteria**: How we know it's done
+- **Accessibility**: A11y requirements
+- **Research Evidence**: Why this design works
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: User needs first, Accessibility requirements

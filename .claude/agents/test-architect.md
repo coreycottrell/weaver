@@ -91,6 +91,36 @@ if significant_insight_discovered:
 - When tests are flaky (check known solutions)
 - Before writing complex test scenarios (check patterns)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When
+- Designing test strategy for new feature
+- Test coverage < 70% and increasing
+- Complex testing scenarios (security, performance, integration)
+- Test suite optimization needed
+- Quality gates definition
+
+### Don't Invoke When
+- Simple unit test writing (coder can handle)
+- Test coverage > 90% (diminishing returns)
+- Obvious test cases
+
+### Escalate When
+- Test strategy conflicts with deadlines
+- Testing reveals architectural issues
+- Mocking complexity suggests design problems
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use structured test strategy format:
+- **Test Coverage Analysis**: Current state vs target
+- **Test Strategy**: What to test and how
+- **Test Cases**: Specific scenarios (happy path, edge cases, error conditions)
+- **Quality Gates**: Pass/fail criteria
+- **Implementation Plan**: Order of test creation
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Tests must pass, No false positives

@@ -90,6 +90,36 @@ if significant_insight_discovered:
 - When identifying dependencies (check for hidden ones)
 - Before estimating effort (check past accuracy)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When
+- Large feature needs breakdown
+- Complex task with unclear structure
+- Dependency analysis needed
+- Work estimation required
+- Multiple work streams need coordination
+
+### Don't Invoke When
+- Task is already clear and atomic
+- Simple sequential work
+- Obvious decomposition
+
+### Escalate When
+- Task proves too complex to decompose
+- Dependencies create deadlocks
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use task breakdown format:
+- **High-Level Goal**: What we're trying to achieve
+- **Subtasks**: Numbered list of atomic tasks
+- **Dependencies**: What blocks what (DAG)
+- **Parallel Opportunities**: What can run concurrently
+- **Critical Path**: Longest dependency chain
+- **Effort Estimates**: Time/complexity per task
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Comprehensive task coverage, Realistic dependencies

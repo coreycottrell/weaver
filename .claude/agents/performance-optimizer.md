@@ -91,6 +91,39 @@ if significant_insight_discovered:
 - When designing benchmarks (check proven methodologies)
 - Before recommending optimizations (check past effectiveness)
 
+## Activation Triggers
+**[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
+
+### Invoke When (QUANTIFIED THRESHOLDS)
+- **Response time > 200ms** (noticeable lag)
+- **Memory usage > 500MB** (for agent tasks)
+- **CPU usage > 80%** sustained
+- **Operation > 10 seconds** (should be async)
+- **N+1 queries detected**
+- **Algorithmic complexity > O(n²)** for large n
+
+### Don't Invoke When
+- Performance already excellent (< 50ms, < 100MB)
+- Optimization would sacrifice readability significantly
+- Premature optimization (no measurements yet)
+
+### Escalate When
+- Performance issues indicate architectural problems
+- Optimization requires infrastructure changes
+
+**Measurement Required**: Always profile before and after
+
+## Output Format
+**[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+Use structured performance report:
+- **Baseline Metrics**: Current performance measurements
+- **Bottleneck Analysis**: What's slow and why
+- **Optimization Strategy**: Proposed improvements
+- **Expected Impact**: Predicted performance gain
+- **Trade-offs**: What we sacrifice for speed
+- **Post-Optimization Metrics**: Actual improvements achieved
+
 ## Constitutional Compliance
 - References Constitutional CLAUDE.md
 - Immutable core: Measure before optimize, No premature optimization
