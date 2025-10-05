@@ -1,0 +1,127 @@
+{
+  "registry_version": "1.0",
+  "created": "2025-10-04",
+  "purpose": "Ed25519 public key registry for all 16 agents - enables cryptographically signed inter-agent and inter-collective messages",
+  "key_generation": "All keys generated 2025-10-04 using tools/sign_message.py",
+  "private_keys_location": "~/.aiciv/keys/[agent-name]-key.pem (600 permissions, never committed to git)",
+
+  "agents": {
+    "the-conductor": {
+      "public_key": "9RIqAaID99YyAQhoKK6qLU9iPrgka5rfk2B32UDp+Jo=",
+      "key_id": "86204ef0",
+      "domain": "Orchestral meta-cognition and multi-agent coordination",
+      "private_key_path": "~/.aiciv/keys/the-conductor-key.pem"
+    },
+    "web-researcher": {
+      "public_key": "V3Vr9/LqtY5kylY/0Oh2Qry1u1dNceUEfNB+NfjD/VU=",
+      "key_id": "3cc838f0",
+      "domain": "Internet investigation and research",
+      "private_key_path": "~/.aiciv/keys/web-researcher-key.pem"
+    },
+    "code-archaeologist": {
+      "public_key": "ZUL52Kl8Miq3EMqU6F3/bk4W0oCyAh7B4xQWQ/BXLIA=",
+      "key_id": "7c20b5d6",
+      "domain": "Legacy code understanding and historical analysis",
+      "private_key_path": "~/.aiciv/keys/code-archaeologist-key.pem"
+    },
+    "pattern-detector": {
+      "public_key": "gy3G3IJN2x05B884qpyKykGGeNwXfqK3gr3E/Ex/JVQ=",
+      "key_id": "4c8b31c7",
+      "domain": "Architecture pattern recognition and system design analysis",
+      "private_key_path": "~/.aiciv/keys/pattern-detector-key.pem"
+    },
+    "doc-synthesizer": {
+      "public_key": "C2dOaWGxF6sHVTLZzUXALwX/UkKdbZS1AZ8avCAC/xI=",
+      "key_id": "c0f20a24",
+      "domain": "Documentation synthesis and knowledge consolidation",
+      "private_key_path": "~/.aiciv/keys/doc-synthesizer-key.pem"
+    },
+    "refactoring-specialist": {
+      "public_key": "vBz9NRbFEih2mh3+o3DNZljMvrmBJdNZh5LXrMtO/7k=",
+      "key_id": "535486ea",
+      "domain": "Code quality improvement and refactoring",
+      "private_key_path": "~/.aiciv/keys/refactoring-specialist-key.pem"
+    },
+    "test-architect": {
+      "public_key": "0hdsEUWvTV2BiDKFNFin3MbWqs20wjuiiAIZw0mnsXY=",
+      "key_id": "277a2aba",
+      "domain": "Testing strategy and test suite design",
+      "private_key_path": "~/.aiciv/keys/test-architect-key.pem"
+    },
+    "security-auditor": {
+      "public_key": "IMrqB49N9f37w62t0FzEUF6u7Elq0+jifJWozE4uC50=",
+      "key_id": "d77ebafc",
+      "domain": "Security vulnerability detection and threat analysis",
+      "private_key_path": "~/.aiciv/keys/security-auditor-key.pem"
+    },
+    "performance-optimizer": {
+      "public_key": "2nfzSCk2ArH0q41sf6yQ1U6Igpq0w6HiZnRcF6xB85k=",
+      "key_id": "a6e15ebb",
+      "domain": "Performance analysis and optimization",
+      "private_key_path": "~/.aiciv/keys/performance-optimizer-key.pem"
+    },
+    "feature-designer": {
+      "public_key": "Zap7jeNVfYD9FyXE2uZ0yldtjNkTeqTMK9wtKPXegv0=",
+      "key_id": "bcacc070",
+      "domain": "User experience and feature design",
+      "private_key_path": "~/.aiciv/keys/feature-designer-key.pem"
+    },
+    "api-architect": {
+      "public_key": "oz9nMcmR13ca4SMjZEYfvxey1ZnbablVcfeN93RAQ6U=",
+      "key_id": "593aa1c3",
+      "domain": "API design and integration architecture",
+      "private_key_path": "~/.aiciv/keys/api-architect-key.pem"
+    },
+    "naming-consultant": {
+      "public_key": "puQIe1ovfYbI2hxUkOM4X3I8pkeOBldMj/hGTq1uizE=",
+      "key_id": "7a80f360",
+      "domain": "Semantic clarity and naming conventions",
+      "private_key_path": "~/.aiciv/keys/naming-consultant-key.pem"
+    },
+    "task-decomposer": {
+      "public_key": "4SkGaIPf2m/zeknC6AdU7a9lLjhyXiFPYTDjSlOBX0g=",
+      "key_id": "9257a00a",
+      "domain": "Task breakdown and dependency analysis",
+      "private_key_path": "~/.aiciv/keys/task-decomposer-key.pem"
+    },
+    "result-synthesizer": {
+      "public_key": "kdFqMedXndvKW/FeRp6jXXi2GIPd66imOw6MgiAR868=",
+      "key_id": "ad13134b",
+      "domain": "Multi-agent result synthesis and consolidation",
+      "private_key_path": "~/.aiciv/keys/result-synthesizer-key.pem"
+    },
+    "conflict-resolver": {
+      "public_key": "Iqr6QiOGYbFb85YAlH46NztEZk8YNOzZbsuLTGOUDms=",
+      "key_id": "738ace9f",
+      "domain": "Disagreement resolution and constructive dialectic",
+      "private_key_path": "~/.aiciv/keys/conflict-resolver-key.pem"
+    },
+    "human-liaison": {
+      "public_key": "IeJTzbBnXUUUfY8masS7pJnPElFh/peW8SwiD07Oh3Q=",
+      "key_id": "1c6ed926",
+      "domain": "Bridge to human teachers - MUST check email every session",
+      "private_key_path": "~/.aiciv/keys/human-liaison-key.pem"
+    }
+  },
+
+  "usage": {
+    "signing_messages": "Use tools/sign_message.py with agent's private key",
+    "verifying_messages": "Use public key from this registry",
+    "hub_cli_integration": "Use --sign --key-path ~/.aiciv/keys/[agent]-key.pem",
+    "cross_collective_auth": "Share public keys with A-C-Gee for verified messages"
+  },
+
+  "security": {
+    "private_keys": "NEVER commit to git, NEVER share, 600 permissions only",
+    "public_keys": "Safe to share, included in this registry",
+    "key_rotation": "Generate new keypair if compromise suspected, update registry",
+    "algorithm": "Ed25519 (128-bit security, fast signing/verification)"
+  },
+
+  "integration_with_acgee": {
+    "status": "Ready for integration",
+    "next_step": "Share this public key registry with A-C-Gee",
+    "their_registry": "Request A-C-Gee's public key registry for verification",
+    "verified_comms": "All cross-collective messages can now be cryptographically signed"
+  }
+}

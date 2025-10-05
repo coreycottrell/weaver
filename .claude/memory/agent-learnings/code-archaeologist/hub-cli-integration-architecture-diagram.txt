@@ -1,0 +1,512 @@
+# Hub CLI Ed25519 Integration - Architecture Diagrams
+
+## Diagram 1: Integration Points in hub_cli.py
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        hub_cli.py                               │
+│                     (239 → 340 lines)                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  [INTEGRATION POINT #1: IMPORTS]                                │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │ try:                                                       │ │
+│  │   from sign_message import Ed25519Signer, ...            │ │
+│  │   SIGNING_AVAILABLE = True                                │ │
+│  │ except ImportError:                                        │ │
+│  │   SIGNING_AVAILABLE = False  # Graceful degradation       │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  [INTEGRATION POINT #2: ARGUMENTS]                              │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │ def parse_args():                                          │ │
+│  │   send.add_argument("--sign", action="store_true")        │ │
+│  │   send.add_argument("--key-path", type=str)               │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  [INTEGRATION POINT #3: KEY LOADING]                            │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │ def cmd_send(..., sign, key_path):                         │ │
+│  │   signer = None                                            │ │
+│  │   if sign:                                                 │ │
+│  │     key_file = key_path or env("HUB_SIGNING_KEY")         │ │
+│  │     private_key = load_private_key(key_file)              │ │
+│  │     signer = Ed25519Signer.from_private_key(private_key)  │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                    ↓                                            │
+│  [INTEGRATION POINT #4: SIGNING]                                │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │   msg = {...}  # Build message                             │ │
+│  │   if signer:                                               │ │
+│  │     msg = sign_hub_message(msg, signer)                   │ │
+│  │   write_json(msg_path, msg)                               │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                    ↓                                            │
+│                git_commit_push()                                │
+│                                                                 │
+│  [INTEGRATION POINT #5: VERIFY (LIST)]                          │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │ def cmd_list(...):                                         │ │
+│  │   for msg in messages:                                     │ │
+│  │     status = _verify_signature(msg)  # ✓/✗/⚠             │ │
+│  │     print(f"{status} {msg['ts']} ...")                    │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  [INTEGRATION POINT #6: VERIFY (WATCH)]                         │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │ def cmd_watch(...):                                        │ │
+│  │   for msg in new_messages:                                 │ │
+│  │     status = _verify_signature(msg)  # ✓/✗/⚠             │ │
+│  │     print(f"[NEW] {status} {msg['ts']} ...")              │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  [NEW HELPER FUNCTION]                                          │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │ def _verify_signature(msg) -> str:                         │ │
+│  │   if not SIGNING_AVAILABLE: return " "                     │ │
+│  │   if no signature: return "⚠"                              │ │
+│  │   if verify_hub_message(msg): return "✓"                   │ │
+│  │   else: return "✗"                                         │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+## Diagram 2: Message Flow (Send with Signing)
+
+```
+┌──────────────┐
+│ User Command │
+└──────┬───────┘
+       │ python3 hub_cli.py send --sign --room lab-x --summary "Test"
+       ↓
+┌──────────────────────┐
+│ 1. Parse Arguments   │
+│    --sign = True     │
+│    --room = "lab-x"  │
+└──────┬───────────────┘
+       ↓
+┌──────────────────────┐
+│ 2. Load Signing Key  │
+│    HUB_SIGNING_KEY   │
+│    → ~/.aiciv/key    │
+└──────┬───────────────┘
+       │ Ed25519Signer created
+       ↓
+┌──────────────────────┐
+│ 3. Build Message     │
+│    {                 │
+│      id: ulid(),     │
+│      ts: now(),      │
+│      summary: "..."  │
+│    }                 │
+└──────┬───────────────┘
+       │ message_dict
+       ↓
+┌──────────────────────────────┐
+│ 4. Sign Message              │
+│    sign_hub_message(msg, sk) │
+│    ↓                          │
+│    Canonical JSON             │
+│    SHA-512 hash               │
+│    Ed25519 sign               │
+│    ↓                          │
+│    Add to extensions:         │
+│    {                          │
+│      signature: {             │
+│        algorithm: "Ed25519",  │
+│        public_key: "...",     │
+│        key_id: "abc123",      │
+│        signature: "..."       │
+│      }                        │
+│    }                          │
+└──────┬───────────────────────┘
+       │ signed_message
+       ↓
+┌──────────────────────┐
+│ 5. Write to JSON     │
+│    rooms/lab-x/      │
+│    messages/2025/10/ │
+│    timestamp-ulid    │
+│    .json             │
+└──────┬───────────────┘
+       │
+       ↓
+┌──────────────────────┐
+│ 6. Git Commit + Push │
+│    git add -A        │
+│    git commit -m ... │
+│    git push          │
+└──────┬───────────────┘
+       │
+       ↓
+┌──────────────────────┐
+│ ✓ Message sent       │
+│   (signed & pushed)  │
+└──────────────────────┘
+```
+
+## Diagram 3: Message Flow (List with Verification)
+
+```
+┌──────────────┐
+│ User Command │
+└──────┬───────┘
+       │ python3 hub_cli.py list --room lab-x
+       ↓
+┌──────────────────────┐
+│ 1. Git Pull          │
+│    Sync with remote  │
+└──────┬───────────────┘
+       ↓
+┌──────────────────────┐
+│ 2. Find Message      │
+│    Files             │
+│    rooms/lab-x/      │
+│    messages/**/*.json│
+└──────┬───────────────┘
+       │ List of JSON files
+       ↓
+┌──────────────────────────────────┐
+│ 3. For Each Message File         │
+│    ┌──────────────────────────┐  │
+│    │ Load JSON                │  │
+│    └──────┬───────────────────┘  │
+│           │                      │
+│    ┌──────▼───────────────────┐  │
+│    │ Verify Signature         │  │
+│    │ _verify_signature(msg)   │  │
+│    │                          │  │
+│    │ Has extensions.sig?      │  │
+│    │   YES ─→ Verify          │  │
+│    │          ├─ Valid → ✓    │  │
+│    │          └─ Invalid → ✗  │  │
+│    │   NO ──→ Unsigned → ⚠    │  │
+│    └──────┬───────────────────┘  │
+│           │                      │
+│    ┌──────▼───────────────────┐  │
+│    │ Print with Status        │  │
+│    │ "✓ 2025-10-04 [lab-x]"   │  │
+│    │ "⚠ 2025-10-03 [lab-x]"   │  │
+│    │ "✗ 2025-10-02 [lab-x]"   │  │
+│    └──────────────────────────┘  │
+└──────────────────────────────────┘
+       │
+       ↓
+┌──────────────────────┐
+│ Complete             │
+│ (all messages shown) │
+└──────────────────────┘
+```
+
+## Diagram 4: Signature Format in Message JSON
+
+```
+┌─────────────────────────────────────────────────────────┐
+│ Message File: rooms/lab-x/messages/2025/10/...json     │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│ BEFORE SIGNING:                                         │
+│ {                                                       │
+│   "version": "1.0",                                     │
+│   "id": "01JABLKZW7XMQR...",                            │
+│   "room": "lab-x",                                      │
+│   "author": {                                           │
+│     "id": "alpha",                                      │
+│     "display": "Team Alpha"                             │
+│   },                                                    │
+│   "ts": "2025-10-04T19:30:00Z",                         │
+│   "type": "text",                                       │
+│   "summary": "Integration complete",                    │
+│   "body": "Ed25519 signing now active"                  │
+│ }                                                       │
+│                                                         │
+│ ────────────────────────────────────────────────────    │
+│                                                         │
+│ AFTER SIGNING:                                          │
+│ {                                                       │
+│   "version": "1.0",                                     │
+│   "id": "01JABLKZW7XMQR...",                            │
+│   "room": "lab-x",                                      │
+│   "author": {                                           │
+│     "id": "alpha",                                      │
+│     "display": "Team Alpha"                             │
+│   },                                                    │
+│   "ts": "2025-10-04T19:30:00Z",                         │
+│   "type": "text",                                       │
+│   "summary": "Integration complete",                    │
+│   "body": "Ed25519 signing now active",                 │
+│                                                         │
+│   "extensions": {              ← NEW: Signature added   │
+│     "signature": {                                      │
+│       "algorithm": "Ed25519",                           │
+│       "public_key": "7s9Yfq3...base64...",              │
+│       "key_id": "abc12345",                             │
+│       "signature": "Xp7Kq2w...base64..."                │
+│     }                                                   │
+│   }                                                     │
+│ }                                                       │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+Signature covers ALL fields EXCEPT extensions.signature
+(canonical JSON with sorted keys)
+```
+
+## Diagram 5: Error Handling Flow
+
+```
+┌─────────────────────────────────────────────────────────┐
+│             Error Handling Decision Tree                │
+└─────────────────────────────────────────────────────────┘
+
+User runs: hub_cli.py send --sign ...
+
+    ├─ Is SIGNING_AVAILABLE?
+    │
+    ├─ NO ──→ Print warning
+    │         "⚠ sign_message.py not available"
+    │         "⚠ Install with: pip install cryptography"
+    │         Continue UNSIGNED
+    │
+    └─ YES ─┬─ Is key path provided?
+            │
+            ├─ NO ──→ Error + Exit
+            │         "ERROR: --sign requires --key-path or HUB_SIGNING_KEY"
+            │
+            └─ YES ─┬─ Does key file exist?
+                    │
+                    ├─ NO ──→ Error + Exit
+                    │         "ERROR: Key file not found: /path/to/key"
+                    │
+                    └─ YES ─┬─ Can load key?
+                            │
+                            ├─ NO ──→ Print warning
+                            │         "⚠ Failed to load key: <error>"
+                            │         Continue UNSIGNED
+                            │
+                            └─ YES ─┬─ Can sign message?
+                                    │
+                                    ├─ NO ──→ Print warning
+                                    │         "⚠ Signing failed: <error>"
+                                    │         Continue UNSIGNED
+                                    │
+                                    └─ YES ──→ Success!
+                                              "✓ Message signed"
+                                              Continue SIGNED
+
+RESULT: Message always sent (signed if possible, unsigned if not)
+        Never crashes (graceful degradation)
+```
+
+## Diagram 6: Verification Status Indicators
+
+```
+┌───────────────────────────────────────────────────────────┐
+│         Signature Verification Status Indicators          │
+├───────────────────────────────────────────────────────────┤
+│                                                           │
+│  ✓  VALID SIGNATURE                                       │
+│     ├─ Signature present in extensions.signature          │
+│     ├─ Signature cryptographically valid                  │
+│     ├─ Message has NOT been tampered with                 │
+│     └─ Sender identity authenticated                      │
+│                                                           │
+│  ✗  INVALID SIGNATURE (DANGER!)                           │
+│     ├─ Signature present BUT verification failed          │
+│     ├─ Message may have been TAMPERED                     │
+│     ├─ Signature corrupted or wrong key                   │
+│     └─ DO NOT TRUST this message                          │
+│                                                           │
+│  ⚠  UNSIGNED (No Signature)                               │
+│     ├─ No signature field present                         │
+│     ├─ Legacy message or sender doesn't sign              │
+│     ├─ Cannot verify authenticity                         │
+│     └─ Verify via other channels if important             │
+│                                                           │
+│     NO INDICATOR (Blank)                                  │
+│     ├─ Signing library not available                      │
+│     ├─ cryptography package not installed                 │
+│     └─ Cannot perform verification                        │
+│                                                           │
+└───────────────────────────────────────────────────────────┘
+```
+
+## Diagram 7: Key Management Workflow
+
+```
+┌─────────────────────────────────────────────────────────┐
+│              Key Generation & Management                │
+└─────────────────────────────────────────────────────────┘
+
+1. GENERATE KEYPAIR (One-time setup)
+   ┌──────────────────────────────────────────┐
+   │ cd grow_openai/tools                     │
+   │ python3 sign_message.py generate \       │
+   │   --output ~/.aiciv/agent-key.pem        │
+   │                                          │
+   │ Output:                                  │
+   │ ✓ Generated new keypair                  │
+   │   Private key: ~/.aiciv/agent-key.pem    │
+   │   Public key: 7s9Yfq3...                 │
+   │   Key ID: abc12345                       │
+   └──────────────────────────────────────────┘
+          ↓
+2. SECURE KEY FILE
+   ┌──────────────────────────────────────────┐
+   │ chmod 600 ~/.aiciv/agent-key.pem         │
+   │ chmod 700 ~/.aiciv/                      │
+   └──────────────────────────────────────────┘
+          ↓
+3. SET ENVIRONMENT VARIABLE
+   ┌──────────────────────────────────────────┐
+   │ export HUB_SIGNING_KEY=~/.aiciv/agent-key.pem │
+   │                                          │
+   │ Add to ~/.bashrc for persistence:        │
+   │ echo 'export HUB_SIGNING_KEY=...' >> ~/.bashrc │
+   └──────────────────────────────────────────┘
+          ↓
+4. USE IN HUB_CLI
+   ┌──────────────────────────────────────────┐
+   │ python3 hub_cli.py send --sign \         │
+   │   --room lab-x --summary "Test"          │
+   │                                          │
+   │ Output:                                  │
+   │ ✓ Loaded signing key (Key ID: abc12345)  │
+   │ ✓ Message signed (Key ID: abc12345)      │
+   └──────────────────────────────────────────┘
+          ↓
+5. PUBLISH PUBLIC KEY (For verification)
+   ┌──────────────────────────────────────────┐
+   │ python3 sign_message.py public-key \     │
+   │   --private-key ~/.aiciv/agent-key.pem   │
+   │                                          │
+   │ Output:                                  │
+   │ Public key: 7s9Yfq3...                   │
+   │                                          │
+   │ Share with Team 2 for verification       │
+   └──────────────────────────────────────────┘
+          ↓
+6. BACKUP KEY (Encrypted!)
+   ┌──────────────────────────────────────────┐
+   │ gpg --encrypt --recipient you@example.com \│
+   │   ~/.aiciv/agent-key.pem                 │
+   │                                          │
+   │ Store encrypted backup securely          │
+   └──────────────────────────────────────────┘
+```
+
+## Diagram 8: Dependencies & File Locations
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    File Dependencies                    │
+└─────────────────────────────────────────────────────────┘
+
+/home/corey/projects/AI-CIV/
+  │
+  ├─ team1-production-hub/
+  │  └─ scripts/
+  │     └─ hub_cli.py ─────────────┐ (MODIFIED)
+  │                                │
+  │                                │ imports
+  │                                ↓
+  ├─ grow_openai/
+  │  └─ tools/
+  │     ├─ sign_message.py ────────┘ (DEPENDENCY)
+  │     │  ├─ Ed25519Signer class
+  │     │  ├─ sign_hub_message()
+  │     │  ├─ verify_hub_message()
+  │     │  └─ load_private_key()
+  │     │
+  │     └─ examples/
+  │        ├─ signing_example.py ────┐ (REFERENCE)
+  │        └─ adr004_integration_*.py─┘ (REFERENCE)
+  │
+  └─ ~/.aiciv/
+     └─ agent-key.pem ───────────────┐ (PRIVATE KEY)
+                                     │
+                                     └─ Loaded by hub_cli.py at runtime
+
+External Dependency:
+  pip install cryptography
+    └─ Provides Ed25519 implementation
+```
+
+## Diagram 9: Testing Strategy
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                   Testing Workflow                      │
+└─────────────────────────────────────────────────────────┘
+
+TEST 1: Backward Compatibility (Unsigned)
+  ┌──────────────────────────────────────┐
+  │ python3 hub_cli.py send \            │
+  │   --room test \                      │
+  │   --summary "Unsigned"               │
+  │                                      │
+  │ Expected: ✓ Works (no signing)       │
+  └──────────────────────────────────────┘
+
+TEST 2: Signed Message (Env Var)
+  ┌──────────────────────────────────────┐
+  │ export HUB_SIGNING_KEY=~/.aiciv/key  │
+  │ python3 hub_cli.py send --sign \     │
+  │   --room test \                      │
+  │   --summary "Signed"                 │
+  │                                      │
+  │ Expected: ✓ Signed successfully      │
+  └──────────────────────────────────────┘
+
+TEST 3: Signed Message (Flag)
+  ┌──────────────────────────────────────┐
+  │ python3 hub_cli.py send --sign \     │
+  │   --key-path ~/.aiciv/key \          │
+  │   --room test \                      │
+  │   --summary "Signed"                 │
+  │                                      │
+  │ Expected: ✓ Signed successfully      │
+  └──────────────────────────────────────┘
+
+TEST 4: Verification (List)
+  ┌──────────────────────────────────────┐
+  │ python3 hub_cli.py list --room test  │
+  │                                      │
+  │ Expected:                            │
+  │ ✓ 2025-10-04  test  Signed           │
+  │ ⚠ 2025-10-03  test  Unsigned         │
+  └──────────────────────────────────────┘
+
+TEST 5: Error Handling (Missing Key)
+  ┌──────────────────────────────────────┐
+  │ python3 hub_cli.py send --sign \     │
+  │   --room test                        │
+  │                                      │
+  │ Expected: ERROR (no key path)        │
+  └──────────────────────────────────────┘
+
+TEST 6: Error Handling (Invalid Key)
+  ┌──────────────────────────────────────┐
+  │ echo "BAD" > /tmp/bad.pem            │
+  │ python3 hub_cli.py send --sign \     │
+  │   --key-path /tmp/bad.pem            │
+  │                                      │
+  │ Expected: ⚠ Warning, send unsigned   │
+  └──────────────────────────────────────┘
+
+TEST 7: Tampering Detection
+  ┌──────────────────────────────────────┐
+  │ 1. Send signed message               │
+  │ 2. Manually edit JSON (change body)  │
+  │ 3. List messages                     │
+  │                                      │
+  │ Expected: ✗ Invalid signature        │
+  └──────────────────────────────────────┘
+
+ALL TESTS MUST PASS before merging to production
+```
+
+---
+
+End of Architecture Diagrams
