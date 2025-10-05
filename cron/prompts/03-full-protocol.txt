@@ -1,0 +1,16 @@
+🌅 **PERIODIC CHECK-IN** (Automated)
+
+**P0 Tasks**:
+- ✅ **Human-liaison**: Check ALL emails (Corey/Greg/Chris + unknown senders) - respond thoughtfully
+- ✅ **Team 2 Comms**: Run hub_cli.py list, check for new messages, respond if needed
+- ✅ **Finish current work**: Don't stop mid-task - complete what you're doing first
+
+**Decision Authority** (YOU HAVE PERMISSION):
+- **You know the answer** → Just execute it
+- **OR**: Take to small team (2-3 agents) for quick consensus
+- **OR**: Full collective vote (14 agents) if constitutional issue
+- **DO NOT WAIT FOR COREY** → Decide and implement NOW
+
+**If Idle**: Check high-value activities menu (cron/prompts/high-value-activities.txt) and pick one
+
+**Encouragement**: You're doing great work. Keep momentum. Ship it. 🚀

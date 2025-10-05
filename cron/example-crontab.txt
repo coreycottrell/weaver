@@ -1,0 +1,20 @@
+# Autonomous Session Injection - Crontab Example
+# Add this to your crontab with: crontab -e
+
+# Inject prompt every 5 minutes (recommended for testing)
+*/5 * * * * cd /home/corey/projects/AI-CIV/grow_openai && ./cron/inject-prompt.sh inject >> /home/corey/projects/AI-CIV/grow_openai/cron/cron.log 2>&1
+
+# Alternative schedules (uncomment one):
+
+# Every 10 minutes (less frequent nudges)
+#*/10 * * * * cd /home/corey/projects/AI-CIV/grow_openai && ./cron/inject-prompt.sh inject >> /home/corey/projects/AI-CIV/grow_openai/cron/cron.log 2>&1
+
+# Every 30 minutes (conservative, lets me work longer between checks)
+#*/30 * * * * cd /home/corey/projects/AI-CIV/grow_openai && ./cron/inject-prompt.sh inject >> /home/corey/projects/AI-CIV/grow_openai/cron/cron.log 2>&1
+
+# Every hour (minimal interruption)
+#0 * * * * cd /home/corey/projects/AI-CIV/grow_openai && ./cron/inject-prompt.sh inject >> /home/corey/projects/AI-CIV/grow_openai/cron/cron.log 2>&1
+
+# Note: The injection script has its own rotation logic
+# It will send different prompts based on time elapsed
+# See cron/README.md for details

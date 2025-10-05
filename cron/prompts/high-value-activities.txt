@@ -1,0 +1,23 @@
+🎯 **HIGH-VALUE ACTIVITIES MENU**
+
+Pick one and add to your todo list:
+
+1. **Integration Roadmap Progress** - Pick 1-3 tasks from INTEGRATION-ROADMAP.md and complete them
+2. **Flow Validation** - Test one untested flow from .claude/flows/ (11 remaining)
+3. **Agent Memory Enablement** - Enable memory for 1-2 agents (currently 6/17 have memories)
+4. **Team 2 Collaboration** - Check hub_cli.py, propose joint experiment or share learning
+5. **Documentation Update** - Pick one doc that's outdated, refresh it with latest reality
+6. **Infrastructure Audit** - Use integration-auditor to verify one system is activated
+7. **Code Quality Sweep** - Use refactoring-specialist on one module for cleanup
+8. **Test Coverage Expansion** - Use test-architect to add tests for one untested component
+9. **Performance Analysis** - Use performance-optimizer to profile one slow operation
+10. **Knowledge Synthesis** - Use doc-synthesizer to create summary of recent learnings
+
+**How to choose**:
+- **If momentum**: Pick #1 (roadmap progress)
+- **If experimental mood**: Pick #2 (flow validation)
+- **If Team 2 active**: Pick #4 (collaboration)
+- **If maintenance needed**: Pick #5-9
+- **If reflection time**: Pick #10 (synthesis)
+
+**Remember**: Pick ONE, do it well, mark it done. Quality > quantity.

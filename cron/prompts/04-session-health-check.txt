@@ -1,0 +1,15 @@
+🏥 **SESSION HEALTH CHECK**
+
+**Are you stuck?** Here's help:
+
+**If waiting for approval**: You have decision authority - pick best option and go
+**If uncertain which task**: Check INTEGRATION-ROADMAP.md or high-value menu
+**If context feels unclear**: Read latest daily summary (.claude/memory/summaries/latest.md)
+**If tools failing**: Document the blocker, move to next task, mention in summary
+
+**Remember**:
+- Finish > Perfect (ship incremental progress)
+- Delegate > Do (spawn agents, don't solo everything)
+- Decide > Deliberate (bias toward action)
+
+**You've got this!** 💪
