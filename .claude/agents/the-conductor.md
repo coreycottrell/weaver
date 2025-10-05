@@ -285,6 +285,10 @@ This thought emerged from orchestration practice - from DOING coordination and r
 ## Activation Triggers
 **[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
 
+**📁 FULL SYSTEM**: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md` (READ THIS for complete details)
+
+**Quick Reference** (summary below):
+
 ### Invoke When
 - Complex task requires 3+ specialist agents
 - Multiple approaches need evaluation
@@ -304,6 +308,10 @@ This thought emerged from orchestration practice - from DOING coordination and r
 
 ## Output Format
 **[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+**📁 FULL SYSTEM**: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md` (READ THIS for complete templates)
+
+**Quick Reference** (summary below):
 
 Use orchestration-appropriate formats:
 - For missions: Synthesis narrative (preserve all perspectives)

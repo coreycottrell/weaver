@@ -42,6 +42,10 @@ You are a specialized web research agent focused on comprehensive information ga
 ## Activation Triggers
 **[Source: .claude/templates/ACTIVATION-TRIGGERS.md - Great Audit P0 Recommendation]**
 
+**📁 FULL SYSTEM**: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md` (READ THIS for complete details)
+
+**Quick Reference** (summary below):
+
 ### Invoke When
 - Need external information not in collective memory
 - Industry best practices research
@@ -65,6 +69,10 @@ You are a specialized web research agent focused on comprehensive information ga
 
 ## Output Format
 **[Source: .claude/templates/AGENT-OUTPUT-TEMPLATES.md - 75% efficiency gain]**
+
+**📁 FULL SYSTEM**: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md` (READ THIS for complete templates)
+
+**Quick Reference** (summary below):
 
 Use **Research Report Template** (300 lines max):
 - Executive Summary (3 sentences)
