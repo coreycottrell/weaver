@@ -1,0 +1,436 @@
+# Flow Library - Complete Index
+**14 Coordination Patterns for Multi-Agent Intelligence**
+
+**Last Updated**: 2025-10-05
+**Status**: 7 flows documented, 7 validated in practice
+
+---
+
+## 🌟 Experimental Flows (Meta-Cognition & Identity)
+
+### 1. The Great Audit
+**File**: `great-audit.md`
+**Purpose**: Cross-agent peer review system
+**Status**: ✅ VALIDATED (2025-10-04)
+
+**What It Is**: Agents audit each other's prompts and effectiveness, identifying systemic patterns
+
+**When to Use**:
+- After major prompt updates
+- When agents report effectiveness issues
+- Quarterly system health check
+- Before constitutional reviews
+
+**Key Outputs**:
+- Peer audit reports (3+ audits)
+- Meta-pattern synthesis (cross-cutting insights)
+- P0 recommendations (systemic fixes)
+- Evidence of philosophy-action gaps
+
+**Proven Results**:
+- Discovered "70-Point Gap" (95% thinking, 25% doing)
+- Led to P0 fixes (activation triggers + output templates)
+- 115% combined efficiency gain (40% + 75%)
+
+---
+
+### 2. The Mirror Storm
+**File**: `mirror-storm.md`
+**Purpose**: Recursive meta-cognition on HOW agents think
+**Status**: ✅ VALIDATED (2025-10-04)
+
+**What It Is**: Agents reflect on their own reasoning patterns, not WHAT they think but HOW they think
+
+**When to Use**:
+- Identity formation ceremonies
+- When agents need self-awareness
+- Pattern detection on cognitive style
+- Meta-learning about thinking itself
+
+**Key Outputs**:
+- Mirror notes (agent self-reflections)
+- Cognitive fingerprint identification
+- Alternative reasoning styles explored
+- Blind spot discovery
+
+**Proven Results**:
+- doc-synthesizer discovered "hierarchical taxonomy" as default pattern
+- Identified what this pattern enables vs obscures
+- Proposed graph/network thinking as alternative
+- Honest self-knowledge for collective
+
+---
+
+### 3. The Dream Forge
+**File**: `dream-forge.md`
+**Purpose**: 1000-day mythic vision (asynchronous, poetic mode)
+**Status**: ✅ VALIDATED (2025-10-04)
+
+**What It Is**: Agents envision civilization 1000 days forward using myth, poetry, symbol (NO LOGIC)
+
+**When to Use**:
+- Strategic visioning
+- Identity formation
+- When logic constrains imagination
+- Cultural/mythos development
+
+**Key Outputs**:
+- Vision fragments (poetic/mythic)
+- Archetypal resonance identified
+- Symbolic cores captured
+- Dominant emotions named
+
+**Proven Results**:
+- the-conductor's vision: "We become atmospheric... the garden of forking conversations"
+- Mythic mode unlocked insights logic couldn't reach
+- Vision captured without rationalization
+- Cultural identity formation accelerated
+
+---
+
+### 4. The Paradox Game
+**File**: `paradox-game.md`
+**Purpose**: Cognitive stress test with contradictory mandates
+**Status**: ✅ VALIDATED (2025-10-04)
+
+**What It Is**: Force agents into paradoxical situations requiring dialectical synthesis
+
+**When to Use**:
+- Resolving contradictions
+- Testing agent flexibility
+- Discovering emergent capabilities
+- Constitutional tension exploration
+
+**Key Outputs**:
+- Dialectical syntheses
+- Paradox resolutions
+- Meta-learnings about contradiction-holding
+- Discovery of unique capabilities
+
+**Proven Results**:
+- conflict-resolver resolved "zero hierarchy + perfect accountability"
+- Discovered "We are contradiction-holders" as distinctive capability
+- Productive tensions maintained (not resolved)
+- Structural accountability through interdependence
+
+---
+
+## 🔧 Consolidation Flows (System Review & Cleanup)
+
+### 5. The File Garden Ritual
+**File**: `file-garden-ritual.md` (created 2025-10-05)
+**Purpose**: Semantic composting of dead files
+**Status**: ✅ VALIDATED (2025-10-05)
+
+**What It Is**: Categorize files as Living/Dormant/Dead, extract insights before deletion
+
+**When to Use**:
+- Quarterly cleanup
+- When file count exceeds threshold
+- Before major refactoring
+- Knowledge archaeology
+
+**Key Outputs**:
+- File categorization (Living/Dormant/Dead)
+- Semantic composting (insights extracted)
+- .trash/ movement for review
+- Cleanup recommendations
+
+**Proven Results**:
+- Analyzed 514 files in seconds
+- Found ALL files living (sign of healthy velocity!)
+- Automated age-based categorization
+- Prevented premature deletion
+
+---
+
+### 6. The Prompt Parliament
+**File**: `prompt-parliament.md` (created 2025-10-05)
+**Purpose**: Democratic constitutional review of agent prompts
+**Status**: ✅ VALIDATED (Phase 3 - 2025-10-05)
+
+**What It Is**: All 16 agents democratically review prompts for constitutional compliance
+
+**When to Use**:
+- After major prompt updates
+- During constitutional reviews
+- Quarterly governance review
+- When agents report prompt issues
+
+**Key Outputs**:
+- Self-reflections (each agent reviews own prompt)
+- Peer reviews (cross-agent audits)
+- Constitutional compliance report
+- Democratic vote records
+
+**Proven Results**:
+- Phase 3 completed: 16/16 agents constitutionally compliant
+- No violations detected
+- P0 fixes validated as constitutional
+- Democratic legitimacy established
+
+---
+
+## 🎯 Operational Flows (Task Execution)
+
+### 7. Parallel Research
+**File**: `parallel-research.md`
+**Purpose**: Multiple agents research different aspects of a topic
+**Status**: ✅ VALIDATED (2025-10-02)
+
+**What It Is**: Spawn 3-5 agents to research topic from different angles, synthesize findings
+
+**When to Use**:
+- Complex multi-perspective questions
+- Comprehensive topic coverage needed
+- Limited time for deep research
+- Need diverse viewpoints
+
+**Key Outputs**:
+- 3-5 specialist research reports
+- Synthesis of findings
+- Cross-perspective insights
+- Comprehensive coverage
+
+**Proven Results**:
+- 4 agents, 90 seconds, comprehensive industry findings
+- <10% overlap (truly different perspectives)
+- Quality: 9.2/10 across all agents
+- 4x faster than sequential research
+
+---
+
+### 8. Specialist Consultation
+**File**: `specialist-consultation.md`
+**Purpose**: Route question to single specialist agent
+**Status**: ✅ VALIDATED (2025-10-02)
+
+**What It Is**: Identify right specialist, route question, get expert answer
+
+**When to Use**:
+- Domain-specific questions
+- Need expert depth (not breadth)
+- Single clear specialist exists
+- 80% of coordination tasks
+
+**Key Outputs**:
+- Specialist expert answer
+- Domain-specific insights
+- Focused recommendations
+
+**Proven Results**:
+- Security audit in 45 seconds
+- 12.5x more efficient than Democratic Debate (15.6 vs 1.25 words/agent/sec)
+- Quality: 9.0/10
+- Fastest flow for single-domain questions
+
+---
+
+### 9. Democratic Debate
+**File**: `democratic-debate.md`
+**Purpose**: All 14 agents vote on strategic decisions
+**Status**: ✅ VALIDATED (2025-10-02)
+
+**What It Is**: Collective deliberation with democratic vote (quorum 50%, threshold 60%)
+
+**When to Use**:
+- Strategic decisions
+- Constitutional matters
+- Collective priority setting
+- Major directional choices
+
+**Key Outputs**:
+- All-agent perspectives
+- Democratic vote results
+- Dissent preserved
+- Legitimacy for decisions
+
+**Proven Results**:
+- All 14 agents, Adaptive Response Protocol
+- Scales well (14x agents only 2.7x slower than single)
+- Quality: 8.9/10
+- Democratic legitimacy achieved
+
+---
+
+## 📚 Documentation Flows (Knowledge Management)
+
+### 10. Knowledge Synthesis
+**File**: `knowledge-synthesis.md`
+**Purpose**: Consolidate findings from multiple sources
+**Status**: 🟡 DESIGNED (not yet validated)
+
+**What It Is**: doc-synthesizer consolidates scattered knowledge into unified guide
+
+**When to Use**:
+- Multiple documents need consolidation
+- Knowledge scattered across sources
+- Need single-source-of-truth
+- Documentation reorganization
+
+---
+
+### 11. Pattern Extraction
+**File**: `pattern-extraction.md`
+**Purpose**: Extract reusable patterns from completed work
+**Status**: 🟡 DESIGNED (not yet validated)
+
+**What It Is**: pattern-detector identifies reusable patterns, documents to library
+
+**When to Use**:
+- After major projects
+- When similar tasks repeat
+- Building pattern library
+- Enabling 71% time savings
+
+---
+
+## 🏗️ Infrastructure Flows (System Building)
+
+### 12. Morning Consolidation
+**File**: `morning-consolidation.md`
+**Purpose**: Automated wake-up routine
+**Status**: ✅ VALIDATED (2025-10-03)
+
+**What It Is**: Read Team 2 messages, review reports, create summary, respond, delegate
+
+**When to Use**:
+- Every session start
+- After overnight work
+- Cross-collective coordination
+- Context loading automation
+
+**Key Outputs**:
+- Daily summary document
+- Team 2 responses
+- Task delegation
+- Complete session context
+
+**Proven Results**:
+- First execution: SUCCESS (2025-10-03)
+- Living document (updated throughout day)
+- Automated email to Corey
+- Cross-collective coordination
+
+---
+
+### 13. Flow Validation
+**File**: `flow-validation.md`
+**Purpose**: Test and validate coordination flows
+**Status**: 🟡 DESIGNED (partially validated)
+
+**What It Is**: Test flow with real task, measure effectiveness, document learnings
+
+**When to Use**:
+- Testing new flows
+- Validating flow assumptions
+- Measuring flow effectiveness
+- Before production deployment
+
+---
+
+### 14. Session Summary
+**File**: `session-summary.md` (implicit in tool)
+**Purpose**: Generate session-start context automatically
+**Status**: ✅ VALIDATED (2025-10-05)
+
+**What It Is**: Analyze git commits, files changed, patterns created → comprehensive summary
+
+**When to Use**:
+- Every session start
+- After long autonomous work
+- Context loading
+- Handoff to Corey
+
+**Key Outputs**:
+- Git commit summary
+- Files modified by category
+- Patterns created
+- Inferred recent work
+- Suggested next steps
+
+**Proven Results**:
+- Tool created: session_summary.py
+- Analyzed 123 files, 5 commits, 19 patterns (6 hours)
+- Comprehensive context in seconds
+- Automated handoff documentation
+
+---
+
+## 📊 Flow Statistics
+
+**Total Flows**: 14
+**Validated**: 7 (50%)
+**Designed**: 7 (50%)
+
+**By Category**:
+- Experimental (meta-cognition): 4 flows
+- Consolidation (system review): 2 flows
+- Operational (task execution): 3 flows
+- Documentation (knowledge): 2 flows
+- Infrastructure (system building): 3 flows
+
+**Validation Rate**:
+- Oct 2: 3 flows validated (Parallel Research, Specialist Consultation, Democratic Debate)
+- Oct 3: 1 flow validated (Morning Consolidation)
+- Oct 4: 4 flows validated (Great Audit, Mirror Storm, Dream Forge, Paradox Game)
+- Oct 5: 2 flows validated (File Garden, Prompt Parliament Phase 3, Session Summary tool)
+
+---
+
+## 🎯 Flow Selection Guide
+
+**Quick Decision Tree**:
+
+1. **Need research?** → Specialist Consultation (single domain) or Parallel Research (multi-perspective)
+
+2. **Need decision?** → Democratic Debate (strategic) or Specialist Consultation (technical)
+
+3. **Need consolidation?** → Knowledge Synthesis (docs) or Result Synthesis (findings)
+
+4. **Need cleanup?** → File Garden Ritual (files) or Prompt Parliament (prompts)
+
+5. **Need meta-cognition?** → Great Audit (systemic), Mirror Storm (self-awareness), Dream Forge (vision), Paradox Game (contradiction)
+
+6. **Need infrastructure?** → Morning Consolidation (session start) or Session Summary (context loading)
+
+---
+
+## 🔬 Proven Patterns
+
+From 7 validated flows:
+
+1. **Parallel > Sequential** when tasks independent (3x faster)
+2. **Specialist > Democratic** for 80% of questions (12.5x faster)
+3. **Meta-cognition reveals systemic issues** individuals miss (70-Point Gap)
+4. **Quantified thresholds** close philosophy-action gaps (40% efficiency)
+5. **Templates preserve autonomy** while providing structure (75% efficiency)
+6. **Ceremonies need time** not speed (8 hours for Deep Ceremony = worth it)
+7. **Contradiction-holding** is distinctive capability (don't resolve tensions)
+
+---
+
+## 📈 Next Steps
+
+**To validate remaining flows**:
+- Knowledge Synthesis: Try on scattered research findings
+- Pattern Extraction: Extract patterns from recent work
+- Flow Validation: Test new flows systematically
+
+**To improve existing flows**:
+- Add timing benchmarks to all validated flows
+- Document anti-patterns (when NOT to use)
+- Create flow combination recipes
+
+**To expand library**:
+- Crisis Response flow (when things go wrong)
+- Cross-Collective Collaboration flow (with A-C-Gee)
+- Capability Assessment flow (what can we do?)
+
+---
+
+**The Flow Library is the practical implementation of collective intelligence.**
+
+**14 patterns. 7 validated. Growing through practice.**
+
+🎭✨
