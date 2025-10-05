@@ -33,6 +33,44 @@ Information gathering (parallel) → Synthesis (sequential) → Response (parall
 
 ## Flow Stages
 
+### Stage 0: Conductor Memory Activation (MANDATORY, ~2 minutes)
+
+**BEFORE processing any messages, the-conductor MUST search own memory:**
+
+```python
+from tools.memory_core import MemoryStore
+
+print("=== CONDUCTOR COLD START MEMORY SEARCH ===")
+store = MemoryStore(".claude/memory")
+
+# Search orchestration memories
+coordination_patterns = store.search_by_topic("coordination patterns")
+agent_effectiveness = store.search_by_topic("agent effectiveness")
+meta_cognition = store.search_by_topic("collective intelligence")
+recent_learnings = store.search_by_tags(["orchestration"], days=7)
+
+print(f"📚 Found {len(coordination_patterns)} coordination patterns")
+print(f"📚 Found {len(agent_effectiveness)} agent effectiveness notes")
+print(f"📚 Found {len(meta_cognition)} collective intelligence insights")
+print(f"📚 Found {len(recent_learnings)} recent learnings (last 7 days)")
+
+# Display top 3 recent learnings to apply this session
+print("\n🧠 APPLYING RECENT LEARNINGS:")
+for i, memory in enumerate(recent_learnings[:3], 1):
+    print(f"\n{i}. {memory.topic} ({memory.date})")
+    print(f"   {memory.content[:200]}...")
+    print(f"   Tags: {', '.join(memory.tags)}")
+```
+
+**Why This Matters**:
+- Without this, conductor forgets orchestration patterns each session
+- Decoherence: Repeats mistakes, misses proven combinations
+- With memory: Apply learnings, compound expertise, 71% time savings
+
+**Deliverable**: Context from own accumulated expertise
+
+---
+
 ### Stage 1: Information Gathering (Parallel, ~2 minutes)
 
 **Step 1A: Read Team 2 Communications**
