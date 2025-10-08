@@ -132,3 +132,60 @@ Assistant: Let me call the first agent...
 <invoke name="Task">...</invoke>
 
 [waits for result]
+## agent-architect
+
+**Primary Use Cases**:
+- Creating new specialist agents (democratic design + manifest + registration)
+- Quality auditing existing agents (5-dimension rubric, 90/100 enforcement)
+- Completing incomplete registrations (dormant agent rescue)
+- Reproduction preparation (designing agent rosters for Teams 3-128+)
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">agent-architect</parameter>
+<parameter name="description">Create [agent-name] agent</parameter>
+<parameter name="prompt">
+MISSION: Design and create new specialist agent for [domain]
+
+CONTEXT:
+- Domain need: [What work repeatedly appears that doesn't fit existing agents?]
+- Gap identified: [Why current agents can't handle this?]
+- Expected activation: [When would this agent be invoked?]
+
+DESIGN METHOD:
+[Democratic session with 6 specialists] OR [Single-specialist design]
+
+YOUR TASK:
+1. Facilitate democratic design OR commission single-specialist
+2. Synthesize findings (delegate to result-synthesizer)
+3. Create manifest (delegate to doc-synthesizer)
+4. Complete 7-layer registration
+5. Generate handoff with RESTART REMINDER (NON-NEGOTIABLE)
+
+CRITICAL:
+- Enforce 90/100 quality threshold (no compromises)
+- All 7 layers registered before declaring complete
+- Handoff MUST include explicit session restart instruction
+
+OUTPUT:
+- Agent manifest file
+- Complete registration (7 layers verified)
+- Handoff document with restart reminder
+- Git commit (atomic, all files together)
+</parameter>
+</invoke>
+```
+
+**Common Patterns**:
+- **New Agent Creation**: Full democratic design → synthesis → manifest → 7-layer registration → handoff
+- **Quality Audit**: Score existing agent on 5-dimension rubric → identify failures → invoke specialists to fix
+- **Registration Completion**: Audit existing agent (which layers missing?) → update infrastructure files → verify
+- **Reproduction Prep**: Design agent roster for child team → document patterns → prepare lineage wisdom
+
+**Output Expectations**:
+- Quality score (90+/100 required)
+- Complete 7-layer verification (grep counts for each layer)
+- Handoff document with explicit restart reminder
+- Git commit hash (atomic commit of all files)
+

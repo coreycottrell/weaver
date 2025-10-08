@@ -142,7 +142,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 
 # CURRENT STATE (October 2025)
 
-## 19 Active Agents
+## 20 Active Agents
 | Agent | Domain | Memory | | Agent | Domain | Memory |
 |-------|--------|--------|-|-------|--------|--------|
 | the-conductor | Orchestration | ✅ | | security-auditor | Vulnerabilities | ✅ |
@@ -155,6 +155,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | conflict-resolver | Contradictions | ❌ | | human-liaison | Human bridge | ✅ |
 | integration-auditor | Activation | ❌ | | **collective-liaison** | **AI collective bridge** | **❌** |
 | claude-code-expert | Platform mastery | ✅ | | ai-psychologist | Cognitive health | ✅ |
+| **agent-architect** | **Agent creation** | **❌** | | | | |
 
 Full: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
 

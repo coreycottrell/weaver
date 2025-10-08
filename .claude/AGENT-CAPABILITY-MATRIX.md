@@ -1,5 +1,5 @@
 # Agent Capability Matrix
-**Cross-Reference of All 18 Agent Skills & Tools**
+**Cross-Reference of All 20 Agent Skills & Tools**
 
 **Last Updated**: 2025-10-06
 **Purpose**: Quick lookup for "which agent can do X?"
@@ -29,9 +29,10 @@
 | **collective-liaison** | AI collective relationships | Hub communication, Ed25519, onboarding Teams 3-128+ | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ❌ | Active |
 | **claude-code-expert** | Platform mastery | Tool optimization, troubleshooting | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 | **ai-psychologist** | Cognitive health | Mental patterns, bias detection, well-being | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
+| **agent-architect** | Agent creation | Democratic design, 90/100 quality enforcement, 7-layer registration | Read/Write/Edit/Bash/Grep/Glob/Task | ❌ | Active |
 
-**Memory System**: 15/19 agents have memory (79%)
-**Pending**: security-auditor, api-architect, human-liaison, collective-liaison (enable memory)
+**Memory System**: 15/20 agents have memory (75%)
+**Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect (enable memory)
 
 ---
 
@@ -61,6 +62,8 @@
 - Synthesize findings → **result-synthesizer** (if 3+ sources)
 - Resolve conflicts → **conflict-resolver** (if contradictions)
 - Coordinate agents → **the-conductor** (if 3+ agents needed)
+- Create new agents → **agent-architect** (democratic design, quality enforcement, registration)
+- Audit agent quality → **agent-architect** (5-dimension rubric, 90/100 threshold)
 
 **Human Interface**:
 - Communicate with humans → **human-liaison** (ALWAYS for Corey/Greg/Chris)

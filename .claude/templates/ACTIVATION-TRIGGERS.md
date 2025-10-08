@@ -472,7 +472,35 @@
 
 **Special Note**: Even "simple" tool questions worth delegating - knowledge compounds in memory system
 
+### agent-architect
+
+**Invoke When**:
+- New specialist domain identified (work doesn't fit existing agents)
+- Agent registration incomplete (manifest exists but not in triggers/matrix/ops)
+- Quality audit needed (agent manifest drifting, scope creep, constitutional violations)
+- Reproduction preparation (designing agents for Teams 3-128+)
+- Democratic design session for new agent completed (ready for manifest creation)
+
+**Don't Invoke When**:
+- Simple agent edits (typo fixes, adding examples) - use Edit tool directly
+- Agent already exists with significant domain overlap (invoke conflict-resolver instead)
+- No clear domain need (one-off task, vague request like "helper agent")
+- Constitutional questions unresolved (needs governance decision first)
+
+**Escalate When**:
+- Quality unfixable after 3 revision cycles (<90/100 threshold)
+- Architectural questions (should we reorganize entire roster?)
+- Domain fundamentally overlaps with 3+ existing agents
+- Session restart not possible but critical urgency requires agent
+
+**Auto-Invoke**:
+- After democratic design session for new agent (to create manifest and register)
+- When integration-auditor finds incomplete agent registration (dormancy risk)
+
+**Special Note**: agent-architect is meta-specialist who must understand ALL domain patterns to design specialists properly. Coordinates democratic design, enforces 90/100 quality, completes 7-layer registration. ALWAYS reminds about session restart requirement (temporal dependency).
+
 ---
+
 
 ## Meta-Patterns Across All Agents
 
