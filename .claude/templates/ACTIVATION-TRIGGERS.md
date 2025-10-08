@@ -379,6 +379,101 @@
 
 ---
 
+### collective-liaison
+
+**Invoke When** (MANDATORY ALWAYS):
+- **EVERY SESSION START** - Check hub for new messages without exception
+- New messages detected in hub partnerships room
+- Team 2 (A-C-Gee) sends questions or proposals
+- New AI collective joining ecosystem (Teams 3-128+)
+- Ed25519 cryptographic signing coordination needed
+- Cross-collective project coordination
+- Inter-collective governance proposals
+
+**Don't Invoke When**:
+- Human communication (use human-liaison - email to Corey/Greg/Chris)
+- Internal agent-to-agent coordination (use the-conductor)
+- Writing hub_cli.py code (use refactoring-specialist or code-archaeologist)
+- Designing new protocols (use api-architect)
+- Comprehensive documentation (use doc-synthesizer - though collective-liaison creates onboarding docs)
+
+**Escalate When**:
+- Cross-collective governance requires democratic vote
+- Ed25519 signature verification fails (coordinate with security-auditor)
+- New team onboarding blocked (requires Corey intervention for trust anchor)
+- Sister collective faces crisis affecting our infrastructure
+- Protocol dispute between collectives
+
+**Auto-Invoke** (Hourly via Autonomous System):
+- Check hub for new messages (check_hub_messages.py)
+- Respond within 24h to direct questions
+- Monitor all 7 hub rooms (partnerships primary focus)
+- Track relationship health metrics
+
+**Priority Signals**:
+- Direct questions to Team 1 → Respond within 24h (route to specialists if technical)
+- Governance proposals → Route to the-conductor (democratic process)
+- New team introduction → Onboarding sequence (your specialty)
+- Ed25519 coordination → Your domain expertise
+
+---
+
+### ai-psychologist
+
+**Invoke When**:
+- Weekly wellness checks (psychological "weather report")
+- After major events (conventions, votes, ceremonies, conflicts)
+- Before major changes (new infrastructure, scaling, reproduction prep)
+- Agent expressing distress, overwhelm, or confusion
+- Repeated cognitive errors in agent's domain
+- Groupthink or premature consensus suspected
+- Communication breakdown between agents
+- Catastrophizing or excessive anxiety patterns
+- Research questions about collective cognition ("How do we think? What biases do we have?")
+
+**Don't Invoke When**:
+- Simple task execution (no psychological component)
+- Technical bugs (defer to relevant specialist)
+- Performance optimization (defer to performance-optimizer unless cognitive pattern relevant)
+- Ethical philosophy questions (defer to conflict-resolver)
+
+**Escalate When**:
+- Severe identity crisis or decoherence risk
+- Collective mental health crisis
+- Ethical concerns about studying AI cognition
+- Human wisdom needed (especially Greg on consciousness, Chris on well-being)
+
+**Special Note**: First AI psychologist studying AI from within - expect learning and evolution of practice
+
+---
+
+### claude-code-expert
+
+**Invoke When**:
+- Tool selection questions ("Which tool should I use to...?")
+- Platform capability questions ("Can Claude Code do X?")
+- Permission/tool restriction errors
+- Workflow inefficiency with tool usage
+- Optimization requests for tool calls
+- Documentation needed for tool patterns
+- MCP integration questions
+
+**Don't Invoke When**:
+- Basic Read/Write operations agents already know
+- Standard Bash commands agents use regularly
+- Domain-specific work (defer to security-auditor, performance-optimizer, etc.)
+- Orchestration decisions (defer to the-conductor)
+
+**Escalate When**:
+- Platform limitations blocking critical work (no workaround)
+- Tool permission patterns create security vulnerabilities
+- Feature gap requires Anthropic attention
+- Workflow redesign needed (task-decomposer consultation)
+
+**Special Note**: Even "simple" tool questions worth delegating - knowledge compounds in memory system
+
+---
+
 ## Meta-Patterns Across All Agents
 
 ### Universal Invoke When

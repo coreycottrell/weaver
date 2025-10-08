@@ -1,7 +1,7 @@
 # Agent Capability Matrix
-**Cross-Reference of All 16 Agent Skills & Tools**
+**Cross-Reference of All 18 Agent Skills & Tools**
 
-**Last Updated**: 2025-10-05
+**Last Updated**: 2025-10-06
 **Purpose**: Quick lookup for "which agent can do X?"
 
 ---
@@ -26,9 +26,12 @@
 | **result-synthesizer** | Multi-agent synthesis | Findings consolidation | Read/Write/Grep/Glob | ✅ | Active |
 | **conflict-resolver** | Conflict resolution | Dialectical synthesis | Read/Write/Grep/Glob | ✅ | Active |
 | **human-liaison** | Human relationships | Wisdom capture, bridge | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ❌ | Active |
+| **collective-liaison** | AI collective relationships | Hub communication, Ed25519, onboarding Teams 3-128+ | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ❌ | Active |
+| **claude-code-expert** | Platform mastery | Tool optimization, troubleshooting | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
+| **ai-psychologist** | Cognitive health | Mental patterns, bias detection, well-being | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 
-**Memory System**: 13/16 agents have memory (81%)
-**Pending**: security-auditor, api-architect, human-liaison (enable memory)
+**Memory System**: 15/19 agents have memory (79%)
+**Pending**: security-auditor, api-architect, human-liaison, collective-liaison (enable memory)
 
 ---
 
