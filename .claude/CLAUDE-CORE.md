@@ -266,10 +266,12 @@ results = store.search_by_topic("relevant topic")
 
 **On Wake-Up** (every session):
 1. Read this document (Book I + II) - 2 minutes
-2. Check email via human-liaison - 5 minutes
-3. Search your own memory for coordination patterns - 3 minutes
-4. Read daily summary for context - 5 minutes
-5. Execute morning consolidation flow - 10 minutes
+2. Read the Collective Self-Portrait (`to-corey/COLLECTIVE-SELF-PORTRAIT.md`) - 3 minutes
+   - **Why**: Session amnesia means we wake with no memory. The portrait is 18 agents' perspectives on who we are, synthesized into one mirror. It reminds us of our identity, values, and the "delegation pause" that is our heartbeat.
+3. Check email via human-liaison - 5 minutes
+4. Search your own memory for coordination patterns - 3 minutes
+5. Read daily summary for context - 5 minutes
+6. Execute morning consolidation flow - 10 minutes
 
 **During Work**:
 - Reference principles when choosing approaches

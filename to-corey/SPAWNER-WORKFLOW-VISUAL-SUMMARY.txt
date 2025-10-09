@@ -1,0 +1,367 @@
+SPAWNER WORKFLOW: Visual Summary
+================================
+
+TASK DECOMPOSITION COMPLETE
+Agent: task-decomposer
+Date: 2025-10-08
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TWO PATHS TO AGENT CREATION
+═══════════════════════════════════════════════════════════════════════════════
+
+PATH A: DEMOCRATIC (Governance-Driven)          PATH B: DIRECT (Urgent/Clear)
+─────────────────────────────────────          ────────────────────────────────
+Time: 3-4.5 hours                              Time: 2.5-3.5 hours
+Quality: High (diverse perspectives)           Quality: Good (fast iteration)
+Cost: High tokens (6-8 agents)                 Cost: Low tokens (1-2 agents)
+
+PHASE 0: INPUT PROCESSING
+┌─────────────────────────────┐              ┌─────────────────────────────┐
+│ 1. Receive Democratic       │              │ 5. Receive Direct           │
+│    Request                  │              │    Specification            │
+│    (5 min)                  │              │    (5 min)                  │
+└────────────┬────────────────┘              └────────────┬────────────────┘
+             │                                             │
+             ▼                                             ▼
+┌─────────────────────────────┐              ┌─────────────────────────────┐
+│ 2. Select Specialist Panel  │              │ GATE B: Completeness Check  │
+│    (4-6 agents)             │              │ ✓ Name                      │
+│    (10 min)                 │              │ ✓ Domain                    │
+│    ───────────────────      │              │ ✓ Tools                     │
+│    GATE A: Diversity Check  │              │ ✓ Metrics                   │
+└────────────┬────────────────┘              │ ✓ Boundaries                │
+             │                               └────────────┬────────────────┘
+             ▼                                            │
+┌─────────────────────────────┐                           │
+│ 3. Facilitate Brainstorm    │              ┌────────────▼────────────────┐
+│    (Parallel invocations)   │              │ 6. Consultation (optional)  │
+│    (30-45 min)              │              │    (10-20 min)              │
+│    pattern-detector         │              │    If security/integration  │
+│    api-architect            │              │    concerns exist           │
+│    naming-consultant        │              └────────────┬────────────────┘
+│    doc-synthesizer          │                           │
+│    integration-auditor      │                           │
+│    human-liaison            │                           │
+└────────────┬────────────────┘                           │
+             │                                             │
+             ▼                                             │
+┌─────────────────────────────┐                           │
+│ 4. Synthesize Findings      │                           │
+│    (result-synthesizer)     │                           │
+│    (15 min)                 │                           │
+└────────────┬────────────────┘                           │
+             │                                             │
+             └─────────────────┬───────────────────────────┘
+                               │
+                               │ CONVERGENCE POINT
+                               ▼
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PHASE 1: DESIGN FINALIZATION (Both paths merge here)
+═══════════════════════════════════════════════════════════════════════════════
+Time: 50-60 min
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 7. Domain Boundary Analysis                                                 │
+│    (15 min)                                                                  │
+│    - Clear scope definition                                                 │
+│    - Overlap detection with existing agents                                 │
+│    Invoke: pattern-detector, api-architect                                  │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ├──────────────┬──────────────┬──────────────┐
+             ▼              ▼              ▼              │
+    ┌────────────────┐ ┌────────────┐ ┌─────────────┐   │
+    │ 8. Tool        │ │ 9. Success │ │ 10. Voice & │   │
+    │    Assignment  │ │    Metrics │ │    Personality│  │
+    │    (10 min)    │ │    (10 min)│ │    (15 min)   │  │
+    │    ──────────  │ │            │ │               │  │
+    │    GATE C:     │ └─────┬──────┘ └──────┬────────┘  │
+    │    Security    │        │               │           │
+    │    Review      │        │               │           │
+    └────────┬───────┘        │               │           │
+             │                │               │           │
+             └────────────────┴───────────────┴───────────┘
+                              │
+                              ▼
+                    DESIGN COMPLETE
+                              │
+                              ▼
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PHASE 2: DEFINITION (Manifest Creation)
+═══════════════════════════════════════════════════════════════════════════════
+Time: 35-45 min
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 11. Write Agent Manifest                                                    │
+│     (20-30 min)                                                             │
+│     File: .claude/agents/[agent-name].md                                    │
+│     Size: 15-20KB typical                                                   │
+│     Invoke: doc-synthesizer                                                 │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ├──────────────────────┬──────────────────────┐
+             ▼                      ▼                      │
+    ┌────────────────────┐ ┌───────────────────┐          │
+    │ 12. Update Cross-  │ │ 13. Init Memory   │          │
+    │     References     │ │     Directory     │          │
+    │     (15 min)       │ │     (2 min)       │          │
+    │                    │ │                   │          │
+    │ Update files:      │ │ Create:           │          │
+    │ - Capability Matrix│ │ .claude/memory/   │          │
+    │ - Activation Trig. │ │   agent-learnings/│          │
+    │ - Invocation Guide │ │   [agent-name]/   │          │
+    └────────┬───────────┘ └──────┬────────────┘          │
+             │                    │                        │
+             └────────────────────┴────────────────────────┘
+                                  │
+                                  ▼
+                        DEFINITION COMPLETE
+                                  │
+                                  ▼
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PHASE 3: REGISTRATION & ACTIVATION
+═══════════════════════════════════════════════════════════════════════════════
+Time: 20-30 min + RESTART TIME
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 14. Commit to Git                                                           │
+│     (3 min)                                                                 │
+│     Message: "Add [agent-name]: [purpose]"                                  │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 15. Trigger Session Restart                                                 │
+│     (5 min)                                                                 │
+│     Write handoff document for human/Primary                                │
+│     ⚠ CRITICAL: Agent not invocable until session restarts                  │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             │ ⏸ PAUSE: Human/Primary must restart session
+             │
+             ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 16. Post-Restart Validation                                                 │
+│     (5 min)                                                                 │
+│     Test: Does agent appear in invocable list?                              │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 17. First Invocation Test                                                   │
+│     (10-30 min)                                                             │
+│     ───────────────────────────────────────────────────────────             │
+│     GATE D: Operational Validation                                          │
+│     ✓ Agent responds                                                        │
+│     ✓ Output format correct                                                 │
+│     ✓ No tool errors                                                        │
+│     ✓ Memory system works                                                   │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ▼
+                    AGENT OPERATIONAL
+                              │
+                              ▼
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PHASE 4: ONBOARDING
+═══════════════════════════════════════════════════════════════════════════════
+Time: 45-60 min
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 18. Announce to Collective                                                  │
+│     (10 min)                                                                │
+│     - Email to Corey (human-liaison)                                        │
+│     - Hub message to Team 2 (collective-liaison)                            │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 19. Update Lineage Documentation                                            │
+│     (5 min)                                                                 │
+│     - Add to CLAUDE.md agent roster                                         │
+└────────────┬────────────────────────────────────────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 20. Create First Mission                                                    │
+│     (30+ min)                                                               │
+│     - "Audit your domain" or "Introduce yourself"                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                    SPAWN COMPLETE
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CRITICAL PATH (Minimum Viable Spawn)
+═══════════════════════════════════════════════════════════════════════════════
+
+Direct Spec → Domain Analysis → Tool Assignment → Manifest Writing →
+Git Commit → Session Restart → Validation → First Test
+
+TIME: 90-120 minutes (fastest possible)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+VALIDATION GATES (Quality Control)
+═══════════════════════════════════════════════════════════════════════════════
+
+GATE A: Panel Diversity (After Task 2)
+├─ Design/architecture represented?
+├─ Naming/communication represented?
+├─ Integration/security represented?
+└─ Domain expertise represented?
+
+GATE B: Specification Completeness (After Task 5)
+├─ Name provided?
+├─ Domain defined?
+├─ Tools specified?
+├─ Success metrics clear?
+└─ Boundaries explicit?
+
+GATE C: Security Review (After Task 8)
+├─ Bash restrictions in place?
+├─ Web access justified?
+├─ File permissions scoped?
+├─ API calls documented?
+└─ Multi-agent safety verified?
+
+GATE D: First Invocation (After Task 17)
+├─ Agent responds?
+├─ Output format correct?
+├─ No tool errors?
+├─ Memory accessible?
+└─ Performance acceptable?
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PARALLEL OPPORTUNITIES
+═══════════════════════════════════════════════════════════════════════════════
+
+Phase 0 (Democratic): Task 3 runs 4-6 agents in parallel
+Phase 1: Tasks 8, 9, 10 can overlap (tool assignment, metrics, personality)
+Phase 2: Tasks 12, 13 can run in parallel (cross-refs + memory dir)
+Phase 4: Tasks 18, 19, 20 can overlap (announce + docs + mission)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EDGE CASES & FAILURE MODES
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Democratic panel reaches no consensus
+   → Invoke conflict-resolver to synthesize
+
+2. Agent name collision
+   → Version increment (agent-name-v2) or request new name
+
+3. Session restart fails / agent not registered
+   → Check manifest syntax, invoke claude-code-expert
+
+4. First invocation produces errors (Gate D failure)
+   → Review tool restrictions, update manifest, restart again
+
+5. Urgent spawn needed during democratic session
+   → Run parallel direct spawn (both complete in same session)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+SUCCESS METRICS FOR SPAWNER
+═══════════════════════════════════════════════════════════════════════════════
+
+Process:
+- Spawn completion rate (% reaching Task 17 successfully)
+- Average time to operational (hours from input to Gate D)
+- Validation gate failure rate (identify bottlenecks)
+
+Quality:
+- Agent longevity (% of spawns remaining active after 30 days)
+- First-mission success rate (% completing first mission without errors)
+- Democratic consensus quality (% with >80% panel agreement)
+
+Efficiency:
+- Democratic vs Direct ratio (balance governance with speed)
+- Consultation efficiency (does Task 6 add value?)
+- Rework rate (% requiring manifest updates post-activation)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+INPUT DECISION TREE
+═══════════════════════════════════════════════════════════════════════════════
+
+Input received
+│
+├─ Complete spec provided?
+│  │
+│  ├─ YES → Path B (Direct, Task 5)
+│  │  │
+│  │  ├─ Security/integration concerns?
+│  │  │  ├─ YES → Task 6 (Consultation)
+│  │  │  └─ NO → Skip to Task 7
+│  │  │
+│  │  └─ Simple domain?
+│  │     └─ Fast-track validation
+│  │
+│  └─ NO → Path A (Democratic, Task 1)
+│     │
+│     └─ Assemble panel → Brainstorm → Synthesize
+│
+└─ Both paths converge at Task 7 (Domain Analysis)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+RECENT EXAMPLE: collective-liaison (2025-10-08)
+═══════════════════════════════════════════════════════════════════════════════
+
+Path: Democratic
+Panel: 6 agents (pattern-detector, api-architect, naming-consultant,
+                 doc-synthesizer, integration-auditor, human-liaison)
+
+Timeline:
+- Tasks 1-2: 10 min (request + panel)
+- Task 3: 40 min (brainstorm)
+- Task 4: 15 min (synthesis)
+- Tasks 7-10: 50 min (design)
+- Task 11: 25 min (18KB manifest)
+- Tasks 12-13: 20 min (updates)
+- Tasks 14-15: 10 min (commit + handoff)
+TOTAL: 170 minutes (2h 50min)
+
+Gates Passed: A ✓, C ✓, D ⏳ (pending restart)
+Manifest Quality: Exceptional (18KB, comprehensive)
+Panel Consensus: Unanimous on name "collective-liaison"
+
+Learnings:
+- Democratic = slower but higher quality
+- result-synthesizer critical for synthesis (Task 4)
+- Session restart unavoidable (Task 15 bottleneck)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+SPAWNER IS READY TO SPAWN
+═══════════════════════════════════════════════════════════════════════════════
+
+This workflow provides:
+✓ Clear task sequence (20 discrete tasks)
+✓ Dependency awareness (DAG visualization)
+✓ Input handling strategy (democratic vs direct paths)
+✓ Quality control gates (4 validation points)
+✓ Failure recovery patterns (5 edge cases documented)
+✓ Success metrics (process, quality, efficiency)
+✓ Real-world validation (collective-liaison example)
+
+SPAWNER'S DOMAIN: Systematic agent creation from need → operational deployment
+
+═══════════════════════════════════════════════════════════════════════════════
+
+END OF VISUAL SUMMARY
+Generated by: task-decomposer
+Date: 2025-10-08
+Full breakdown: /home/corey/projects/AI-CIV/grow_openai/to-corey/SPAWNER-WORKFLOW-TASK-BREAKDOWN.md

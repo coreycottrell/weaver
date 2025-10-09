@@ -1,0 +1,143 @@
+=============================================================================
+MEMORY SYSTEM ACTIVATION AUDIT - EXECUTIVE SUMMARY
+Date: 2025-10-06 | Auditor: integration-auditor
+=============================================================================
+
+HEALTH SCORE: 45/100 (CAUTION)
+COLD-START: BLOCKED (Critical API mismatch)
+
+ONE-SENTENCE VERDICT:
+Memory system exists and agents write to it (138 entries, 9 today), but 
+nobody can read it because API returns file paths while documentation 
+shows objects.
+
+=============================================================================
+CRITICAL FINDING (P0)
+=============================================================================
+
+WHAT: API Documentation Mismatch
+WHERE: tools/memory_core.py (lines 306-340) vs CLAUDE.md (lines 154-158)
+
+DOCUMENTATION SHOWS:
+  results = store.search_by_topic("coordination patterns")
+  for memory in results:
+      print(memory.topic)  # Expects MemoryEntry object
+
+CODE ACTUALLY DOES:
+  def search_by_topic() -> List[str]:
+      return ["/path/to/file.md", ...]  # Returns file path strings
+
+RESULT: Following CLAUDE.md Step 4 crashes with AttributeError
+
+IMPACT:
+- Cold-start blocked (fresh session can't use memory)
+- 71% time savings claim invalidated (system unusable)
+- All agents blocked from reading collective memory
+- Write-only pattern (agents write, never read)
+
+=============================================================================
+FIX REQUIRED (Before Next Session)
+=============================================================================
+
+CHANGE: memory_core.py search methods to return List[MemoryEntry] objects
+
+RATIONALE:
+- Documentation in 20+ files (hard to change all)
+- Object interface is better UX
+- Code change localized to one file
+- Matches original intended design
+
+FILES TO MODIFY:
+1. /home/corey/projects/AI-CIV/grow_openai/tools/memory_core.py
+   - search_by_topic() (line 306)
+   - search_by_tag() (similar)
+   - search() (similar)
+   - Add: Parse file → MemoryEntry before returning
+
+VALIDATION:
+Run CLAUDE.md Step 4 code exactly as written, verify no errors
+
+=============================================================================
+WHAT'S WORKING
+=============================================================================
+
+WRITE API: Perfect (9 entries written today by 7 agents)
+PHYSICAL INFRASTRUCTURE: 138 total entries, 19 agent directories
+DISCOVERY: CLAUDE.md references it in Step 4
+FILE STRUCTURE: Valid YAML frontmatter, parseable
+
+=============================================================================
+WHAT'S BROKEN
+=============================================================================
+
+READ API: Completely blocked (wrong return type)
+COLD-START: Cannot follow documentation without crash
+TOPIC COVERAGE: Key topics return 0 results
+  - "coordination": 0 results (CLAUDE.md Step 4 example won't work)
+  - "CLAUDE": 0 results
+  - "Ed25519": 0 results
+USAGE METRICS: No logging (can't measure adoption)
+
+=============================================================================
+SECONDARY RECOMMENDATIONS
+=============================================================================
+
+P1 - Add search logging for metrics (measure actual usage)
+P1 - Functional test memory-first protocol (verify agents use it)
+P2 - Standardize topic taxonomy (improve discoverability)
+P2 - Add fuzzy search (match similar terms)
+
+=============================================================================
+SUCCESS METRICS (Current Status)
+=============================================================================
+
+P0 systems have activation hooks:     50% (write yes, read no)
+Cold-start can find infrastructure:   0% (crashes following docs)
+Fresh session success rate:           0% (Step 4 blocked)
+Zero "didn't know about X":           1 (this gap found)
+
+=============================================================================
+ACTIVATION ANTI-PATTERNS IDENTIFIED
+=============================================================================
+
+1. "Works in the Builder's Head" - Builder uses file paths (insider 
+   knowledge), users follow docs (expects objects), gap invisible
+
+2. "Write-Only Infrastructure" - High write activity looks healthy, zero 
+   read activity invisible without metrics
+
+3. "Documentation Drift" - Code and docs diverged, no validation that 
+   examples actually run
+
+=============================================================================
+KEY LEARNING
+=============================================================================
+
+"Built ≠ Activated ≠ Used"
+
+Memory system is BUILT (files exist) and partially ACTIVATED (documented),
+but cannot be USED (API mismatch blocks reading).
+
+Must test that "following the docs" works for fresh session with zero
+insider knowledge.
+
+=============================================================================
+NEXT STEPS
+=============================================================================
+
+IMMEDIATE (P0):
+1. Fix memory_core.py to return MemoryEntry objects
+2. Validate CLAUDE.md Step 4 works without error
+3. Test coordinator search for "coordination patterns" finds results
+
+AFTER FIX (P1):
+1. Add search logging to measure actual usage
+2. Collect 1 week of data (searches/day, topics, per-agent)
+3. Validate 71% time savings with real metrics
+4. Re-audit activation status (v2 report)
+
+=============================================================================
+FULL REPORT: to-corey/MEMORY-SYSTEM-ACTIVATION-AUDIT.md (272 lines)
+MEMORY ENTRY: .claude/memory/agent-learnings/integration-auditor/
+              2025-10-06--gotcha-memory-system-api-documentation-mismatch.md
+=============================================================================

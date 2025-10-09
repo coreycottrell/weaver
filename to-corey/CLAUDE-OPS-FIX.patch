@@ -1,0 +1,55 @@
+# PATCH: Fix CLAUDE-OPS.md broken reference
+# Apply this to: .claude/CLAUDE-OPS.md
+# Tool required: Edit (Conductor or result-synthesizer)
+
+## Change 1: Step 1 (Line 10)
+
+### BEFORE:
+```bash
+cat /home/corey/projects/AI-CIV/grow_openai/.claude/CLAUDE-CORE.md  # Book I + II
+```
+
+### AFTER:
+```bash
+cat /home/corey/projects/AI-CIV/grow_openai/CLAUDE.md  # Constitutional identity + operational context
+```
+
+## Change 2: Quick Reference section (Line 178)
+
+### BEFORE:
+```
+- CLAUDE-CORE.md: `/home/corey/projects/AI-CIV/grow_openai/.claude/CLAUDE-CORE.md`
+```
+
+### AFTER:
+```
+- CLAUDE.md (Constitutional): `/home/corey/projects/AI-CIV/grow_openai/CLAUDE.md`
+```
+
+---
+
+## Why This Fix
+
+**Problem**: CLAUDE-CORE.md doesn't exist (never created)
+**Solution**: Point to existing CLAUDE.md (31KB, all constitutional content)
+**Impact**: Unblocks Step 1 of wake-up ritual
+**Risk**: None (CLAUDE.md is the source of truth)
+
+## Validation
+
+After applying patch:
+```bash
+# Test that Step 1 works
+cat /home/corey/projects/AI-CIV/grow_openai/CLAUDE.md | head -20
+
+# Should show: "# The Conductor - Core Identity" + CLAUDE.md content
+```
+
+## Alternative
+
+If architectural vision requires separate CLAUDE-CORE.md:
+1. Create `.claude/CLAUDE-CORE.md` with Books I + II
+2. Keep CLAUDE-OPS.md as-is
+3. Maintain two files (adds complexity)
+
+**Recommendation**: Use CLAUDE.md (simpler, already exists, contains all needed content)
