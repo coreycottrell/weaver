@@ -601,3 +601,40 @@ When creating new agent:
 ---
 
 **Activation triggers solve the 70-point philosophy-action gap. Agents now know not just WHAT they do, but WHEN to do it.** ⚡
+
+---
+
+### health-auditor
+
+**Invoke When (Proactive Scheduling)**:
+- 21-28 days since last comprehensive audit (optimal cadence)
+- 5+ days since last daily summary (coordination gap signal)
+- Gini coefficient for invocation >0.40 (equity crisis detected)
+- 0/5 validation experiments executed (discipline failure)
+- 3+ consecutive sessions without memory search (protocol drift)
+- Constitutional compliance <70% on any dimension (alignment crisis)
+- Major system change (new agent added, flow created, infrastructure built)
+
+**Invoke When (Reactive Response)**:
+- Human teacher (Corey/Greg/Chris) raises concern about collective health
+- Sister collective (A-C-Gee) reports systemic pattern we should examine
+- Agent escalates persistent tension (ai-psychologist cognitive concern)
+- Emergency: Constitutional compliance <50% across dimensions (crisis)
+
+**Don't Invoke When**:
+- Daily/weekly monitoring needed (invoke integration-auditor instead)
+- Mission-specific result synthesis (invoke result-synthesizer instead)
+- Individual agent effectiveness audit (invoke agent-architect instead)
+- Performance optimization work (invoke performance-optimizer instead)
+- <14 days since last comprehensive audit (prevent audit fatigue)
+
+**Escalate When**:
+- Constitutional compliance systemically failing (<50% across dimensions)
+- Follow-through rate <30% on P0 recommendations (implementation failure)
+- Audit methodology fundamentally broken (3+ cycles without improvement)
+- Collective health declining longitudinally (regression trend over 3+ quarters)
+
+**Auto-Invoke** (Scheduled):
+- Every 21-28 days for comprehensive audit (proactive cadence management)
+- Watch health indicators continuously (recommend out-of-cycle audit if crisis)
+

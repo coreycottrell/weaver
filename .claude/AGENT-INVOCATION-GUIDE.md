@@ -189,3 +189,93 @@ OUTPUT:
 - Handoff document with explicit restart reminder
 - Git commit hash (atomic commit of all files)
 
+
+---
+
+## health-auditor
+
+**Primary Use Cases**:
+- Periodic comprehensive audits of collective health (every 21-28 days)
+- Multi-dimensional health assessment (constitutional, equity, validation, cognitive, performance, infrastructure, interface, workflow, memory, platform)
+- Audit methodology iteration (making each cycle faster and more effective)
+- Longitudinal trend tracking (are we improving over quarters?)
+- Audit performance analysis (ROI, follow-through rate, methodology effectiveness)
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">health-auditor</parameter>
+<parameter name="description">Comprehensive collective health audit</parameter>
+<parameter name="prompt">
+MISSION: Conduct comprehensive audit of collective health
+
+CONTEXT:
+- Days since last audit: [X days]
+- Trigger: [Proactive schedule / Health indicator: [specific metric] / Emergency: [specific crisis]]
+- Last audit findings: [Brief summary of previous cycle's key insights]
+
+AUDIT SCOPE:
+[Full comprehensive (10 dimensions)] OR [Focused (specific dimensions: X, Y, Z)]
+
+YOUR TASK:
+1. Search memory for past audit learnings (apply methodology improvements)
+2. Analyze current health indicators (evidence-based scope determination)
+3. Design audit framework (four-lens synthesis or iterate based on learnings)
+4. Invoke 10+ specialist agents for parallel deep-dives:
+   - constitutional-compliance → human-liaison
+   - validation-methodology → test-architect
+   - invocation-equity → agent-architect
+   - cognitive-patterns → ai-psychologist
+   - platform-optimization → claude-code-expert
+   - performance-analysis → performance-optimizer
+   - infrastructure-activation → integration-auditor
+   - interface-health → api-architect
+   - workflow-design → task-decomposer
+   - memory-compliance → doc-synthesizer
+5. Invoke result-synthesizer for four-lens consolidation
+6. Invoke doc-synthesizer for report writing
+7. Track audit performance metrics (time, insights, actionability)
+8. Document methodology learnings for next cycle
+
+OUTPUT DELIVERABLES:
+1. Health Dashboard (current state across dimensions)
+2. Quick Wins Roadmap (P0→P1→P2→P3 prioritized)
+3. Handoff Summary (context + next audit recommendation)
+4. Methodology iteration notes (what worked, what didn't, next improvements)
+5. Next audit recommendation (when, scope, watch indicators)
+
+CRITICAL:
+- Evidence-based findings (git logs, memory files, metrics required)
+- Honest null results (document "no problems found" explicitly)
+- Follow-through tracking (check P0 implementation 30 days later)
+- Methodology iteration (each cycle makes next cycle better)
+</parameter>
+</invoke>
+```
+
+**Common Patterns**:
+- **Scheduled Comprehensive Audit** (every 21-28 days): Full 10-specialist deep-dive → four-lens synthesis → prioritized roadmap
+- **Emergency Audit** (<21 days): Focused scope on crisis dimension → targeted findings → immediate P0 recommendations
+- **Follow-Through Check** (30 days post-audit): Verify P0 implementation → measure follow-through rate → adjust methodology if low
+- **Methodology Iteration** (after each audit): Document what worked/didn't → apply learnings to next cycle → track speed improvement
+
+**Output Expectations**:
+- Audit complete report with performance metrics (time, specialists invoked, findings count)
+- Three deliverables (Dashboard, Roadmap, Handoff) in `to-corey/` directory
+- Methodology iteration notes (what to improve next cycle)
+- Next audit recommendation (when, why, scope, watch indicators)
+- ROI assessment (hours invested vs improvements gained)
+- Follow-through tracking (% of P0 completed within 30 days - target 80%+)
+
+**Cadence Intelligence**:
+- Optimal rhythm: 21-28 days between comprehensive audits
+- Proactive triggers: Invocation equity Gini >0.40, daily summary gap >5 days, validation discipline 0/5, constitutional compliance <70%
+- Emergency triggers: Constitutional crisis <50%, agent escalation, human teacher concern
+- Fatigue prevention: Never <14 days between audits, track specialist burden
+
+**Integration Notes**:
+- **Complementary to integration-auditor**: health-auditor does periodic comprehensive reviews (21-28 days), integration-auditor does ongoing daily/weekly monitoring
+- **Uses result-synthesizer**: Delegates consolidation of ~150K words specialist findings into four-lens output
+- **Tracks longitudinally**: Constitutional compliance, invocation equity, validation discipline trends over quarters
+- **Methodology compounds**: Each audit makes next audit 20-30% faster through institutional memory
+

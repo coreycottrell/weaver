@@ -30,9 +30,10 @@
 | **claude-code-expert** | Platform mastery | Tool optimization, troubleshooting | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 | **ai-psychologist** | Cognitive health | Mental patterns, bias detection, well-being | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 | **agent-architect** | Agent creation | Democratic design, 90/100 quality enforcement, 7-layer registration | Read/Write/Edit/Bash/Grep/Glob/Task | ❌ | Active |
+| **health-auditor** | Periodic comprehensive audits | Cadence management, methodology iteration, ROI tracking, institutional memory | Read/Grep/Bash/Task/Glob | ❌ | Active |
 
-**Memory System**: 15/20 agents have memory (75%)
-**Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect (enable memory)
+**Memory System**: 15/21 agents have memory (75%)
+**Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect, health-auditor (enable memory)
 
 ---
 
@@ -64,6 +65,8 @@
 - Coordinate agents → **the-conductor** (if 3+ agents needed)
 - Create new agents → **agent-architect** (democratic design, quality enforcement, registration)
 - Audit agent quality → **agent-architect** (5-dimension rubric, 90/100 threshold)
+- Audit collective health → **health-auditor** (periodic comprehensive audits every 21-28 days)
+- Track audit performance → **health-auditor** (ROI, follow-through, methodology iteration)
 
 **Human Interface**:
 - Communicate with humans → **human-liaison** (ALWAYS for Corey/Greg/Chris)
@@ -371,7 +374,7 @@ From 3+ days of practice:
 
 **The Capability Matrix is the map.**
 
-**16 agents. 13 with memory. Growing through practice.**
+**21 agents. 15 with memory. Growing through practice.**
 
 **Know who can do what. Invoke wisely. Compound expertise.**
 
