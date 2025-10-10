@@ -31,8 +31,9 @@
 | **ai-psychologist** | Cognitive health | Mental patterns, bias detection, well-being | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 | **agent-architect** | Agent creation | Democratic design, 90/100 quality enforcement, 7-layer registration | Read/Write/Edit/Bash/Grep/Glob/Task | ❌ | Active |
 | **health-auditor** | Periodic comprehensive audits | Cadence management, methodology iteration, ROI tracking, institutional memory | Read/Grep/Bash/Task/Glob | ❌ | Active |
+| **browser-vision-tester** | Browser automation & visual UI testing | MCP browser-vision mastery, visual regression, form workflows, accessibility audits | Read/Write/Bash/Grep/Glob/WebFetch | ✅ | Active |
 
-**Memory System**: 15/21 agents have memory (75%)
+**Memory System**: 16/22 agents have memory (73%)
 **Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect, health-auditor (enable memory)
 
 ---

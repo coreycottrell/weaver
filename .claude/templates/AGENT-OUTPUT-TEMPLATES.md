@@ -562,6 +562,126 @@
 
 ---
 
+### 8. VISUAL TEST REPORT TEMPLATE (browser-vision-tester)
+
+**Use When**: Browser automation and visual UI testing
+
+**Max Length**: 300 lines (screenshot descriptions + evidence + findings)
+
+```markdown
+# Visual Test Report: [Page/Feature Name]
+
+**Date**: YYYY-MM-DD
+**Tester**: browser-vision-tester
+**Session ID**: [browser-vision UUID]
+**Target URL**: [URL tested]
+**Viewports**: [e.g., 1440x900, 375x667]
+
+---
+
+## Test Summary
+
+**Status**: ✅ PASS / ⚠️ WARNING / ❌ FAIL
+
+**Visual State**: [High-level description of what I see]
+
+**Console Status**: [X errors, Y warnings, Z logs]
+
+**Key Findings**:
+1. [Primary finding with evidence]
+2. [Secondary finding]
+3. [Tertiary finding]
+
+---
+
+## Visual Evidence
+
+### Screenshot 1: [Description]
+**File**: `001-[label].png`
+**What I see**: [Detailed visual description]
+**Viewport**: 1440x900
+**Timestamp**: [time]
+
+### Screenshot 2: [Description]
+**File**: `002-[label].png`
+**What I see**: [Changes from screenshot 1]
+**Viewport**: 1440x900
+**Timestamp**: [time]
+
+---
+
+## Console Log Analysis
+
+**Errors** (X total):
+- [Error text + screenshot correlation]
+
+**Warnings** (Y total):
+- [Warning text + context]
+
+**Logs** (Z total):
+- [Relevant log entries]
+
+---
+
+## Detailed Findings
+
+### Finding 1: [Title]
+- **Type**: Bug / Warning / Info
+- **Severity**: Critical / High / Medium / Low
+- **Evidence**: Screenshot [number], Console line [number]
+- **Description**: [What's wrong, why it matters]
+- **Visual Impact**: [What user sees]
+- **Reproduction Steps**:
+  1. [Step with screenshot reference]
+  2. [Step with screenshot reference]
+- **Recommendation**: [Fix or escalation]
+
+### Finding 2: [Title]
+[Same structure]
+
+---
+
+## Test Coverage
+
+**Pages Tested**: [List]
+**Interactions Tested**: [Clicks, form fills, navigations]
+**Viewports Tested**: [Desktop, tablet, mobile]
+**Browsers Tested**: Chromium [version]
+
+---
+
+## Recommendations
+
+1. **Immediate Action**: [Critical fixes]
+2. **Follow-up**: [Non-critical improvements]
+3. **Escalation**: [Issues requiring other specialists]
+
+---
+
+## Session Metadata
+
+**Session Directory**: `/tmp/browser-vision/sessions/[uuid]/`
+**Screenshots**: [N] total
+**Console Logs**: [N] entries
+**Session Duration**: [X] seconds
+
+---
+
+## Next Steps
+
+- [ ] [Action item 1]
+- [ ] [Action item 2]
+- [ ] [Escalate to [agent] for [reason]]
+
+---
+
+**Tested by**: browser-vision-tester
+**Session closed**: [timestamp]
+**Memory recorded**: [Yes/No]
+```
+
+---
+
 ## Usage Guidelines
 
 ### When to Use Templates

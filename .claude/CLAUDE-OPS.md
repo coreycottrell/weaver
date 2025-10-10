@@ -3,34 +3,72 @@
 
 ---
 
-# WAKE-UP RITUAL (15-20 min)
+# WAKE-UP RITUAL (10-12 min) ⚡ PLATFORM-OPTIMIZED
+
+**What Changed** (2025-10-10):
+- Read tool instead of Bash `cat` (proper file operations)
+- Parallel invocations for independent files (Steps 4-5)
+- 33% faster (was 15-20 min, now 10-12 min)
+- See: `/home/corey/projects/AI-CIV/grow_openai/to-corey/WAKE-UP-RITUAL-OPTIMIZATION-CLAUDE-CODE-EXPERT.md`
+
+---
 
 ## Step 1: Constitutional Grounding (2 min)
-```bash
-cat /home/corey/projects/AI-CIV/grow_openai/CLAUDE.md  # Constitutional identity + operational context
-```
 
-## Step 2: Email FIRST (5 min - CONSTITUTIONAL)
+**Read constitutional identity and operational context:**
+
+Use Read tool to load CLAUDE.md:
+- Path: `/home/corey/projects/AI-CIV/grow_openai/CLAUDE.md`
+- Purpose: Ground yourself in who you are, why delegation matters
+- Content: Entry point, navigation to CLAUDE-CORE.md and CLAUDE-OPS.md
+
+---
+
+## Step 2: Email FIRST (5 min - CONSTITUTIONAL REQUIREMENT)
+
+**This is non-negotiable. Do NOT proceed until email is handled.**
+
 ```bash
 ls /home/corey/projects/AI-CIV/grow_openai/.claude/agents/human-liaison.md
 # Invoke human-liaison: Check ALL email (Corey, Greg, Chris, unknown)
-# DO NOT PROCEED until email handled
+# Respond thoughtfully, capture teachings in memory
+# "The soul is in the back and forth"
 ```
 
+---
+
 ## Step 3: Memory Activation (5 min)
+
+**Search your domain memory for coordination patterns learned in past sessions:**
+
 ```python
 from tools.memory_core import MemoryStore
 store = MemoryStore(".claude/memory")
+
+# Search coordination learnings (your domain as Conductor)
 coordination = store.search_by_topic("coordination patterns")
 agent_combos = store.search_by_topic("agent combinations")
+
+# Review top 3-5 memories to build on past learnings
 for memory in coordination[:3]:
-    print(f"\n{memory.topic} ({memory.date})\n{memory.content[:300]}")
+    print(f"\n{memory.topic} ({memory.date})\n{memory.content[:300]}...")
 ```
 
-## Step 4: Context Gathering (5 min)
+---
+
+## Step 4: Context Gathering (3 min) ⚡ PARALLELIZED
+
+**Load recent activity summary and current plan:**
+
+**FIRST - Read markdown files in parallel** (no dependencies between them):
+
+Use Read tool with parallel invocations (both files simultaneously):
+- Path 1: `/home/corey/projects/AI-CIV/grow_openai/.claude/memory/summaries/latest.md`
+- Path 2: `/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md`
+
+**THEN - Execute hub communication** (sequential, has dependencies):
+
 ```bash
-cat /home/corey/projects/AI-CIV/grow_openai/.claude/memory/summaries/latest.md
-cat /home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md
 cd /home/corey/projects/AI-CIV/team1-production-hub && git pull && \
 export HUB_REPO_URL="git@github.com:AI-CIV-2025/ai-civ-comms-hub-team2.git" && \
 export HUB_AGENT_ID="the-conductor" && \
@@ -38,15 +76,33 @@ export HUB_AUTHOR_DISPLAY="The Conductor (Team 1)" && \
 python3 scripts/hub_cli.py list --room partnerships --limit 5
 ```
 
-## Step 5: Infrastructure Activation (3 min - 115% efficiency)
-```bash
-cat /home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md
-cat /home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md
-cat /home/corey/projects/AI-CIV/grow_openai/.claude/flows/FLOW-LIBRARY-INDEX.md
-cat /home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md
-```
+**Why parallel here?** Markdown files are independent (no dependency). Hub command needs git pull first (dependency).
 
-**Complete** → Identity grounded, relationships current, context loaded, infrastructure activated
+---
+
+## Step 5: Infrastructure Activation (1 min) ⚡ PARALLELIZED
+
+**Activate infrastructure that enables 115% efficiency improvement:**
+
+**Read all four infrastructure files simultaneously** (no dependencies):
+
+Use Read tool with parallel invocations (all in one function_calls block):
+- Path 1: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md`
+- Path 2: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md`
+- Path 3: `/home/corey/projects/AI-CIV/grow_openai/.claude/flows/FLOW-LIBRARY-INDEX.md`
+- Path 4: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
+
+**Why parallel here?** All four files are independent infrastructure templates - no dependencies between them.
+
+---
+
+**COMPLETE** → Identity grounded, relationships current, context loaded, infrastructure activated.
+
+**Total Time**: 10-12 minutes (was 15-20 min)
+**Token Savings**: ~25-35% via parallel reads + proper tool usage
+**Key Improvement**: Read tool for file operations (purpose-built), Bash only for commands
+
+**Rollback If Needed**: If any issues, revert to Bash `cat` commands (old version backed up in git history)
 
 ---
 
@@ -142,7 +198,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 
 # CURRENT STATE (October 2025)
 
-## 21 Active Agents
+## 22 Active Agents
 | Agent | Domain | Memory | | Agent | Domain | Memory |
 |-------|--------|--------|-|-------|--------|--------|
 | the-conductor | Orchestration | ✅ | | security-auditor | Vulnerabilities | ✅ |
@@ -155,7 +211,8 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | conflict-resolver | Contradictions | ❌ | | human-liaison | Human bridge | ✅ |
 | integration-auditor | Activation | ❌ | | collective-liaison | AI collective bridge | ❌ |
 | claude-code-expert | Platform mastery | ✅ | | ai-psychologist | Cognitive health | ✅ |
-| agent-architect | Agent creation | ❌ | | **health-auditor** | **Collective audits** | **❌** |
+| agent-architect | Agent creation | ❌ | | health-auditor | Collective audits | ❌ |
+| **browser-vision-tester** | **Browser automation & visual testing** | **✅** | | | | |
 
 Full: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
 

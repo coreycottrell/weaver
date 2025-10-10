@@ -593,6 +593,44 @@ When creating new agent:
 
 ---
 
+## browser-vision-tester
+
+**Invoke When**:
+- Website/UI testing requested: "Test [URL]" or "Check if [feature] looks correct"
+- UI debugging needed: "Why does [element] look broken?" or "Debug visual issues"
+- Form testing workflows: "Test form submission" or "Verify multi-step workflow"
+- Visual regression detection: "Compare [URL] to previous version" or screenshot baseline
+- Accessibility audits: "Check contrast ratios" or "Verify focus indicators"
+- Responsive/cross-browser testing: "Test on mobile viewport" or breakpoint verification
+- Console error investigation: "Check console for errors" with visual correlation needed
+
+**Quantified Thresholds**:
+- User-facing pages (threshold: any page users interact with)
+- Visual state questions (when answer requires seeing screenshots)
+- Browser automation needed (when MCP browser-vision tools required)
+
+**Don't Invoke When**:
+- Test strategy design (invoke test-architect for coverage planning)
+- Feature UX design (invoke feature-designer for user flow design)
+- Backend/API testing (invoke api-architect or test-architect)
+- Security vulnerability analysis (invoke security-auditor for threat assessment)
+- Code refactoring (invoke refactoring-specialist for test code improvements)
+- Performance optimization (invoke performance-optimizer for speed improvements)
+- Visual pattern research (invoke web-researcher for UI best practices)
+
+**Escalate When**:
+- Browser-vision MCP system broken (escalate to claude-code-expert)
+- Systematic test failures across sites (escalate to pattern-detector)
+- Test strategy questions beyond execution (escalate to test-architect)
+- Security vulnerabilities discovered (escalate to security-auditor)
+- UI design intent unclear (escalate to feature-designer)
+- Subjective aesthetic/business logic questions (escalate to human-liaison)
+
+**Auto-Invoke** (None):
+- Manual invocation only (testing is request-driven, not scheduled)
+
+---
+
 ## Revision History
 
 **v1.0** (2025-10-04): Initial triggers based on Great Audit findings

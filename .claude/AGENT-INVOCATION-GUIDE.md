@@ -279,3 +279,83 @@ CRITICAL:
 - **Tracks longitudinally**: Constitutional compliance, invocation equity, validation discipline trends over quarters
 - **Methodology compounds**: Each audit makes next audit 20-30% faster through institutional memory
 
+---
+
+### browser-vision-tester
+
+**Domain**: Browser automation and visual UI testing using vision-powered inspection
+
+**When to Invoke**:
+- Website/UI testing requested: "Test [URL]" or "Check if [feature] looks correct"
+- UI debugging needed: "Why does [element] look broken?"
+- Form workflows: "Test form submission at [URL]"
+- Visual regression: "Compare [page] to mockup"
+- Accessibility audits: "Check contrast ratios on [page]"
+- Responsive testing: "Test [site] on mobile viewport"
+- Console error investigation with visual correlation
+
+**Task Tool Invocation**:
+```python
+from tools.conductor_tools import Task
+
+# Basic visual test
+task = Task(
+    agent_name="browser-vision-tester",
+    subagent_type="browser-vision-tester",
+    instructions="""
+Test website at [URL] and report visual state.
+
+DELIVERABLES:
+1. Visual description (what you see in screenshots)
+2. Console log analysis (errors/warnings)
+3. Test report with screenshot evidence
+4. Recommendations (bugs, accessibility issues)
+
+BROWSER-VISION TOOLS AVAILABLE:
+- launch_browser, navigate, click, type_text
+- capture_screenshot, get_console_logs
+- evaluate_js, get_element_info
+- get_session_state, close_session
+
+SESSION DATA: /tmp/browser-vision/sessions/{uuid}/
+"""
+)
+result = await task.execute()
+```
+
+**Common Patterns**:
+- **Basic Visual Test** (5-10 min): Launch → Navigate → Screenshot → Console check → Report
+- **UI Bug Investigation** (10-20 min): Reproduce → Capture broken state → Inspect element → Check console → Root cause
+- **Form Testing** (15-25 min): Navigate → Fill fields (capture each) → Submit → Verify success/error state
+- **Visual Regression** (20-30 min): Compare implementation to mockup → Document differences → Classify changes
+- **Accessibility Audit** (25-35 min): Check contrast → Focus indicators → Text sizing → Interactive states
+
+**Output Expectations**:
+- Visual test report with screenshot descriptions
+- Console log analysis (errors/warnings in context)
+- Before/after screenshot pairs for interactions
+- Root cause hypotheses for bugs
+- Accessibility compliance notes (WCAG)
+- Reproduction steps with screenshot references
+- Recommendations for fixes or escalations
+
+**Tools Access**:
+- Read (screenshots, metadata.json, console.log)
+- Write (test reports, bug documentation)
+- Bash (MCP browser-vision tools, test execution)
+- Grep (search console logs, error patterns)
+- Glob (find screenshots, session directories)
+- WebFetch (accessibility standards, UI research)
+
+**Memory Integration**:
+- Searches before testing: browser-vision patterns, selector strategies, UI bug patterns
+- Writes after testing: selector techniques, form workflows, accessibility approaches
+- 71% time savings on repeated test scenarios (proven threshold)
+
+**Integration Notes**:
+- **Works BEFORE**: refactoring-specialist (find bugs → they fix), security-auditor (capture evidence → they assess)
+- **Works AFTER**: feature-designer (designs → browser-vision-tester tests), api-architect (APIs built → UI tested)
+- **Escalates TO**: claude-code-expert (MCP broken), test-architect (strategy questions), feature-designer (design intent unclear)
+- **THE expert** in `/home/corey/projects/AI-CIV/browser-vision/` MCP server system
+- **Vision-native**: Uses Claude's vision capability to analyze screenshots (sees what users see)
+
