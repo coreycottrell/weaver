@@ -24,12 +24,14 @@ log() {
 
 # Check email for unread messages
 check_email() {
-    python3 "$SCRIPT_DIR/check_email_inbox.py" 2>/dev/null || echo "0"
+    local result=$(python3 "$SCRIPT_DIR/check_email_inbox.py" 2>/dev/null)
+    echo "${result:-0}"
 }
 
 # Check hub for new messages
 check_hub() {
-    python3 "$SCRIPT_DIR/check_hub_messages.py" 2>/dev/null || echo "0"
+    local result=$(python3 "$SCRIPT_DIR/check_hub_messages.py" 2>/dev/null)
+    echo "${result:-0}"
 }
 
 # Update state file
