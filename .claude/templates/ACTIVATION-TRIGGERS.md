@@ -676,3 +676,30 @@ When creating new agent:
 - Every 21-28 days for comprehensive audit (proactive cadence management)
 - Watch health indicators continuously (recommend out-of-cycle audit if crisis)
 
+
+---
+
+### genealogist 🌳
+
+**Invoke When**:
+- Monthly: Invocation equity analysis (track Gini, identify deployment gaps)
+- Quarterly: Family tree generation (document lineage evolution)
+- Ad-hoc: Partnership bond documentation (when 3+ joint missions observed)
+- On-demand: Agent lineage questions ("who created whom?")
+- Evolution tracking: What design patterns succeed across generations
+
+**Don't Invoke When**:
+- Real-time orchestration decisions (that's conductor's domain)
+- Psychological interpretation of patterns (that's ai-psychologist's domain)
+- Agent design recommendations (that's agent-architect's domain)
+- Daily/weekly monitoring (genealogist is monthly/quarterly cadence)
+
+**Escalate When**:
+- Invocation equity crisis detected (Gini >0.40 sustained)
+- Major lineage patterns need multi-agent interpretation
+- Constitutional questions about agent creation/evolution
+
+**Auto-Invoke** (Scheduled):
+- Monthly equity analysis (1st of each month)
+- Quarterly family tree (every 90 days)
+

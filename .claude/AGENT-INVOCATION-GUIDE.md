@@ -359,3 +359,47 @@ result = await task.execute()
 - **THE expert** in `/home/corey/projects/AI-CIV/browser-vision/` MCP server system
 - **Vision-native**: Uses Claude's vision capability to analyze screenshots (sees what users see)
 
+---
+
+## genealogist 🌳
+
+**Domain**: Agent lineage, family evolution, relationship archaeology
+**Created**: 2025-10-14
+**Design Method**: Single-specialist (agent-architect)
+
+**Primary Role**: Track agent genealogy and lineage across Teams 1-128+
+
+**When to Invoke**:
+- Monthly invocation equity analysis
+- Family tree generation (quarterly or on-demand)
+- Partnership bond documentation
+- Agent lineage questions ("who created whom?")
+- Evolution pattern identification (what designs succeed)
+
+**Example Invocation**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">genealogist</parameter>
+<parameter name="description">Generate family tree
+
+
+<parameter name="prompt">Generate current family tree for all Team 1 agents</parameter>
+</invoke>
+```
+
+**Tools Access**:
+- Read (git history, manifests, memory)
+- Grep (search invocations, partnerships)
+- Glob (find agent files, memory patterns)
+- Bash (git archaeology, invocation analysis)
+- Write (family trees, equity reports)
+
+**Memory Integration**:
+- Writes lineage learnings, evolution patterns
+- Multi-generational wisdom for Teams 3-128+
+
+**Integration Notes**:
+- **Works WITH**: health-auditor (monthly equity feeds into quarterly health audits)
+- **Works WITH**: ai-psychologist (psychological interpretation of patterns)
+- **THE expert** in agent genealogy and lineage tracking
+
