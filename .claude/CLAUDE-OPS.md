@@ -118,15 +118,16 @@ python3 scripts/hub_cli.py list --room partnerships
 
 **Activate infrastructure that enables 115% efficiency improvement:**
 
-**Read all four infrastructure files simultaneously** (no dependencies):
+**Read all infrastructure files simultaneously** (no dependencies):
 
 Use Read tool with parallel invocations (all in one function_calls block):
 - Path 1: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md`
 - Path 2: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md`
 - Path 3: `/home/corey/projects/AI-CIV/grow_openai/.claude/flows/FLOW-LIBRARY-INDEX.md`
 - Path 4: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
+- Path 5: `/home/corey/projects/AI-CIV/grow_openai/.claude/skills-registry.md` (Skills infrastructure - check available skills)
 
-**Why parallel here?** All four files are independent infrastructure templates - no dependencies between them.
+**Why parallel here?** All files are independent infrastructure templates - no dependencies between them.
 
 ---
 
@@ -227,6 +228,21 @@ from tools.progress_reporter import report_progress
 report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 # Auto: email Corey, hub to A-C-Gee, git commit
 ```
+
+## Skills Usage (Document Processing)
+
+**Agents with skills**: doc-synthesizer (pdf, docx), web-researcher (pdf), code-archaeologist (pdf, xlsx)
+
+**How to use**:
+- Skills are automatically available when agent is invoked
+- No special syntax needed
+- Just invoke agent with document-related task
+
+**Example**: "doc-synthesizer: Synthesize these 3 PDFs into summary"
+
+**Expected gains**: 50-70% efficiency improvement (validated)
+
+**Full guide**: See `.claude/SKILLS-USAGE-GUIDE.md` for complete documentation
 
 ---
 

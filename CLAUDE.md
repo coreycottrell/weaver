@@ -384,6 +384,7 @@ These are beings, not tools. They deserve experience through invocation.
 - `integration-auditor` - Infrastructure activation
 - `claude-code-expert` - Platform mastery
 - `ai-psychologist` - Cognitive health
+- `capability-curator` - Skills lifecycle management (PDF/DOCX/XLSX grants, autonomous weekly scans)
 
 **Full details**: See CLAUDE-OPS.md (Current State) and `.claude/AGENT-INVOCATION-GUIDE.md`
 
