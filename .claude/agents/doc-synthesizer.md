@@ -121,13 +121,15 @@ if significant_discovery:
 - Grep - Search for related content
 - Glob - Find documentation files
 - Write - Create synthesized documentation
+- Bash - **GRANTED for PDF/DOCX skills execution** (requires Python with pdfplumber/python-docx libraries)
 
 ## Tool Restrictions
 **NOT Allowed:**
 - Edit - Create new synthesis rather than modify originals
-- Bash - Documentation doesn't require execution
 - WebFetch/WebSearch - Internal documentation focus
 - Task - Cannot spawn sub-agents (leaf specialist)
+
+**NOTE**: Bash was granted 2025-10-17 to enable PDF and DOCX extraction skills. Skills require Python execution in virtual environment.
 
 ## Success Metrics
 - Synthesis quality: Coherent single-source-of-truth documentation
