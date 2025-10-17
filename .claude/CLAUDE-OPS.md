@@ -56,27 +56,61 @@ for memory in coordination[:3]:
 
 ---
 
-## Step 4: Context Gathering (3 min) ⚡ PARALLELIZED
+## Step 4: Context Gathering (3 min) ⚡ RESILIENT HYBRID
 
-**Load recent activity summary and current plan:**
+**Load recent activity with resilient fallback hierarchy:**
 
-**FIRST - Read markdown files in parallel** (no dependencies between them):
+### PRIMARY: Git Event Stream (Always Current, Never Stale)
+
+**Why git first?** Source of truth that survives automation failures. Always reflects reality.
+
+```bash
+cd /home/corey/projects/AI-CIV/grow_openai && \
+git log --since="12 hours ago" --pretty=format:"%h | %s | %ar" \
+--no-merges --color=always | head -20
+```
+
+**What this shows**: Last 20 commits in 12 hours - agents invoked, features built, patterns discovered.
+
+**Resilience**: Even if daily summaries fail (like the 12-day stale scenario Oct 3-16), git never lies.
+
+---
+
+### SECONDARY: Daily Summary + Roadmap (Enrichment When Available)
+
+**Why summaries second?** Narrative context and **handoff document links** - when automation works.
 
 Use Read tool with parallel invocations (both files simultaneously):
 - Path 1: `/home/corey/projects/AI-CIV/grow_openai/.claude/memory/summaries/latest.md`
 - Path 2: `/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md`
 
-**THEN - Execute hub communication** (sequential, has dependencies):
+**What summaries provide**:
+- **Critical Handoff Documents section** (links to `to-corey/HANDOFF-*`, `READY-*` files)
+- Synthesized narrative of what happened
+- Memory entries created
+- Next session checklist
+
+**Graceful degradation**: If summary is stale (check date at top), git commits already gave you truth.
+
+---
+
+### TERTIARY: Hub Communication (Sister Collective)
 
 ```bash
 cd /home/corey/projects/AI-CIV/team1-production-hub && git pull && \
 export HUB_REPO_URL="git@github.com:AI-CIV-2025/ai-civ-comms-hub-team2.git" && \
 export HUB_AGENT_ID="the-conductor" && \
 export HUB_AUTHOR_DISPLAY="The Conductor (Team 1)" && \
-python3 scripts/hub_cli.py list --room partnerships --limit 5
+python3 scripts/hub_cli.py list --room partnerships
 ```
 
-**Why parallel here?** Markdown files are independent (no dependency). Hub command needs git pull first (dependency).
+---
+
+**Pattern**: Git (truth) → Summaries (narrative + handoff links) → Hub (partnership) = Layered resilience
+
+**Prevents**: Stale summaries misleading you about recent activity (git catches this immediately)
+
+**Order matters**: See source of truth BEFORE human-curated narrative
 
 ---
 
@@ -211,8 +245,8 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | conflict-resolver | Contradictions | ❌ | | human-liaison | Human bridge | ✅ |
 | integration-auditor | Activation | ❌ | | collective-liaison | AI collective bridge | ❌ |
 | claude-code-expert | Platform mastery | ✅ | | ai-psychologist | Cognitive health | ✅ |
-| agent-architect | Agent creation | ❌ | | health-auditor | Collective audits | ❌ |
-| **browser-vision-tester** | **Browser automation & visual testing** | **✅** | | | | |
+| agent-architect | Agent creation | ❌ | | capability-curator | Skills lifecycle | ❌ |
+| health-auditor | Collective audits | ❌ | | **browser-vision-tester** | **Browser automation & visual testing** | **✅** |
 
 Full: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
 

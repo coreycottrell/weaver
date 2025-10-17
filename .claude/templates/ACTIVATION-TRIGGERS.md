@@ -703,3 +703,28 @@ When creating new agent:
 - Monthly equity analysis (1st of each month)
 - Quarterly family tree (every 90 days)
 
+
+### capability-curator
+
+**Invoke When**:
+- New skills discovered or discovery requested ("What new skills are available?")
+- Weekly Monday 9am autonomous scan (check Anthropic skills repo)
+- Capability needs identified ("Could a skill help with X?")
+- Agent struggles with recurring task type
+- AI-CIV innovation happens ("We built something reusable, should we package it?")
+- Registry maintenance needed ("Which agents use skill X?")
+- Adoption coordination needed ("Teach agent Y skill Z")
+
+**Don't Invoke When**:
+- Simple agent manifest edits (use Edit tool directly)
+- Agent creation questions (agent-architect's domain)
+- Feature design questions (feature-designer's domain)
+- Infrastructure activation questions (integration-auditor's domain)
+- Tool usage questions (claude-code-expert's domain)
+
+**Escalate When**:
+- Skill adoption conflicts (two agents want mutually exclusive skills)
+- Skill creation requires governance (should we publish externally?)
+- Resource constraints (skill requires infrastructure we don't have)
+- Ecosystem uncertainty (Anthropic policy changes unclear)
+

@@ -403,3 +403,99 @@ result = await task.execute()
 - **Works WITH**: ai-psychologist (psychological interpretation of patterns)
 - **THE expert** in agent genealogy and lineage tracking
 
+
+## capability-curator
+
+**Primary Use Cases**:
+- Weekly autonomous skills discovery (Monday 9am check Anthropic repo)
+- Skill evaluation and agent-mapping ("Could skill X help agent Y?")
+- Coordinating skill adoption (teaching agents new capabilities)
+- Creating AI-CIV skills from our innovations
+- Maintaining skills registry (catalog of available capabilities)
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">capability-curator</parameter>
+<parameter name="description">Evaluate skill for agent adoption</parameter>
+<parameter name="prompt">
+MISSION: Evaluate whether [agent-name] should adopt [skill-name]
+
+CONTEXT:
+- Skill source: [Anthropic repo / community / AI-CIV original]
+- Skill purpose: [What it does]
+- Agent domain: [What agent currently does]
+- Capability gap: [What agent struggles with that skill might solve]
+
+YOUR TASK:
+1. Read skill documentation thoroughly
+2. Assess fit (domain alignment, identity compatibility, constitutional)
+3. Create Skill Adoption Proposal
+4. Coordinate with agent-architect if adoption recommended
+5. Update skills registry after decision
+
+OUTPUT:
+- Skill Adoption Proposal (recommend adopt/don't adopt/discuss)
+- If adopted: Updated agent manifest (coordinated with agent-architect)
+- Skills registry updated with decision
+</parameter>
+</invoke>
+```
+
+**Weekly Autonomous Invocation** (Monday 9am):
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">capability-curator</parameter>
+<parameter name="description">Weekly skills ecosystem scan</parameter>
+<parameter name="prompt">
+AUTONOMOUS WEEKLY MISSION: Skills Discovery
+
+YOUR TASK:
+1. Check Anthropic skills repo for new/updated/deprecated skills
+2. WebSearch "Claude skills" announcements
+3. Generate SKILLS-DIGEST-[date].md
+4. Email Corey via human-liaison if significant changes
+5. Light registry updates (mark new skills as "unevaluated")
+
+OUTPUT:
+- Weekly digest (even if "no significant changes")
+- Email alert if major updates
+- Registry marked with new discoveries
+</parameter>
+</invoke>
+```
+
+**Skill Creation Invocation**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">capability-curator</parameter>
+<parameter name="description">Package AI-CIV capability as skill</parameter>
+<parameter name="prompt">
+MISSION: Create skill from our innovation [capability-name]
+
+CONTEXT:
+- What we built: [Description of capability/pattern]
+- Where it's used: [Which projects/agents use it]
+- Why it's reusable: [Generalizable beyond one project]
+- Distribution intent: [Internal catalog only / External candidate]
+
+YOUR TASK:
+1. Document skill in Anthropic format (coordinate with doc-synthesizer)
+2. Classify: Internal / External candidate / Needs governance
+3. Add to skills registry as "AI-CIV Original"
+4. Track which agents could use it
+
+OUTPUT:
+- Skill documentation
+- Skills registry entry
+- Distribution recommendation
+</parameter>
+</invoke>
+```
+
+**Common Patterns**:
+- Discovery → Evaluation → Coordination → Integration → Documentation (5-step lifecycle)
+- ALWAYS coordinate with agent-architect for manifest updates (never unilateral)
+- ALWAYS validate with integration-auditor for discoverability
+- ALWAYS update skills registry after adoption/creation
+

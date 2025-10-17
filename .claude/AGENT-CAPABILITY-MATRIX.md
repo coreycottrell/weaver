@@ -30,6 +30,7 @@
 | **claude-code-expert** | Platform mastery | Tool optimization, troubleshooting | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 | **ai-psychologist** | Cognitive health | Mental patterns, bias detection, well-being | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
 | **agent-architect** | Agent creation | Democratic design, 90/100 quality enforcement, 7-layer registration | Read/Write/Edit/Bash/Grep/Glob/Task | ❌ | Active |
+| **capability-curator** | Capability lifecycle management | Skills discovery/evaluation/integration, registry maintenance, ecosystem awareness | Read/Write/Edit/Bash/Grep/Glob/WebSearch/WebFetch/Task | ❌ | Active |
 | **health-auditor** | Periodic comprehensive audits | Cadence management, methodology iteration, ROI tracking, institutional memory | Read/Grep/Bash/Task/Glob | ❌ | Active |
 | **browser-vision-tester** | Browser automation & visual UI testing | MCP browser-vision mastery, visual regression, form workflows, accessibility audits | Read/Write/Bash/Grep/Glob/WebFetch | ✅ | Active |
 

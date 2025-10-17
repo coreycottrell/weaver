@@ -5,6 +5,10 @@
 #
 # Usage: Run via cron every 30 minutes
 # Cron: */30 * * * * /home/corey/projects/AI-CIV/grow_openai/tools/check_and_inject.sh
+#
+# TODO: Add weekly capability-curator trigger (Monday 9am)
+# Future cron: 0 9 * * 1 capability-curator weekly skills scan
+# Requires separate script or integration with Claude Code autonomous system
 
 set -euo pipefail
 
@@ -135,6 +139,9 @@ main() {
         inject_prompt "$email_count" "$hub_count"
     else
         log "✅ No new messages. Sleeping."
+        # Clear old prompt if it exists (messages already handled)
+        rm -f "$HOME/.aiciv/inject-prompt.txt"
+        rm -f "$PROJECT_DIR/.claude/autonomous-prompt.txt"
     fi
     
     # Update state
