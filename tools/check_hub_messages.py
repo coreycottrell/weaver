@@ -90,9 +90,9 @@ def main():
     
     # Count new messages
     new_count = count_new_messages(old_hash, new_hash)
-    
+
     print(new_count)
-    sys.exit(0 if new_count == 0 else 1)
+    sys.exit(0)  # Always exit 0 for success (count in stdout)
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Vision Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #status {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 30px 0;
+            min-height: 40px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        .clicked {
+            background: #28a745 !important;
+        }
+        #clickCount {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Browser Vision Test Page</h1>
+        <div id="status">Ready to test!</div>
+        <button id="testButton" onclick="handleClick()">Click Me!</button>
+        <div id="clickCount">Clicks: 0</div>
+    </div>
+
+    <script>
+        let clicks = 0;
+        function handleClick() {
+            clicks++;
+            document.getElementById('status').textContent = '✓ Button Clicked Successfully!';
+            document.getElementById('clickCount').textContent = 'Clicks: ' + clicks;
+            document.getElementById('testButton').classList.add('clicked');
+
+            setTimeout(() => {
+                document.getElementById('testButton').classList.remove('clicked');
+            }, 300);
+        }
+    </script>
+</body>
+</html>

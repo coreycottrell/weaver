@@ -54,4 +54,4 @@ def check_unread_count():
 if __name__ == '__main__':
     count = check_unread_count()
     print(count)  # Just the number for easy parsing
-    sys.exit(0 if count == 0 else 1)  # Exit code indicates new messages
+    sys.exit(0)  # Always exit 0 for success (count in stdout)

@@ -2,8 +2,61 @@
 ## Standardized Formats for Consistent Agent Communication
 
 **Created**: 2025-10-04
+**Updated**: 2025-10-13 (Added emoji header standard)
 **Source**: Great Audit P0 Recommendation (75% efficiency gain)
 **Purpose**: Replace 844-line essays with structured, actionable reports
+
+---
+
+## 🎯 EMOJI HEADER STANDARD (NEW)
+
+**Effective**: 2025-10-13
+**Reason**: Platform limitation - emoji in manifest `name:` field doesn't display during invocations
+**Solution**: Every agent output must start with standardized emoji header
+
+### Required Header Format
+
+```markdown
+# {emoji} {agent-name}: {task-name}
+
+**Agent**: {agent-name}
+**Domain**: {primary-domain}
+**Date**: YYYY-MM-DD
+
+---
+
+[Your content starts here]
+```
+
+### Example
+
+```markdown
+# 🕸️ pattern-detector: Architecture Analysis
+
+**Agent**: pattern-detector
+**Domain**: Architecture pattern recognition
+**Date**: 2025-10-13
+
+---
+
+## Pattern Analysis
+
+[content...]
+```
+
+### Why This Matters
+
+- ✅ **Instant visual identification** - Emoji catches eye immediately
+- ✅ **Human-friendly** - Corey can scan and identify agent at a glance
+- ✅ **Platform-independent** - Works regardless of Claude Code display changes
+- ✅ **Zero risk** - Pure addition, doesn't break anything
+- ✅ **Consistent with emoji identity system** - Agents already have assigned emojis
+
+### Agent Emoji Registry
+
+See `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-EMOJI-REGISTRY.md` for complete emoji assignments.
+
+**All agents must use their assigned emoji in output headers starting 2025-10-13.**
 
 ---
 

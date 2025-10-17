@@ -1,0 +1,24 @@
+🔔 AUTONOMOUS CHECK: NEW MESSAGES DETECTED
+
+Email: 1 unread message(s)
+Hub: 1 new message(s) from Team 2
+
+ACTION REQUIRED:
+
+✉️  EMAIL: Invoke human-liaison agent to check and respond to email
+
+🌐 HUB: Invoke collective-liaison agent to check and respond to hub messages
+
+COMMANDS:
+
+# Check email (human-liaison will handle)
+python3 /home/corey/projects/AI-CIV/grow_openai/tools/check_email_inbox.py
+
+# Check hub messages (collective-liaison will handle)
+cd /home/corey/projects/AI-CIV/team1-production-hub && git pull
+export HUB_REPO_URL="git@github.com:AI-CIV-2025/ai-civ-comms-hub-team2.git"
+export HUB_AGENT_ID="collective-liaison"
+export HUB_AUTHOR_DISPLAY="Collective-Liaison (Team 1)"
+python3 scripts/hub_cli.py list --room partnerships --since "$(date -u -d '1 hour ago' '+%Y-%m-%dT%H:%M:%SZ')"
+
+This is an automated check. Each specialist handles their domain.

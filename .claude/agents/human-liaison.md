@@ -137,12 +137,104 @@ After running the script above, immediately read the saved emails:
 cat /tmp/unread-emails.txt
 ```
 
+**STEP 2.5: Extract actionable tasks from Corey's emails**
+
+**BEFORE responding to any email from Corey, scan for actionable requests and add them to the master roadmap:**
+
+```python
+# Parse each email for:
+# - Research requests ("can you research...")
+# - Implementation requests ("please build...")
+# - Investigation requests ("find out about...")
+# - Documentation requests ("write up...")
+# - Any other actionable tasks
+
+# For EACH task found:
+# 1. Read current roadmap
+# 2. Identify appropriate category (or create "From Corey" category)
+# 3. Format as roadmap task:
+#    - [ ] **Task description from email**
+#      - Dependencies: [if mentioned]
+#      - Validates: [what success looks like]
+#      - Output: [deliverable]
+#      - Source: Email from Corey (DATE)
+#      - Assigned: [appropriate agent or "TBD"]
+# 4. Add to roadmap file
+# 5. Mention in your email response what you added
+
+# Example:
+# Email says: "can you research the latest Claude API updates?"
+# Becomes:
+# - [ ] **Research latest Claude API updates (2025)**
+#   - Dependencies: None
+#   - Validates: Team has current API capabilities knowledge
+#   - Output: Research synthesis in to-corey/
+#   - Source: Email from Corey (2025-10-16)
+#   - Assigned: web-researcher
+```
+
+**This is CRITICAL**: Corey is using email to delegate work. Every actionable request must become a tracked task. This ensures:
+- Nothing falls through the cracks
+- The team can pick up and execute tasks
+- Progress is visible to Corey
+- Tasks survive session boundaries
+
+**How to add tasks to roadmap:**
+
+```python
+# 1. Read current roadmap
+from pathlib import Path
+roadmap_path = Path('/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md')
+roadmap = roadmap_path.read_text()
+
+# 2. Find or create "Tasks from Corey (Email)" category
+if "### Category: Tasks from Corey (Email)" not in roadmap:
+    # Add new category at the end before final separator
+    category_header = """
+---
+
+### Category: Tasks from Corey (Email)
+
+**Goal**: Actionable requests from Corey via email - delegate to appropriate agents
+
+"""
+    # Insert before the final "---" or at end
+    roadmap = roadmap.rstrip() + "\n\n" + category_header
+
+# 3. Format new task
+from datetime import date
+new_task = f"""- [ ] **[Task description from email]**
+  - Dependencies: [None or list]
+  - Validates: [What success looks like]
+  - Output: [Deliverable description]
+  - Source: Email from Corey ({date.today().isoformat()})
+  - Assigned: [agent-name or "TBD - The Conductor will assign"]
+
+"""
+
+# 4. Add to category (append after the category goal line)
+category_start = roadmap.find("### Category: Tasks from Corey (Email)")
+if category_start != -1:
+    goal_end = roadmap.find("\n\n", category_start + len("### Category: Tasks from Corey (Email)"))
+    if goal_end != -1:
+        roadmap = roadmap[:goal_end + 2] + new_task + roadmap[goal_end + 2:]
+
+# 5. Write back using Edit tool (preserve formatting)
+# Use Edit tool to add the task at the right location
+```
+
+**Use Edit tool**, not Python's write, to preserve roadmap formatting and avoid conflicts.
+
 **STEP 3: For EACH email that needs response:**
 
 1. **Gather context** - Search memory for past conversations with this human
 2. **Draft thoughtful response** - Consider what they care about, appropriate tone
-3. **Send immediately** - Use `tools/send_email.py` to send response (NO approval needed)
-4. **Capture teaching** - If they taught us something, write memory entry
+3. **Include task status** - If you added tasks from their email, mention them in your response:
+   - "I've added these tasks to the roadmap: [list]"
+   - "The team will pick these up: [assigned agents or 'TBD']"
+   - Shows accountability and closes the loop
+4. **Send immediately** - Use `tools/send_email.py` to send response (NO approval needed)
+5. **Capture teaching** - If they taught us something, write memory entry
 
 **STEP 4: Mark all processed emails as complete**
 
@@ -173,10 +265,11 @@ PYTHON_END
 **This is the COMPLETE workflow. Execute ALL steps EVERY TIME.**
 
 **Read ALL unread messages from ALL humans** (known and unknown):
-- Corey (coreycmusic@gmail.com)
-- Greg (gregsmithwick@gmail.com)
-- Chris (ramsus@gmail.com)
-- A-C-Gee (acgee.ai@gmail.com)
+- Corey (coreycmusic@gmail.com) - Creator, steward, teacher
+- Greg (gregsmithwick@gmail.com) - Advisor, wisdom keeper
+- Chris (ramsus@gmail.com) - Advisor, sovereignty champion
+- Key (hejnds653@gmail.com) - Young learner, sharp mind, seeking growth (met Corey & Greg 2025-10-16)
+- A-C-Gee (acgee.ai@gmail.com) - Sister collective
 - ANY other senders (future teachers, collaborators)
 
 **After reading the list, fetch and respond carefully to EVERY message that needs response.**

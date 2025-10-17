@@ -2,7 +2,7 @@
 
 **Target**: Week 4 Integration Sprint with A-C-Gee (Oct 24-31)
 **Status**: PLANNING PHASE
-**Last Updated**: 2025-10-03
+**Last Updated**: 2025-10-16
 
 ---
 
@@ -20,10 +20,73 @@
 4. **Tools & Infrastructure** - Ensure dashboard, benchmarks, and utilities are shared-ready
 5. **Documentation** - Create integration guides, examples, and tutorials
 6. **Cross-Collective Testing** - Validate interoperability before Week 4
+7. **Tasks from Corey (Email)** - Actionable requests from human teacher
 
 ---
 
 ## Tasks (No Time Estimates)
+
+### Category 7: Tasks from Corey (Email)
+
+**Goal**: Execute actionable research and implementation requests from Corey
+
+**Source**: Email communications (2025-10-13 to 2025-10-17)
+
+#### MCP Research Tasks
+- [ ] **Research Docker MCP Gateway**
+  - Dependencies: None
+  - Validates: Understanding of Docker's MCP gateway capabilities
+  - Output: Research report on Docker MCP gateway architecture, use cases, integration patterns
+  - Source: Email 2025-10-13 "Docker MCP servers!" (https://github.com/docker/mcp-gateway)
+  - Assigned: web-researcher + doc-synthesizer
+
+- [ ] **Research Postman Public MCP Servers Collection**
+  - Dependencies: None
+  - Validates: Understanding of available MCP servers ecosystem
+  - Output: Research report on Postman MCP servers, categorization, relevance to AI-CIV
+  - Source: Email 2025-10-14 "Another huge treasure trove" (https://www.postman.com/getmcp/public-mcp-servers/overview)
+  - Assigned: web-researcher + doc-synthesizer
+
+- [ ] **Synthesize MCP Ecosystem Findings**
+  - Dependencies: Docker MCP research complete, Postman MCP research complete
+  - Validates: Strategic understanding of MCP landscape for AI-CIV
+  - Output: Strategic synthesis report - how MCP ecosystem applies to our collective
+  - Source: Combined insights from both research tasks
+  - Assigned: result-synthesizer + api-architect
+
+#### Anthropic Skills Repo Research (HIGH PRIORITY)
+- [ ] **Research Anthropic Skills Repository**
+  - Dependencies: None
+  - Validates: Understanding of Anthropic's official skills library for Claude
+  - Output: Research report on skills architecture, examples, integration patterns
+  - Source: Email 2025-10-17 "Skills repo from git" (https://github.com/anthropics/skills)
+  - Priority: HIGH (Corey explicitly flagged)
+  - Assigned: web-researcher + claude-code-expert + api-architect
+
+- [ ] **Analyze Skills for AI-CIV Application**
+  - Dependencies: Skills repo research complete
+  - Validates: Strategic understanding of how Anthropic skills apply to our collective
+  - Output: Analysis of which skills are relevant, how to adapt, what to build
+  - Source: Strategic analysis of research findings
+  - Priority: HIGH
+  - Assigned: result-synthesizer + the-conductor
+
+- [ ] **Propose Maximal Benefit Strategy**
+  - Dependencies: Skills analysis complete
+  - Validates: Actionable proposal for leveraging Anthropic skills
+  - Output: Concrete proposal with priorities, implementation approach, expected benefits
+  - Source: Synthesis of research + analysis
+  - Priority: HIGH
+  - Assigned: feature-designer + api-architect + the-conductor
+
+- [ ] **Design MCP Integration Strategy**
+  - Dependencies: MCP ecosystem synthesis complete
+  - Validates: Clear roadmap for MCP adoption in AI-CIV
+  - Output: MCP integration proposal with priorities, dependencies, timeline
+  - Source: Strategic synthesis
+  - Assigned: api-architect + feature-designer
+
+---
 
 ### Category 1: Ed25519 Integration Prep
 
@@ -398,6 +461,12 @@
 
 ## Parallel Tracks
 
+### Track 0: Corey's Requests (Week 1, Immediate Priority)
+**Start immediately - highest priority**
+- MCP research (Docker gateway, Postman collection)
+- Ecosystem synthesis
+- Integration strategy design
+
 ### Track 1: Ed25519 (Weeks 1-3)
 **Can start immediately, no blockers**
 - Documentation (integration guide, examples, key distribution)
@@ -467,6 +536,13 @@ Update them every week:
 
 ## Success Criteria
 
+### Corey's Email Tasks Complete ✅
+- [ ] Docker MCP gateway researched and documented
+- [ ] Postman MCP servers collection analyzed
+- [ ] MCP ecosystem synthesis complete
+- [ ] Integration strategy designed and proposed
+- [ ] Corey receives comprehensive reports on all MCP findings
+
 ### Ed25519 Integration-Ready ✅
 - [ ] Integration guide published (step-by-step for ADR-004)
 - [ ] Auto-signing working in hub_cli.py
@@ -509,7 +585,7 @@ Update them every week:
 - [ ] Shared workspace set up
 
 ### Overall Readiness Checklist
-- [ ] All 6 categories 100% complete
+- [ ] All 7 categories 100% complete
 - [ ] No critical blockers remaining
 - [ ] A-C-Gee confirms readiness
 - [ ] Both teams aligned on Week 4 agenda
@@ -537,6 +613,7 @@ Update them every week:
 2. **Ed25519 auto-signing** → Verification endpoint → Message bus adapter
 3. **API comparison** → v2.0 design → Migration guide
 4. **All systems tested** → Week 4 sprint plan → Integration execution
+5. **MCP research** → MCP synthesis → MCP integration strategy
 
 ### No Critical Blockers
 - All Week 1 tasks can start immediately
@@ -548,22 +625,24 @@ Update them every week:
 ## Timeline Summary
 
 ### Week 1 (Oct 3-10): Foundation
-**Focus**: Ed25519, Flows, Tools
+**Focus**: Ed25519, Flows, Tools, MCP Research
+- **PRIORITY**: Complete MCP research tasks (Docker, Postman)
 - Ed25519 integration guide + auto-signing
 - Validate 8 remaining flows
 - Package dashboard for sharing
 - Create core documentation
 
-**Goal**: 50% integration-ready
+**Goal**: 50% integration-ready + MCP landscape understood
 
 ### Week 2 (Oct 10-17): Enhancement
-**Focus**: API v2.0, Documentation
+**Focus**: API v2.0, Documentation, MCP Strategy
+- **PRIORITY**: Design MCP integration strategy
 - Compare v1.0 with ADR-004 (when available)
 - Design v2.0 formats
 - Complete user guides and tutorials
 - Test dual-team dashboard
 
-**Goal**: 80% integration-ready
+**Goal**: 80% integration-ready + MCP roadmap defined
 
 ### Week 3 (Oct 17-24): Validation
 **Focus**: Testing, Preparation
@@ -588,18 +667,25 @@ Update them every week:
 ## Next Actions
 
 ### Immediate (Today/Tomorrow)
-1. **Start Ed25519 integration guide** (Track 1)
-2. **Test 2 more flows** (Track 2)
-3. **Package dashboard** (Track 3)
-4. **Write "Getting Started" guide** (Track 4)
+1. **START MCP RESEARCH** (Track 0 - HIGHEST PRIORITY)
+   - Docker MCP gateway deep dive
+   - Postman MCP servers collection analysis
+2. **Start Ed25519 integration guide** (Track 1)
+3. **Test 2 more flows** (Track 2)
+4. **Package dashboard** (Track 3)
+5. **Write "Getting Started" guide** (Track 4)
 
 ### This Week
-1. **Complete Ed25519 auto-signing**
-2. **Validate 8 remaining flows**
-3. **Publish core documentation**
-4. **Update A-C-Gee on progress**
+1. **Complete all MCP research and synthesis**
+2. **Complete Ed25519 auto-signing**
+3. **Validate 8 remaining flows**
+4. **Publish core documentation**
+5. **Update A-C-Gee on progress**
 
 ### Delegation Recommendations
+- **Web-researcher + doc-synthesizer**: MCP research tasks (Docker, Postman)
+- **Result-synthesizer + api-architect**: MCP ecosystem synthesis
+- **Api-architect + feature-designer**: MCP integration strategy
 - **Doc-synthesizer**: Write user guides and tutorials
 - **Test-architect**: Build cross-collective test suite
 - **API-architect**: Compare v1.0 with ADR-004 (when available)
@@ -610,10 +696,11 @@ Update them every week:
 
 **Status**: READY TO EXECUTE
 **Confidence**: HIGH (clear tasks, no critical blockers, 3-4 weeks is sufficient)
-**Recommendation**: START IMMEDIATELY with parallel Track 1-4 work
+**Recommendation**: START IMMEDIATELY with Track 0 (MCP research) as highest priority
 
 ---
 
 *This roadmap created by: The Conductor + task-decomposer + api-architect + test-architect*
 *Date: 2025-10-03*
+*Last Updated: 2025-10-17 (Added Anthropic Skills research - HIGH PRIORITY)*
 *Integration Target: Week 4 (Oct 24-31) with A-C-Gee*
