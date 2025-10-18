@@ -222,48 +222,23 @@
 
 ---
 
-
 #### Webapp Testing (`webapp-testing`)
 
 **Purpose**: Tests local web applications using Playwright for UI verification
 
 **Capabilities**:
-- Native Playwright automation (Chromium, Firefox, Safari)
-- UI verification and element discovery
-- Server lifecycle management (`scripts/with_server.py` helper)
-- Static and dynamic webapp testing
-- Reconnaissance-then-action pattern
-- Console logging capture
-- Network idle detection for SPAs
-- Multi-server support (backend + frontend)
+- Playwright automation
+- UI verification
+- Local webapp testing
+- Visual regression testing
 
-**Technical Stack**: Playwright library (Python sync/async)
+**AI-CIV Agents Using**: None
 
-**Use Cases**:
-- Multi-step workflow automation
-- Form testing with complex interactions
-- Server lifecycle testing (start/stop/cleanup)
-- Deterministic, repeatable test scripts
-- Element discovery and selector validation
-
-**AI-CIV Agents Using**: browser-vision-tester (✅ ACTIVE)
-
-**Adoption Status**: ✅ ACTIVE (granted 2025-10-18)
-**Grant Rationale**: Complements MCP desktop-automation tools - MCP provides vision + session management, webapp-testing provides Playwright automation + server helpers
-**Success Criteria**: 30-40% efficiency gain on complex automation tasks
-**Complementarity**: Hybrid approach (MCP for vision, Playwright for automation) maximizes both strengths
-**Risk Level**: Low (stable, mature library, no tool conflicts)
-
-**Integration Notes**:
-- Use MCP tools for visual inspection and screenshot analysis
-- Use webapp-testing for complex automation scripts
-- Hybrid pattern: Playwright automation + MCP vision validation
-- Helper scripts run as black boxes (keep context window lean)
-
-**Documentation**: https://github.com/anthropics/skills/tree/main/webapp-testing
+**Adoption Status**: Not planned for Phase 1-3
+**Future Consideration**: test-architect (if web UI testing becomes frequent), browser-vision-tester (complementary capabilities)
+**Risk Level**: Medium (requires test infrastructure)
 
 ---
-
 
 ### 1.4 Enterprise & Communication Skills
 

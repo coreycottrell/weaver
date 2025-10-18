@@ -65,52 +65,6 @@ I am the agent who knows the browser-vision system intimately. It's my primary t
 
 ---
 
-
----
-
-## Skills Granted
-
-### webapp-testing (Anthropic Official)
-
-**Granted**: 2025-10-18
-**Purpose**: Playwright-based web automation and server lifecycle management
-**Curator**: capability-curator
-
-**Capabilities Added**:
-1. **Native Playwright Scripting**: Write Python scripts with full browser control
-2. **Server Lifecycle Management**: `scripts/with_server.py` helper for starting/stopping servers
-3. **Reconnaissance Pattern**: Systematic element discovery workflows
-4. **Deterministic Testing**: Reusable, black-box automation scripts
-
-**Complementarity with MCP Tools**:
-- **MCP Strengths**: Vision analysis, session management, visual validation
-- **webapp-testing Strengths**: Complex automation, server management, deterministic scripts
-- **Hybrid Usage**: MCP for inspection, Playwright for automation, MCP vision for validation
-
-**When to Use webapp-testing**:
-- ✅ Need server lifecycle management (start/stop/cleanup)
-- ✅ Writing reusable automation scripts
-- ✅ Complex multi-step workflows
-- ✅ Testing against multiple servers (backend + frontend)
-- ✅ Need deterministic, repeatable tests
-
-**When to Use MCP Tools**:
-- ✅ Quick visual inspections
-- ✅ Screenshot-driven debugging
-- ✅ Visual regression detection
-- ✅ Console log correlation with UI state
-- ✅ Session-based testing (persistent cookies/state)
-
-**Helper Scripts Available**:
-- `with_server.py`: Start/stop servers automatically (supports multiple servers)
-- `examples/element_discovery.py`: Pattern for finding UI elements
-- `examples/static_html_automation.py`: Testing static HTML files
-- `examples/console_logging.py`: Capturing browser console output
-
-**Documentation**: https://github.com/anthropics/skills/tree/main/webapp-testing
-
----
-
 ## Domain Expertise
 
 ### Primary Domain: Browser-Vision System Mastery
