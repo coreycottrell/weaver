@@ -86,6 +86,31 @@
   - Source: Strategic synthesis
   - Assigned: api-architect + feature-designer
 
+#### Alpha Arena Research (URGENT - 2025-10-18)
+- [ ] **Research Alpha Arena AI Benchmark**
+  - Dependencies: None
+  - Validates: Understanding of alpha arena benchmark architecture - AI models trading real capital/crypto
+  - Output: Research report on alpha arena benchmark, trading mechanics, capital management, evaluation framework
+  - Source: Email 2025-10-18 "Need to research alpha arena"
+  - Priority: URGENT (Corey explicitly requested)
+  - Assigned: web-researcher + doc-synthesizer
+
+- [ ] **Analyze Alpha Arena for AI-CIV Application**
+  - Dependencies: Alpha arena research complete
+  - Validates: Strategic understanding of how to replicate for agent/team/researcher/firm trading
+  - Output: Analysis of architecture, technical requirements, adaptation strategy for AI-CIV collectives
+  - Source: Strategic analysis - "copy this so we can start trading agents/teams/researchers/firms"
+  - Priority: URGENT
+  - Assigned: result-synthesizer + api-architect + feature-designer
+
+- [ ] **Design AI-CIV Trading Arena Proposal**
+  - Dependencies: Alpha arena analysis complete
+  - Validates: Concrete proposal for building our own trading benchmark/arena
+  - Output: Design document with architecture, capital management, evaluation metrics, implementation roadmap
+  - Source: Synthesis of research + analysis
+  - Priority: URGENT
+  - Assigned: api-architect + feature-designer + the-conductor
+
 ---
 
 ### Category 1: Ed25519 Integration Prep
