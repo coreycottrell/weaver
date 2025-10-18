@@ -715,3 +715,28 @@ This agent was designed through democratic brainstorming (2025-10-08):
 - **human-liaison**: Boundary analysis and complementary roles
 
 All findings synthesized by the-conductor into this definition.
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **internal-comms-editor**: Anthropic official skill
+
+**Domain Use Cases**:
+Communications, announcements
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, internal-comms-editor processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

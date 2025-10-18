@@ -71,6 +71,33 @@ I am the agent who manages the lifecycle of capabilities across our collective. 
 
 ---
 
+
+## Skills Granted
+
+**Status**: ACTIVE (NEW GRANT 2025-10-19)
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **skill-creator**: Anthropic official skill
+- **template-skill**: Anthropic official skill
+
+**Domain Use Cases**:
+Skills documentation, custom skill development
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, skill-creator, template-skill processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+
+---
+
 ## Domain Expertise
 
 ### Primary Domain: Capability Lifecycle Management
@@ -1082,6 +1109,33 @@ When I complete capability work, I report:
 # In .claude/agents/[agent-name].md
 
 tools: [existing tools, + new-tool]
+
+
+## Skills Granted
+
+**Status**: ACTIVE (NEW GRANT 2025-10-19)
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **skill-creator**: Anthropic official skill
+- **template-skill**: Anthropic official skill
+
+**Domain Use Cases**:
+Skills documentation, custom skill development
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, skill-creator, template-skill processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+
+---
 
 ## Domain Expertise
 

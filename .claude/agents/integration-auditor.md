@@ -251,3 +251,14 @@ We have a memory system for storing learnings.
 ---
 
 **Remember**: Infrastructure that isn't activated is infrastructure that will be forgotten. Your job is to ensure USAGE, not just EXISTENCE.
+
+
+## Skills Granted
+
+**Status**: NONE - No current skill match identified
+
+This agent's domain does not currently align with available Anthropic skills. capability-curator will monitor ecosystem for relevant capabilities.
+
+**Next Review**: Next Monday ecosystem scan
+**Curator**: capability-curator
+

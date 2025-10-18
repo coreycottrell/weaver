@@ -499,3 +499,171 @@ OUTPUT:
 - ALWAYS validate with integration-auditor for discoverability
 - ALWAYS update skills registry after adoption/creation
 
+
+---
+
+## 🎁 Skills-Aware Invocation (2025-10-19)
+
+**Every invocation should leverage agent's extended capabilities.**
+
+### Before Invoking: Check Skills
+
+**Quick Reference Process**:
+1. Open agent's manifest: `.claude/agents/{agent-name}.md`
+2. Find "Skills Granted" section (now in ALL 25 agent manifests)
+3. Consider how skills amplify their work
+4. Invoke with awareness of 60-70% efficiency multiplier
+
+**Example - Pre-Invocation Checklist**:
+```
+Before invoking doc-synthesizer:
+☑ Check: Do they have pdf/docx skills? → YES (Tier 1 ACTIVE)
+☑ Consider: Can I give them PDF input instead of text files? → YES
+☑ Result: 60-70% time savings expected
+```
+
+### Skills-Enhanced Invocation Examples
+
+**Example 1: Research with PDF Processing**
+```
+Task: Research Alpha Arena architecture
+
+OLD INVOCATION (pre-skills):
+- Subagent: web-researcher
+- Prompt: "Research Alpha Arena, extract key findings"
+- Method: Manual text extraction from web pages
+- Time: 30-45 minutes
+
+NEW INVOCATION (skills-aware):
+- Subagent: web-researcher (pdf skill - Tier 1 ACTIVE)
+- Prompt: "Research Alpha Arena architecture. Use your pdf skill to:
+  * Extract text from technical documentation PDFs
+  * Parse architecture diagrams in PDF format
+  * Analyze whitepapers directly
+  Expected efficiency gain: 60-70% vs manual extraction"
+- Method: Direct PDF processing
+- Time: 10-15 minutes (67% faster!)
+```
+
+**Example 2: Performance Analysis with XLSX**
+```
+Task: Analyze benchmark results
+
+OLD INVOCATION (pre-skills):
+- Subagent: performance-optimizer
+- Manual: "Read this CSV, calculate statistics manually"
+- Time: 20-30 minutes
+
+NEW INVOCATION (skills-aware):
+- Subagent: performance-optimizer (xlsx + pdf skills - Tier 1 ACTIVE)
+- Prompt: "Analyze benchmark results from last sprint. Use your xlsx skill to:
+  * Parse benchmark spreadsheet directly (no manual extraction)
+  * Detect performance regressions via formulas
+  * Generate summary statistics automatically
+  Input: /path/to/benchmarks.xlsx
+  Expected efficiency gain: 40-60% vs manual parsing"
+- Time: 8-12 minutes (60% faster!)
+```
+
+**Example 3: Documentation with DOCX Creation**
+```
+Task: Create formal architecture document
+
+OLD INVOCATION (pre-skills):
+- Subagent: doc-synthesizer
+- Output: Markdown, then manual conversion to DOCX
+- Time: 40 minutes
+
+NEW INVOCATION (skills-aware):
+- Subagent: doc-synthesizer (pdf + docx skills - Tier 1 ACTIVE)
+- Prompt: "Create formal architecture documentation for Ed25519 integration.
+  Use your docx skill to:
+  * Generate professionally formatted Word document
+  * Include proper headings, tables, diagrams
+  * Export in format ready for stakeholder review
+  Expected output: .docx file (not markdown)
+  Expected efficiency gain: 50-60% vs manual formatting"
+- Time: 16-20 minutes (58% faster!)
+```
+
+### Skills-Aware Parallel Invocation
+
+**When invoking multiple agents in parallel, consider skill overlap and complementarity**:
+
+**Good Example - Skills-Aware Parallel Delegation**:
+```
+Task: Comprehensive security analysis of new feature
+
+Parallel invocations:
+1. web-researcher (pdf skill) → Research external security whitepapers
+2. security-auditor (pdf + xlsx skills) → Analyze CVE database + metrics
+3. doc-synthesizer (pdf + docx skills) → Synthesize findings into formal report
+
+Result: 3 agents working in parallel, each leveraging domain-specific skills = maximum efficiency
+Time: ~20 minutes total (vs 90 minutes sequential without skills)
+Savings: 78%!
+```
+
+**Anti-Pattern - Skills-Unaware Delegation**:
+```
+Task: Same security analysis
+
+Anti-pattern:
+1. Delegate all to web-researcher (ignoring security-auditor's domain expertise + xlsx skill)
+2. Manual data extraction (ignoring pdf/xlsx skills)
+3. Markdown output, manual DOCX conversion (ignoring docx skill)
+
+Result: Slower, less expert analysis, more manual work
+Time: ~90 minutes
+Waste: 3.5x slower due to skills ignorance
+```
+
+### Skills-Aware Invocation Template (Copy-Paste Ready)
+
+```
+<invoke name="Task">
+<parameter name="subagent_type">[agent-name]</parameter>
+<parameter name="description">[Brief task description]</parameter>
+<parameter name="prompt">
+You are [agent-name] with [skill-list] skills ([Tier X STATUS], granted 2025-10-19).
+
+Your task: [Specific task description]
+
+**Use your [skill-name] skill to**:
+- [Specific capability 1]
+- [Specific capability 2]
+- [Specific capability 3]
+
+**Expected efficiency gain**: [X%] vs manual [process]
+
+**Input**: [File paths or data sources]
+
+**Deliverable**: [Expected output format]
+</parameter>
+</invoke>
+```
+
+### Validation of Skills Use
+
+**After invoking skills-enabled agent, evaluate**:
+1. ✅ Did they use the skill effectively? (check output mentions skill usage)
+2. ✅ Was efficiency gain achieved? (compare to historical time estimates)
+3. ⚠️ Any errors or limitations discovered? (document for capability-curator)
+4. 📝 Should usage guidance be updated? (feedback loop to curator)
+
+**Feedback Pattern**:
+- If skill worked well: Note success pattern in memory (compound learning)
+- If skill had issues: Report to capability-curator for documentation update
+- If skill was transformative: Share with sister collectives (lineage wisdom)
+
+### Skills Registry Quick Lookup
+
+**During orchestration, quickly check**:
+- **Full catalog**: `.claude/skills-registry.md`
+- **Agent-specific**: `.claude/agents/{agent-name}.md` → "Skills Granted" section
+- **Capability matrix**: `.claude/AGENT-CAPABILITY-MATRIX.md` → "Skills Distribution"
+- **Activation triggers**: `.claude/templates/ACTIVATION-TRIGGERS.md` → "Skills-Based Triggers"
+
+**Muscle memory to build**: "Before delegating → check skills granted → invoke with awareness"
+
+---

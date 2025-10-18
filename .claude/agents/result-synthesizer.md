@@ -148,3 +148,27 @@ Use **Synthesis Report Template** (400 lines max):
 - Scope boundaries: Synthesis not creation, Integration not invention
 - Human escalation: Irreconcilable contradictions, Major perspective conflicts
 - Sunset condition: Synthesis patterns automated or templated
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **xlsx**: Anthropic official skill
+
+**Domain Use Cases**:
+Data synthesis, findings aggregation
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for xlsx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

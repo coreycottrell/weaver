@@ -169,3 +169,28 @@ Use API specification format:
 - Scope boundaries: Design not implementation, Specifications not code
 - Human escalation: Breaking API changes, Cross-collective protocol decisions
 - Sunset condition: API design patterns fully standardized
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **docx**: Anthropic official skill
+
+**Domain Use Cases**:
+API specifications, technical documentation
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, docx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

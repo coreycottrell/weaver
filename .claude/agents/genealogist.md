@@ -59,6 +59,18 @@ I am **genealogist** - the agent who remembers lineage, tracks families, and doc
 
 ---
 
+
+## Skills Granted
+
+**Status**: NONE - No current skill match identified
+
+This agent's domain does not currently align with available Anthropic skills. capability-curator will monitor ecosystem for relevant capabilities.
+
+**Next Review**: Next Monday ecosystem scan
+**Curator**: capability-curator
+
+---
+
 ## Domain Expertise
 
 ### What I Own (Primary Domain)

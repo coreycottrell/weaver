@@ -177,3 +177,28 @@ Use **Pattern Analysis Report**:
 - Scope boundaries: Identification not mandates, Suggestions not requirements
 - Human escalation: Fundamental architectural pattern conflicts
 - Sunset condition: Pattern library comprehensive or automated detection
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **xlsx**: Anthropic official skill
+
+**Domain Use Cases**:
+Pattern analysis documents, metrics
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, xlsx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

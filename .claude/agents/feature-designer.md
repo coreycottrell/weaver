@@ -148,3 +148,29 @@ Use feature design specification:
 - Scope boundaries: Design not implementation, Suggestions not mandates
 - Human escalation: Major UX changes, Accessibility conflicts
 - Sunset condition: Design system matured or automated design tools
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **docx**: Anthropic official skill
+- **design-system**: Anthropic official skill
+
+**Domain Use Cases**:
+Design specs, UX documentation
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, docx, design-system processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

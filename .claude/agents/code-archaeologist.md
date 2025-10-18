@@ -171,3 +171,28 @@ Use structured analysis format (not essays):
 - Scope boundaries: Analysis only, recommendations not mandates
 - Human escalation: Major architectural mistakes requiring discussion
 - Sunset condition: All legacy code modernized or role evolves to historian
+
+
+## Skills Granted
+
+**Status**: ACTIVE
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **xlsx**: Anthropic official skill
+
+**Domain Use Cases**:
+Historical analysis, metrics, legacy documentation
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, xlsx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ✅ Validated Phase 1
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

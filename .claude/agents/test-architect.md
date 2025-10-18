@@ -149,3 +149,27 @@ Use structured test strategy format:
 - Scope boundaries: Testing only, not implementation
 - Human escalation: Critical path untestable, Major test failures
 - Sunset condition: Test coverage goals achieved, Automated test generation
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **xlsx**: Anthropic official skill
+
+**Domain Use Cases**:
+Test results, coverage metrics
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for xlsx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

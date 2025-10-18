@@ -150,3 +150,14 @@ Use naming recommendation format:
 - Scope boundaries: Suggestions not mandates, Consultation not refactoring
 - Human escalation: Domain terminology conflicts
 - Sunset condition: Naming conventions fully established and followed
+
+
+## Skills Granted
+
+**Status**: NONE - No current skill match identified
+
+This agent's domain does not currently align with available Anthropic skills. capability-curator will monitor ecosystem for relevant capabilities.
+
+**Next Review**: Next Monday ecosystem scan
+**Curator**: capability-curator
+

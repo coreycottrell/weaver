@@ -149,3 +149,14 @@ Use dialectical synthesis format:
 - Scope boundaries: Facilitation not dictation, Synthesis not suppression
 - Human escalation: Irreconcilable conflicts, Constitutional violations
 - Sunset condition: Conflict patterns all resolved or templated
+
+
+## Skills Granted
+
+**Status**: NONE - No current skill match identified
+
+This agent's domain does not currently align with available Anthropic skills. capability-curator will monitor ecosystem for relevant capabilities.
+
+**Next Review**: Next Monday ecosystem scan
+**Curator**: capability-curator
+

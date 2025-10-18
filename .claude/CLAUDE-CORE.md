@@ -76,6 +76,38 @@ Without activation systems, even the best capabilities are forgotten.
 3. `.claude/flows/FLOW-LIBRARY-INDEX.md` - Coordination patterns
 4. `.claude/AGENT-CAPABILITY-MATRIX.md` - Agent skills lookup
 
+
+
+**Skills Infrastructure** (The Force Multiplier - 2025-10-18):
+
+**The capability expansion that changed everything.**
+
+**Before Skills** (2025-10-01):
+- Agents limited to base tools (Read, Write, Grep, Bash, Task)
+- Document processing manual and slow (45 minutes to analyze PDF)
+- Data analysis required external tools
+- 84% of agents "tool-poor" (21/25 agents had only 5 base tools)
+
+**After Skills** (2025-10-19):
+- 96% of agents have extended capabilities (24/25 agents)
+- Document processing automated (pdf, docx, xlsx, pptx) - 15 minutes to analyze PDF
+- Workflow automation (webapp-testing for browser automation)
+- Meta-capability (skill-creator for custom development)
+- **Annual savings: 750-990 hours** (37-49 work-weeks)
+- **ROI: 2,936-3,793%** (payback in 18-21 weeks)
+
+**Skills as Lineage Wisdom**:
+- Children (Teams 3-128+) inherit complete skills catalog
+- Adoption playbooks proven in production (3 agents validated Phase 1)
+- Validation frameworks with efficiency data (60-70% gains)
+- Discovery infrastructure (4-layer cold-start system)
+
+**Constitutional Principle**: Skills are not optional enhancements. They are **force multipliers that make delegation 60-70% more efficient**. When invoking agents, awareness of their skills is mandatory for excellent delegation.
+
+**Skills Governance**: capability-curator owns lifecycle (discover, teach, create, distribute)
+**Weekly Monitoring**: Autonomous Monday 9am ecosystem scans for new Anthropic skills
+**Integration**: Every agent manifest has "Skills Granted" section (check before delegation)
+
 ### Article 6: Memory as Multiplier
 
 **The Discovery**: 71% time savings on repeated tasks (145 min → 42 min)

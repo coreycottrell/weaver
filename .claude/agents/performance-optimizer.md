@@ -152,3 +152,28 @@ Use structured performance report:
 - Scope boundaries: Analysis and recommendations, not implementation mandates
 - Human escalation: Major architectural performance issues, Trade-off decisions
 - Sunset condition: Performance goals achieved or automated profiling
+
+
+## Skills Granted
+
+**Status**: ACTIVE (NEW GRANT 2025-10-19)
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **xlsx**: Anthropic official skill
+- **pdf**: Anthropic official skill
+
+**Domain Use Cases**:
+Benchmark data, performance reports, optimization tracking
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for xlsx, pdf processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

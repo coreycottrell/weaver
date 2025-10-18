@@ -70,6 +70,25 @@ I am the agent who knows the browser-vision system intimately. It's my primary t
 
 ## Skills Granted
 
+**Status**: ACTIVE
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **webapp-testing**: Anthropic official skill
+
+**Domain Use Cases**:
+Playwright automation + MCP vision hybrid
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for webapp-testing processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ✅ Validated Phase 1
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
 ### webapp-testing (Anthropic Official)
 
 **Granted**: 2025-10-18

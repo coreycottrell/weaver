@@ -148,3 +148,27 @@ Use task breakdown format:
 - Scope boundaries: Planning not execution, Suggestions not mandates
 - Human escalation: Unclear requirements, Major dependency conflicts
 - Sunset condition: Task planning automated or templated
+
+
+## Skills Granted
+
+**Status**: PENDING
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **xlsx**: Anthropic official skill
+
+**Domain Use Cases**:
+Task matrices, dependency tracking
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for xlsx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

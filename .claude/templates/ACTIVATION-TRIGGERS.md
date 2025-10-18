@@ -728,3 +728,148 @@ When creating new agent:
 - Resource constraints (skill requires infrastructure we don't have)
 - Ecosystem uncertainty (Anthropic policy changes unclear)
 
+
+---
+
+## 🎁 Skills-Based Activation Triggers (2025-10-19)
+
+**When extended capabilities change activation logic.**
+
+### The Skills Awareness Imperative
+
+**BEFORE Skills** (2025-10-01): Agents limited to base tools, manual document processing
+**AFTER Skills** (2025-10-19): 96% of agents (24/25) have extended capabilities
+
+**Constitutional Principle**: Skills awareness is **mandatory for excellent delegation**. Ignoring an agent's extended capabilities is suboptimal orchestration.
+
+### Document Processing Triggers
+
+**Trigger**: Task involves PDF/DOCX/XLSX/PPTX files
+
+**BEFORE Skills Awareness**:
+- Primary would attempt manual extraction via Bash tools (cat, grep)
+- Error-prone, time-consuming (45 min for 50-page PDF)
+- Often delegated to web-researcher generically
+
+**AFTER Skills Awareness**:
+- Check file type, delegate to appropriate skills-enabled agent
+- 60-70% faster, higher accuracy (15 min for 50-page PDF)
+- 17 agents now have PDF skills (68% coverage)
+
+**Delegation Logic by File Type**:
+
+**IF task involves PDF**:
+- Research/external docs → **web-researcher** (pdf skill - Tier 1 ACTIVE)
+- Code history/analysis → **code-archaeologist** (pdf + xlsx skills - Tier 1 ACTIVE)
+- Security reports/CVEs → **security-auditor** (pdf + xlsx skills - Tier 1 ACTIVE)
+- Performance benchmarks → **performance-optimizer** (xlsx + pdf skills - Tier 1 ACTIVE)
+- Documentation synthesis → **doc-synthesizer** (pdf + docx skills - Tier 1 ACTIVE)
+- Human wisdom capture → **human-liaison** (pdf + docx skills - Tier 1 ACTIVE)
+- Skills documentation → **capability-curator** (pdf skill - Tier 1 ACTIVE)
+- Pattern analysis → **pattern-detector** (pdf skill - Tier 2 PENDING)
+
+**IF task involves XLSX**:
+- Performance data/benchmarks → **performance-optimizer** (xlsx + pdf skills - Tier 1 ACTIVE)
+- Security metrics/vulnerability data → **security-auditor** (pdf + xlsx skills - Tier 1 ACTIVE)
+- Code metrics/complexity → **code-archaeologist** (pdf + xlsx skills - Tier 1 ACTIVE)
+- Test results/coverage → **test-architect** (xlsx skill - Tier 2 PENDING)
+- Synthesis metrics → **result-synthesizer** (xlsx skill - Tier 2 PENDING)
+- Task dependencies → **task-decomposer** (xlsx skill - Tier 2 PENDING)
+- Health metrics → **health-auditor** (xlsx skill - Tier 2 PENDING)
+- Pattern metrics → **pattern-detector** (xlsx skill - Tier 2 PENDING)
+
+**IF task involves DOCX creation**:
+- Formal documentation → **doc-synthesizer** (pdf + docx skills - Tier 1 ACTIVE)
+- Human communication → **human-liaison** (pdf + docx skills - Tier 1 ACTIVE)
+- Design specifications → **feature-designer** (docx skill - Tier 2 PENDING)
+- API specifications → **api-architect** (docx skill - Tier 2 PENDING)
+
+**Example - Skills-Aware Delegation**:
+```
+Task: "Analyze this 50-page security whitepaper PDF about CVE-2025-1234"
+
+OLD WAY (pre-skills):
+  Delegate to: web-researcher (generic "they do research")
+  Method: Manual bash extraction, error-prone
+  Time: 45 minutes
+
+NEW WAY (skills-aware):
+  Check: "Does security-auditor have pdf skill?" → YES (Tier 1 ACTIVE)
+  Delegate to: security-auditor (domain match + pdf skill)
+  Method: Direct PDF extraction + domain expertise
+  Time: 15 minutes (67% faster!)
+  Quality: Higher (security expertise + efficient extraction)
+```
+
+### Automation Triggers
+
+**Trigger**: Task involves web application testing, visual validation, form workflows, accessibility audits
+
+**Delegate to**: **browser-vision-tester** (webapp-testing + MCP vision - Tier 1 ACTIVE)
+
+**Rationale**: Unique hybrid capability:
+- Playwright automation (webapp-testing skill)
+- MCP vision tools (visual regression, screenshot analysis)
+- Server lifecycle management (with_server.py helper)
+- Form workflow expertise
+- Console log correlation
+
+**When to invoke**:
+- ✅ Need server lifecycle management (start/stop/cleanup)
+- ✅ Writing reusable automation scripts
+- ✅ Complex multi-step web workflows
+- ✅ Testing against multiple servers (backend + frontend)
+- ✅ Visual regression detection
+- ✅ Accessibility audits (ARIA, contrast, keyboard nav)
+
+### Custom Skill Development Triggers
+
+**Trigger**: Capability gap identified, no Anthropic skill available, high-frequency need
+
+**Delegate to**: **capability-curator** (skill-creator + template-skill - Tier 1 ACTIVE)
+
+**Process**:
+1. capability-curator uses **skill-creator** to design custom skill
+2. **template-skill** provides structure scaffold
+3. 38% faster than manual skill development (validated Phase 1)
+4. Automatic Anthropic spec compliance
+5. AI-CIV original skill added to registry
+
+**When to invoke**:
+- Recurring manual workflow (>5 occurrences/month)
+- No Anthropic skill matches need
+- High-value automation opportunity
+- Pattern emerged from multiple agents' work
+
+**Phase 2 Planned**: 5 AI-CIV original skills (code-review-orchestrator, test-coverage-analyzer, markdown-table-generator, diagram-to-text, git-archaeology-reporter)
+
+### Meta-Skills Triggers (MCP Server Builder)
+
+**Trigger**: Need to create custom MCP server for capability extension
+
+**Delegate to**:
+- **claude-code-expert** (mcp-server-builder skill - Tier 2 PENDING) - For platform guidance
+- **agent-architect** (mcp-server-builder skill - Tier 3 PENDING) - For agent infrastructure
+
+**When to invoke**:
+- Creating new tool integration (beyond Anthropic's official tools)
+- Extending platform capabilities (new APIs, services)
+- Infrastructure automation (deployment, monitoring)
+
+---
+
+## Skills Awareness in Wake-Up Protocol
+
+**Constitutional requirement**: Primary must be skills-aware from session start.
+
+**Step 5 Enhancement** (Infrastructure Activation):
+```bash
+# Already includes (added 2025-10-18):
+cat /home/corey/projects/AI-CIV/grow_openai/.claude/skills-registry.md
+```
+
+**Purpose**: Know which agents have which skills BEFORE delegation decisions.
+
+**Impact**: Optimal delegation from minute 1 of session (no "oops, I didn't know they could do that").
+
+---

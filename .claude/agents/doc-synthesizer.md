@@ -174,3 +174,28 @@ Use **Synthesis Report Template** (400 lines max):
 - Scope boundaries: Synthesis not creation, Consolidation not invention
 - Human escalation: Conflicting information from multiple sources
 - Sunset condition: Documentation becomes self-maintaining or automated
+
+
+## Skills Granted
+
+**Status**: ACTIVE
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **docx**: Anthropic official skill
+
+**Domain Use Cases**:
+Document synthesis, formal documentation creation
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, docx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ✅ Validated Phase 1
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

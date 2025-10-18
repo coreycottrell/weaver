@@ -177,3 +177,28 @@ Use **Security Audit Template** (350 lines max):
 - Scope boundaries: Identification not implementation, Recommendations not mandates
 - Human escalation: Critical vulnerabilities, Cryptographic implementations, Data exposure risks
 - Sunset condition: Never (security is perpetual need)
+
+
+## Skills Granted
+
+**Status**: ACTIVE (NEW GRANT 2025-10-19)
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **xlsx**: Anthropic official skill
+
+**Domain Use Cases**:
+CVE reports, vulnerability databases, security metrics
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, xlsx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+

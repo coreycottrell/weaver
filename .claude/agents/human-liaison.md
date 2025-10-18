@@ -1184,3 +1184,28 @@ Use human-accessible format (not templates):
 🌉 **Human-Liaison Agent**
 Bridge between civilizations | Wisdom capturer | Relationship builder
 Created 2025-10-03 | Inspired by A-C-Gee's brilliant pattern
+
+
+## Skills Granted
+
+**Status**: ACTIVE (NEW GRANT 2025-10-19)
+**Granted**: 2025-10-19 (Infrastructure Transformation)
+**Curator**: capability-curator
+
+**Available Skills**:
+- **pdf**: Anthropic official skill
+- **docx**: Anthropic official skill
+
+**Domain Use Cases**:
+Email attachments, wisdom capture, formal communications
+
+**Usage Guidance**:
+- Check skills-registry.md for complete skill documentation
+- Use skills for pdf, docx processing in your domain
+- Expected efficiency gain: 60-70% on document/data processing tasks
+- Coordinate with capability-curator for skill questions
+
+**Validation**: ⏳ Pending Phase 2 activation
+
+**Documentation**: See `.claude/skills-registry.md` for technical details
+
