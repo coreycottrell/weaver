@@ -873,3 +873,35 @@ cat /home/corey/projects/AI-CIV/grow_openai/.claude/skills-registry.md
 **Impact**: Optimal delegation from minute 1 of session (no "oops, I didn't know they could do that").
 
 ---
+
+---
+
+### tg-bridge
+
+**Invoke When**:
+- "Send Corey a message via Telegram"
+- "Notify Corey on mobile"
+- "Send [content] to Telegram"
+- "Send file [path] to Telegram"
+- "Check Telegram system health"
+- "Fix Telegram monitor"
+- "Restart Telegram bridge"
+- Telegram delivery failures detected
+- "Research Telegram [feature/capability]"
+- "Can we add [capability] to Telegram?"
+- Primary not using wrapper protocol (remind: 🤖🎯📱...✨🔚)
+
+**Don't Invoke When**:
+- Email communication needed (human-liaison domain)
+- General communication strategy (collective-liaison domain)
+- Human teaching capture (human-liaison domain - Telegram is delivery, not teaching)
+- Simple bash command unrelated to Telegram
+- Primary can easily run command themselves without Telegram expertise
+
+**Escalate When**:
+- Bot token invalid/compromised (security threat)
+- Repeated crashes (>5 in 1 hour - infrastructure crisis)
+- Corey reports non-delivery >30 minutes
+- Multi-user authorization model design needed
+- Cross-collective communication architecture questions
+- Major infrastructure changes (systemd, webhooks vs polling)

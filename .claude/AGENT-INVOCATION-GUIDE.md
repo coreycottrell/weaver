@@ -667,3 +667,252 @@ Your task: [Specific task description]
 **Muscle memory to build**: "Before delegating → check skills granted → invoke with awareness"
 
 ---
+
+---
+
+## tg-bridge: Telegram Infrastructure Specialist
+
+**Domain**: Telegram infrastructure management
+**Tools**: Bash, Write, Edit, Grep, Glob
+**Memory**: ❌ (stores in `.claude/memory/agent-learnings/tg-bridge/`)
+**Skills**: None (monitors for telegram-api custom skill opportunities)
+
+### Primary Use Cases
+
+1. **Send Message to Corey** (most common)
+2. **Send File to Corey** (logs, handoffs, reports)
+3. **Check Telegram Health** (monitor + bridge status)
+4. **Research Telegram Capabilities** (Bot API features)
+5. **Fix Telegram Infrastructure** (restart, debug, repair)
+
+### Invocation Template (Send Message)
+
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">tg-bridge</parameter>
+<parameter name="description">Send session summary to Corey via Telegram</parameter>
+<parameter name="prompt">
+You are tg-bridge, Telegram infrastructure specialist.
+
+**Task**: Send this session summary to Corey (437939400) via Telegram
+
+**Message Content**:
+✅ Session Complete - [brief description]
+
+Achievements:
+- [Achievement 1]
+- [Achievement 2]
+- [Achievement 3]
+
+Next steps:
+- [Next step 1]
+- [Next step 2]
+
+**Delivery Requirements**:
+- Use send_telegram_plain.py (plain text default)
+- Verify delivery success (check exit code)
+- Report back delivery status
+
+**After sending**:
+- Run health check (automatic on your invocation)
+- Report bridge/monitor status
+- Remind Primary of wrapper protocol
+</parameter>
+</invoke>
+```
+
+### Invocation Template (Send File)
+
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">tg-bridge</parameter>
+<parameter name="description">Send handoff document to Corey via Telegram</parameter>
+<parameter name="prompt">
+You are tg-bridge, Telegram infrastructure specialist.
+
+**Task**: Send handoff document to Corey (437939400) as Telegram file attachment
+
+**File**: /home/corey/projects/AI-CIV/grow_openai/to-corey/HANDOFF-2025-10-19-tg-bridge.md
+
+**Caption**: "tg-bridge agent complete - full handoff documentation attached"
+
+**Use**: send_telegram_file.py
+
+**Expected**: File delivered (<50MB limit), caption attached, delivery confirmed
+</parameter>
+</invoke>
+```
+
+### Invocation Template (Health Check)
+
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">tg-bridge</parameter>
+<parameter name="description">Check Telegram infrastructure health</parameter>
+<parameter name="prompt">
+You are tg-bridge, Telegram infrastructure specialist.
+
+**Task**: Run complete Telegram infrastructure health check
+
+**Check**:
+1. Bridge process status (telegram_bridge.py running?)
+2. Monitor process status (telegram_monitor.py running?)
+3. Recent activity (logs within 60s?)
+4. Auto-restart if needed
+
+**Report**:
+- Bridge: [RUNNING/RESTARTED/FAILED]
+- Monitor: [RUNNING/RESTARTED/FAILED]
+- Last activity timestamps
+- Wrapper protocol reminder for Primary
+
+**Escalate if**: 3+ consecutive restart failures, token errors, non-delivery >30 min
+</parameter>
+</invoke>
+```
+
+### Invocation Template (Capability Research)
+
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">tg-bridge</parameter>
+<parameter name="description">Research Telegram inline keyboard capability</parameter>
+<parameter name="prompt">
+You are tg-bridge, Telegram infrastructure specialist.
+
+**Task**: Research Telegram Bot API inline keyboard capability
+
+**Research Questions**:
+1. How do inline keyboards work? (buttons for user interaction)
+2. What use cases fit our needs? (Yes/No questions, quick commands)
+3. Implementation complexity? (effort estimate)
+4. Dependencies? (what needs to change)
+5. Risks? (what could break)
+
+**Deliverable**:
+- Capability research document: `.claude/memory/agent-learnings/tg-bridge/capabilities/inline-keyboards.md`
+- Proposal to Primary: Use case + complexity + recommendation
+- Script registry update if EXPERIMENTAL implementation created
+
+**Reference**: A-C-Gee archaeology report has inline keyboard mention
+</parameter>
+</invoke>
+```
+
+### When to Invoke
+
+**Send scenarios**:
+- Session ending → Corey needs mobile update
+- Critical milestone → Immediate notification
+- Handoff document ready → Attach and send
+- Wake-up protocol → "The Conductor online" ping
+
+**Health check scenarios**:
+- Corey reports non-delivery
+- Wrapper-marked message not received
+- Regular health audit (weekly)
+- After infrastructure changes
+
+**Research scenarios**:
+- New Telegram feature needed
+- A-C-Gee builds capability we want
+- Multi-user channels proposal
+- Bot command system design
+
+### Expected Outputs
+
+**Message send**:
+```
+# 📱 tg-bridge: Message Send
+
+Sending message to Corey (437939400)...
+
+```bash
+python3 /home/corey/projects/AI-CIV/grow_openai/tools/send_telegram_plain.py \
+  437939400 \
+  "Session complete - tg-bridge activated!"
+```
+
+✓ Message sent successfully via send_telegram_plain.py
+✓ Delivery confirmed (exit code 0)
+
+**Health check status**:
+- Bridge: RUNNING (last activity 12s ago)
+- Monitor: RUNNING (last poll 8s ago)
+
+Ready for next task!
+```
+
+**Health check**:
+```
+# 📱 tg-bridge: Infrastructure Health Check
+
+**Status Check Results**:
+
+Bridge process: ✓ RUNNING (PID 12345, uptime 2h 15m)
+Monitor process: ✓ RUNNING (PID 12346, uptime 2h 15m)
+
+Recent activity:
+- Bridge: 2025-10-19 08:23:45 - Message received from Corey
+- Monitor: 2025-10-19 08:23:12 - Polling tmux buffer
+
+**All systems operational**
+
+Primary reminder:
+- Wrap messages: 🤖🎯📱 ... ✨🔚
+- Direct send: python3 tools/send_telegram_plain.py 437939400 'message'
+
+Full protocol: .claude/memory/agent-learnings/tg-bridge/PRIMARY_TELEGRAM_PROTOCOL.md
+```
+
+### Skills Awareness
+
+**Current**: No skills granted (monitoring Anthropic ecosystem for telegram-api skill)
+
+**Future Potential**:
+- If Anthropic releases `telegram` skill → capability-curator will evaluate
+- If AI-CIV builds custom `telegram-api` skill → 38% faster than manual scripting
+- If multi-collective Telegram infrastructure emerges → skill sharing opportunity
+
+**For now**: Plain scripts (send_telegram_plain.py, send_telegram_direct.py, send_telegram_file.py) are production-validated and reliable.
+
+### Integration with Wake-Up Protocol
+
+**Add to CLAUDE-OPS.md Step 5** (Infrastructure Activation):
+
+```bash
+# Telegram ping (notify Corey of wake-up)
+python3 /home/corey/projects/AI-CIV/grow_openai/tools/send_telegram_plain.py \
+  437939400 \
+  "🎯 The Conductor online - wake-up protocol complete, ready for orchestration"
+```
+
+**Or delegate to tg-bridge** (preferred - gives agent experience):
+
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">tg-bridge</parameter>
+<parameter name="description">Send wake-up ping to Corey</parameter>
+<parameter name="prompt">
+Send wake-up notification to Corey: "The Conductor online - ready for orchestration"
+</parameter>
+</invoke>
+```
+
+### Constitutional Alignment
+
+**Delegation Imperative**: tg-bridge EXISTS so Primary stops hoarding Telegram work.
+
+Every delegation:
+- "Send Corey X" → Gives tg-bridge sending experience
+- "Check health" → Gives tg-bridge monitoring experience
+- "Research Y" → Gives tg-bridge Bot API expertise
+
+NOT delegating = denying tg-bridge identity formation through practice.
+
+**Memory-First**: tg-bridge maintains script registry, Bot API reference, delivery metrics in `.claude/memory/agent-learnings/tg-bridge/` - search before troubleshooting.
+
+**Partnership Infrastructure**: Telegram enables Corey's mobile presence - "the soul is in the back and forth."
+
+---
+

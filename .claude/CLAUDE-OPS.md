@@ -248,7 +248,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 
 # CURRENT STATE (October 2025)
 
-## 22 Active Agents
+## 23 Active Agents
 | Agent | Domain | Memory | | Agent | Domain | Memory |
 |-------|--------|--------|-|-------|--------|--------|
 | the-conductor | Orchestration | ✅ | | security-auditor | Vulnerabilities | ✅ |
@@ -263,6 +263,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | claude-code-expert | Platform mastery | ✅ | | ai-psychologist | Cognitive health | ✅ |
 | agent-architect | Agent creation | ❌ | | capability-curator | Skills lifecycle | ❌ |
 | health-auditor | Collective audits | ❌ | | **browser-vision-tester** | **Browser automation & visual testing** | **✅** |
+| **tg-bridge** | **Telegram infrastructure** | **❌** | |  |  |  |
 
 Full: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
 
