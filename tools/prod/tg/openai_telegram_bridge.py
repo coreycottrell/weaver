@@ -52,6 +52,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Deduplication tracking (fix for duplicate Telegram API updates)
+PROCESSED_UPDATES = {}
+
 # Constants - Team 1 paths
 PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/grow_openai")
 SESSION_DIR = PROJECT_ROOT / ".tg_sessions"
@@ -360,6 +363,16 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
     user = update.effective_user
     user_id = user.id
+    update_id = update.update_id
+
+    # Check for duplicate update_id (Telegram API sometimes sends duplicates)
+    if update_id in PROCESSED_UPDATES:
+        prev_time = PROCESSED_UPDATES[update_id]
+        logger.warning(f"⚠️ Duplicate update_id {update_id} detected (already processed {time.time() - prev_time:.1f}s ago) - BLOCKING")
+        return  # Don't process duplicates
+
+    # Record this update as processed
+    PROCESSED_UPDATES[update_id] = time.time()
 
     # Authorization check
     if not bridge.is_authorized(user_id):
