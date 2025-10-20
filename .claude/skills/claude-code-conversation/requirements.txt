@@ -1,0 +1,9 @@
+# claude-code-conversation dependencies
+
+# File watching (choose one)
+inotify-simple>=1.3.5  # Linux (recommended)
+watchdog>=2.1.0  # Cross-platform fallback
+
+# Optional enhancements
+# pygments>=2.10.0  # Syntax highlighting for HTML export
+# markdown>=3.4.0  # Enhanced Markdown export

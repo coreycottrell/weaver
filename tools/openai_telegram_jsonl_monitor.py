@@ -22,12 +22,12 @@ State File:
     .tg_sessions/jsonl_monitor_state.json
 
 Logs:
-    /tmp/telegram_jsonl_monitor.log (main log)
-    /tmp/telegram_jsonl_monitor_error.log (errors only)
+    /tmp/openai_telegram_jsonl_monitor.log (main log)
+    /tmp/openai_telegram_jsonl_monitor_error.log (errors only)
 
-Author: coder (AI-CIV A-C-Gee Civilization)
+Author: Team 1 (AI-CIV grow_openai)
 Date: 2025-10-20
-Status: PRODUCTION (offset persistence fixed)
+Status: PRODUCTION - Project-specific naming to avoid ACG collision
 """
 
 import sys
@@ -47,8 +47,8 @@ import argparse
 PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/grow_openai")
 CONFIG_FILE = PROJECT_ROOT / "config/telegram_config.json"
 STATE_FILE = PROJECT_ROOT / ".tg_sessions/jsonl_monitor_state.json"
-LOG_FILE = Path("/tmp/telegram_jsonl_monitor_openai.log")
-ERROR_LOG_FILE = Path("/tmp/telegram_jsonl_monitor_openai_error.log")
+LOG_FILE = Path("/tmp/openai_telegram_jsonl_monitor.log")
+ERROR_LOG_FILE = Path("/tmp/openai_telegram_jsonl_monitor_error.log")
 
 # Default configuration
 DEFAULT_CONFIG = {

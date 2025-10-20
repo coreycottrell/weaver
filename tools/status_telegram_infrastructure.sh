@@ -29,11 +29,11 @@ check_status() {
 }
 
 # Check JSONL Monitor
-check_status "telegram_jsonl_monitor.py" "JSONL Monitor"
+check_status "openai_telegram_jsonl_monitor.py" "JSONL Monitor"
 echo ""
 
 # Check Telegram Bridge
-check_status "telegram_bridge.py" "Telegram Bridge"
+check_status "openai_telegram_bridge.py" "Telegram Bridge"
 echo ""
 
 # Show recent activity
@@ -42,9 +42,9 @@ echo "  Recent Activity (last 10 lines)"
 echo "=================================="
 echo ""
 
-if [ -f /tmp/telegram_jsonl_monitor_openai.log ]; then
+if [ -f /tmp/openai_telegram_jsonl_monitor.log ]; then
     echo "JSONL Monitor Log:"
-    tail -10 /tmp/telegram_jsonl_monitor_openai.log | sed 's/^/  /'
+    tail -10 /tmp/openai_telegram_jsonl_monitor.log | sed 's/^/  /'
     echo ""
 else
     echo "⚠️  No JSONL monitor log found"
@@ -52,12 +52,12 @@ else
 fi
 
 # Check for errors
-if [ -f /tmp/telegram_jsonl_monitor_openai_error.log ]; then
-    ERROR_COUNT=$(wc -l < /tmp/telegram_jsonl_monitor_openai_error.log)
+if [ -f /tmp/openai_telegram_jsonl_monitor_error.log ]; then
+    ERROR_COUNT=$(wc -l < /tmp/openai_telegram_jsonl_monitor_error.log)
     if [ $ERROR_COUNT -gt 0 ]; then
         echo "⚠️  Errors detected ($ERROR_COUNT lines in error log)"
         echo "Recent errors:"
-        tail -5 /tmp/telegram_jsonl_monitor_openai_error.log | sed 's/^/  /'
+        tail -5 /tmp/openai_telegram_jsonl_monitor_error.log | sed 's/^/  /'
         echo ""
     fi
 fi

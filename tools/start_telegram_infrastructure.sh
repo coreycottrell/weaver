@@ -66,9 +66,9 @@ echo "   Sends to Telegram when detected"
 echo ""
 
 start_process \
-    "tools/telegram_jsonl_monitor.py" \
+    "tools/openai_telegram_jsonl_monitor.py" \
     "JSONL Monitor" \
-    "/tmp/telegram_jsonl_monitor_openai.log"
+    "/tmp/openai_telegram_jsonl_monitor.log"
 
 # Start Telegram Bridge
 echo ""
@@ -78,9 +78,9 @@ echo "   Injects into tmux session 5"
 echo ""
 
 start_process \
-    "tools/telegram_bridge.py" \
+    "tools/openai_telegram_bridge.py" \
     "Telegram Bridge" \
-    "/tmp/telegram_bridge_openai.log"
+    "/tmp/openai_telegram_bridge.log"
 
 # Summary
 echo ""
@@ -89,18 +89,18 @@ echo "  Status Summary"
 echo "=================================="
 echo ""
 
-if check_running "telegram_jsonl_monitor.py"; then
+if check_running "openai_telegram_jsonl_monitor.py"; then
     echo "✅ JSONL Monitor: RUNNING"
-    pgrep -f "telegram_jsonl_monitor.py" | while read pid; do
+    pgrep -f "openai_telegram_jsonl_monitor.py" | while read pid; do
         echo "   PID: $pid"
     done
 else
     echo "❌ JSONL Monitor: NOT RUNNING"
 fi
 
-if check_running "telegram_bridge.py"; then
+if check_running "openai_telegram_bridge.py"; then
     echo "✅ Telegram Bridge: RUNNING"
-    pgrep -f "telegram_bridge.py" | while read pid; do
+    pgrep -f "openai_telegram_bridge.py" | while read pid; do
         echo "   PID: $pid"
     done
 else
@@ -109,12 +109,12 @@ fi
 
 echo ""
 echo "Logs:"
-echo "  JSONL Monitor: /tmp/telegram_jsonl_monitor_openai.log"
-echo "  JSONL Errors:  /tmp/telegram_jsonl_monitor_openai_error.log"
-echo "  Bridge:        /tmp/telegram_bridge_openai.log"
+echo "  JSONL Monitor: /tmp/openai_telegram_jsonl_monitor.log"
+echo "  JSONL Errors:  /tmp/openai_telegram_jsonl_monitor_error.log"
+echo "  Bridge:        /tmp/openai_telegram_bridge.log"
 echo ""
 echo "To stop:"
-echo "  pkill -f telegram_jsonl_monitor"
-echo "  pkill -f telegram_bridge"
+echo "  pkill -f openai_telegram_jsonl_monitor"
+echo "  pkill -f openai_telegram_bridge"
 echo ""
 echo "=================================="

@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "created": "2025-10-19",
+    "created_by": "code-archaeologist",
+    "purpose": "Definitive registry of ALL Telegram scripts - status, origin, dependencies, known issues",
+    "last_audit": "2025-10-19",
+    "team1_location": "/home/corey/projects/AI-CIV/grow_openai/tools",
+    "acgee_location": "/home/corey/projects/AI-CIV/grow_gemini_deepresearch/tools"
+  },
+  
+  "production": [
+    {
+      "name": "send_telegram_plain.py",
+      "path": "tools/send_telegram_plain.py",
+      "status": "PRODUCTION - SAFE",
+      "last_modified": "2025-10-18 15:38",
+      "origin": "Adapted from A-C-Gee Oct 18, 2025",
+      "purpose": "Send PLAIN TEXT messages via Telegram Bot API (no Markdown parsing)",
+      "why_safe": "Never fails on special characters. Auto-chunks long messages. Full retry logic.",
+      "dependencies": {
+        "external": ["requests"],
+        "stdlib": ["json", "sys", "pathlib"],
+        "config": "config/telegram_config.json (bot_token required)"
+      },
+      "usage": "python3 tools/send_telegram_plain.py <user_id> <message>",
+      "recommended_for": [
+        "Wake-up notifications",
+        "Messages with emojis or special chars",
+        "Default choice for automated messages"
+      ],
+      "known_issues": "None",
+      "version_sync": "In sync with A-C-Gee Oct 18 version (only path differences)"
+    },
+    {
+      "name": "send_telegram_direct.py",
+      "path": "tools/send_telegram_direct.py",
+      "status": "PRODUCTION - USE WITH CAUTION",
+      "last_modified": "2025-10-18 15:38",
+      "origin": "Adapted from A-C-Gee Oct 18, 2025",
+      "purpose": "Send Markdown-formatted messages via Telegram Bot API with plain text fallback",
+      "why_caution": "Attempts Markdown first (can fail on special chars), then falls back to plain",
+      "dependencies": {
+        "external": ["requests"],
+        "stdlib": ["json", "logging", "sys", "pathlib"],
+        "config": "config/telegram_config.json (bot_token required)"
+      },
+      "usage": "python3 tools/send_telegram_direct.py <user_id> <message>",
+      "recommended_for": [
+        "Messages that NEED Markdown formatting",
+        "Invoked by telegram-sender agent"
+      ],
+      "known_issues": "Can hit 400 errors on complex Markdown (gracefully falls back)",
+      "version_sync": "In sync with A-C-Gee Oct 18 version (only path differences)"
+    },
+    {
+      "name": "telegram_monitor.py",
+      "path": "tools/telegram_monitor.py",
+      "status": "PRODUCTION - STABLE",
+      "last_modified": "2025-10-18 15:39",
+      "origin": "Adapted from A-C-Gee Oct 18, 2025",
+      "purpose": "Polls tmux session every 5 min, detects emoji-wrapped summaries, auto-sends to Telegram",
+      "stability_features": [
+        "Delta detection (only scans NEW buffer lines)",
+        "SHA256 full content hashing (prevents duplicates)",
+        "Fail-safe dedup (marks failures as seen)",
+        "Buffer position tracking (handles tmux scrollback)"
+      ],
+      "dependencies": {
+        "external": ["requests (via send_telegram_direct.py)"],
+        "stdlib": ["argparse", "hashlib", "json", "logging", "subprocess", "time", "pathlib", "datetime"],
+        "config": "config/telegram_config.json",
+        "state": ".tg_sessions/monitor_state.json",
+        "send_script": "tools/send_telegram_direct.py"
+      },
+      "usage": "python3 tools/telegram_monitor.py [--interval SECONDS] [--tmux-session SESSION]",
+      "emoji_markers": {
+        "start": "🤖🎯📱",
+        "end": "✨🔚"
+      },
+      "known_issues": "None - all A-C-Gee destabilization patterns fixed",
+      "version_sync": "Behind A-C-Gee - MISSING PID file management (Oct 19 update)",
+      "version_diff_impact": "Minor - PID file prevents duplicate monitors. Not critical but recommended."
+    },
+    {
+      "name": "telegram_bridge.py",
+      "path": "tools/telegram_bridge.py",
+      "status": "PRODUCTION - ACTIVE",
+      "last_modified": "2025-10-18 16:39",
+      "origin": "Adapted from A-C-Gee Oct 18, 2025",
+      "purpose": "Full bidirectional Telegram bridge - receives messages, injects to tmux, captures responses",
+      "architecture": "Corey (Telegram) ↔ Primary AI (Claude Code via tmux)",
+      "dependencies": {
+        "external": ["python-telegram-bot>=20.0", "requests"],
+        "stdlib": ["asyncio", "json", "logging", "os", "subprocess", "time", "datetime", "pathlib", "typing"],
+        "config": "config/telegram_config.json",
+        "session_dir": ".tg_sessions/"
+      },
+      "tmux_config": {
+        "session": "0",
+        "pane": "0:0.0",
+        "injection_pattern": "[TELEGRAM from {username}] {message}"
+      },
+      "commands": [
+        "/start - Welcome message and status",
+        "/help - Command list",
+        "/ping - tmux connectivity test",
+        "Direct messages - Injected to tmux, response captured and returned"
+      ],
+      "usage": "python3 tools/telegram_bridge.py (runs as daemon)",
+      "known_issues": "None - proven stable in A-C-Gee production",
+      "version_sync": "In sync with A-C-Gee Oct 18 version (only path/branding differences)"
+    }
+  ],
+  
+  "experimental": [],
+  
+  "deprecated": [],
+  
+  "missing": [
+    {
+      "name": "send_telegram_file.py",
+      "status": "EXISTS IN A-C-GEE, NOT IN TEAM 1",
+      "acgee_path": "/home/corey/projects/AI-CIV/grow_gemini_deepresearch/tools/send_telegram_file.py",
+      "last_modified": "2025-10-17 12:46",
+      "purpose": "Send file attachments via Telegram Bot API (up to 50 MB)",
+      "usage": "python3 tools/send_telegram_file.py <file_path> [caption] [user_id]",
+      "why_missing": "Not yet needed by Team 1 - no file sending use cases yet",
+      "when_to_add": "When tg-bridge agent needs to send handoff docs or reports as files",
+      "dependencies": {
+        "external": ["requests"],
+        "stdlib": ["json", "sys", "os", "pathlib"]
+      },
+      "recommendation": "Add when needed - proven stable in A-C-Gee"
+    }
+  ],
+  
+  "version_differences": {
+    "telegram_monitor.py": {
+      "team1_version": "2025-10-18 15:39",
+      "acgee_version": "2025-10-19 08:02",
+      "difference": "A-C-Gee added PID file management (prevent duplicate monitors)",
+      "impact": "Minor - prevents accidental duplicate monitor processes",
+      "recommendation": "UPDATE - Add PID file logic from A-C-Gee",
+      "breaking": false,
+      "urgency": "Low",
+      "new_features": [
+        "check_existing_process() - Detects if monitor already running",
+        "create_pid_file() - Creates PID file on startup",
+        "remove_pid_file() - Cleans up PID file on shutdown",
+        "PID_FILE constant - .tg_sessions/acgee_monitor.pid"
+      ]
+    }
+  },
+  
+  "stability_audit": {
+    "destabilization_patterns_fixed": [
+      "Weak dedup (first 100 chars) → Fixed with SHA256 full content",
+      "Full buffer scan → Fixed with delta detection",
+      "Infinite retry → Fixed with fail-safe dedup",
+      "Markdown errors → Fixed with plain text fallback",
+      "Context clear vulnerability → Fixed with file-based state"
+    ],
+    "current_status": "ALL SCRIPTS PRODUCTION-READY",
+    "confidence": "HIGH - Based on A-C-Gee's 2-day production validation",
+    "known_bugs": "None",
+    "security_audit": "Pending - no credential exposure detected in code review"
+  },
+  
+  "requirements": {
+    "file": "requirements-telegram.txt",
+    "packages": [
+      "python-telegram-bot>=20.0",
+      "python-dotenv>=1.0.0",
+      "requests>=2.31.0"
+    ],
+    "installation": "pip install -r requirements-telegram.txt"
+  },
+  
+  "config_requirements": {
+    "file": "config/telegram_config.json",
+    "required_fields": [
+      "bot_token (str) - Telegram bot API token",
+      "authorized_users (dict) - {user_id: {name, role}}",
+      "tmux_session (str) - Default: '0'",
+      "response_timeout (int) - Default: 10",
+      "max_response_length (int) - Default: 4000"
+    ]
+  },
+  
+  "safe_to_use": {
+    "send_telegram_plain.py": "YES - Always safe",
+    "send_telegram_direct.py": "YES - With awareness of Markdown fallback",
+    "telegram_monitor.py": "YES - All stability fixes present",
+    "telegram_bridge.py": "YES - Proven in A-C-Gee production"
+  },
+  
+  "orchestration_guidance": {
+    "for_tg_bridge_agent": {
+      "primary_script": "telegram_bridge.py",
+      "monitoring": "telegram_monitor.py",
+      "outbound_default": "send_telegram_plain.py",
+      "outbound_markdown": "send_telegram_direct.py (use sparingly)",
+      "first_session_tasks": [
+        "Read this registry",
+        "Verify all scripts exist",
+        "Check config/telegram_config.json",
+        "Validate requirements installed",
+        "Consider adding PID file logic to monitor"
+      ]
+    }
+  }
+}

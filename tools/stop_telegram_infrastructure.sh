@@ -39,12 +39,12 @@ kill_process() {
 }
 
 # Stop JSONL Monitor
-kill_process "telegram_jsonl_monitor.py" "JSONL Monitor"
+kill_process "openai_telegram_jsonl_monitor.py" "JSONL Monitor"
 
 echo ""
 
 # Stop Telegram Bridge
-kill_process "telegram_bridge.py" "Telegram Bridge"
+kill_process "openai_telegram_bridge.py" "Telegram Bridge"
 
 echo ""
 echo "=================================="

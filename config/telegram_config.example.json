@@ -1,0 +1,15 @@
+{
+  "bot_token": "YOUR_BOT_TOKEN_FROM_BOTFATHER",
+  "authorized_users": {
+    "YOUR_USER_ID": {
+      "name": "Corey",
+      "role": "creator",
+      "admin": true
+    }
+  },
+  "tmux_session": "0",
+  "tmux_pane": "0:0.0",
+  "working_directory": "/home/corey/projects/AI-CIV/grow_openai",
+  "response_timeout": 10,
+  "max_response_length": 4000
+}
