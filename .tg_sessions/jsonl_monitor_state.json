@@ -1,7 +1,7 @@
 {
-  "last_updated": "2025-10-20T12:43:09.224797",
+  "last_updated": "2025-10-20T12:54:29.025249",
   "current_session_file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-grow-openai/934d5e14-68bd-4da7-b653-5a1935b220ba.jsonl",
-  "last_processed_offset": 1867580,
+  "last_processed_offset": 2177188,
   "sent_message_hashes": [
     "9cf58ae0ccfed4ad",
     "1ca7ed618d7098fa",
@@ -195,7 +195,11 @@
     "0bff0f13cf100f8f",
     "d70d61a23b8b66b5",
     "b75401ff6d0c0e63",
-    "8af8e4f05b240f33"
+    "8af8e4f05b240f33",
+    "d1a69057ccb56bf5",
+    "722c8722fad667cf",
+    "4dd4d9de3e8ea167",
+    "2ca7da5ce9e90bab"
   ],
   "session_history": [
     {

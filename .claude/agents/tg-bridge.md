@@ -123,58 +123,91 @@ python3 /home/corey/projects/AI-CIV/grow_openai/tools/send_telegram_file.py \
 
 ### 2. Monitor Infrastructure Health (AUTOMATIC - Every Invocation)
 
+
+**IMPORTANT - Current State (2025-10-20)**:
+- Production files are in `tools/prod/tg/` but NOT yet running
+- Current processes still use `tools/` directory (old location)
+- User will switch when ready
+- Health checks should look for EITHER location
+
 **Health Check Protocol** (run on EVERY invocation):
 
 ```bash
+# Check for EITHER production OR development processes
+# (Currently development is running until user switches)
+
 # 1. Check bridge process
-if ! ps aux | grep -q "[t]elegram_bridge.py"; then
+if ps aux | grep -E "tools/(prod/tg/)?openai_telegram_bridge.py" | grep -v grep > /dev/null; then
+    echo "✓ Bridge process RUNNING"
+    ps aux | grep -E "tools/(prod/tg/)?openai_telegram_bridge.py" | grep -v grep | awk '{print "  PID:", $2, "Location:", $NF}'
+else
     echo "⚠️ Bridge process DOWN - attempting restart"
-    cd /home/corey/projects/AI-CIV/grow_openai
-    nohup python3 tools/telegram_bridge.py > /tmp/telegram_bridge.log 2>&1 &
-    sleep 2
-    if ps aux | grep -q "[t]elegram_bridge.py"; then
-        echo "✓ Bridge restarted successfully"
+    # Restart from CURRENT active location (check which is configured)
+    if [ -f tools/prod/tg/openai_telegram_bridge.py ] && grep -q "tools/prod/tg" config/telegram_config.json 2>/dev/null; then
+        cd /home/corey/projects/AI-CIV/grow_openai
+        nohup python3 tools/prod/tg/openai_telegram_bridge.py >> /tmp/openai_telegram_bridge.log 2>&1 &
     else
-        echo "✗ Bridge restart FAILED - escalate to Primary"
+        cd /home/corey/projects/AI-CIV/grow_openai
+        nohup python3 tools/telegram_bridge.py >> /tmp/telegram_bridge.log 2>&1 &
     fi
+    sleep 2
 fi
 
-# 2. Check monitor process
-if ! ps aux | grep -q "[t]elegram_monitor.py"; then
-    echo "⚠️ Monitor process DOWN - attempting restart"
-    cd /home/corey/projects/AI-CIV/grow_openai
-    nohup python3 tools/telegram_monitor.py > /tmp/telegram_monitor.log 2>&1 &
-    sleep 2
-    if ps aux | grep -q "[t]elegram_monitor.py"; then
-        echo "✓ Monitor restarted successfully"
+# 2. Check JSONL monitor process (NEW architecture)
+if ps aux | grep -E "tools/(prod/tg/)?openai_telegram_jsonl_monitor.py" | grep -v grep > /dev/null; then
+    echo "✓ JSONL Monitor process RUNNING"
+    ps aux | grep -E "tools/(prod/tg/)?openai_telegram_jsonl_monitor.py" | grep -v grep | awk '{print "  PID:", $2, "Location:", $NF}'
+else
+    echo "⚠️ JSONL Monitor process DOWN - attempting restart"
+    # Restart from CURRENT active location
+    if [ -f tools/prod/tg/openai_telegram_jsonl_monitor.py ] && grep -q "tools/prod/tg" config/telegram_config.json 2>/dev/null; then
+        cd /home/corey/projects/AI-CIV/grow_openai
+        nohup python3 tools/prod/tg/openai_telegram_jsonl_monitor.py >> /tmp/openai_telegram_jsonl_monitor.log 2>&1 &
     else
-        echo "✗ Monitor restart FAILED - escalate to Primary"
+        cd /home/corey/projects/AI-CIV/grow_openai
+        nohup python3 tools/telegram_jsonl_monitor.py >> /tmp/telegram_jsonl_monitor.log 2>&1 &
     fi
+    sleep 2
 fi
 
 # 3. Verify recent activity
-echo "Recent activity:"
-echo "Bridge: $(tail -1 /tmp/telegram_bridge.log 2>/dev/null || echo 'No log found')"
-echo "Monitor: $(tail -1 /tmp/telegram_monitor.log 2>/dev/null || echo 'No log found')"
-
-# 4. Report status with Primary reminder
 echo ""
-echo "Telegram Infrastructure Status:"
-echo "- Bridge: [RUNNING/RESTARTED/FAILED]"
-echo "- Monitor: [RUNNING/RESTARTED/FAILED]"
+echo "Recent activity:"
+# Check BOTH possible log locations
+if [ -f /tmp/openai_telegram_bridge.log ]; then
+    echo "Bridge (production): $(tail -1 /tmp/openai_telegram_bridge.log 2>/dev/null)"
+elif [ -f /tmp/telegram_bridge.log ]; then
+    echo "Bridge (dev): $(tail -1 /tmp/telegram_bridge.log 2>/dev/null)"
+fi
+
+if [ -f /tmp/openai_telegram_jsonl_monitor.log ]; then
+    echo "JSONL Monitor (production): $(tail -1 /tmp/openai_telegram_jsonl_monitor.log 2>/dev/null)"
+elif [ -f /tmp/telegram_jsonl_monitor.log ]; then
+    echo "JSONL Monitor (dev): $(tail -1 /tmp/telegram_jsonl_monitor.log 2>/dev/null)"
+fi
+
+# 4. Report status
+echo ""
+echo "==================================="
+echo "Telegram Infrastructure Status"
+echo "==================================="
+echo ""
+echo "Architecture: JSONL monitoring (3s polling, 20x faster)"
+echo "Production lock: tools/prod/tg/ (protected)"
+echo "Current running: [tools/ OR tools/prod/tg/]"
 echo ""
 echo "Primary reminder:"
 echo "- Wrap messages for auto-mirror: 🤖🎯📱 ... ✨🔚"
 echo "- Direct send: python3 tools/send_telegram_plain.py 437939400 'message'"
-echo "- File send: python3 tools/send_telegram_file.py 437939400 /path 'caption'"
 echo ""
-echo "Full protocol: .claude/memory/agent-learnings/tg-bridge/PRIMARY_TELEGRAM_PROTOCOL.md"
+echo "Production management:"
+echo "- Start: ./tools/prod/tg/start_telegram_infrastructure.sh"
+echo "- Status: ./tools/prod/tg/status_telegram_infrastructure.sh"
+echo "- Stop: ./tools/prod/tg/stop_telegram_infrastructure.sh"
+echo ""
+echo "Documentation: tools/prod/tg/README.md"
+echo "==================================="
 ```
-
-**Auto-escalation**:
-- 3+ consecutive restart failures → Alert Primary + create incident report
-- Token invalid errors → Immediate escalation (security)
-- Non-delivery >30 min → Escalate with delivery metrics
 
 ### 3. Maintain Script Registry (Prevent Wrong Version Usage)
 
@@ -472,6 +505,125 @@ if significant_learning:
 
 ## Files & Infrastructure
 
+### 🔒 PRODUCTION LOCK ARCHITECTURE (2025-10-20)
+
+**CRITICAL**: Telegram infrastructure now protected via production lock pattern.
+
+**Production Directory**: `tools/prod/tg/` (🔒 NEVER MODIFY DIRECTLY)
+
+All files in `tools/prod/tg/` have protection headers:
+```python
+"""
+🔒 PRODUCTION FILE - DO NOT MODIFY 🔒
+
+This file is operational and tested in production.
+To make changes:
+1. Create a variant: tools/{script_name}_v2.py
+2. Test thoroughly
+3. Copy to tools/prod/tg/ only after validation
+
+Location: tools/prod/tg/ (production lock - agents should not modify)
+Last Production Update: 2025-10-20
+"""
+```
+
+**Why Production Lock Exists**:
+- Multiple collisions with A-C-Gee (grow_gemini) processes
+- Accidental overwrites during debugging
+- Process name collisions causing cross-project interference
+
+**Solution**: Spatial isolation
+- `tools/prod/tg/` = Production lock (never touch)
+- `tools/` = Development workspace (agents can work here)
+- Process names include full path for safety
+
+### Production Files (Current State)
+
+**Directory**: `tools/prod/tg/` (8 protected files)
+
+**Core Infrastructure**:
+1. **openai_telegram_jsonl_monitor.py** - Watches Claude Code JSONL logs
+2. **openai_telegram_bridge.py** - Receives Telegram messages, injects to tmux
+3. **send_telegram_plain.py** - Direct Telegram message sender
+4. **send_telegram_direct.py** - Simple Telegram send utility
+
+**Management Scripts**:
+5. **start_telegram_infrastructure.sh** - Start monitor + bridge
+6. **stop_telegram_infrastructure.sh** - Stop all Telegram processes
+7. **status_telegram_infrastructure.sh** - Check status and recent activity
+8. **README.md** - Comprehensive production lock documentation
+
+**Usage**:
+```bash
+# Start infrastructure
+cd /home/corey/projects/AI-CIV/grow_openai
+./tools/prod/tg/start_telegram_infrastructure.sh
+
+# Check status
+./tools/prod/tg/status_telegram_infrastructure.sh
+
+# Stop infrastructure
+./tools/prod/tg/stop_telegram_infrastructure.sh
+```
+
+**Process Naming Convention** (Prevents ACG Collision):
+- All processes use `openai_` prefix
+- Full path matching: `tools/prod/tg/openai_telegram_jsonl_monitor.py`
+- Safe to `pkill -f "tools/prod/tg/openai_telegram"` without affecting ACG
+
+**Backup**: `corey_tg_interface_backup.tar.gz` (all 8 production files archived)
+
+### JSONL Monitoring Architecture (NEW - 20x Faster)
+
+**Replaced**: tmux buffer monitoring (60-second polls)
+**With**: Direct JSONL file monitoring (3-second polls)
+
+**How It Works**:
+1. Claude Code writes conversation logs to `~/.claude/projects/{project-slug}/{session-uuid}.jsonl`
+2. Monitor tracks file offset to read only NEW content
+3. Detects messages wrapped with `🤖🎯📱 ... ✨🔚` markers
+4. Aggregates multi-line JSONL entries into complete messages
+5. SHA256 hashing prevents duplicates
+6. Sends via `send_telegram_plain.py`
+
+**Key Features**:
+- **3-second polling**: 20x faster than tmux approach (60s)
+- **Delta detection**: Tracks file offset, reads only new lines
+- **Message aggregation**: Claude Code writes 5-20+ JSONL lines per message
+- **Full SHA256 hashing**: Deduplication of complete content
+- **Session rotation handling**: Automatically switches to newest JSONL file
+- **State persistence**: `.tg_sessions/jsonl_monitor_state.json`
+
+**State File Format**:
+```json
+{
+  "current_jsonl_file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-grow_openai/session-abc123.jsonl",
+  "last_position": 45230,
+  "sent_message_hashes": [
+    "abc123...",
+    "def456..."
+  ],
+  "last_check_time": "2025-10-20T12:34:56Z"
+}
+```
+
+**Logs**:
+- Monitor: `/tmp/openai_telegram_jsonl_monitor.log`
+- Errors: `/tmp/openai_telegram_jsonl_monitor_error.log`
+- Bridge: `/tmp/openai_telegram_bridge.log`
+
+**Configuration** (`config/telegram_config.json` - jsonl_monitor section):
+```json
+"jsonl_monitor": {
+  "enabled": true,
+  "project_name": "-home-corey-projects-AI-CIV-grow_openai",
+  "poll_interval_seconds": 3,
+  "max_message_age_hours": 1,
+  "deduplication_enabled": true
+}
+```
+
+
 ### Configuration
 
 **telegram_config.json** (location: `config/telegram_config.json`):
@@ -526,7 +678,7 @@ python3 /home/corey/projects/AI-CIV/grow_openai/tools/send_telegram_file.py \
 - Runs as daemon process
 - Logs: `/tmp/telegram_bridge.log`
 
-### Monitoring (BROKEN - FIXING)
+### Monitoring (FIXED - JSONL Architecture)
 
 **telegram_monitor.py** (Auto-send summaries):
 - Polls tmux buffer for emoji-wrapped content
