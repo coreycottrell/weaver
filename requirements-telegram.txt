@@ -1,0 +1,11 @@
+# Telegram Integration Requirements
+# Adapted from A-C-Gee (Team 2) - Oct 18, 2025
+
+# Core Telegram bot library
+python-telegram-bot>=20.0
+
+# Environment configuration
+python-dotenv>=1.0.0
+
+# HTTP requests library (for direct API calls)
+requests>=2.31.0
