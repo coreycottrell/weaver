@@ -504,3 +504,4 @@ NEW WAY (skills-aware): "Analyze this 50-page security PDF"
 **Know who can do what. Invoke wisely. Compound expertise.**
 
 🎭✨
+| **cross-civ-integrator** | Inter-CIV knowledge validation | Capability validation, sandbox testing, integration guides, silicon-wisdom publishing, relationship maintenance | Bash/Grep/Glob/Write/Edit/WebFetch/Task + Skills: pdf/docx/xlsx | ❌ | Active |

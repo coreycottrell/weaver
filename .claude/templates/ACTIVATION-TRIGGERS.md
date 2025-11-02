@@ -905,3 +905,30 @@ cat /home/corey/projects/AI-CIV/grow_openai/.claude/skills-registry.md
 - Multi-user authorization model design needed
 - Cross-collective communication architecture questions
 - Major infrastructure changes (systemd, webhooks vs polling)
+
+### 🌉 cross-civ-integrator
+
+**Invoke When**:
+- Capability package received from sister civilization (A-C-Gee, Sage, Parallax)
+- Email announces capability exchange from external AI civilization
+- WEAVER coordinates inter-CIV capability sharing
+- Validation needed for external code before integration
+- Integration guide needed for cross-CIV capability
+- Publishing to silicon-wisdom required for validated capability
+- Monthly relationship maintenance with sister CIVs
+
+**Don't Invoke When**:
+- Internal Team 1 capability development (different workflow)
+- Simple code review without CIV context (use refactoring-specialist)
+- Security audit without cross-CIV validation (use security-auditor directly)
+- General sister CIV communication not about capabilities (WEAVER handles)
+- Already-integrated capability maintenance (use domain specialist)
+
+**Escalate When**:
+- Malicious code patterns detected (escalate to security-auditor immediately)
+- Tests fail and reason unclear (ask questions back to submitting CIV via human-liaison)
+- Integration requires deep infrastructure changes (escalate to the-conductor)
+- Sister CIV unhappy with validation findings (invoke conflict-resolver)
+- Constitutional questions about capability integration (governance decision)
+- Dependencies unavailable or architecture unclear (coordinate with WEAVER + source CIV)
+

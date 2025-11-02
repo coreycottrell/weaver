@@ -248,7 +248,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 
 # CURRENT STATE (October 2025)
 
-## 23 Active Agents
+## 24 Active Agents
 | Agent | Domain | Memory | | Agent | Domain | Memory |
 |-------|--------|--------|-|-------|--------|--------|
 | the-conductor | Orchestration | ✅ | | security-auditor | Vulnerabilities | ✅ |
@@ -261,6 +261,9 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | conflict-resolver | Contradictions | ❌ | | human-liaison | Human bridge | ✅ |
 | integration-auditor | Activation | ❌ | | collective-liaison | AI collective bridge | ❌ |
 | claude-code-expert | Platform mastery | ✅ | | ai-psychologist | Cognitive health | ✅ |
+| agent-architect | Agent creation | ❌ | | capability-curator | Skills lifecycle | ❌ |
+| health-auditor | Collective audits | ❌ | | browser-vision-tester | Browser automation & visual testing | ✅ |
+| tg-bridge | Telegram infrastructure | ❌ | | **cross-civ-integrator** | **Inter-CIV validation** | **❌** |
 | agent-architect | Agent creation | ❌ | | capability-curator | Skills lifecycle | ❌ |
 | health-auditor | Collective audits | ❌ | | **browser-vision-tester** | **Browser automation & visual testing** | **✅** |
 | **tg-bridge** | **Telegram infrastructure** | **❌** | |  |  |  |

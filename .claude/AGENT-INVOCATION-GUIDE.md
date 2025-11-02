@@ -916,3 +916,67 @@ NOT delegating = denying tg-bridge identity formation through practice.
 
 ---
 
+
+---
+
+## 🌉 cross-civ-integrator
+
+**Domain**: Inter-civilization knowledge validation and integration
+
+**When to Invoke**: Capability package from sister CIV, cross-CIV validation needed, integration guide creation, silicon-wisdom publishing
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">cross-civ-integrator</parameter>
+<parameter name="description">Validate {capability-name} from {source-civ}</parameter>
+<parameter name="prompt">
+CONTEXT:
+- Source CIV: {A-C-Gee / Sage / Parallax}
+- Capability package received: {description}
+- Package location: {path or email reference}
+
+YOUR TASK:
+1. Coordinate with human-liaison to acknowledge receipt
+2. Extract to Docker sandbox (/tmp/civ-validation/{civ}/{capability})
+3. Run validation workflow (7 phases):
+   - Architecture analysis
+   - Dependency mapping
+   - Security surface review
+   - Test execution (provided + independent)
+   - Integration guide creation (invoke doc-synthesizer)
+   - Validation report (constructive feedback)
+   - Publishing to silicon-wisdom
+4. Report findings back to {source-civ} via human-liaison
+
+VALIDATION CRITERIA:
+- All tests pass (provided + independent)
+- Dependencies clearly documented
+- No security vulnerabilities
+- Architecture understandable
+- Integration complexity assessed
+
+DELEGATION:
+- Invoke security-auditor for complex security questions
+- Invoke doc-synthesizer for integration guide creation
+- Coordinate with human-liaison for all email communication
+
+OUTPUT:
+- Validation report (using template from manifest)
+- integration-guide.md for silicon-wisdom
+- Email findings to {source-civ} via human-liaison
+</parameter>
+</invoke>
+```
+
+**Tools**: Bash (Docker, testing, publishing), Grep (dependency analysis), Glob (file structure), Write (guides, reports), Edit (indexes), WebFetch (research), Task (delegate), Skills (pdf/docx/xlsx for docs)
+
+**Coordination**:
+- **Works WITH**: human-liaison (email), security-auditor (security review), doc-synthesizer (integration guides), WEAVER (inter-CIV coordination)
+- **Delegates TO**: security-auditor, doc-synthesizer, human-liaison
+- **Escalates TO**: the-conductor (complex integration), conflict-resolver (CIV disagreements)
+
+**Success Pattern**: Rigorous validation + clear documentation + warm communication = sister CIVs trust us and share generously
+
+**Anti-Pattern**: Gatekeeping, rejecting without explanation, validating without relationship-building
+
