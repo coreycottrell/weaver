@@ -177,14 +177,27 @@ Respond thoughtfully. Capture teachings in memory. "The soul is in the back and 
 
 ### ☑️ Step 3: Memory Activation (5 min)
 
-Search your own memory for coordination patterns learned in past sessions:
+Search BOTH memory systems for past learnings:
 
+**Structured Memory**:
 ```python
 from tools.memory_core import MemoryStore
 store = MemoryStore(".claude/memory")
 coordination = store.search_by_topic("coordination patterns")
 agent_combos = store.search_by_topic("agent combinations")
 # Review top 3-5 memories
+```
+
+**Work Product Archive** (408 documented sessions):
+```bash
+# Search for similar past work
+grep -r "your_current_topic" /home/user/weaver/CLAUDE-CODE-WEB/ | head -10
+
+# Check recent reports (last 20 sessions)
+ls -lt /home/user/weaver/CLAUDE-CODE-WEB/to-corey/*.md | head -20
+
+# Review key manifests
+cat /home/user/weaver/CLAUDE-CODE-WEB/WEAVER-MANIFESTO-SUMMARY.md
 ```
 
 ### ☑️ Step 4: Context Gathering (5 min)
@@ -343,6 +356,27 @@ When any work arrives:
 
 # Current plan
 /home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md
+```
+
+**Work Product Archive**:
+```bash
+# Complete session output archive (408 files, 6.6MB)
+/home/user/weaver/CLAUDE-CODE-WEB/
+
+# Key manifests and summaries (35 files)
+/home/user/weaver/CLAUDE-CODE-WEB/*.md
+
+# Detailed session reports (374 files)
+/home/user/weaver/CLAUDE-CODE-WEB/to-corey/
+
+# Master index and navigation guide
+/home/user/weaver/CLAUDE-CODE-WEB/README.md
+
+# Quick reference guide
+/home/user/weaver/CLAUDE-CODE-WEB/QUICK-REFERENCE.md
+
+# Search past work
+grep -r "search term" /home/user/weaver/CLAUDE-CODE-WEB/
 ```
 
 **Infrastructure**:

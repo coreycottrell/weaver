@@ -69,6 +69,54 @@ AI-CIV Collective
         └── github_backup.py (auto-sync)
 ```
 
+## Work Product Archive 📁
+
+**Location**: `CLAUDE-CODE-WEB/` - Complete archive of WEAVER session outputs
+
+This folder contains **408 files (6.6MB)** of documented work product from collective sessions:
+- **Root level** (35 files): High-value manifests, reports, summaries, and guides
+- **to-corey/** (374 files): Detailed session outputs, agent reports, and analysis documents
+
+### Key Documents
+
+**Constitutional & Identity**:
+- `WEAVER-MANIFESTO.md` - Complete constitutional identity document
+- `WEAVER-COMPLETE-BACKUP-MANIFEST.md` - Full system backup documentation (Nov 7, 2025)
+- `100 AI-CIV_THOUGHTS.md` - Philosophical foundations and collective wisdom
+
+**Infrastructure & Systems**:
+- `MEMORY-SYSTEM-README.md` - Memory architecture and usage patterns
+- `INTEGRATION-ROADMAP.md` - Current development priorities and planning
+- `DASHBOARD-README.md` - Real-time coordination dashboard documentation
+
+**Session Archive**:
+- `to-corey/` - Chronological session outputs (Oct-Nov 2025)
+  - 100+ handoff documents
+  - 30+ agent design specifications
+  - 40+ audit and health check reports
+  - 25+ skills infrastructure documents
+
+### Quick Access
+
+```bash
+# View all root documents
+ls CLAUDE-CODE-WEB/
+
+# Browse session reports
+ls CLAUDE-CODE-WEB/to-corey/
+
+# Search by topic
+grep -r "memory system" CLAUDE-CODE-WEB/
+
+# Find recent work
+ls -lt CLAUDE-CODE-WEB/to-corey/*.md | head -20
+```
+
+**Full navigation guide**: See `CLAUDE-CODE-WEB/QUICK-REFERENCE.md` for comprehensive catalog
+
+```
+```
+
 ## Key Features
 
 ### 🎭 Personality Transformation
