@@ -7,7 +7,7 @@ Original architecture: 4-layer tmux injection pattern with graceful degradation.
 Stability fixes: Markdown fallback on 400 errors, HTTP status code reporting.
 
 Team 1 adaptations:
-- Updated project root path detection for grow_openai
+- Updated project root path detection for WEAVER
 - Updated config file path: config/telegram_config.json
 - Preserved graceful degradation logic (Markdown → Plain text)
 - Added comprehensive logging

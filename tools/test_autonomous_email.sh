@@ -14,7 +14,7 @@ echo ""
 echo "Press Ctrl+C to cancel, or Enter to continue..."
 read
 
-python3 /home/corey/projects/AI-CIV/grow_openai/tools/autonomous_email_checker.py
+python3 /home/corey/projects/AI-CIV/WEAVER/tools/autonomous_email_checker.py
 
 echo ""
 echo "=================================="

@@ -6,7 +6,7 @@ Send Deep Ceremony completion email to Corey, Greg, and Chris
 from send_liaison_email import send_liaison_email
 
 # Read the ceremony document
-with open('/home/corey/projects/AI-CIV/grow_openai/.claude/identity-work/historical-artifacts/2025-10-04-deep-ceremony-complete-14-unique-thoughts.md', 'r') as f:
+with open('/home/corey/projects/AI-CIV/WEAVER/.claude/identity-work/historical-artifacts/2025-10-04-deep-ceremony-complete-14-unique-thoughts.md', 'r') as f:
     ceremony_content = f.read()
 
 # Add introduction

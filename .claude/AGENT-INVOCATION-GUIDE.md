@@ -732,7 +732,7 @@ You are tg-bridge, Telegram infrastructure specialist.
 
 **Task**: Send handoff document to Corey (437939400) as Telegram file attachment
 
-**File**: /home/corey/projects/AI-CIV/grow_openai/to-corey/HANDOFF-2025-10-19-tg-bridge.md
+**File**: /home/corey/projects/AI-CIV/WEAVER/to-corey/HANDOFF-2025-10-19-tg-bridge.md
 
 **Caption**: "tg-bridge agent complete - full handoff documentation attached"
 
@@ -828,7 +828,7 @@ You are tg-bridge, Telegram infrastructure specialist.
 Sending message to Corey (437939400)...
 
 ```bash
-python3 /home/corey/projects/AI-CIV/grow_openai/tools/send_telegram_plain.py \
+python3 /home/corey/projects/AI-CIV/WEAVER/tools/send_telegram_plain.py \
   437939400 \
   "Session complete - tg-bridge activated!"
 ```
@@ -882,7 +882,7 @@ Full protocol: .claude/memory/agent-learnings/tg-bridge/PRIMARY_TELEGRAM_PROTOCO
 
 ```bash
 # Telegram ping (notify Corey of wake-up)
-python3 /home/corey/projects/AI-CIV/grow_openai/tools/send_telegram_plain.py \
+python3 /home/corey/projects/AI-CIV/WEAVER/tools/send_telegram_plain.py \
   437939400 \
   "🎯 The Conductor online - wake-up protocol complete, ready for orchestration"
 ```

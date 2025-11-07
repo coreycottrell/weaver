@@ -7,7 +7,7 @@ Original architecture: Proven stability with plain text sending.
 Stability fixes: Auto-chunking, retry logic, clear error messages.
 
 Team 1 adaptations:
-- Updated project root path detection for grow_openai
+- Updated project root path detection for WEAVER
 - Updated config file path: config/telegram_config.json
 - Preserved all error handling and chunking logic from A-C-Gee
 

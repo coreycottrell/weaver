@@ -40,7 +40,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants - Team 1 paths
-PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/grow_openai")
+PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/WEAVER")
 SESSION_DIR = PROJECT_ROOT / ".tg_sessions"
 CONFIG_FILE = PROJECT_ROOT / "config" / "telegram_config.json"
 DEFAULT_CONFIG = {

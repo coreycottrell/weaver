@@ -1,0 +1,8 @@
+[2025-10-02 11:49:05] Processing: test-autonomous.txt
+[2025-10-02 11:49:05]   Executing Claude Code with prompt from test-autonomous.txt
+[2025-10-02 11:49:16]   ✓ Completed successfully
+[2025-10-02 11:49:16]     
+[2025-10-02 11:49:16]     
+[2025-10-02 11:49:16]     Complete. The file `autonomous-test-success.txt` has been created with the message "The autonomous queue is working!"
+[2025-10-02 11:49:16]   Archived → /home/corey/projects/AI-CIV/grow_openai/queue/processed/20251002-114916-test-autonomous.txt
+[2025-10-02 11:49:16] Processed 1 queue file(s)

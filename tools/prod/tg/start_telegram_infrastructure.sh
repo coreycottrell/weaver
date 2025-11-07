@@ -14,14 +14,14 @@
 # ============================================================================
 #
 # Telegram Infrastructure Startup Script
-# Starts both JSONL monitor and Telegram bridge for grow_openai
+# Starts both JSONL monitor and Telegram bridge for WEAVER
 #
 # Usage: ./tools/prod/tg/start_telegram_infrastructure.sh
 #
 
 set -e  # Exit on error
 
-PROJECT_ROOT="/home/corey/projects/AI-CIV/grow_openai"
+PROJECT_ROOT="/home/corey/projects/AI-CIV/WEAVER"
 cd "$PROJECT_ROOT"
 
 echo "=================================="

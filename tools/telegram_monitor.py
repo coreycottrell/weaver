@@ -12,7 +12,7 @@ CRITICAL Stability fixes preserved:
 - Buffer position tracking: Handles tmux scrollback correctly
 
 Team 1 adaptations:
-- Updated config paths for grow_openai
+- Updated config paths for WEAVER
 - Updated default tmux session to "0" (Team 1's session)
 - Preserved all emoji markers and state management
 - Added comprehensive logging for debugging

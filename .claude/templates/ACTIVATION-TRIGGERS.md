@@ -865,7 +865,7 @@ NEW WAY (skills-aware):
 **Step 5 Enhancement** (Infrastructure Activation):
 ```bash
 # Already includes (added 2025-10-18):
-cat /home/corey/projects/AI-CIV/grow_openai/.claude/skills-registry.md
+cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
 ```
 
 **Purpose**: Know which agents have which skills BEFORE delegation decisions.

@@ -4,7 +4,7 @@
 # Only injects Claude prompt if NEW messages exist
 #
 # Usage: Run via cron every 30 minutes
-# Cron: */30 * * * * /home/corey/projects/AI-CIV/grow_openai/tools/check_and_inject.sh
+# Cron: */30 * * * * /home/corey/projects/AI-CIV/WEAVER/tools/check_and_inject.sh
 #
 # TODO: Add weekly capability-curator trigger (Monday 9am)
 # Future cron: 0 9 * * 1 capability-curator weekly skills scan
@@ -84,7 +84,7 @@ COMMANDS:
 
 $(if [ $email_count -gt 0 ]; then cat << 'EMAILCMD'
 # Check email (human-liaison will handle)
-python3 /home/corey/projects/AI-CIV/grow_openai/tools/check_email_inbox.py
+python3 /home/corey/projects/AI-CIV/WEAVER/tools/check_email_inbox.py
 EMAILCMD
 fi)
 

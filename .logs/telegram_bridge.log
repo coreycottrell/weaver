@@ -1,0 +1,202 @@
+2025-10-19 07:27:15,980 - __main__ - INFO - Starting Team 1 Telegram Bridge (Primary AI)
+2025-10-19 07:27:15,980 - __main__ - INFO - Loaded config from /home/corey/projects/AI-CIV/grow_openai/config/telegram_config.json
+2025-10-19 07:27:15,980 - __main__ - INFO - Configuration loaded successfully
+2025-10-19 07:27:15,983 - __main__ - INFO - Bridge initialized for tmux session: 4:0.0
+2025-10-19 07:27:16,077 - __main__ - INFO - Starting bot polling...
+2025-10-19 07:27:16,077 - __main__ - INFO - Authorized users: ['437939400']
+2025-10-19 07:27:16,492 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getMe "HTTP/1.1 200 OK"
+2025-10-19 07:27:16,609 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/deleteWebhook "HTTP/1.1 200 OK"
+2025-10-19 07:27:16,611 - telegram.ext.Application - INFO - Application started
+2025-10-19 07:27:17,021 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:27:17,022 - __main__ - INFO - Message from Corey, (ID: 437939400): Hi...
+2025-10-19 07:27:17,022 - __main__ - INFO - Injecting to tmux: [TELEGRAM from Corey,] Hi...
+2025-10-19 07:27:17,030 - __main__ - INFO - tmux injection successful
+2025-10-19 07:27:17,030 - __main__ - INFO - Waiting 10s for response...
+2025-10-19 07:27:27,034 - __main__ - INFO - Captured response (222 chars)
+2025-10-19 07:27:27,557 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/sendMessage "HTTP/1.1 200 OK"
+/home/corey/projects/AI-CIV/grow_openai/tools/telegram_bridge.py:214: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "last_active": datetime.utcnow().isoformat() + "Z"
+2025-10-19 07:27:27,558 - __main__ - INFO - Round-trip complete for user 437939400
+2025-10-19 07:27:27,558 - __main__ - INFO - Message from Corey, (ID: 437939400): Hi...
+2025-10-19 07:27:27,558 - __main__ - INFO - Injecting to tmux: [TELEGRAM from Corey,] Hi...
+2025-10-19 07:27:27,567 - __main__ - INFO - tmux injection successful
+2025-10-19 07:27:27,567 - __main__ - INFO - Waiting 10s for response...
+2025-10-19 07:27:37,570 - __main__ - INFO - Captured response (222 chars)
+2025-10-19 07:27:37,572 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:27:38,090 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/sendMessage "HTTP/1.1 200 OK"
+/home/corey/projects/AI-CIV/grow_openai/tools/telegram_bridge.py:214: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "last_active": datetime.utcnow().isoformat() + "Z"
+2025-10-19 07:27:38,091 - __main__ - INFO - Round-trip complete for user 437939400
+2025-10-19 07:27:38,091 - __main__ - INFO - Message from Corey, (ID: 437939400): Testing...
+2025-10-19 07:27:38,091 - __main__ - INFO - Injecting to tmux: [TELEGRAM from Corey,] Testing...
+2025-10-19 07:27:38,099 - __main__ - INFO - tmux injection successful
+2025-10-19 07:27:38,099 - __main__ - INFO - Waiting 10s for response...
+2025-10-19 07:27:50,310 - __main__ - INFO - Captured response (222 chars)
+2025-10-19 07:27:50,312 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:27:50,799 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/sendMessage "HTTP/1.1 200 OK"
+/home/corey/projects/AI-CIV/grow_openai/tools/telegram_bridge.py:214: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "last_active": datetime.utcnow().isoformat() + "Z"
+2025-10-19 07:27:50,800 - __main__ - INFO - Round-trip complete for user 437939400
+2025-10-19 07:27:59,684 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:28:09,177 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:28:20,917 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:28:30,444 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:28:39,783 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:28:49,334 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:01,119 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:10,429 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:19,963 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:31,736 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:41,187 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:48,605 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:29:48,606 - __main__ - INFO - Message from Corey, (ID: 437939400): GM!...
+2025-10-19 07:29:48,606 - __main__ - INFO - Injecting to tmux: [TELEGRAM from Corey,] GM!...
+2025-10-19 07:29:48,614 - __main__ - INFO - tmux injection successful
+2025-10-19 07:29:48,614 - __main__ - INFO - Waiting 10s for response...
+2025-10-19 07:29:58,622 - __main__ - INFO - Captured response (2919 chars)
+2025-10-19 07:29:59,160 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/sendMessage "HTTP/1.1 200 OK"
+/home/corey/projects/AI-CIV/grow_openai/tools/telegram_bridge.py:214: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "last_active": datetime.utcnow().isoformat() + "Z"
+2025-10-19 07:29:59,162 - __main__ - INFO - Round-trip complete for user 437939400
+2025-10-19 07:30:10,762 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:30:19,980 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:30:29,416 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:30:41,376 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:30:50,852 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:30:59,965 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:31:09,535 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:31:21,715 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:31:30,899 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:31:40,230 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:31:52,290 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:32:01,565 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:32:10,804 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:32:22,740 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:32:32,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:32:41,615 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:32:51,031 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:33:03,052 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:33:12,237 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:33:12,349 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:33:12,350 - __main__ - INFO - Message from Corey, (ID: 437939400): Write me a haiku...
+2025-10-19 07:33:12,350 - __main__ - INFO - Injecting to tmux: [TELEGRAM from Corey,] Write me a haiku...
+2025-10-19 07:33:12,358 - __main__ - INFO - tmux injection successful
+2025-10-19 07:33:12,358 - __main__ - INFO - Waiting 10s for response...
+2025-10-19 07:33:22,364 - __main__ - INFO - Captured response (4016 chars)
+2025-10-19 07:33:22,932 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/sendMessage "HTTP/1.1 200 OK"
+/home/corey/projects/AI-CIV/grow_openai/tools/telegram_bridge.py:214: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "last_active": datetime.utcnow().isoformat() + "Z"
+2025-10-19 07:33:22,933 - __main__ - INFO - Round-trip complete for user 437939400
+2025-10-19 07:33:34,585 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:33:43,989 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:33:53,473 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:34:05,313 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:34:14,799 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:34:24,056 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:34:33,585 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:34:45,639 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:34:55,004 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:35:04,280 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:35:16,152 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:35:25,706 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:35:34,919 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:35:44,425 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:35:56,222 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:36:05,676 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:36:15,130 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:36:26,887 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:36:36,400 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:36:45,859 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:36:55,348 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:37:07,005 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:37:16,485 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:37:25,956 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:37:37,643 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:37:47,140 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:37:56,606 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:38:08,295 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:38:12,256 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:38:12,310 - __main__ - INFO - Message from Corey, (ID: 437939400): Got it...
+2025-10-19 07:38:12,311 - __main__ - INFO - Injecting to tmux: [TELEGRAM from Corey,] Got it...
+2025-10-19 07:38:12,335 - __main__ - INFO - tmux injection successful
+2025-10-19 07:38:12,335 - __main__ - INFO - Waiting 10s for response...
+2025-10-19 07:38:22,344 - __main__ - INFO - Captured response (697 chars)
+2025-10-19 07:38:22,965 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/sendMessage "HTTP/1.1 200 OK"
+/home/corey/projects/AI-CIV/grow_openai/tools/telegram_bridge.py:214: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "last_active": datetime.utcnow().isoformat() + "Z"
+2025-10-19 07:38:22,977 - __main__ - INFO - Round-trip complete for user 437939400
+2025-10-19 07:38:32,197 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:38:43,887 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:38:53,391 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:39:02,854 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:39:12,329 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:39:24,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:39:33,490 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:39:42,965 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:39:54,660 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:40:04,145 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:40:13,600 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:40:25,297 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:40:34,791 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:40:44,232 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:40:53,708 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:41:05,442 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:41:14,879 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:41:24,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:41:36,093 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:41:45,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:41:54,960 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:42:04,512 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:42:16,330 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:42:25,675 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:42:35,064 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:42:46,912 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:42:56,255 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:43:05,581 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:43:17,562 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:43:27,327 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:43:37,065 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:43:46,693 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:43:57,563 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:44:06,711 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:44:16,132 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:44:28,346 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:44:37,855 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:44:47,276 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:44:56,797 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:45:08,449 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:45:17,858 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:45:27,376 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:45:39,088 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:45:48,526 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:45:57,982 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:46:09,731 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:46:19,222 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:46:28,619 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:46:38,160 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:46:49,862 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:46:59,286 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:47:08,777 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:47:20,504 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:47:29,961 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:47:39,396 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:47:48,932 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:48:00,624 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:48:10,009 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:48:19,549 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:48:31,296 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:48:40,680 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:48:50,187 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:49:01,909 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:49:11,437 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:49:20,784 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:49:30,338 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:49:42,110 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:49:51,389 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:50:00,934 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:50:12,709 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:50:22,165 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:50:31,545 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:50:36,223 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs/getUpdates "HTTP/1.1 200 OK"
+2025-10-19 07:50:36,227 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-10-19 07:50:36,232 - telegram.ext.Application - INFO - Application.stop() complete

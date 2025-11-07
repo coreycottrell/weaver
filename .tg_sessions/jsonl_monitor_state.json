@@ -1,7 +1,7 @@
 {
-  "last_updated": "2025-10-20T12:54:29.025249",
-  "current_session_file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-grow-openai/934d5e14-68bd-4da7-b653-5a1935b220ba.jsonl",
-  "last_processed_offset": 2177188,
+  "last_updated": "2025-10-20T13:12:09.352205",
+  "current_session_file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/934d5e14-68bd-4da7-b653-5a1935b220ba.jsonl",
+  "last_processed_offset": 2388962,
   "sent_message_hashes": [
     "9cf58ae0ccfed4ad",
     "1ca7ed618d7098fa",
@@ -199,15 +199,16 @@
     "d1a69057ccb56bf5",
     "722c8722fad667cf",
     "4dd4d9de3e8ea167",
-    "2ca7da5ce9e90bab"
+    "2ca7da5ce9e90bab",
+    "42e2384e577f57d7"
   ],
   "session_history": [
     {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-grow-openai/6c380f81-29ba-4240-a87f-77bab63a2b09.jsonl",
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/6c380f81-29ba-4240-a87f-77bab63a2b09.jsonl",
       "ended_at": "2025-10-20T10:26:00.052889"
     },
     {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-grow-openai/f24ecedc-2010-4faa-b62a-881ceb74fad3.jsonl",
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/f24ecedc-2010-4faa-b62a-881ceb74fad3.jsonl",
       "ended_at": "2025-10-20T10:28:28.071307"
     }
   ]

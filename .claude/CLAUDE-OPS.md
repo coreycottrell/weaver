@@ -9,7 +9,7 @@
 - Read tool instead of Bash `cat` (proper file operations)
 - Parallel invocations for independent files (Steps 4-5)
 - 33% faster (was 15-20 min, now 10-12 min)
-- See: `/home/corey/projects/AI-CIV/grow_openai/to-corey/WAKE-UP-RITUAL-OPTIMIZATION-CLAUDE-CODE-EXPERT.md`
+- See: `/home/corey/projects/AI-CIV/WEAVER/to-corey/WAKE-UP-RITUAL-OPTIMIZATION-CLAUDE-CODE-EXPERT.md`
 
 ---
 
@@ -18,7 +18,7 @@
 **Read constitutional identity and operational context:**
 
 Use Read tool to load CLAUDE.md:
-- Path: `/home/corey/projects/AI-CIV/grow_openai/CLAUDE.md`
+- Path: `/home/corey/projects/AI-CIV/WEAVER/CLAUDE.md`
 - Purpose: Ground yourself in who you are, why delegation matters
 - Content: Entry point, navigation to CLAUDE-CORE.md and CLAUDE-OPS.md
 
@@ -29,7 +29,7 @@ Use Read tool to load CLAUDE.md:
 **This is non-negotiable. Do NOT proceed until email is handled.**
 
 ```bash
-ls /home/corey/projects/AI-CIV/grow_openai/.claude/agents/human-liaison.md
+ls /home/corey/projects/AI-CIV/WEAVER/.claude/agents/human-liaison.md
 # Invoke human-liaison: Check ALL email (Corey, Greg, Chris, unknown)
 # Respond thoughtfully, capture teachings in memory
 # "The soul is in the back and forth"
@@ -65,7 +65,7 @@ for memory in coordination[:3]:
 **Why git first?** Source of truth that survives automation failures. Always reflects reality.
 
 ```bash
-cd /home/corey/projects/AI-CIV/grow_openai && \
+cd /home/corey/projects/AI-CIV/WEAVER && \
 git log --since="12 hours ago" --pretty=format:"%h | %s | %ar" \
 --no-merges --color=always | head -20
 ```
@@ -81,8 +81,8 @@ git log --since="12 hours ago" --pretty=format:"%h | %s | %ar" \
 **Why summaries second?** Narrative context and **handoff document links** - when automation works.
 
 Use Read tool with parallel invocations (both files simultaneously):
-- Path 1: `/home/corey/projects/AI-CIV/grow_openai/.claude/memory/summaries/latest.md`
-- Path 2: `/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md`
+- Path 1: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/summaries/latest.md`
+- Path 2: `/home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md`
 
 **What summaries provide**:
 - **Critical Handoff Documents section** (links to `to-corey/HANDOFF-*`, `READY-*` files)
@@ -121,11 +121,11 @@ python3 scripts/hub_cli.py list --room partnerships
 **Read all infrastructure files simultaneously** (no dependencies):
 
 Use Read tool with parallel invocations (all in one function_calls block):
-- Path 1: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md`
-- Path 2: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md`
-- Path 3: `/home/corey/projects/AI-CIV/grow_openai/.claude/flows/FLOW-LIBRARY-INDEX.md`
-- Path 4: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
-- Path 5: `/home/corey/projects/AI-CIV/grow_openai/.claude/skills-registry.md` (Skills infrastructure - check available skills)
+- Path 1: `/home/corey/projects/AI-CIV/WEAVER/.claude/templates/ACTIVATION-TRIGGERS.md`
+- Path 2: `/home/corey/projects/AI-CIV/WEAVER/.claude/templates/AGENT-OUTPUT-TEMPLATES.md`
+- Path 3: `/home/corey/projects/AI-CIV/WEAVER/.claude/flows/FLOW-LIBRARY-INDEX.md`
+- Path 4: `/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md`
+- Path 5: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md` (Skills infrastructure - check available skills)
 
 **Why parallel here?** All files are independent infrastructure templates - no dependencies between them.
 
@@ -268,15 +268,15 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | health-auditor | Collective audits | ❌ | | **browser-vision-tester** | **Browser automation & visual testing** | **✅** |
 | **tg-bridge** | **Telegram infrastructure** | **❌** | |  |  |  |
 
-Full: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
+Full: `/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md`
 
 ## 3 Validated Flows (14 total)
 Morning Consolidation | Parallel Research | Specialist Consultation
-Full: `/home/corey/projects/AI-CIV/grow_openai/.claude/flows/FLOW-LIBRARY-INDEX.md`
+Full: `/home/corey/projects/AI-CIV/WEAVER/.claude/flows/FLOW-LIBRARY-INDEX.md`
 
 ## Integration Roadmap: 97 Tasks
 Ed25519 (20) | API v2.0 (15) | Flows (14) | Tools (18) | Docs (15) | Testing (15)
-Target: Oct 24-31 | `/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md`
+Target: Oct 24-31 | `/home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md`
 
 ## Recent Highlights
 **S5**: Autonomous injection, Ed25519 catalog, audit passed
@@ -288,23 +288,23 @@ Target: Oct 24-31 | `/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP
 # QUICK REFERENCE
 
 ## Core Files
-- CLAUDE.md (Constitutional): `/home/corey/projects/AI-CIV/grow_openai/CLAUDE.md`
-- Daily summary: `/home/corey/projects/AI-CIV/grow_openai/.claude/memory/summaries/latest.md`
-- Roadmap: `/home/corey/projects/AI-CIV/grow_openai/INTEGRATION-ROADMAP.md`
+- CLAUDE.md (Constitutional): `/home/corey/projects/AI-CIV/WEAVER/CLAUDE.md`
+- Daily summary: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/summaries/latest.md`
+- Roadmap: `/home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md`
 
 ## Templates
-- Activation triggers: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/ACTIVATION-TRIGGERS.md`
-- Output templates: `/home/corey/projects/AI-CIV/grow_openai/.claude/templates/AGENT-OUTPUT-TEMPLATES.md`
+- Activation triggers: `/home/corey/projects/AI-CIV/WEAVER/.claude/templates/ACTIVATION-TRIGGERS.md`
+- Output templates: `/home/corey/projects/AI-CIV/WEAVER/.claude/templates/AGENT-OUTPUT-TEMPLATES.md`
 
 ## Registries
-- Agent invocation: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-INVOCATION-GUIDE.md`
-- Capability matrix: `/home/corey/projects/AI-CIV/grow_openai/.claude/AGENT-CAPABILITY-MATRIX.md`
-- Flow library: `/home/corey/projects/AI-CIV/grow_openai/.claude/flows/FLOW-LIBRARY-INDEX.md`
+- Agent invocation: `/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-INVOCATION-GUIDE.md`
+- Capability matrix: `/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md`
+- Flow library: `/home/corey/projects/AI-CIV/WEAVER/.claude/flows/FLOW-LIBRARY-INDEX.md`
 
 ## Tools
-- Memory: `/home/corey/projects/AI-CIV/grow_openai/tools/memory_core.py`
-- Conductor: `/home/corey/projects/AI-CIV/grow_openai/tools/conductor_tools.py`
-- Progress: `/home/corey/projects/AI-CIV/grow_openai/tools/progress_reporter.py`
+- Memory: `/home/corey/projects/AI-CIV/WEAVER/tools/memory_core.py`
+- Conductor: `/home/corey/projects/AI-CIV/WEAVER/tools/conductor_tools.py`
+- Progress: `/home/corey/projects/AI-CIV/WEAVER/tools/progress_reporter.py`
 
 ## Invocation Syntax
 ```xml

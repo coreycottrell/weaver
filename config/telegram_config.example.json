@@ -9,7 +9,7 @@
   },
   "tmux_session": "0",
   "tmux_pane": "0:0.0",
-  "working_directory": "/home/corey/projects/AI-CIV/grow_openai",
+  "working_directory": "/home/corey/projects/AI-CIV/WEAVER",
   "response_timeout": 10,
   "max_response_length": 4000
 }

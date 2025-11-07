@@ -74,7 +74,7 @@ class TelegramBridge:
         self.tmux_pane = f"{self.tmux_session}:0.0"
         self.working_dir = self.config.get(
             "working_directory",
-            "/home/corey/projects/AI-CIV/grow_openai"
+            "/home/corey/projects/AI-CIV/WEAVER"
         )
         self.response_timeout = self.config.get("response_timeout", 10)
 

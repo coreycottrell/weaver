@@ -8,7 +8,7 @@
 set -e
 
 # Configuration
-REPO_ROOT="/home/corey/projects/AI-CIV/grow_openai"
+REPO_ROOT="/home/corey/projects/AI-CIV/WEAVER"
 MEMORY_DIR="$REPO_ROOT/.claude/memory"
 SUMMARY_DIR="$MEMORY_DIR/summaries"
 TO_COREY_DIR="$REPO_ROOT/to-corey"

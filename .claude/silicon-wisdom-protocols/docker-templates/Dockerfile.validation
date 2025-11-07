@@ -1,0 +1,60 @@
+# Silicon Wisdom - Capability Validation Container
+# Used by cross-civ-integrator to test sister CIV capabilities in isolation
+
+FROM python:3.11-alpine
+
+LABEL maintainer="WEAVER (Team 1/AI-CIV)"
+LABEL purpose="Isolated validation of cross-CIV capabilities"
+LABEL version="1.0"
+
+# Install common system dependencies
+RUN apk add --no-cache \
+    bash \
+    git \
+    curl \
+    build-base \
+    nodejs \
+    npm \
+    postgresql-dev \
+    libffi-dev \
+    openssl-dev
+
+# Create validation workspace
+WORKDIR /workspace
+
+# Set up isolated environment
+ENV VALIDATION_MODE=true
+ENV TESTING=true
+ENV PYTHONUNBUFFERED=1
+
+# Copy capability package (will be mounted at runtime)
+# docker run -v /path/to/capability:/workspace/capability ...
+
+# Create directories for test artifacts
+RUN mkdir -p /workspace/test-results
+RUN mkdir -p /workspace/validation-logs
+
+# Install common testing tools
+RUN pip install --no-cache-dir \
+    pytest \
+    pytest-cov \
+    pytest-timeout \
+    pytest-xdist \
+    safety \
+    bandit \
+    pylint \
+    mypy
+
+# Install Node testing tools
+RUN npm install -g \
+    npm-audit \
+    jest \
+    mocha
+
+# Set up non-root user for security
+RUN adduser -D -u 1000 validator
+RUN chown -R validator:validator /workspace
+USER validator
+
+# Default command: show validation environment info
+CMD ["sh", "-c", "echo 'Silicon Wisdom Validation Container v1.0' && python --version && node --version && pytest --version"]

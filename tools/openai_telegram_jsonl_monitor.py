@@ -25,7 +25,7 @@ Logs:
     /tmp/openai_telegram_jsonl_monitor.log (main log)
     /tmp/openai_telegram_jsonl_monitor_error.log (errors only)
 
-Author: Team 1 (AI-CIV grow_openai)
+Author: Team 1 (AI-CIV WEAVER)
 Date: 2025-10-20
 Status: PRODUCTION - Project-specific naming to avoid ACG collision
 """
@@ -44,7 +44,7 @@ from typing import Optional, Dict, List, Set
 import argparse
 
 # Configuration paths
-PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/grow_openai")
+PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/WEAVER")
 CONFIG_FILE = PROJECT_ROOT / "config/telegram_config.json"
 STATE_FILE = PROJECT_ROOT / ".tg_sessions/jsonl_monitor_state.json"
 LOG_FILE = Path("/tmp/openai_telegram_jsonl_monitor.log")
