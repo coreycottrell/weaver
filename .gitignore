@@ -1,36 +1,67 @@
-# Session-specific runtime data
-.claude/memory/session-context.json
-
-# User-specific preferences
-.claude/memory/user-preferences.md
-
-# Observatory state (runtime data)
-.claude/observatory/dashboard-state.json
-.claude/observatory/config.json
-
-# Environment variables
-.env
-
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
-venv/
-.venv/
 *.egg-info/
+dist/
+build/
+*.egg
 
-# IDEs
-.vscode/
-.idea/
+# Virtual Environments
+browser_venv/
+skills_test_venv/
+venv/
+env/
+ENV/
+.venv/
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Private keys and secrets
+tools/ed25519/
+*.key
+!*.pub
+
+# Session logs (large files over 100MB)
+memories/logs/sessions/*.jsonl
+
+# Logs
+*.log
+.logs/
+cron/*.log
+queue/*.log
+
+# Temporary files
+*.tmp
+*.temp
 *.swp
 *.swo
-
-# OS
+*~
 .DS_Store
 Thumbs.db
 
-# Logs
-*.logbrowser_venv/
+# Large archives
+*.tar.gz
+*.zip
+corey_tg_interface_backup.tar.gz
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Analytics database (regenerable)
+.claude/analytics/archive.db
+
+# Git filter-branch backup
+.git/refs/original/
+refs/original/
+
+# Embedded repositories (manage separately)
+aiciv-comms-hub-bootstrap/.git/
+aiciv-skills/.git/
