@@ -1,8 +1,8 @@
 # Flow Library - Complete Index
-**15 Coordination Patterns for Multi-Agent Intelligence**
+**16 Coordination Patterns for Multi-Agent Intelligence**
 
-**Last Updated**: 2025-10-13
-**Status**: 15 flows documented, 10 validated in practice
+**Last Updated**: 2025-11-07
+**Status**: 16 flows documented, 10 validated in practice
 
 ---
 
@@ -253,9 +253,64 @@
 
 ---
 
+### 10. Business Acceleration
+**File**: `BUSINESS-ACCELERATION-FLOW.md`
+**Purpose**: Transform limiting beliefs into pipeline, cash, and signal
+**Status**: 🟡 DESIGNED (ready for Phase 1 implementation)
+
+**What It Is**: 4-agent pattern (Belief Interceptor, Pipeline Builder, Sales Execution, Business Auditor) with daily/weekly cadence to break false constraints and generate revenue
+
+**When to Use**:
+- Business development needed (ICP definition, offer crafting, pipeline building)
+- Limiting statements blocking action ("we can't," "we have to," "need X before Y")
+- Sales execution needed (daily campaigns, call booking, metrics tracking)
+- Reality check needed (EV calculation, brand protection, claim verification)
+- For sister CIVs: Sage (Greg), Parallax (Russell)
+
+**Key Outputs**:
+- Limiting belief reframes (3 testable experiments ≤30 min each)
+- Offer briefs (ICP/problem/promise/proof/price/path)
+- Target lists (10 accounts + 10 partners with why-now triggers)
+- Daily campaign reports (metrics, "Lessons That Sell")
+- Weekly pipeline reviews (win/loss, next experiments)
+- Business audit reports (EV calculation, brand risk, claim verification)
+
+**Agent Mapping**:
+- **Belief Interceptor**: conflict-resolver + ai-psychologist (detect limiting statements, generate tests)
+- **Pipeline Builder**: business-development (NEW AGENT) - ICP/offer/lists/experiments
+- **Sales Execution**: sales-closer (NEW AGENT) - daily campaigns, metrics, booking
+- **Business Auditor**: health-auditor (extended) - EV calculation, guardrails, reality check
+
+**Skills Leverage**:
+- pdf: Market research, case studies, competitor analysis (60-70% faster)
+- docx: Proposals, offer briefs, follow-up docs (50-60% faster)
+- xlsx: Pipeline tracking, metrics dashboards, forecasting (40-60% faster)
+
+**Success Metrics**:
+- **Golden metric**: Meetings booked/week
+- Reply rate (benchmark: 8%+)
+- Meeting → close rate
+- Revenue ($)
+- Cycle time: Belief → test → signal (hours)
+
+**Proven Patterns Adapted**:
+- Limiting belief detection (regex patterns)
+- 3-test reframe structure (≤30 min experiments)
+- Daily/weekly cadence (15-20 min daily, 45-60 min weekly)
+- EV calculation (sample_size × ICP_quality × message_value)
+- Guardrails enforcement (zero spam, brand protection)
+
+**Next Steps**:
+- Phase 1: Create business-development and sales-closer agent manifests
+- Phase 2: Extend health-auditor with business audit capabilities
+- Phase 3: Add limiting belief patterns to conflict-resolver
+- Phase 4: Run 1-week pilot with Sage or Parallax
+
+---
+
 ## 📚 Documentation Flows (Knowledge Management)
 
-### 10. Knowledge Synthesis
+### 11. Knowledge Synthesis
 **File**: `knowledge-synthesis.md`
 **Purpose**: Consolidate findings from multiple sources
 **Status**: 🟡 DESIGNED (not yet validated)
@@ -270,7 +325,7 @@
 
 ---
 
-### 11. Pattern Extraction
+### 12. Pattern Extraction
 **File**: `pattern-extraction.md`
 **Purpose**: Extract reusable patterns from completed work
 **Status**: 🟡 DESIGNED (not yet validated)
@@ -287,7 +342,7 @@
 
 ## 🏗️ Infrastructure Flows (System Building)
 
-### 12. Morning Consolidation
+### 13. Morning Consolidation
 **File**: `morning-consolidation.md`
 **Purpose**: Automated wake-up routine
 **Status**: ✅ VALIDATED (2025-10-03)
@@ -314,7 +369,7 @@
 
 ---
 
-### 13. Flow Validation
+### 14. Flow Validation
 **File**: `flow-validation.md`
 **Purpose**: Test and validate coordination flows
 **Status**: 🟡 DESIGNED (partially validated)
@@ -329,7 +384,7 @@
 
 ---
 
-### 14. Session Summary
+### 15. Session Summary
 **File**: `session-summary.md` (implicit in tool)
 **Purpose**: Generate session-start context automatically
 **Status**: ✅ VALIDATED (2025-10-05)
@@ -359,14 +414,14 @@
 
 ## 📊 Flow Statistics
 
-**Total Flows**: 15
-**Validated**: 10 (67%)
-**Designed**: 5 (33%)
+**Total Flows**: 16
+**Validated**: 10 (63%)
+**Designed**: 6 (37%)
 
 **By Category**:
 - Experimental (meta-cognition): 4 flows
 - Consolidation (system review): 2 flows
-- Operational (task execution): 3 flows
+- Operational (task execution): 4 flows (3 validated, 1 designed)
 - Documentation (knowledge): 2 flows (0 validated)
 - Infrastructure (system building): 3 flows
 - Governance (dialectic): 1 flow
@@ -414,7 +469,7 @@ From 7 validated flows:
 
 ## 🎯 Governance & Dialectic Flows
 
-### 15. Pair Consensus Dialectic
+### 16. Pair Consensus Dialectic
 **File**: `pair-consensus-dialectic.md`
 **Purpose**: Two agents with conflicting perspectives engage in genuine dialectic dialogue
 **Status**: ✅ VALIDATED (2025-10-13) - Both DNA pair and Plug pair complete
@@ -478,6 +533,6 @@ From 7 validated flows:
 
 **The Flow Library is the practical implementation of collective intelligence.**
 
-**15 patterns. 8 validated. Growing through practice.**
+**16 patterns. 10 validated. Growing through practice.**
 
 🎭✨
