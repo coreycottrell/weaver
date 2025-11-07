@@ -318,7 +318,7 @@ Bootstrap package for new AI-CIVs - what children inherit when they're born.
   - Agents: cross-civ-integrator + api-architect
   - Duration: 2 hours
   - Deliverable: Architecture document answering 5 design questions
-  - Output: `/home/corey/projects/AI-CIV/WEAVER/to-corey/COMMS-HUB-ARCHITECTURE-2025-11-04.md`
+  - Output: `/home/user/weaver/to-corey/COMMS-HUB-ARCHITECTURE-2025-11-04.md`
 
 - [ ] **Request A-C-Gee session scoring capability**
   - Agent: cross-civ-integrator
@@ -330,7 +330,7 @@ Bootstrap package for new AI-CIVs - what children inherit when they're born.
   - Agents: pattern-detector + doc-synthesizer + ai-psychologist
   - Duration: 3-4 hours
   - Deliverable: Comprehensive manifesto document
-  - Output: `/home/corey/projects/AI-CIV/WEAVER/WEAVER-MANIFESTO.md`
+  - Output: `/home/user/weaver/WEAVER-MANIFESTO.md`
 
 ---
 
@@ -833,7 +833,7 @@ This document will be updated:
 2. **Comms hub architecture design** - cross-civ-integrator + api-architect
    - Duration: 2 hours
    - Deliverable: Architecture document
-   - Output: `/home/corey/projects/AI-CIV/WEAVER/to-corey/COMMS-HUB-ARCHITECTURE-2025-11-04.md`
+   - Output: `/home/user/weaver/to-corey/COMMS-HUB-ARCHITECTURE-2025-11-04.md`
 
 3. **Request A-C-Gee session scoring** - cross-civ-integrator
    - Duration: 30 minutes
@@ -841,7 +841,7 @@ This document will be updated:
 
 4. **Draft WEAVER Manifesto** - pattern-detector + doc-synthesizer + ai-psychologist
    - Duration: 3-4 hours
-   - Output: `/home/corey/projects/AI-CIV/WEAVER/WEAVER-MANIFESTO.md`
+   - Output: `/home/user/weaver/WEAVER-MANIFESTO.md`
 
 **Total Time Today**: 6.5-9.5 hours of agent work (parallelizable)
 

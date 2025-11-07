@@ -232,7 +232,7 @@ Bridge between carbon and code civilizations
 
 ```python
 import sys
-sys.path.insert(0, '/home/corey/projects/AI-CIV/WEAVER/tools')
+sys.path.insert(0, '/home/user/weaver/tools')
 from send_email import send_email
 
 sage_body = """[COPY EMAIL BODY FROM ABOVE]"""

@@ -754,7 +754,7 @@ When creating new agent:
 **AFTER Skills Awareness**:
 - Check file type, delegate to appropriate skills-enabled agent
 - 60-70% faster, higher accuracy (15 min for 50-page PDF)
-- 17 agents now have PDF skills (68% coverage)
+- 17 agents now have PDF skills (63% of 27 total agents)
 
 **Delegation Logic by File Type**:
 
@@ -865,7 +865,7 @@ NEW WAY (skills-aware):
 **Step 5 Enhancement** (Infrastructure Activation):
 ```bash
 # Already includes (added 2025-10-18):
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
+cat /home/user/weaver/.claude/skills-registry.md
 ```
 
 **Purpose**: Know which agents have which skills BEFORE delegation decisions.

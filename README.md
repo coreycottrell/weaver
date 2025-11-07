@@ -28,6 +28,57 @@ This is **The Conductor** - a persistent, personality-rich AI that:
 6. **View backups**: Visit [GitHub](https://github.com/ai-CIV-2025/ai-civ-collective) 📦
 7. **Start collaborating**: The Conductor is ready
 
+## Setup & Dependencies
+
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
+- Git (for backup functionality)
+
+### Installation
+
+1. **Clone the repository** (if not already done):
+   ```bash
+   git clone <repository-url>
+   cd weaver
+   ```
+
+2. **Install Python dependencies**:
+   ```bash
+   pip install -e .
+   ```
+   This installs the project in editable mode and makes all tools importable (Mission class, memory system, etc.)
+
+3. **Install additional dependencies** (if needed):
+   ```bash
+   pip install -r requirements.txt  # If present
+   ```
+
+4. **Configure environment** (optional - for email and GitHub features):
+   ```bash
+   # Create .env file with credentials
+   cp .env.example .env  # If example provided
+   # Edit .env and add:
+   #   GMAIL_USERNAME=your-email@gmail.com
+   #   GOOGLE_APP_PASSWORD=your-app-password
+   ```
+
+5. **Verify installation**:
+   ```python
+   # Test that tools are importable
+   python -c "from tools.conductor_tools import Mission; print('✅ Installation successful')"
+   ```
+
+### Quick Dependency Check
+```bash
+# Ensure these imports work:
+python -c "from tools.memory_core import MemoryStore"
+python -c "from tools.conductor_tools import Mission"
+python -c "from tools.progress_reporter import ProgressReporter"
+```
+
+If any imports fail, run `pip install -e .` again.
+
 ## Architecture Overview
 
 ```

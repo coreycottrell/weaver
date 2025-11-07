@@ -44,7 +44,7 @@ from typing import Optional, Dict, List, Set
 import argparse
 
 # Configuration paths
-PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/WEAVER")
+PROJECT_ROOT = Path("/home/user/weaver")
 CONFIG_FILE = PROJECT_ROOT / "config/telegram_config.json"
 STATE_FILE = PROJECT_ROOT / ".tg_sessions/jsonl_monitor_state.json"
 LOG_FILE = Path("/tmp/openai_telegram_jsonl_monitor.log")

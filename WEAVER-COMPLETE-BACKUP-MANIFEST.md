@@ -189,7 +189,7 @@ Go to: https://github.com/coreycottrell/weaver/settings/keys
 ### Step 2: Push to New Repository
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 
 # Add new remote
 git remote add backup git@github.com:coreycottrell/weaver.git

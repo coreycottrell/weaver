@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Optional, Dict, Any
 
 
-def get_active_session_file(project_path: str = "/home/corey/projects/AI-CIV/WEAVER") -> Optional[str]:
+def get_active_session_file(project_path: str = "/home/user/weaver") -> Optional[str]:
     """Find the most recently updated JSONL session file."""
     # Claude Code logs to ~/.claude/projects/{project-slug}/{session-uuid}.jsonl
     claude_projects = Path.home() / ".claude" / "projects" / "-home-corey-projects-AI-CIV-grow-openai"
@@ -49,7 +49,7 @@ def extract_wrapped_content(text: str) -> Optional[str]:
 
 def send_to_telegram(content: str, user_id: str = "437939400") -> bool:
     """Send message to Telegram using send_telegram_direct.py."""
-    script_path = "/home/corey/projects/AI-CIV/WEAVER/tools/send_telegram_direct.py"
+    script_path = "/home/user/weaver/tools/send_telegram_direct.py"
 
     try:
         result = subprocess.run(

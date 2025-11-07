@@ -22,7 +22,7 @@
 **Single command** - does everything:
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 bash tools/fix_telegram_config.sh
 ```
 
@@ -41,20 +41,20 @@ If you want to see each step:
 
 **Step 1: Test Direct Send (Verify Bot Works)**
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 bash tools/test_telegram_now.sh
 ```
 **Success**: Message on Telegram = bot token valid
 
 **Step 2: Apply Configuration Fix**
 Edit `config/telegram_config.json`:
-- Line 11: `/home/corey/projects/AI-CIV/grow_openai` → `/home/corey/projects/AI-CIV/WEAVER`
+- Line 11: `/home/corey/projects/AI-CIV/grow_openai` → `/home/user/weaver`
 - Line 17: `-home-corey-projects-AI-CIV-grow-openai` → `-home-corey-projects-AI-CIV-WEAVER`
 
 **Step 3: Restart Monitor**
 ```bash
 pkill -f "openai_telegram_jsonl_monitor.py"
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 nohup python3 tools/prod/tg/openai_telegram_jsonl_monitor.py >> /tmp/openai_telegram_jsonl_monitor.log 2>&1 &
 ```
 
@@ -132,7 +132,7 @@ All ready for immediate use:
 **Fastest path to working Telegram**:
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 bash tools/fix_telegram_config.sh
 ```
 

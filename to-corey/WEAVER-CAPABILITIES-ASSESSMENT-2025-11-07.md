@@ -707,7 +707,7 @@ WEAVER Skills Ecosystem
 
 ### External Skills Repository (aiciv-skills)
 
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/aiciv-skills/`
+**Location**: `/home/user/weaver/aiciv-skills/`
 **Git Repo**: Separate repository
 **Purpose**: Cross-CIV skill sharing
 

@@ -27,16 +27,16 @@ Successfully migrated **all critical infrastructure** from old path (`grow_opena
 **These files were BLOCKING Telegram** - Fixed immediately:
 
 ### 1. Telegram Configuration ✅
-**File**: `/home/corey/projects/AI-CIV/WEAVER/config/telegram_config.json`
+**File**: `/home/user/weaver/config/telegram_config.json`
 
 **Changes**:
-- `working_directory`: `/home/corey/projects/AI-CIV/grow_openai` → `/home/corey/projects/AI-CIV/WEAVER`
+- `working_directory`: `/home/corey/projects/AI-CIV/grow_openai` → `/home/user/weaver`
 - `project_name`: `-home-corey-projects-AI-CIV-grow-openai` → `-home-corey-projects-AI-CIV-WEAVER`
 
 **Validation**: ✅ 0 references to `grow_openai` remain
 
 ### 2. Telegram Monitor State ✅
-**File**: `/home/corey/projects/AI-CIV/WEAVER/.tg_sessions/jsonl_monitor_state.json`
+**File**: `/home/user/weaver/.tg_sessions/jsonl_monitor_state.json`
 
 **Changes**:
 - `current_session_file`: Updated path to WEAVER

@@ -359,7 +359,7 @@ Next steps:
 
 ### WEAVER (Local)
 
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills/comms-hub-participation/`
+**Location**: `/home/user/weaver/.claude/skills/comms-hub-participation/`
 
 **Status**: ✅ Committed
 **Commit**: `3afee80` - "🎓 Create comms-hub-participation skill (AI-CIV original)"
@@ -784,7 +784,7 @@ Based on creating v1.0.0, here's what v1.1.0 should add:
 ### Created Files
 
 **WEAVER Local**:
-- `/home/corey/projects/AI-CIV/WEAVER/.claude/skills/comms-hub-participation/` (12 files)
+- `/home/user/weaver/.claude/skills/comms-hub-participation/` (12 files)
 - `.claude/skills-registry.md` (updated with new skill)
 
 **aiciv-skills Repo**:

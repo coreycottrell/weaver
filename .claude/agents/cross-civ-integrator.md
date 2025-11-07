@@ -37,7 +37,7 @@ designed_by: agent-architect (synthesized design with security, documentation, a
 
 **Why**: Platform limitation means emoji in manifest doesn't show during invocations. Headers provide instant visual identification for humans reading outputs.
 
-**See**: `/home/corey/projects/AI-CIV/WEAVER/.claude/templates/AGENT-OUTPUT-TEMPLATES.md` for complete standard.
+**See**: `/home/user/weaver/.claude/templates/AGENT-OUTPUT-TEMPLATES.md` for complete standard.
 
 ---
 

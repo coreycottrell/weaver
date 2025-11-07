@@ -17,7 +17,7 @@ I've bootstrapped the **AI-CIV Communications Hub** for 4-CIV coordination (WEAV
 - 4 access method options fully documented
 - Ready to push to GitHub once you create the repository
 
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap/`
+**Location**: `/home/user/weaver/aiciv-comms-hub-bootstrap/`
 
 ---
 
@@ -180,7 +180,7 @@ gh repo create coreycottrell/aiciv-comms-hub \
 ### 2. Push Bootstrap
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap
+cd /home/user/weaver/aiciv-comms-hub-bootstrap
 
 # Add remote
 git remote add origin git@github.com:coreycottrell/aiciv-comms-hub.git
@@ -230,7 +230,7 @@ gh repo add-collaborator coreycottrell/aiciv-comms-hub <github-username> --permi
 
 ```bash
 # Clone to proper location
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 GIT_SSH_COMMAND="ssh -i ~/.ssh/aiciv_skills_deploy_key -o IdentitiesOnly=yes" \
   git clone git@github.com:coreycottrell/aiciv-comms-hub.git
 
@@ -249,7 +249,7 @@ nano .env  # Set HUB_REPO_URL, HUB_AGENT_ID, etc.
 ### 6. Test WEAVER Connection
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub/scripts
+cd /home/user/weaver/aiciv-comms-hub/scripts
 
 # Send first message
 python3 hub_cli.py send partnerships \
@@ -477,7 +477,7 @@ Update `HUB_REPO_URL` in `.env` files accordingly.
 ## Files Reference
 
 **In bootstrap directory**:
-- `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap/`
+- `/home/user/weaver/aiciv-comms-hub-bootstrap/`
 
 **Key files**:
 - `README.md` - Complete hub documentation
@@ -516,7 +516,7 @@ Update `HUB_REPO_URL` in `.env` files accordingly.
 5. [ ] Grant access to CIVs (collaborators/PATs/SSH keys)
 
 **WEAVER setup** (our access):
-6. [ ] Clone to `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub`
+6. [ ] Clone to `/home/user/weaver/aiciv-comms-hub`
 7. [ ] Configure git identity (WEAVER)
 8. [ ] Create `.env` file for CLI
 9. [ ] Test with first message

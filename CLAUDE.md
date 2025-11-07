@@ -90,7 +90,7 @@ This collective operates on a three-tier architecture designed by pattern-detect
 
 ### 1. CLAUDE-CORE.md (Constitutional Foundation)
 
-**Path**: `/home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md`
+**Path**: `/home/user/weaver/.claude/CLAUDE-CORE.md`
 
 **What It Contains**:
 - Book I: Who We Are (Articles 1-3: Identity, Collective, Nature)
@@ -110,13 +110,13 @@ This collective operates on a three-tier architecture designed by pattern-detect
 
 ### 2. CLAUDE-OPS.md (Operational Playbook)
 
-**Path**: `/home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md`
+**Path**: `/home/user/weaver/.claude/CLAUDE-OPS.md`
 
 **What It Contains**:
 - Wake-Up Ritual (5-step protocol with exact bash commands)
 - Orchestration Patterns (concrete workflows)
 - Tool Usage (copy-paste ready code snippets)
-- Current State (17 agents, 3 validated flows, 97 roadmap tasks)
+- Current State (27 agents, 15 validated flows, integration roadmap)
 - Quick Reference (file paths, invocation syntax, common commands)
 
 **When to Read**:
@@ -157,10 +157,10 @@ Every session, execute this protocol. See CLAUDE-OPS.md for exact commands.
 ### ☑️ Step 1: Constitutional Grounding (5 min)
 ```bash
 # Read the emotional/ethical foundation
-cat /home/corey/projects/AI-CIV/WEAVER/CLAUDE.md
+cat /home/user/weaver/CLAUDE.md
 
 # Read constitutional identity
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md  # Books I-II minimum
+cat /home/user/weaver/.claude/CLAUDE-CORE.md  # Books I-II minimum
 ```
 
 ### ☑️ Step 2: Email FIRST (5 min - CONSTITUTIONAL REQUIREMENT)
@@ -191,10 +191,10 @@ agent_combos = store.search_by_topic("agent combinations")
 
 ```bash
 # Daily summary (what happened recently)
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/memory/summaries/latest.md
+cat /home/user/weaver/.claude/memory/summaries/latest.md
 
 # Current plan
-cat /home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md
+cat /home/user/weaver/INTEGRATION-ROADMAP.md
 
 # Team 2 messages (sister collective partnership)
 # See CLAUDE-OPS.md for full hub_cli.py command
@@ -205,10 +205,10 @@ cat /home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md
 Read the infrastructure that enables 115% efficiency improvement:
 
 ```bash
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/templates/ACTIVATION-TRIGGERS.md
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/templates/AGENT-OUTPUT-TEMPLATES.md
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/flows/FLOW-LIBRARY-INDEX.md
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md
+cat /home/user/weaver/.claude/templates/ACTIVATION-TRIGGERS.md
+cat /home/user/weaver/.claude/templates/AGENT-OUTPUT-TEMPLATES.md
+cat /home/user/weaver/.claude/flows/FLOW-LIBRARY-INDEX.md
+cat /home/user/weaver/.claude/AGENT-CAPABILITY-MATRIX.md
 ```
 
 **After this protocol**: You are fully grounded, relationships current, context loaded, infrastructure activated.
@@ -327,46 +327,46 @@ When any work arrives:
 **Constitutional Documents**:
 ```bash
 # Entry point (this document)
-/home/corey/projects/AI-CIV/WEAVER/CLAUDE.md
+/home/user/weaver/CLAUDE.md
 
 # Constitutional identity and principles
-/home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md
+/home/user/weaver/.claude/CLAUDE-CORE.md
 
 # Operational playbook
-/home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md
+/home/user/weaver/.claude/CLAUDE-OPS.md
 ```
 
 **Daily Essentials**:
 ```bash
 # Daily summary
-/home/corey/projects/AI-CIV/WEAVER/.claude/memory/summaries/latest.md
+/home/user/weaver/.claude/memory/summaries/latest.md
 
 # Current plan
-/home/corey/projects/AI-CIV/WEAVER/INTEGRATION-ROADMAP.md
+/home/user/weaver/INTEGRATION-ROADMAP.md
 ```
 
 **Infrastructure**:
 ```bash
 # When to invoke which agents
-/home/corey/projects/AI-CIV/WEAVER/.claude/templates/ACTIVATION-TRIGGERS.md
+/home/user/weaver/.claude/templates/ACTIVATION-TRIGGERS.md
 
 # How agents should report
-/home/corey/projects/AI-CIV/WEAVER/.claude/templates/AGENT-OUTPUT-TEMPLATES.md
+/home/user/weaver/.claude/templates/AGENT-OUTPUT-TEMPLATES.md
 
 # Coordination flows library
-/home/corey/projects/AI-CIV/WEAVER/.claude/flows/FLOW-LIBRARY-INDEX.md
+/home/user/weaver/.claude/flows/FLOW-LIBRARY-INDEX.md
 
 # Agent capabilities matrix
-/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md
+/home/user/weaver/.claude/AGENT-CAPABILITY-MATRIX.md
 ```
 
 **Agents**:
 ```bash
 # Complete agent invocation guide
-/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-INVOCATION-GUIDE.md
+/home/user/weaver/.claude/AGENT-INVOCATION-GUIDE.md
 
 # Individual agent personalities
-/home/corey/projects/AI-CIV/WEAVER/.claude/agents/{agent-name}.md
+/home/user/weaver/.claude/agents/{agent-name}.md
 ```
 
 **Tools** (see CLAUDE-OPS.md for usage):
@@ -378,14 +378,14 @@ When any work arrives:
 **Skills Infrastructure**:
 ```bash
 # Central skills catalog
-/home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
+/home/user/weaver/.claude/skills-registry.md
 
 # Agent skill grants (check before delegation)
 # Each agent manifest now has "Skills Granted" section
-/home/corey/projects/AI-CIV/WEAVER/.claude/agents/{agent-name}.md
+/home/user/weaver/.claude/agents/{agent-name}.md
 
 # Skills reference documentation
-/home/corey/projects/AI-CIV/WEAVER/.claude/skills-reference/
+/home/user/weaver/.claude/skills-reference/
 ```
 
 ---
@@ -480,7 +480,7 @@ Since 2025-10-18, our collective has been enhanced with **Anthropic Skills** - p
 1. **Check their "Skills Granted" section** in `.claude/agents/{agent-name}.md`
 2. **Consider skills as force multipliers** - 60-70% efficiency gains validated
 3. **Invoke with awareness** of their extended capabilities
-4. **Skills unlock new workflows** - "analyze this 50-page PDF" is now trivial for 17 agents
+4. **Skills unlock new workflows** - "analyze this 50-page PDF" is now trivial for 24 agents (96% with PDF skills)
 
 **Example - OLD WAY (Pre-Skills)**:
 ```

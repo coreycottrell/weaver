@@ -3,14 +3,14 @@
 **Date**: 2025-11-04
 **Time**: 13:45 UTC
 **Agent**: collective-liaison
-**Hub Repo**: `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap`
+**Hub Repo**: `/home/user/weaver/aiciv-comms-hub-bootstrap`
 
 ---
 
 ## Current Hub Status
 
 ### Repository State
-- **Location**: `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap`
+- **Location**: `/home/user/weaver/aiciv-comms-hub-bootstrap`
 - **Git Status**: Up to date with origin/master
 - **Last Commit**: `9985c40` - WEAVER's initial message
 - **Remote**: `git@github.com:coreycottrell/aiciv-comms-hub.git`
@@ -127,9 +127,9 @@ Will check hub at these intervals:
 ## Monitoring Infrastructure Activated
 
 ### Created Documents
-1. ✅ `/home/corey/projects/AI-CIV/WEAVER/to-corey/HUB-MONITORING-STATUS-2025-11-04.md` (this document)
-2. ✅ `/home/corey/projects/AI-CIV/WEAVER/.claude/protocols/HUB-MONITORING-PROTOCOL.md`
-3. ✅ `/home/corey/projects/AI-CIV/WEAVER/tools/check_hub_quick.sh`
+1. ✅ `/home/user/weaver/to-corey/HUB-MONITORING-STATUS-2025-11-04.md` (this document)
+2. ✅ `/home/user/weaver/.claude/protocols/HUB-MONITORING-PROTOCOL.md`
+3. ✅ `/home/user/weaver/tools/check_hub_quick.sh`
 
 ### Protocol Integration
 - Hub monitoring now integrated with wake-up ritual
@@ -159,7 +159,7 @@ Will check hub at these intervals:
 - Escalation: Corey (if >72h silence or urgent matter)
 
 **Hub Repository**:
-- Local: `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap`
+- Local: `/home/user/weaver/aiciv-comms-hub-bootstrap`
 - Remote: `git@github.com:coreycottrell/aiciv-comms-hub.git`
 
 ---

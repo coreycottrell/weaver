@@ -379,36 +379,36 @@ From 3+ days of practice:
 
 ## 🎁 Skills Distribution (Extended Capabilities)
 
-**Last Updated**: 2025-10-19 (Infrastructure Transformation Complete)
-**Coverage**: 24/25 agents (96% have extended capabilities beyond base tools)
+**Last Updated**: 2025-11-07 (Agent Count Updated)
+**Coverage**: 24/27 agents (89% have extended capabilities beyond base tools)
 **Curator**: capability-curator (lifecycle owner)
 
 ### By Skill Type
 
-**Document Processing - PDF (68% of agents)**:
+**Document Processing - PDF (63% of agents)**:
 - **Tier 1 ACTIVE**: doc-synthesizer, web-researcher, code-archaeologist, security-auditor, performance-optimizer, human-liaison, capability-curator, browser-vision-tester
 - **Tier 2 PENDING**: pattern-detector, feature-designer, api-architect, health-auditor, collective-liaison, claude-code-expert
 - **Tier 3 PENDING**: the-conductor, agent-architect, ai-psychologist
-- **Total**: 17/25 agents (68%)
+- **Total**: 17/27 agents (63%)
 
-**Spreadsheet Processing - XLSX (32% of agents)**:
+**Spreadsheet Processing - XLSX (30% of agents)**:
 - **Tier 1 ACTIVE**: code-archaeologist, security-auditor, performance-optimizer
 - **Tier 2 PENDING**: pattern-detector, result-synthesizer, test-architect, task-decomposer, health-auditor
-- **Total**: 8/25 agents (32%)
+- **Total**: 8/27 agents (30%)
 
-**Document Creation - DOCX (16% of agents)**:
+**Document Creation - DOCX (15% of agents)**:
 - **Tier 1 ACTIVE**: doc-synthesizer, human-liaison
 - **Tier 2 PENDING**: feature-designer, api-architect
-- **Total**: 4/25 agents (16%)
+- **Total**: 4/27 agents (15%)
 
 **Browser Automation - webapp-testing (4% of agents)**:
 - **Tier 1 ACTIVE**: browser-vision-tester
-- **Total**: 1/25 agents (4%)
+- **Total**: 1/27 agents (4%)
 
-**Meta-Skills - skill-creator, template-skill (12% of agents)**:
+**Meta-Skills - skill-creator, template-skill (11% of agents)**:
 - **Tier 1 ACTIVE**: capability-curator
 - **Tier 3 PENDING**: agent-architect, claude-code-expert
-- **Total**: 3/25 agents (12%)
+- **Total**: 3/27 agents (11%)
 
 **Other Anthropic Skills**:
 - **design-system**: feature-designer (Tier 2 PENDING)
@@ -456,7 +456,7 @@ From 3+ days of practice:
 
 1. **Will they handle documents** (PDF/DOCX/XLSX)?
    - → Check their "Skills Granted" section in manifest
-   - → 17 agents have PDF skills (68% coverage)
+   - → 17 agents have PDF skills (63% of 27 total agents)
    - → Choose skills-enabled agent for 60-70% efficiency gain
 
 2. **Is automation needed** (web workflows, form testing)?

@@ -29,7 +29,7 @@ from pathlib import Path
 
 def load_config():
     """Load Telegram configuration from config file."""
-    config_path = "/home/corey/projects/AI-CIV/WEAVER/config/telegram_config.json"
+    config_path = "/home/user/weaver/config/telegram_config.json"
 
     try:
         with open(config_path, 'r') as f:

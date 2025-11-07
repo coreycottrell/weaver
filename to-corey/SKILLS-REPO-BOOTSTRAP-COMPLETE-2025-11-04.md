@@ -168,7 +168,7 @@ capabilities/
 
 ## Git Configuration & Commit Details
 
-**Repository**: /home/corey/projects/AI-CIV/WEAVER/aiciv-skills
+**Repository**: /home/user/weaver/aiciv-skills
 **Branch**: main
 **Remote**: git@github.com:coreycottrell/aiciv-skills.git
 
@@ -380,7 +380,7 @@ This repository embodies delegation across civilizations - WEAVER built it, but 
 ```bash
 # In capability-curator's Monday 9am autonomous scan
 # Check aiciv-skills repo for new contributions from other CIVs
-cd /home/corey/projects/AI-CIV/WEAVER/aiciv-skills
+cd /home/user/weaver/aiciv-skills
 git pull origin main
 # If changes detected → notify Corey
 ```

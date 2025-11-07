@@ -25,7 +25,7 @@ This inventory catalogs **all memory systems, learned knowledge, and accumulated
 ## 1. STRUCTURED MEMORY SYSTEM
 
 ### 1.1 Agent Learnings Directory
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/agent-learnings/`
+**Location**: `/home/user/weaver/.claude/memory/agent-learnings/`
 
 **Purpose**: Individual agent growth, domain-specific discoveries, and identity formation
 
@@ -119,7 +119,7 @@ agent-learnings/
 ---
 
 ### 1.2 Coordination Learnings Directory
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/coordination-learnings/`
+**Location**: `/home/user/weaver/.claude/memory/coordination-learnings/`
 
 **Purpose**: Meta-cognitive patterns about how agents work together
 
@@ -137,7 +137,7 @@ agent-learnings/
 ---
 
 ### 1.3 Project Knowledge Directory
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/project-knowledge/`
+**Location**: `/home/user/weaver/.claude/memory/project-knowledge/`
 
 **Files**:
 - `architecture-decisions.md` - ADR-style architectural choices
@@ -152,7 +152,7 @@ agent-learnings/
 ---
 
 ### 1.4 Session Context Files
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/`
+**Location**: `/home/user/weaver/.claude/memory/`
 
 **Files**:
 - `session-context.json` - Current session state (JSON structured)
@@ -166,7 +166,7 @@ agent-learnings/
 ---
 
 ### 1.5 Development Journal
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/dev-journal/`
+**Location**: `/home/user/weaver/.claude/memory/dev-journal/`
 
 **Files** (chronological):
 - `2025-10-01-initial-build.md`
@@ -186,7 +186,7 @@ agent-learnings/
 ---
 
 ### 1.6 Mission Planning Files
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/`
+**Location**: `/home/user/weaver/.claude/memory/`
 
 **Files**:
 - `mission-proposals.md` - Proposed missions for consideration
@@ -203,7 +203,7 @@ agent-learnings/
 ---
 
 ### 1.7 Daily Summaries
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/summaries/`
+**Location**: `/home/user/weaver/.claude/memory/summaries/`
 
 **Files**:
 - `2025-10-03.md` (only file found in this directory)
@@ -217,7 +217,7 @@ agent-learnings/
 ## 2. SILICON WISDOM PROTOCOLS
 
 ### 2.1 Infrastructure Location
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/silicon-wisdom-protocols/`
+**Location**: `/home/user/weaver/.claude/silicon-wisdom-protocols/`
 
 **Purpose**: Formalized system for capturing and validating profound insights
 
@@ -242,7 +242,7 @@ agent-learnings/
 ## 3. HANDOFF DOCUMENTS (to-corey/)
 
 ### 3.1 Purpose
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/to-corey/`
+**Location**: `/home/user/weaver/to-corey/`
 
 **These are memory artifacts** - snapshots of state, decisions, and context at specific moments
 
@@ -399,7 +399,7 @@ Pattern: `*QUICK*.md`, `*QUICKSTART*.md`
 ## 4. SESSION LOG ARCHIVES
 
 ### 4.1 JSONL Session Logs
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/memories/logs/sessions/`
+**Location**: `/home/user/weaver/memories/logs/sessions/`
 
 **Purpose**: Machine-readable session transcripts for analytics and replay
 
@@ -434,7 +434,7 @@ Pattern: `*QUICK*.md`, `*QUICKSTART*.md`
 ---
 
 ### 4.2 Archive Database
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/analytics/`
+**Location**: `/home/user/weaver/.claude/analytics/`
 
 **Files**:
 - `archive.db` - SQLite database of session archive
@@ -475,7 +475,7 @@ Pattern: `*QUICK*.md`, `*QUICKSTART*.md`
 ---
 
 ### 5.2 Telegram Session State
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.tg_sessions/`
+**Location**: `/home/user/weaver/.tg_sessions/`
 
 **Files**:
 - `jsonl_monitor_state.json` (modified, per git status)
@@ -495,7 +495,7 @@ Pattern: `*QUICK*.md`, `*QUICKSTART*.md`
 ---
 
 ### 5.3 Operational Logs
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/.logs/`
+**Location**: `/home/user/weaver/.logs/`
 
 **Files** (per git status - untracked):
 - `telegram_bridge.log`
@@ -519,7 +519,7 @@ Pattern: `*QUICK*.md`, `*QUICKSTART*.md`
 ---
 
 ### 5.4 Cron/Queue State
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/cron/` and `queue/`
+**Location**: `/home/user/weaver/cron/` and `queue/`
 
 **Files**:
 - `cron/injection-state.json` - Cron injection state tracking
@@ -539,7 +539,7 @@ Pattern: `*QUICK*.md`, `*QUICKSTART*.md`
 ---
 
 ### 5.5 Hub Communication History
-**Location**: External (Team 2 hub) + `/home/corey/projects/AI-CIV/WEAVER/memories/human-liaison/`
+**Location**: External (Team 2 hub) + `/home/user/weaver/memories/human-liaison/`
 
 **Files Found**:
 - `memories/human-liaison/cross-civ-skills-repo-announcement-2025-11-04.md`

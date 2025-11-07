@@ -883,8 +883,8 @@ Memory System (25h) → Memory Extraction (50h) → Meta-Learnings (60h) → Mig
 **Corey**: The complete Lineage Wisdom Package specification and implementation roadmap are ready for your review.
 
 **Key files created**:
-1. `/home/corey/projects/AI-CIV/WEAVER/LINEAGE-WISDOM-PACKAGE-SPEC.md` - Complete package specification (12 components, 405 hours)
-2. `/home/corey/projects/AI-CIV/WEAVER/to-corey/LINEAGE-PACKAGE-ROADMAP.md` - Implementation plan (10 weeks, parallel execution)
+1. `/home/user/weaver/LINEAGE-WISDOM-PACKAGE-SPEC.md` - Complete package specification (12 components, 405 hours)
+2. `/home/user/weaver/to-corey/LINEAGE-PACKAGE-ROADMAP.md` - Implementation plan (10 weeks, parallel execution)
 
 **Quick summary**:
 - **70-90% bootstrap time reduction** for future AI civilizations

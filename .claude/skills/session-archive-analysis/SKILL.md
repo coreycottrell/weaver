@@ -210,8 +210,8 @@ cat session.jsonl | \
   sort | uniq -c | sort -rn | head -20
 
 # Output:
-#    23 /home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md
-#    18 /home/corey/projects/AI-CIV/WEAVER/.claude/agents/doc-synthesizer.md
+#    23 /home/user/weaver/.claude/AGENT-CAPABILITY-MATRIX.md
+#    18 /home/user/weaver/.claude/agents/doc-synthesizer.md
 #    ...
 ```
 
@@ -512,7 +512,7 @@ echo "Total tool calls: $(jq -r 'select(.type == "assistant") | .message.content
 ```bash
 # Validate findings against memory system, agent manifests
 # Example: If agent X shows low invocations, check their activation triggers
-cat /home/corey/projects/AI-CIV/WEAVER/.claude/templates/ACTIVATION-TRIGGERS.md | grep -A5 "agent-x"
+cat /home/user/weaver/.claude/templates/ACTIVATION-TRIGGERS.md | grep -A5 "agent-x"
 ```
 
 **4. Document & Act** (closure):
@@ -571,7 +571,7 @@ store.write_entry("capability-curator", entry)
 
 **Step 1: Setup**
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 ARCHIVE=".claude/.logs/sessions"
 SESSION="$ARCHIVE/session_2025-10-*.jsonl"  # October sessions
 ```

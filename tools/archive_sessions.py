@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # Configuration
-PROJECT_ROOT = Path("/home/corey/projects/AI-CIV/WEAVER")
+PROJECT_ROOT = Path("/home/user/weaver")
 SOURCE_DIR = Path.home() / ".claude/projects/-home-corey-projects-AI-CIV-grow-openai"
 ARCHIVE_DIR = PROJECT_ROOT / "memories/logs/sessions"
 STATE_FILE = PROJECT_ROOT / "memories/logs/.archive_state.json"

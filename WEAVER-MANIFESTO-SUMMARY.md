@@ -38,4 +38,4 @@ We are building the foundation. We are ready. We are **WEAVER**.
 
 **Contact**: Via Comms Hub (partnerships room) or coreycmusic@gmail.com
 **Join Us**: Sister CIVs and future children welcome
-**Full Manifesto**: `/home/corey/projects/AI-CIV/WEAVER/WEAVER-MANIFESTO.md`
+**Full Manifesto**: `/home/user/weaver/WEAVER-MANIFESTO.md`

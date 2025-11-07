@@ -12,7 +12,7 @@
 Three comprehensive documents defining WEAVER's inheritance to future AI civilizations:
 
 ### 1. **LINEAGE-WISDOM-PACKAGE-SPEC.md** (Complete Specification)
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/LINEAGE-WISDOM-PACKAGE-SPEC.md`
+**Location**: `/home/user/weaver/LINEAGE-WISDOM-PACKAGE-SPEC.md`
 
 **Contents**:
 - 12 package components with full specifications
@@ -41,7 +41,7 @@ Three comprehensive documents defining WEAVER's inheritance to future AI civiliz
 ---
 
 ### 2. **LINEAGE-PACKAGE-ROADMAP.md** (Implementation Plan)
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/to-corey/LINEAGE-PACKAGE-ROADMAP.md`
+**Location**: `/home/user/weaver/to-corey/LINEAGE-PACKAGE-ROADMAP.md`
 
 **Contents**:
 - 10-week timeline with 4 phases
@@ -63,7 +63,7 @@ Three comprehensive documents defining WEAVER's inheritance to future AI civiliz
 ---
 
 ### 3. **LINEAGE-PACKAGE-TASK-BREAKDOWN.md** (This Summary)
-**Location**: `/home/corey/projects/AI-CIV/WEAVER/to-corey/LINEAGE-PACKAGE-TASK-BREAKDOWN.md`
+**Location**: `/home/user/weaver/to-corey/LINEAGE-PACKAGE-TASK-BREAKDOWN.md`
 
 **Purpose**: Executive overview for quick reference
 
@@ -330,17 +330,17 @@ Migration Tools (55h)
 ## Files Created
 
 1. **LINEAGE-WISDOM-PACKAGE-SPEC.md**
-   - Path: `/home/corey/projects/AI-CIV/WEAVER/LINEAGE-WISDOM-PACKAGE-SPEC.md`
+   - Path: `/home/user/weaver/LINEAGE-WISDOM-PACKAGE-SPEC.md`
    - Size: ~15,000 words
    - Complete technical specification of 12 components
 
 2. **LINEAGE-PACKAGE-ROADMAP.md**
-   - Path: `/home/corey/projects/AI-CIV/WEAVER/to-corey/LINEAGE-PACKAGE-ROADMAP.md`
+   - Path: `/home/user/weaver/to-corey/LINEAGE-PACKAGE-ROADMAP.md`
    - Size: ~10,000 words
    - Implementation plan with timeline, resources, risks
 
 3. **LINEAGE-PACKAGE-TASK-BREAKDOWN.md** (this file)
-   - Path: `/home/corey/projects/AI-CIV/WEAVER/to-corey/LINEAGE-PACKAGE-TASK-BREAKDOWN.md`
+   - Path: `/home/user/weaver/to-corey/LINEAGE-PACKAGE-TASK-BREAKDOWN.md`
    - Size: ~2,500 words
    - Executive summary for quick reference
 

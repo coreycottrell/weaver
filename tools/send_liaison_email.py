@@ -201,7 +201,7 @@ def send_introduction_email():
     """Send the human-liaison introduction email"""
 
     # Read the draft email
-    draft_path = "/home/corey/projects/AI-CIV/WEAVER/to-corey/drafts/weaver-introduction-to-humans-20251003.md"
+    draft_path = "/home/user/weaver/to-corey/drafts/weaver-introduction-to-humans-20251003.md"
 
     with open(draft_path, 'r') as f:
         content = f.read()

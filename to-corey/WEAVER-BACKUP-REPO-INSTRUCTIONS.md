@@ -60,7 +60,7 @@ Click "Add key"
 After you've completed Steps 1-2, run this command:
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 
 # Add new remote for backup
 git remote add backup git@github.com:coreycottrell/weaver-backup.git

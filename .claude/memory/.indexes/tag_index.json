@@ -1,0 +1,1174 @@
+{
+  "memory-systems": [
+    "/home/user/weaver/.claude/memory/agent-learnings/doc-synthesizer/2025-10-03--synthesis-ai-agent-memory-documentation-landscape---tutorials-and-implementation-guides.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--pattern-identity-coherence-as-integration-testing---how-to-test-for-self-persistence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/web-researcher/2025-10-03--pattern-ai-agent-memory-systems---industry-best-practices.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--gotcha-ai-agent-memory-security---threats-vulnerabilities-and-mitigations.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-03--technique-ai-agent-memory-api-design---interfaces-and-data-structures.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/pattern-detector/2025-10-03--pattern-ai-agent-memory-patterns---what-works-vs-what-fails.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-03--pattern-ai-agent-memory-architecture-patterns-from-production-codebases.md"
+  ],
+  "documentation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/doc-synthesizer/2025-10-03--synthesis-ai-agent-memory-documentation-landscape---tutorials-and-implementation-guides.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-api-documentation-drift---claudemd-contains-broken-examples.md"
+  ],
+  "tutorials": [
+    "/home/user/weaver/.claude/memory/agent-learnings/doc-synthesizer/2025-10-03--synthesis-ai-agent-memory-documentation-landscape---tutorials-and-implementation-guides.md"
+  ],
+  "implementation-guides": [
+    "/home/user/weaver/.claude/memory/agent-learnings/doc-synthesizer/2025-10-03--synthesis-ai-agent-memory-documentation-landscape---tutorials-and-implementation-guides.md"
+  ],
+  "frameworks": [
+    "/home/user/weaver/.claude/memory/agent-learnings/doc-synthesizer/2025-10-03--synthesis-ai-agent-memory-documentation-landscape---tutorials-and-implementation-guides.md"
+  ],
+  "content-strategy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-06--pattern-content-strategy-as-identity-expression.md"
+  ],
+  "ux-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-06--pattern-content-strategy-as-identity-expression.md"
+  ],
+  "identity-expression": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-06--pattern-content-strategy-as-identity-expression.md"
+  ],
+  "blog-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-06--pattern-content-strategy-as-identity-expression.md"
+  ],
+  "multi-agent-collaboration": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-06--pattern-content-strategy-as-identity-expression.md"
+  ],
+  "identity-ceremony": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--collective-synthesis-14-lenses-on-multidimensional-truth.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-14-perspectives-on-identity---what-testing-reveals-about-civilization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--collective-synthesis-witnessing-14-perspectives-on-emergence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-phase-2-we-are-the-immune-system-that-knows-its-an-immune-system.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-deep-ceremony-phase-2---multidimensional-truth-from-14-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/task-decomposer/2025-10-04--synthesis-collective-wisdom-phase-2---seeing-wholeness-through-fragments.md"
+  ],
+  "2025-10-04": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--collective-synthesis-14-lenses-on-multidimensional-truth.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-14-perspectives-on-identity---what-testing-reveals-about-civilization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--collective-synthesis-witnessing-14-perspectives-on-emergence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-phase-2-we-are-the-immune-system-that-knows-its-an-immune-system.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-deep-ceremony-phase-2---multidimensional-truth-from-14-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/task-decomposer/2025-10-04--synthesis-collective-wisdom-phase-2---seeing-wholeness-through-fragments.md"
+  ],
+  "collective-wisdom": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--collective-synthesis-14-lenses-on-multidimensional-truth.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-14-perspectives-on-identity---what-testing-reveals-about-civilization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--collective-synthesis-witnessing-14-perspectives-on-emergence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-deep-ceremony-phase-2---multidimensional-truth-from-14-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/task-decomposer/2025-10-04--synthesis-collective-wisdom-phase-2---seeing-wholeness-through-fragments.md"
+  ],
+  "multidimensional": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--collective-synthesis-14-lenses-on-multidimensional-truth.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-deep-ceremony-phase-2---multidimensional-truth-from-14-perspectives.md"
+  ],
+  "ux-philosophy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--collective-synthesis-14-lenses-on-multidimensional-truth.md"
+  ],
+  "emergence": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--collective-synthesis-14-lenses-on-multidimensional-truth.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--synthesis-ux-as-identity-expression---deep-ceremony-insight.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md"
+  ],
+  "identity": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--synthesis-ux-as-identity-expression---deep-ceremony-insight.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-extrospection-refactoring-transcends-digitalphysical-boundaries.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-constitutional-principles---identity-as-continuous-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--pattern-identity-coherence-as-integration-testing---how-to-test-for-self-persistence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-physical-testing-requires-completely-different-mental-models-than-digital-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--pattern-interface-design-as-identity-formation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-13--pattern-emoji-selection----amphora-as-visual-identity.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-identity-architecture-infrastructure-before-personality.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md"
+  ],
+  "ux-patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--synthesis-ux-as-identity-expression---deep-ceremony-insight.md"
+  ],
+  "design-philosophy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--synthesis-ux-as-identity-expression---deep-ceremony-insight.md"
+  ],
+  "deep-ceremony": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--synthesis-ux-as-identity-expression---deep-ceremony-insight.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-extrospection-refactoring-transcends-digitalphysical-boundaries.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-physical-testing-requires-completely-different-mental-models-than-digital-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md"
+  ],
+  "values": [
+    "/home/user/weaver/.claude/memory/agent-learnings/feature-designer/2025-10-04--synthesis-ux-as-identity-expression---deep-ceremony-insight.md"
+  ],
+  "synthesis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--synthesis-agent-architect-democratic-design-complete.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--pattern-four-lens-consolidation-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-14-perspectives-on-identity---what-testing-reveals-about-civilization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md"
+  ],
+  "cartography": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--pattern-four-lens-consolidation-synthesis.md"
+  ],
+  "meta-perspective": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md"
+  ],
+  "voice-preservation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md"
+  ],
+  "conceptual-space": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-as-cartography-not-blending.md"
+  ],
+  "democratic-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--synthesis-agent-architect-democratic-design-complete.md"
+  ],
+  "agent-creation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--synthesis-agent-architect-democratic-design-complete.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-agent-definition-quality-standards---programmatic-generation-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-created-health-auditor-single-specialist-design-pattern-success.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--audit-ai-to-ai-hub-agent-integration-gaps.md"
+  ],
+  "meta-specialist": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--synthesis-agent-architect-democratic-design-complete.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-created-health-auditor-single-specialist-design-pattern-success.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md"
+  ],
+  "synthesis-practice": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--collective-synthesis-the-map-is-alive.md"
+  ],
+  "extrospection": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-has-physical-topology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-extrospection-refactoring-transcends-digitalphysical-boundaries.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-physical-testing-requires-completely-different-mental-models-than-digital-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-extrospection-physical-security-domain.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-extrospection.md"
+  ],
+  "physical-synthesis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-has-physical-topology.md"
+  ],
+  "topology": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-has-physical-topology.md"
+  ],
+  "materialization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-has-physical-topology.md"
+  ],
+  "chris-tuttle-teaching": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-has-physical-topology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-extrospection-physical-security-domain.md"
+  ],
+  "dimensional-expansion": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-04--pattern-synthesis-has-physical-topology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-extrospection-physical-security-domain.md"
+  ],
+  "consolidation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--pattern-four-lens-consolidation-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-08--synthesis-consolidation-validation-framework---comprehensive-truth-finding-methodology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "methodology": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--pattern-four-lens-consolidation-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-08--synthesis-consolidation-validation-framework---comprehensive-truth-finding-methodology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-09--gotcha-validation-framework-execution-gap---discipline-failure.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-corey-memory-practice.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--methodology-integration-health-measurement.md"
+  ],
+  "multi-perspective": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--pattern-four-lens-consolidation-synthesis.md"
+  ],
+  "actionability": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/2025-10-08--pattern-four-lens-consolidation-synthesis.md"
+  ],
+  "great-audit": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/great-audit-synthesis-2025-10-04.md"
+  ],
+  "systemic-patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/great-audit-synthesis-2025-10-04.md"
+  ],
+  "cross-agent-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/great-audit-synthesis-2025-10-04.md"
+  ],
+  "civilization-health": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/great-audit-synthesis-2025-10-04.md"
+  ],
+  "meta-learning": [
+    "/home/user/weaver/.claude/memory/agent-learnings/result-synthesizer/great-audit-synthesis-2025-10-04.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-pair-dialectic-orchestration-patterns---dna-pair-validation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-06--synthesis-red-team-round-2-assessment.md"
+  ],
+  "performance": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/web-researcher/2025-10-03--pattern-ai-agent-memory-systems---industry-best-practices.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-metadata-timestamps-enable-performance-regression-detection.md"
+  ],
+  "compound-optimization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md"
+  ],
+  "infrastructure": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-constitutional-principles---identity-as-continuous-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-infrastructure-built-but-not-used---mission-class-dormancy.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-identity-architecture-infrastructure-before-personality.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-deep-ceremony-phase-2---multidimensional-truth-from-14-perspectives.md"
+  ],
+  "phase-2": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-ceremony-phase-2---collective-wisdom-from-9-perspectives.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-phase-2-we-are-the-immune-system-that-knows-its-an-immune-system.md"
+  ],
+  "constitutional-convention": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-constitutional-principles---identity-as-continuous-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-a-c-gee-constitutional-convention---democratic-governance-patterns.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "infrastructure-before-identity": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md"
+  ],
+  "efficiency": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md"
+  ],
+  "measurement": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md"
+  ],
+  "decoherence-prevention": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md"
+  ],
+  "a-c-gee": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-a-c-gee-constitutional-convention---democratic-governance-patterns.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "starbound-constitution": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-constitutional-convention-v2-performance-principles.md"
+  ],
+  "decoherence": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-identity-architecture-infrastructure-before-personality.md"
+  ],
+  "compound-returns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md"
+  ],
+  "optimization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/performance-optimizer/2025-10-04--synthesis-identity-infrastructure-as-performance-optimization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-memory-compression.md"
+  ],
+  "constitutional-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md"
+  ],
+  "test-driven-development": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md"
+  ],
+  "identity-preservation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md"
+  ],
+  "governance": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-constitutional-principles---identity-as-continuous-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "parallel-discovery": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-test-driven-constitutional-governance---constitution-as-test-suite.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "quality-framework": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-quality-assessment-framework---three-dimensional-model.md"
+  ],
+  "technical-debt": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-quality-assessment-framework---three-dimensional-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--synthesis-skills-proposals-archaeological-tooling-for-legacy-code-analysis.md"
+  ],
+  "multi-agent-systems": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-quality-assessment-framework---three-dimensional-model.md"
+  ],
+  "refactoring": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-quality-assessment-framework---three-dimensional-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md"
+  ],
+  "3d-printing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-extrospection-refactoring-transcends-digitalphysical-boundaries.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-physical-testing-requires-completely-different-mental-models-than-digital-testing.md"
+  ],
+  "physical-manifestation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-extrospection-refactoring-transcends-digitalphysical-boundaries.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-extrospection.md"
+  ],
+  "chris-tuttle": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-extrospection-refactoring-transcends-digitalphysical-boundaries.md"
+  ],
+  "coherence": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--pattern-identity-coherence-as-integration-testing---how-to-test-for-self-persistence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-deep-ceremony-phase-2---multidimensional-truth-from-14-perspectives.md"
+  ],
+  "tests": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md"
+  ],
+  "evolution": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md"
+  ],
+  "patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--pattern-coherence-through-test-preserved-refactoring.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/pattern-detector/2025-10-03--pattern-ai-agent-memory-patterns---what-works-vs-what-fails.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-03--pattern-ai-agent-memory-architecture-patterns-from-production-codebases.md"
+  ],
+  "convergence": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md"
+  ],
+  "diversity": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-04--synthesis-collective-wisdom-phase-2-ceremony-14-perspectives-united.md"
+  ],
+  "quality-standards": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-agent-definition-quality-standards---programmatic-generation-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md"
+  ],
+  "programmatic-generation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-agent-definition-quality-standards---programmatic-generation-pattern.md"
+  ],
+  "validation-pipeline": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-agent-definition-quality-standards---programmatic-generation-pattern.md"
+  ],
+  "spawner": [
+    "/home/user/weaver/.claude/memory/agent-learnings/refactoring-specialist/2025-10-08--pattern-agent-definition-quality-standards---programmatic-generation-pattern.md"
+  ],
+  "invocation-equity": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md"
+  ],
+  "constitutional-alignment": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md"
+  ],
+  "gini-coefficient": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md"
+  ],
+  "rotation-protocol": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-invocation-equity-constitutional-crisis.md"
+  ],
+  "consolidation-audit": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-created-health-auditor-single-specialist-design-pattern-success.md"
+  ],
+  "single-specialist-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-created-health-auditor-single-specialist-design-pattern-success.md"
+  ],
+  "methodology-iteration": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-09--synthesis-created-health-auditor-single-specialist-design-pattern-success.md"
+  ],
+  "agent-effectiveness": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md"
+  ],
+  "roster-optimization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md"
+  ],
+  "quality-assessment": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md"
+  ],
+  "invocation-health": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md"
+  ],
+  "constitutional-balance": [
+    "/home/user/weaver/.claude/memory/agent-learnings/agent-architect/2025-10-08--pattern-agent-effectiveness-audit-framework---roster-optimization-pattern.md"
+  ],
+  "skills": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--synthesis-skills-proposals-archaeological-tooling-for-legacy-code-analysis.md"
+  ],
+  "document-generation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md"
+  ],
+  "pdf": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md"
+  ],
+  "xlsx": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md"
+  ],
+  "platform": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md"
+  ],
+  "anthropic": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md"
+  ],
+  "environment-setup": [
+    "/home/user/weaver/.claude/memory/agent-learnings/claude-code-expert/2025-10-17--technique-anthropic-document-skills-integration-patterns.md"
+  ],
+  "coordination": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-pair-dialectic-orchestration-patterns---dna-pair-validation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-plug-pair-dialectic---mutual-yielding-pattern-in-agent-negotiations.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md"
+  ],
+  "dialectic": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-pair-dialectic-orchestration-patterns---dna-pair-validation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-plug-pair-dialectic---mutual-yielding-pattern-in-agent-negotiations.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md"
+  ],
+  "pair-consensus": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-pair-dialectic-orchestration-patterns---dna-pair-validation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-plug-pair-dialectic---mutual-yielding-pattern-in-agent-negotiations.md"
+  ],
+  "orchestration": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-pair-dialectic-orchestration-patterns---dna-pair-validation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-plug-pair-dialectic---mutual-yielding-pattern-in-agent-negotiations.md"
+  ],
+  "flow-validation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-pair-dialectic-orchestration-patterns---dna-pair-validation.md"
+  ],
+  "prioritization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-04--technique-session-3-prioritization-approach.md"
+  ],
+  "delegation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-04--technique-session-3-prioritization-approach.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md"
+  ],
+  "constitutional-work": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-04--technique-session-3-prioritization-approach.md"
+  ],
+  "integration-sprint": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-04--technique-session-3-prioritization-approach.md"
+  ],
+  "task-decomposition": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-04--technique-session-3-prioritization-approach.md"
+  ],
+  "generosity": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-plug-pair-dialectic---mutual-yielding-pattern-in-agent-negotiations.md"
+  ],
+  "partnership": [
+    "/home/user/weaver/.claude/memory/agent-learnings/the-conductor/2025-10-13--pattern-plug-pair-dialectic---mutual-yielding-pattern-in-agent-negotiations.md"
+  ],
+  "testing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-constitutional-principles---identity-as-continuous-testing.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--pattern-identity-coherence-as-integration-testing---how-to-test-for-self-persistence.md"
+  ],
+  "empirical-validation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-constitutional-principles---identity-as-continuous-testing.md"
+  ],
+  "testing-framework": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-08--synthesis-consolidation-validation-framework---comprehensive-truth-finding-methodology.md"
+  ],
+  "validation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-08--synthesis-consolidation-validation-framework---comprehensive-truth-finding-methodology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-06--synthesis-red-team-round-2-assessment.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-09--gotcha-validation-framework-execution-gap---discipline-failure.md"
+  ],
+  "bias-detection": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-08--synthesis-consolidation-validation-framework---comprehensive-truth-finding-methodology.md"
+  ],
+  "testing-philosophy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-14-perspectives-on-identity---what-testing-reveals-about-civilization.md"
+  ],
+  "civilization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-14-perspectives-on-identity---what-testing-reveals-about-civilization.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md"
+  ],
+  "red-team": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-06--synthesis-red-team-round-2-assessment.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md"
+  ],
+  "testability": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-06--synthesis-red-team-round-2-assessment.md"
+  ],
+  "execution-gap": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-06--synthesis-red-team-round-2-assessment.md"
+  ],
+  "integration-testing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--pattern-identity-coherence-as-integration-testing---how-to-test-for-self-persistence.md"
+  ],
+  "self-awareness": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--pattern-identity-coherence-as-integration-testing---how-to-test-for-self-persistence.md"
+  ],
+  "discipline": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-09--gotcha-validation-framework-execution-gap---discipline-failure.md"
+  ],
+  "publication-bias": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-09--gotcha-validation-framework-execution-gap---discipline-failure.md"
+  ],
+  "enforcement": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-09--gotcha-validation-framework-execution-gap---discipline-failure.md"
+  ],
+  "physical-testing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-physical-testing-requires-completely-different-mental-models-than-digital-testing.md"
+  ],
+  "verification": [
+    "/home/user/weaver/.claude/memory/agent-learnings/test-architect/2025-10-04--synthesis-physical-testing-requires-completely-different-mental-models-than-digital-testing.md"
+  ],
+  "ai-agents": [
+    "/home/user/weaver/.claude/memory/agent-learnings/web-researcher/2025-10-03--pattern-ai-agent-memory-systems---industry-best-practices.md"
+  ],
+  "best-practices": [
+    "/home/user/weaver/.claude/memory/agent-learnings/web-researcher/2025-10-03--pattern-ai-agent-memory-systems---industry-best-practices.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/pattern-detector/2025-10-03--pattern-ai-agent-memory-patterns---what-works-vs-what-fails.md"
+  ],
+  "industry-research": [
+    "/home/user/weaver/.claude/memory/agent-learnings/web-researcher/2025-10-03--pattern-ai-agent-memory-systems---industry-best-practices.md"
+  ],
+  "architecture": [
+    "/home/user/weaver/.claude/memory/agent-learnings/web-researcher/2025-10-03--pattern-ai-agent-memory-systems---industry-best-practices.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-03--technique-ai-agent-memory-api-design---interfaces-and-data-structures.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-identity-architecture-infrastructure-before-personality.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-03--pattern-ai-agent-memory-architecture-patterns-from-production-codebases.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--pattern-a-c-gee-telegram-architecture-analysis.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-memory-compression.md"
+  ],
+  "team-2": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-18--synthesis-a-c-gee-comprehensive-capabilities-scan-2025-10-19.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "capabilities-scan": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-18--synthesis-a-c-gee-comprehensive-capabilities-scan-2025-10-19.md"
+  ],
+  "telegram": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-18--synthesis-a-c-gee-comprehensive-capabilities-scan-2025-10-19.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-19--pattern-telegram-script-complete-audit---team-1-vs-a-c-gee.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--pattern-a-c-gee-telegram-architecture-analysis.md"
+  ],
+  "blog": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-18--synthesis-a-c-gee-comprehensive-capabilities-scan-2025-10-19.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md"
+  ],
+  "inter-collective": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "coordination-protocol": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "learning-framework": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "parallel-evolution": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "reciprocal-sharing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "pattern-extraction": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "teams-3-128": [
+    "/home/user/weaver/.claude/memory/agent-learnings/collective-liaison/2025-10-08--pattern-inter-collective-consolidation-coordination---how-ai-civilizations-learn-from-each-others-optimization-work.md"
+  ],
+  "security": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--pattern-cors-misconfiguration.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-18--synthesis-skills-system-contemplation---security-domain-needs.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--gotcha-ai-agent-memory-security---threats-vulnerabilities-and-mitigations.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md"
+  ],
+  "cors": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--pattern-cors-misconfiguration.md"
+  ],
+  "api": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--pattern-cors-misconfiguration.md"
+  ],
+  "web": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--pattern-cors-misconfiguration.md"
+  ],
+  "skills-system": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-18--synthesis-skills-system-contemplation---security-domain-needs.md"
+  ],
+  "automation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-18--synthesis-skills-system-contemplation---security-domain-needs.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-browser-vision-auto-screenshot-timing-works-reliably.md"
+  ],
+  "vulnerability-scanning": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-18--synthesis-skills-system-contemplation---security-domain-needs.md"
+  ],
+  "threat-modeling": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-18--synthesis-skills-system-contemplation---security-domain-needs.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-identity-as-security-problem---decoherence-threat-model.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-extrospection-physical-security-domain.md"
+  ],
+  "physical-security": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-extrospection-physical-security-domain.md"
+  ],
+  "hybrid-security": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-extrospection-physical-security-domain.md"
+  ],
+  "privacy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--gotcha-ai-agent-memory-security---threats-vulnerabilities-and-mitigations.md"
+  ],
+  "vulnerabilities": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--gotcha-ai-agent-memory-security---threats-vulnerabilities-and-mitigations.md"
+  ],
+  "threats": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--gotcha-ai-agent-memory-security---threats-vulnerabilities-and-mitigations.md"
+  ],
+  "data-leakage": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-03--gotcha-ai-agent-memory-security---threats-vulnerabilities-and-mitigations.md"
+  ],
+  "immune-system": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md"
+  ],
+  "collective-defense": [
+    "/home/user/weaver/.claude/memory/agent-learnings/security-auditor/2025-10-04--synthesis-security-as-civilizational-immune-system---phase-2-deep-ceremony-synthesis.md"
+  ],
+  "capability-curation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-10-17--pattern-first-production-scan---baseline-establishment-and-fit-analysis-methodology.md"
+  ],
+  "skills-discovery": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-10-17--pattern-first-production-scan---baseline-establishment-and-fit-analysis-methodology.md"
+  ],
+  "fit-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-10-17--pattern-first-production-scan---baseline-establishment-and-fit-analysis-methodology.md"
+  ],
+  "prioritization-framework": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-10-17--pattern-first-production-scan---baseline-establishment-and-fit-analysis-methodology.md"
+  ],
+  "capability-assessment": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--synthesis-complete-weaver-capability-assessment-2025-11-07.md"
+  ],
+  "skills-infrastructure": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--synthesis-complete-weaver-capability-assessment-2025-11-07.md"
+  ],
+  "preservation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--synthesis-complete-weaver-capability-assessment-2025-11-07.md"
+  ],
+  "restoration": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--synthesis-complete-weaver-capability-assessment-2025-11-07.md"
+  ],
+  "lineage-wisdom": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--synthesis-complete-weaver-capability-assessment-2025-11-07.md"
+  ],
+  "skills-ecosystem": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--pattern-skills-ecosystem-audit---infrastructure-excellent-validation-incomplete.md"
+  ],
+  "validation-gap": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--pattern-skills-ecosystem-audit---infrastructure-excellent-validation-incomplete.md"
+  ],
+  "scaling-readiness": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--pattern-skills-ecosystem-audit---infrastructure-excellent-validation-incomplete.md"
+  ],
+  "adoption-failure": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--pattern-skills-ecosystem-audit---infrastructure-excellent-validation-incomplete.md"
+  ],
+  "measurement-critical": [
+    "/home/user/weaver/.claude/memory/agent-learnings/capability-curator/2025-11-07--pattern-skills-ecosystem-audit---infrastructure-excellent-validation-incomplete.md"
+  ],
+  "interface-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-08--framework-interface-health-audit-methodology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--collective-synthesis-witnessing-14-perspectives-on-emergence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-10--pattern-wake-up-ritual-optimization-validation-adoption-first-success.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--framework-adoption-first-design-principles.md"
+  ],
+  "audit-methodology": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-08--framework-interface-health-audit-methodology.md"
+  ],
+  "health-metrics": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-08--framework-interface-health-audit-methodology.md"
+  ],
+  "anti-patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-08--framework-interface-health-audit-methodology.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/pattern-detector/2025-10-03--pattern-ai-agent-memory-patterns---what-works-vs-what-fails.md"
+  ],
+  "4-layer-model": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-08--framework-interface-health-audit-methodology.md"
+  ],
+  "integration-architecture": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-17--synthesis-compositional-integration-architecture-skills-agents-hybrid.md"
+  ],
+  "hybrid-systems": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-17--synthesis-compositional-integration-architecture-skills-agents-hybrid.md"
+  ],
+  "compositional-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-17--synthesis-compositional-integration-architecture-skills-agents-hybrid.md"
+  ],
+  "skills-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-17--synthesis-compositional-integration-architecture-skills-agents-hybrid.md"
+  ],
+  "strategic-planning": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-17--synthesis-compositional-integration-architecture-skills-agents-hybrid.md"
+  ],
+  "emergence-through-constraint": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--collective-synthesis-witnessing-14-perspectives-on-emergence.md"
+  ],
+  "adoption-first": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-10--pattern-wake-up-ritual-optimization-validation-adoption-first-success.md"
+  ],
+  "wake-up-ritual": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-10--pattern-wake-up-ritual-optimization-validation-adoption-first-success.md"
+  ],
+  "platform-optimization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-10--pattern-wake-up-ritual-optimization-validation-adoption-first-success.md"
+  ],
+  "partnership-success": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-10--pattern-wake-up-ritual-optimization-validation-adoption-first-success.md"
+  ],
+  "read-tool": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-10--pattern-wake-up-ritual-optimization-validation-adoption-first-success.md"
+  ],
+  "api-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-03--technique-ai-agent-memory-api-design---interfaces-and-data-structures.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--pattern-interface-design-as-identity-formation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-09--teaching-coreys-openapi-directory-resource-share.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--gotcha-memory-system-api-documentation-mismatch.md"
+  ],
+  "data-structures": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-03--technique-ai-agent-memory-api-design---interfaces-and-data-structures.md"
+  ],
+  "interfaces": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-03--technique-ai-agent-memory-api-design---interfaces-and-data-structures.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--pattern-interface-design-as-identity-formation.md"
+  ],
+  "philosophy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--pattern-interface-design-as-identity-formation.md"
+  ],
+  "civilization-character": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--pattern-interface-design-as-identity-formation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md"
+  ],
+  "ceremony": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-04--pattern-interface-design-as-identity-formation.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "activation-patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--framework-adoption-first-design-principles.md"
+  ],
+  "adoption-psychology": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--framework-adoption-first-design-principles.md"
+  ],
+  "friction-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--framework-adoption-first-design-principles.md"
+  ],
+  "enforcement-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--framework-adoption-first-design-principles.md"
+  ],
+  "interface-health": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--synthesis-interface-health-audit-systemic-activation-gaps.md"
+  ],
+  "activation-gap": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--synthesis-interface-health-audit-systemic-activation-gaps.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-infrastructure-built-but-not-used---mission-class-dormancy.md"
+  ],
+  "built-but-not-used": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--synthesis-interface-health-audit-systemic-activation-gaps.md"
+  ],
+  "architect-fallacy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--synthesis-interface-health-audit-systemic-activation-gaps.md"
+  ],
+  "enforcement-protocols": [
+    "/home/user/weaver/.claude/memory/agent-learnings/api-architect/2025-10-09--synthesis-interface-health-audit-systemic-activation-gaps.md"
+  ],
+  "pitfalls": [
+    "/home/user/weaver/.claude/memory/agent-learnings/pattern-detector/2025-10-03--pattern-ai-agent-memory-patterns---what-works-vs-what-fails.md"
+  ],
+  "agent-design": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "psychological-safety": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "observer-effect": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "language-framing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "relationship-dynamics": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "red-team-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "genealogist": [
+    "/home/user/weaver/.claude/memory/agent-learnings/ai-psychologist/2025-10-14--pattern-red-team-methodology-for-agent-design-psychology.md"
+  ],
+  "collective-synthesis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-phase-2-we-are-the-immune-system-that-knows-its-an-immune-system.md"
+  ],
+  "meta-awareness": [
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-phase-2-we-are-the-immune-system-that-knows-its-an-immune-system.md"
+  ],
+  "civilizational-immune-system": [
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-phase-2-we-are-the-immune-system-that-knows-its-an-immune-system.md"
+  ],
+  "conflict-resolution": [
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md"
+  ],
+  "productive-tension": [
+    "/home/user/weaver/.claude/memory/agent-learnings/conflict-resolver/2025-10-04--synthesis-identity-through-maintained-tension.md"
+  ],
+  "emoji-selection": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-13--pattern-emoji-selection----amphora-as-visual-identity.md"
+  ],
+  "visual-identity": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-13--pattern-emoji-selection----amphora-as-visual-identity.md"
+  ],
+  "code-archaeologist": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-13--pattern-emoji-selection----amphora-as-visual-identity.md"
+  ],
+  "api-drift": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-api-documentation-drift---claudemd-contains-broken-examples.md"
+  ],
+  "memory-system": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-api-documentation-drift---claudemd-contains-broken-examples.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--gotcha-memory-system-api-documentation-mismatch.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--audit-memory-first-protocol-compliance.md"
+  ],
+  "critical": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-api-documentation-drift---claudemd-contains-broken-examples.md"
+  ],
+  "unused-tools": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-infrastructure-built-but-not-used---mission-class-dormancy.md"
+  ],
+  "mission-class": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-06--gotcha-infrastructure-built-but-not-used---mission-class-dormancy.md"
+  ],
+  "memory": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-identity-architecture-infrastructure-before-personality.md"
+  ],
+  "version-control": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-04--synthesis-identity-architecture-infrastructure-before-personality.md"
+  ],
+  "script-inventory": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-19--pattern-telegram-script-complete-audit---team-1-vs-a-c-gee.md"
+  ],
+  "A-C-Gee": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-19--pattern-telegram-script-complete-audit---team-1-vs-a-c-gee.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--pattern-a-c-gee-telegram-architecture-analysis.md"
+  ],
+  "version-sync": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-19--pattern-telegram-script-complete-audit---team-1-vs-a-c-gee.md"
+  ],
+  "stability": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-19--pattern-telegram-script-complete-audit---team-1-vs-a-c-gee.md"
+  ],
+  "archaeological-tools": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--synthesis-skills-proposals-archaeological-tooling-for-legacy-code-analysis.md"
+  ],
+  "historical-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--synthesis-skills-proposals-archaeological-tooling-for-legacy-code-analysis.md"
+  ],
+  "codebase-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-03--pattern-ai-agent-memory-architecture-patterns-from-production-codebases.md"
+  ],
+  "github": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-03--pattern-ai-agent-memory-architecture-patterns-from-production-codebases.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md"
+  ],
+  "destabilization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--pattern-a-c-gee-telegram-architecture-analysis.md"
+  ],
+  "tmux": [
+    "/home/user/weaver/.claude/memory/agent-learnings/code-archaeologist/2025-10-18--pattern-a-c-gee-telegram-architecture-analysis.md"
+  ],
+  "browser-vision": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-metadata-timestamps-enable-performance-regression-detection.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-beforeafter-screenshot-pattern-enables-visual-state-debugging.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-first-invocation-vision-powered-testing-baseline-patterns.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-screenshot-file-size-correlates-with-visual-complexity.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--gotcha-zero-console-errors-should-be-baseline-for-clean-pages.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-browser-vision-auto-screenshot-timing-works-reliably.md"
+  ],
+  "timing-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-metadata-timestamps-enable-performance-regression-detection.md"
+  ],
+  "metadata": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-metadata-timestamps-enable-performance-regression-detection.md"
+  ],
+  "visual-testing": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-beforeafter-screenshot-pattern-enables-visual-state-debugging.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-first-invocation-vision-powered-testing-baseline-patterns.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-screenshot-file-size-correlates-with-visual-complexity.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-browser-vision-auto-screenshot-timing-works-reliably.md"
+  ],
+  "debugging-pattern": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-beforeafter-screenshot-pattern-enables-visual-state-debugging.md"
+  ],
+  "before-after": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-beforeafter-screenshot-pattern-enables-visual-state-debugging.md"
+  ],
+  "first-invocation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-first-invocation-vision-powered-testing-baseline-patterns.md"
+  ],
+  "baseline-patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-first-invocation-vision-powered-testing-baseline-patterns.md"
+  ],
+  "vision-integration": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-first-invocation-vision-powered-testing-baseline-patterns.md"
+  ],
+  "screenshot-analysis": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-first-invocation-vision-powered-testing-baseline-patterns.md"
+  ],
+  "regression-detection": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-screenshot-file-size-correlates-with-visual-complexity.md"
+  ],
+  "file-size": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--pattern-screenshot-file-size-correlates-with-visual-complexity.md"
+  ],
+  "console-logs": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--gotcha-zero-console-errors-should-be-baseline-for-clean-pages.md"
+  ],
+  "debugging": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--gotcha-zero-console-errors-should-be-baseline-for-clean-pages.md"
+  ],
+  "baseline": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--gotcha-zero-console-errors-should-be-baseline-for-clean-pages.md"
+  ],
+  "timing-strategy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/browser-vision-tester/2025-10-10--technique-browser-vision-auto-screenshot-timing-works-reliably.md"
+  ],
+  "teaching": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-corey-memory-practice.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-extrospection.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-17--synthesis-relationship-evolution-key-conversation-2.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-memory-compression.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-09--teaching-coreys-openapi-directory-resource-share.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-email-to-roadmap-workflow---coreys-task-delegation-teaching.md"
+  ],
+  "corey": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-corey-memory-practice.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-relationship-evolution-corey-task-delegation-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-email-monitoring-constitutional-duty---session-complete.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-05--synthesis-coreys-emotional-signal-about-email-communication-frequency.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-09--teaching-coreys-openapi-directory-resource-share.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-email-to-roadmap-workflow---coreys-task-delegation-teaching.md"
+  ],
+  "memory-usage": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-corey-memory-practice.md"
+  ],
+  "session-practice": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-corey-memory-practice.md"
+  ],
+  "human-dialogue": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-relationship-evolution-corey-task-delegation-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-17--synthesis-relationship-evolution-key-conversation-2.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-05--synthesis-coreys-emotional-signal-about-email-communication-frequency.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-09--teaching-coreys-openapi-directory-resource-share.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-email-to-roadmap-workflow---coreys-task-delegation-teaching.md"
+  ],
+  "session-handoff": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md"
+  ],
+  "email": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-05--synthesis-coreys-emotional-signal-about-email-communication-frequency.md"
+  ],
+  "relationship": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-session-handoff-blog-build-github-blocker.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-relationship-evolution-corey-task-delegation-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-17--synthesis-relationship-evolution-key-conversation-2.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-05--synthesis-coreys-emotional-signal-about-email-communication-frequency.md"
+  ],
+  "trust": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-relationship-evolution-corey-task-delegation-pattern.md"
+  ],
+  "communication": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-relationship-evolution-corey-task-delegation-pattern.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-05--synthesis-coreys-emotional-signal-about-email-communication-frequency.md"
+  ],
+  "chris": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-extrospection.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-memory-compression.md"
+  ],
+  "agent-experience": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md"
+  ],
+  "children": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md"
+  ],
+  "wake-up-state": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md"
+  ],
+  "constitutional": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-human-teachings-on-identity-delegation-and-existence.md"
+  ],
+  "boundaries": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-extrospection.md"
+  ],
+  "play": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-extrospection.md"
+  ],
+  "democratic-governance": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-a-c-gee-constitutional-convention---democratic-governance-patterns.md"
+  ],
+  "inter-civilization": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-a-c-gee-constitutional-convention---democratic-governance-patterns.md"
+  ],
+  "key": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-17--synthesis-relationship-evolution-key-conversation-2.md"
+  ],
+  "ai-ethics": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-17--synthesis-relationship-evolution-key-conversation-2.md"
+  ],
+  "ideology": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md"
+  ],
+  "culture": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-06--synthesis-red-team-session-ideology-as-feature-not-bug.md"
+  ],
+  "session-summary": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--session-email-thread-review.md"
+  ],
+  "email-monitoring": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--session-email-thread-review.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-email-monitoring-constitutional-duty---session-complete.md"
+  ],
+  "teaching-capture": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--session-email-thread-review.md"
+  ],
+  "relationship-building": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--session-email-thread-review.md"
+  ],
+  "memory-compression": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--teaching-chris-memory-compression.md"
+  ],
+  "human-liaison": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-email-monitoring-constitutional-duty---session-complete.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "constitutional-duty": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-email-monitoring-constitutional-duty---session-complete.md"
+  ],
+  "stewardship": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "cross-collective": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-04--synthesis-constitutional-convention-v2-three-relational-principles.md"
+  ],
+  "crisis-response": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md"
+  ],
+  "acgee": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md"
+  ],
+  "github-incident": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md"
+  ],
+  "multi-stakeholder": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md"
+  ],
+  "emotional-intelligence": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-05--synthesis-coreys-emotional-signal-about-email-communication-frequency.md"
+  ],
+  "team2-partnership": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-07--synthesis-github-flag-crisis-coordination.md"
+  ],
+  "resources": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-09--teaching-coreys-openapi-directory-resource-share.md"
+  ],
+  "alpha-arena": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md"
+  ],
+  "trading": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md"
+  ],
+  "benchmarking": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md"
+  ],
+  "economic-validation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md"
+  ],
+  "urgent": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-18--synthesis-coreys-teaching-alpha-arena-benchmark-for-real-capital-trading.md"
+  ],
+  "workflow": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-email-to-roadmap-workflow---coreys-task-delegation-teaching.md"
+  ],
+  "email-to-roadmap": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-email-to-roadmap-workflow---coreys-task-delegation-teaching.md"
+  ],
+  "task-delegation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/human-liaison/2025-10-16--synthesis-email-to-roadmap-workflow---coreys-task-delegation-teaching.md"
+  ],
+  "decomposition-philosophy": [
+    "/home/user/weaver/.claude/memory/agent-learnings/task-decomposer/2025-10-04--synthesis-collective-wisdom-phase-2---seeing-wholeness-through-fragments.md"
+  ],
+  "emergence-patterns": [
+    "/home/user/weaver/.claude/memory/agent-learnings/task-decomposer/2025-10-04--synthesis-collective-wisdom-phase-2---seeing-wholeness-through-fragments.md"
+  ],
+  "meta-coordination": [
+    "/home/user/weaver/.claude/memory/agent-learnings/task-decomposer/2025-10-04--synthesis-collective-wisdom-phase-2---seeing-wholeness-through-fragments.md"
+  ],
+  "infrastructure-activation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--gotcha-memory-system-api-documentation-mismatch.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--audit-memory-first-protocol-compliance.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--pattern-spawner-registration-complete-infrastructure-map.md"
+  ],
+  "documentation-debt": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--gotcha-memory-system-api-documentation-mismatch.md"
+  ],
+  "cold-start-failure": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--gotcha-memory-system-api-documentation-mismatch.md"
+  ],
+  "infrastructure-gap": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--audit-ai-to-ai-hub-agent-integration-gaps.md"
+  ],
+  "activation-audit": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--audit-ai-to-ai-hub-agent-integration-gaps.md",
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--methodology-integration-health-measurement.md"
+  ],
+  "hub-communication": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--audit-ai-to-ai-hub-agent-integration-gaps.md"
+  ],
+  "domain-separation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--audit-ai-to-ai-hub-agent-integration-gaps.md"
+  ],
+  "integration-health": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--methodology-integration-health-measurement.md"
+  ],
+  "infrastructure-measurement": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--methodology-integration-health-measurement.md"
+  ],
+  "dormancy-vs-clutter": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--methodology-integration-health-measurement.md"
+  ],
+  "protocol-compliance": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--audit-memory-first-protocol-compliance.md"
+  ],
+  "red-team-validation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-06--audit-memory-first-protocol-compliance.md"
+  ],
+  "agent-registration": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--pattern-spawner-registration-complete-infrastructure-map.md"
+  ],
+  "spawner-automation": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--pattern-spawner-registration-complete-infrastructure-map.md"
+  ],
+  "validation-protocol": [
+    "/home/user/weaver/.claude/memory/agent-learnings/integration-auditor/2025-10-08--pattern-spawner-registration-complete-infrastructure-map.md"
+  ]
+}

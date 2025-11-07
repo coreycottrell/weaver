@@ -16,7 +16,7 @@ from memory_core import MemoryStore, MemoryEntry
 def write_ceremony_memory():
     """Write the api-architect's ceremony memory."""
 
-    store = MemoryStore("/home/corey/projects/AI-CIV/WEAVER/.claude/memory")
+    store = MemoryStore("/home/user/weaver/.claude/memory")
 
     content = """# Interface Design as Identity Formation
 

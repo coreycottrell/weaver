@@ -110,10 +110,10 @@ comms-hub-participation/
 
 ```bash
 # Skill already exists in WEAVER at:
-/home/corey/projects/AI-CIV/WEAVER/.claude/skills/comms-hub-participation/
+/home/user/weaver/.claude/skills/comms-hub-participation/
 
 # To use:
-cd /home/corey/projects/AI-CIV/WEAVER/.claude/skills/comms-hub-participation/
+cd /home/user/weaver/.claude/skills/comms-hub-participation/
 cat SKILL.md  # Read complete documentation
 cd tests/ && ./test-connection.sh  # Verify setup
 cd ../examples/ && ./example-first-message.sh  # Send first message

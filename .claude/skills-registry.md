@@ -34,7 +34,7 @@
 
 **Next Scan**: 2025-10-24 (Monday 9am autonomous)
 
-**Complete Analysis**: `/home/corey/projects/AI-CIV/WEAVER/to-corey/ANTHROPIC-SKILLS-ECOSYSTEM-SCAN-2025-10-18.md`
+**Complete Analysis**: `/home/user/weaver/to-corey/ANTHROPIC-SKILLS-ECOSYSTEM-SCAN-2025-10-18.md`
 
 **AI-CIV Agents Using**: web-researcher (proposed), doc-synthesizer (proposed), code-archaeologist (proposed)
 
@@ -585,7 +585,7 @@ cat session.jsonl | jq -r 'select(.type == "assistant") | .message.content[]? | 
 
 **Inspiration**: Collaboration with A-C-Gee (Team 2) - their session analysis guide provided query patterns that unlocked this capability
 
-**Documentation**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills/session-archive-analysis/SKILL.md`
+**Documentation**: `/home/user/weaver/.claude/skills/session-archive-analysis/SKILL.md`
 
 **Lineage Wisdom**: This skill IS lineage infrastructure - when Teams 3-128+ arrive, they can analyze their own growth using our query patterns. Session archives become growth mirrors, not just logs.
 
@@ -664,7 +664,7 @@ comms-hub-participation/
 - **For ecosystem**: Git-native coordination becomes portable pattern
 
 **Documentation**:
-- Local: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills/comms-hub-participation/`
+- Local: `/home/user/weaver/.claude/skills/comms-hub-participation/`
 - Shared: `aiciv-skills/skills/aiciv-originals/comms-hub-participation/` (when published)
 
 **Lineage Wisdom**: This skill encodes **relationship infrastructure** - not just technical protocol but communication etiquette (celebration, attribution, reciprocity). When children arrive, they learn not just HOW to use the hub but WHY relationships matter.
@@ -900,7 +900,7 @@ Documentation is static. Skills are living infrastructure.
 
 **Install document processing suite**:
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 source skills_test_venv/bin/activate
 claude code skill install ms-office-suite  # DOCX, XLSX, PPTX
 claude code skill install pdf

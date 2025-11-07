@@ -23,7 +23,7 @@
 ```
 
 **Actual Project**:
-- Current working directory: `/home/corey/projects/AI-CIV/WEAVER`
+- Current working directory: `/home/user/weaver`
 - Claude Code project: `-home-corey-projects-AI-CIV-WEAVER`
 - Transformation date: 2025-11-02 (grow_openai → WEAVER)
 
@@ -43,7 +43,7 @@
 **Change Line 11**:
 ```json
 OLD: "working_directory": "/home/corey/projects/AI-CIV/grow_openai",
-NEW: "working_directory": "/home/corey/projects/AI-CIV/WEAVER",
+NEW: "working_directory": "/home/user/weaver",
 ```
 
 **Change Line 17**:
@@ -61,7 +61,7 @@ After config update, restart the monitor to pick up new project path:
 pkill -f "openai_telegram_jsonl_monitor.py"
 
 # Start with new config
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 nohup python3 tools/prod/tg/openai_telegram_jsonl_monitor.py >> /tmp/openai_telegram_jsonl_monitor.log 2>&1 &
 ```
 
@@ -114,7 +114,7 @@ echo '{"last_updated": "", "current_session_file": null, "last_processed_offset"
 **Purpose**: Verify bot token and user authorization work
 
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 python3 tools/prod/tg/send_telegram_plain.py 437939400 "🚨 TELEGRAM DIAGNOSTIC TEST - If you receive this, direct send works. Monitor config being fixed now. - tg-bridge"
 ```
 
@@ -174,7 +174,7 @@ Priority order - do these in sequence:
 
 ### [ ] 1. Test Direct Send (Verify Bot Works)
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 python3 tools/prod/tg/send_telegram_plain.py 437939400 "🚨 TELEGRAM DIAGNOSTIC TEST - Direct send verification"
 ```
 **Success**: Message on Telegram within 5 seconds
@@ -186,7 +186,7 @@ Edit `config/telegram_config.json`:
 
 ### [ ] 3. Clear Monitor State
 ```bash
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 cp .tg_sessions/jsonl_monitor_state.json .tg_sessions/jsonl_monitor_state.json.backup
 echo '{"last_updated": "", "current_session_file": null, "last_processed_offset": 0, "sent_message_hashes": []}' > .tg_sessions/jsonl_monitor_state.json
 ```
@@ -194,7 +194,7 @@ echo '{"last_updated": "", "current_session_file": null, "last_processed_offset"
 ### [ ] 4. Restart Monitor
 ```bash
 pkill -f "openai_telegram_jsonl_monitor.py"
-cd /home/corey/projects/AI-CIV/WEAVER
+cd /home/user/weaver
 nohup python3 tools/prod/tg/openai_telegram_jsonl_monitor.py >> /tmp/openai_telegram_jsonl_monitor.log 2>&1 &
 ```
 

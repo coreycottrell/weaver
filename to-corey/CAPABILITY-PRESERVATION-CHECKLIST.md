@@ -363,7 +363,7 @@ echo "✅ Monthly audit complete"
 
 **Anthropic Skills Support**: (Claude Code platform)
 **Hub Repository**: team1-production-hub (Git repo URL)
-**aiciv-skills Repository**: /home/corey/projects/AI-CIV/WEAVER/aiciv-skills
+**aiciv-skills Repository**: /home/user/weaver/aiciv-skills
 **Credential Storage**: (Corey's secure manager)
 
 ---

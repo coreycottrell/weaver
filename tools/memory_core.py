@@ -159,6 +159,11 @@ class MemoryStore:
         self.project_knowledge_dir.mkdir(parents=True, exist_ok=True)
         self.indexes_dir.mkdir(parents=True, exist_ok=True)
 
+        # Initialize in-memory indexes (lazy loaded)
+        self._tag_index = None  # {tag: [filepaths]}
+        self._topic_index = None  # {topic: [filepaths]}
+        self._indexes_loaded = False
+
     def _generate_filename(self, entry: MemoryEntry) -> str:
         """Generate filename from memory entry metadata.
 
@@ -176,6 +181,141 @@ class MemoryStore:
         agent_dir = self.agent_learnings_dir / agent_id
         agent_dir.mkdir(parents=True, exist_ok=True)
         return agent_dir
+
+    def _load_indexes(self):
+        """Load indexes from disk (lazy loading on first search)."""
+        if self._indexes_loaded:
+            return
+
+        tag_index_file = self.indexes_dir / "tag_index.json"
+        topic_index_file = self.indexes_dir / "topic_index.json"
+
+        # Load or initialize tag index
+        if tag_index_file.exists():
+            with open(tag_index_file, 'r') as f:
+                self._tag_index = json.load(f)
+        else:
+            self._tag_index = {}
+
+        # Load or initialize topic index
+        if topic_index_file.exists():
+            with open(topic_index_file, 'r') as f:
+                self._topic_index = json.load(f)
+        else:
+            self._topic_index = {}
+
+        self._indexes_loaded = True
+
+    def _save_indexes(self):
+        """Save indexes to disk."""
+        if not self._indexes_loaded:
+            return
+
+        tag_index_file = self.indexes_dir / "tag_index.json"
+        topic_index_file = self.indexes_dir / "topic_index.json"
+
+        with open(tag_index_file, 'w') as f:
+            json.dump(self._tag_index, f, indent=2)
+
+        with open(topic_index_file, 'w') as f:
+            json.dump(self._topic_index, f, indent=2)
+
+    def _update_indexes(self, filepath: str, entry: MemoryEntry):
+        """Update indexes with new entry."""
+        self._load_indexes()  # Ensure indexes are loaded
+
+        # Update tag index
+        for tag in entry.tags:
+            if tag not in self._tag_index:
+                self._tag_index[tag] = []
+            if filepath not in self._tag_index[tag]:
+                self._tag_index[tag].append(filepath)
+
+        # Update topic index
+        topic_key = entry.topic.lower()
+        if topic_key not in self._topic_index:
+            self._topic_index[topic_key] = []
+        if filepath not in self._topic_index[topic_key]:
+            self._topic_index[topic_key].append(filepath)
+
+        self._save_indexes()
+
+    def rebuild_indexes(self):
+        """Rebuild all indexes from scratch by scanning all memory files.
+
+        Use this for maintenance or after bulk imports.
+        """
+        print("🔨 Rebuilding memory indexes...")
+
+        self._tag_index = {}
+        self._topic_index = {}
+        self._indexes_loaded = True
+
+        # Scan all agent directories
+        count = 0
+        for agent_dir in self.agent_learnings_dir.iterdir():
+            if not agent_dir.is_dir():
+                continue
+
+            # Scan all memory files for this agent
+            for md_file in agent_dir.glob("*.md"):
+                try:
+                    markdown = md_file.read_text(encoding='utf-8')
+                    if '---' not in markdown:
+                        continue
+
+                    parts = markdown.split('---', 2)
+                    if len(parts) < 3:  # Need opening ---, yaml, closing ---, content
+                        continue
+
+                    # Try to parse YAML metadata
+                    try:
+                        metadata = yaml.safe_load(parts[1])
+                    except yaml.YAMLError:
+                        # Skip files with malformed YAML (READMEs, etc.)
+                        continue
+
+                    # Skip if metadata is not a dict (malformed entry)
+                    if not isinstance(metadata, dict):
+                        continue
+
+                    # Skip if missing required fields (not a proper memory entry)
+                    if 'tags' not in metadata or 'topic' not in metadata:
+                        continue
+
+                    filepath = str(md_file.absolute())
+
+                    # Index tags
+                    tags = metadata.get('tags', [])
+                    if not isinstance(tags, list):
+                        tags = [tags]
+
+                    for tag in tags:
+                        # Convert to string if needed
+                        tag_str = str(tag) if not isinstance(tag, str) else tag
+                        if tag_str not in self._tag_index:
+                            self._tag_index[tag_str] = []
+                        if filepath not in self._tag_index[tag_str]:
+                            self._tag_index[tag_str].append(filepath)
+
+                    # Index topic
+                    topic = str(metadata.get('topic', '')).lower()
+                    if topic:
+                        if topic not in self._topic_index:
+                            self._topic_index[topic] = []
+                        if filepath not in self._topic_index[topic]:
+                            self._topic_index[topic].append(filepath)
+
+                    count += 1
+
+                except Exception as e:
+                    # Silently skip errors (expected for README files, etc.)
+                    continue
+
+        self._save_indexes()
+        print(f"✅ Indexed {count} memories")
+        print(f"   {len(self._tag_index)} unique tags")
+        print(f"   {len(self._topic_index)} unique topics")
 
     def write_entry(self, agent_id: str, entry: MemoryEntry) -> str:
         """Write memory entry to disk.
@@ -208,7 +348,11 @@ class MemoryStore:
         markdown = entry.to_markdown()
         filepath.write_text(markdown, encoding='utf-8')
 
-        return str(filepath.absolute())
+        # Update indexes
+        filepath_str = str(filepath.absolute())
+        self._update_indexes(filepath_str, entry)
+
+        return filepath_str
 
     def read_entry(self, filepath: str) -> MemoryEntry:
         """Read memory entry from disk.
@@ -269,7 +413,7 @@ class MemoryStore:
         return memories
 
     def search_by_tag(self, agent: Optional[str], tag: str) -> List[str]:
-        """Search memories by tag.
+        """Search memories by tag (O(1) index lookup).
 
         Args:
             agent: Agent to search (None = all agents)
@@ -278,63 +422,47 @@ class MemoryStore:
         Returns:
             List of matching file paths
         """
-        results = []
+        # Load indexes if not already loaded
+        self._load_indexes()
 
-        # Determine search scope
+        # Get all files with this tag from index (O(1) lookup)
+        all_matches = self._tag_index.get(tag, [])
+
+        # Filter by agent if specified
         if agent:
-            search_dirs = [self._get_agent_dir(agent)]
+            agent_dir_str = str(self._get_agent_dir(agent))
+            results = [fp for fp in all_matches if fp.startswith(agent_dir_str)]
         else:
-            search_dirs = [d for d in self.agent_learnings_dir.iterdir() if d.is_dir()]
-
-        # Search all memories
-        for agent_dir in search_dirs:
-            for md_file in agent_dir.glob("*.md"):
-                try:
-                    markdown = md_file.read_text(encoding='utf-8')
-                    # Quick YAML parse to check tags
-                    if '---' in markdown:
-                        parts = markdown.split('---', 2)
-                        if len(parts) >= 2:
-                            metadata = yaml.safe_load(parts[1])
-                            if tag in metadata.get('tags', []):
-                                results.append(str(md_file.absolute()))
-                except Exception:
-                    continue
+            results = all_matches
 
         return results
 
     def search_by_topic(self, topic: str, agent: Optional[str] = None) -> List[str]:
-        """Search memories by topic.
+        """Search memories by topic (O(1) index lookup).
 
         Args:
-            topic: Topic keyword to search for
+            topic: Topic keyword to search for (case-insensitive substring match)
             agent: Agent to search (None = all agents)
 
         Returns:
             List of matching file paths
         """
-        results = []
+        # Load indexes if not already loaded
+        self._load_indexes()
+
         topic_lower = topic.lower()
+        results = []
 
-        # Determine search scope
+        # Find all topics that contain the search term (still O(k) where k=unique topics, much smaller than n=total memories)
+        for indexed_topic, filepaths in self._topic_index.items():
+            if topic_lower in indexed_topic:
+                results.extend(filepaths)
+
+        # Remove duplicates and filter by agent if specified
+        results = list(set(results))
         if agent:
-            search_dirs = [self._get_agent_dir(agent)]
-        else:
-            search_dirs = [d for d in self.agent_learnings_dir.iterdir() if d.is_dir()]
-
-        # Search all memories
-        for agent_dir in search_dirs:
-            for md_file in agent_dir.glob("*.md"):
-                try:
-                    markdown = md_file.read_text(encoding='utf-8')
-                    if '---' in markdown:
-                        parts = markdown.split('---', 2)
-                        if len(parts) >= 2:
-                            metadata = yaml.safe_load(parts[1])
-                            if topic_lower in metadata.get('topic', '').lower():
-                                results.append(str(md_file.absolute()))
-                except Exception:
-                    continue
+            agent_dir_str = str(self._get_agent_dir(agent))
+            results = [fp for fp in results if fp.startswith(agent_dir_str)]
 
         return results
 
