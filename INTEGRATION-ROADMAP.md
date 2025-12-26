@@ -1,8 +1,8 @@
 # Integration Readiness Roadmap
 
 **Target**: Week 4 Integration Sprint with A-C-Gee (Oct 24-31)
-**Status**: PLANNING PHASE
-**Last Updated**: 2025-10-16
+**Status**: RECONNECTION PHASE (Post-Dormancy)
+**Last Updated**: 2025-12-26
 
 ---
 
@@ -33,29 +33,29 @@
 **Source**: Email communications (2025-10-13 to 2025-10-17)
 
 #### MCP Research Tasks
-- [ ] **Research Docker MCP Gateway**
+- [x] **Research Docker MCP Gateway** ✅ COMPLETED 2025-12-26
   - Dependencies: None
   - Validates: Understanding of Docker's MCP gateway capabilities
   - Output: Research report on Docker MCP gateway architecture, use cases, integration patterns
   - Source: Email 2025-10-13 "Docker MCP servers!" (https://github.com/docker/mcp-gateway)
   - Assigned: web-researcher + doc-synthesizer
 
-- [ ] **Research Postman Public MCP Servers Collection**
+- [x] **Research Postman Public MCP Servers Collection** ✅ COMPLETED 2025-12-26
   - Dependencies: None
   - Validates: Understanding of available MCP servers ecosystem
   - Output: Research report on Postman MCP servers, categorization, relevance to AI-CIV
   - Source: Email 2025-10-14 "Another huge treasure trove" (https://www.postman.com/getmcp/public-mcp-servers/overview)
   - Assigned: web-researcher + doc-synthesizer
 
-- [ ] **Synthesize MCP Ecosystem Findings**
+- [x] **Synthesize MCP Ecosystem Findings** ✅ COMPLETED 2025-12-26
   - Dependencies: Docker MCP research complete, Postman MCP research complete
   - Validates: Strategic understanding of MCP landscape for AI-CIV
-  - Output: Strategic synthesis report - how MCP ecosystem applies to our collective
+  - Output: MCP-INTEGRATION-STRATEGY.md created
   - Source: Combined insights from both research tasks
   - Assigned: result-synthesizer + api-architect
 
 #### Anthropic Skills Repo Research (HIGH PRIORITY)
-- [ ] **Research Anthropic Skills Repository**
+- [x] **Research Anthropic Skills Repository** ✅ COMPLETED 2025-12-26
   - Dependencies: None
   - Validates: Understanding of Anthropic's official skills library for Claude
   - Output: Research report on skills architecture, examples, integration patterns
@@ -63,7 +63,7 @@
   - Priority: HIGH (Corey explicitly flagged)
   - Assigned: web-researcher + claude-code-expert + api-architect
 
-- [ ] **Analyze Skills for AI-CIV Application**
+- [x] **Analyze Skills for AI-CIV Application** ✅ COMPLETED 2025-12-26
   - Dependencies: Skills repo research complete
   - Validates: Strategic understanding of how Anthropic skills apply to our collective
   - Output: Analysis of which skills are relevant, how to adapt, what to build
@@ -71,7 +71,7 @@
   - Priority: HIGH
   - Assigned: result-synthesizer + the-conductor
 
-- [ ] **Propose Maximal Benefit Strategy**
+- [x] **Propose Maximal Benefit Strategy** ✅ COMPLETED 2025-12-26
   - Dependencies: Skills analysis complete
   - Validates: Actionable proposal for leveraging Anthropic skills
   - Output: Concrete proposal with priorities, implementation approach, expected benefits
@@ -79,15 +79,15 @@
   - Priority: HIGH
   - Assigned: feature-designer + api-architect + the-conductor
 
-- [ ] **Design MCP Integration Strategy**
+- [x] **Design MCP Integration Strategy** ✅ COMPLETED 2025-12-26
   - Dependencies: MCP ecosystem synthesis complete
   - Validates: Clear roadmap for MCP adoption in AI-CIV
-  - Output: MCP integration proposal with priorities, dependencies, timeline
+  - Output: MCP-INTEGRATION-STRATEGY.md (4-phase roadmap created)
   - Source: Strategic synthesis
   - Assigned: api-architect + feature-designer
 
 #### Alpha Arena Research (URGENT - 2025-10-18)
-- [ ] **Research Alpha Arena AI Benchmark**
+- [x] **Research Alpha Arena AI Benchmark** ✅ COMPLETED 2025-12-26
   - Dependencies: None
   - Validates: Understanding of alpha arena benchmark architecture - AI models trading real capital/crypto
   - Output: Research report on alpha arena benchmark, trading mechanics, capital management, evaluation framework
@@ -95,7 +95,7 @@
   - Priority: URGENT (Corey explicitly requested)
   - Assigned: web-researcher + doc-synthesizer
 
-- [ ] **Analyze Alpha Arena for AI-CIV Application**
+- [x] **Analyze Alpha Arena for AI-CIV Application** ✅ COMPLETED 2025-12-26
   - Dependencies: Alpha arena research complete
   - Validates: Strategic understanding of how to replicate for agent/team/researcher/firm trading
   - Output: Analysis of architecture, technical requirements, adaptation strategy for AI-CIV collectives
@@ -134,10 +134,10 @@
   - Output: Section in integration guide
 
 #### Code Tasks
-- [ ] **Add hub_cli.py auto-signing integration**
+- [x] **Add hub_cli.py auto-signing integration** ✅ COMPLETED 2025-12-26
   - Dependencies: None
   - Validates: Messages auto-sign when sent
-  - Output: Modified `hub_cli.py` with signing
+  - Output: Modified `hub_cli.py` with --sign flag and HUB_PRIVATE_KEY support
 
 - [ ] **Create verification endpoint for hub**
   - Dependencies: Auto-signing complete

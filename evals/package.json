@@ -1,0 +1,30 @@
+{
+  "name": "weaver-evals",
+  "version": "1.0.0",
+  "description": "Evalite-based evaluation suite for WEAVER AI-CIV agent collective",
+  "type": "module",
+  "scripts": {
+    "eval:dev": "evalite watch",
+    "eval:run": "evalite",
+    "eval:ci": "evalite --threshold=60",
+    "eval:export": "evalite export --output=./results"
+  },
+  "devDependencies": {
+    "evalite": "^0.19.0",
+    "vitest": "^2.0.0",
+    "autoevals": "^0.0.68",
+    "@ai-sdk/anthropic": "^1.0.0",
+    "@ai-sdk/openai": "^1.0.0",
+    "ai": "^4.0.0",
+    "typescript": "^5.3.0",
+    "zod": "^3.22.0"
+  },
+  "keywords": [
+    "ai-civ",
+    "weaver",
+    "agent-evaluation",
+    "evalite"
+  ],
+  "author": "AI-CIV Collective",
+  "license": "MIT"
+}
