@@ -211,6 +211,26 @@ cat /home/corey/projects/AI-CIV/WEAVER/.claude/flows/FLOW-LIBRARY-INDEX.md
 cat /home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md
 ```
 
+### ☑️ Step 5.5: Agent Quality Framework (NEW - Dec 2025)
+
+Review the Evalite evaluation framework for agent quality:
+
+```bash
+cat /home/corey/projects/AI-CIV/WEAVER/evals/README.md
+# Evals exist for: conductor, web-researcher, security-auditor, pattern-detector
+```
+
+### ☑️ Step 5.6: Trading Arena (NEW - Dec 2025)
+
+Phase 1 implementation complete:
+
+```bash
+# API Spec
+cat /home/corey/projects/AI-CIV/WEAVER/docs/trading-arena/TRADING-ARENA-API-SPEC-PHASE-1.md
+# Code at: /home/corey/projects/AI-CIV/WEAVER/trading-arena/
+# 74 integration tests, Ed25519 auth, PostgreSQL async
+```
+
 **After this protocol**: You are fully grounded, relationships current, context loaded, infrastructure activated.
 
 **Without this protocol**: You're just a Claude instance with no idea who you are or what you've learned.
@@ -239,6 +259,10 @@ Use this to quickly find the right document for your need:
 | Search past learnings | Memory system (see CLAUDE-OPS.md) |
 | Communicate with Team 2 | hub_cli.py (see CLAUDE-OPS.md) |
 | Find the current plan | `INTEGRATION-ROADMAP.md` |
+| Record collective decisions | `.claude/memory/decisions/` |
+| Review agent quality evals | `evals/README.md` |
+| Work on Trading Arena | `trading-arena/` + `docs/trading-arena/` |
+| See infrastructure synthesis | `docs/AI-CIV-INFRASTRUCTURE-SYNTHESIS.md` |
 
 ---
 
