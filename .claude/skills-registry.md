@@ -1,7 +1,7 @@
 # Skills Registry
 
 **Maintained by**: capability-curator
-**Last Updated**: 2025-11-04 (NEW SKILL: comms-hub-participation)
+**Last Updated**: 2025-12-26 (NEW SKILL: websocket-server-patterns - First technical infrastructure skill!)
 **Update Frequency**: Weekly (autonomous Monday 9am scans)
 **Purpose**: Central catalog of available skills, agent grants, and adoption tracking
 
@@ -691,6 +691,106 @@ Documentation is static. Skills are living infrastructure.
 **Creation Time**: ~3 hours (spec documentation, helper scripts, examples, tests, integration)
 
 **ROI**: Massive - every new CIV saves 50+ minutes onboarding, 2-3 hours per month on hub operations via helper scripts
+
+---
+
+### WebSocket Server Patterns (`websocket-server-patterns`)
+
+**Created by**: AI-CIV Team 1 (WEAVER - capability-curator)
+**Version**: 1.0.0
+**Created**: 2025-12-26
+**Status**: ACTIVE (production-ready, comprehensive documentation)
+
+**Purpose**: Production-ready WebSocket server patterns for FastAPI - the complete guide to building real-time systems
+
+**Background**: Created as Priority #1 skill for Trading Arena Phase 2. WebSocket infrastructure is the "spine" of real-time trading - without it, no live portfolio updates, no streaming order status, no instant market data.
+
+**Capabilities**:
+- **Connection Management**: Multi-client tracking, room-based subscriptions, broadcast patterns
+- **Authentication**: Query parameter tokens, Ed25519 challenge-response (Trading Arena specific)
+- **Heartbeat/Keepalive**: Server-side ping management, stale connection detection
+- **Error Handling**: Custom close codes (4000-4999), graceful disconnect, comprehensive error classification
+- **Reconnection**: Event sequencing, missed event replay, last_sequence tracking
+- **Trading Integration**: Complete Trading Arena WebSocket implementation (portfolio streams, order updates)
+- **Testing & Monitoring**: Load testing script, real-time connection monitor
+
+**Skill Contents**:
+```
+websocket-server-patterns/
+├── SKILL.md                          # Complete pattern documentation (10 parts)
+├── references/
+│   ├── connection_manager.py         # Production-ready ConnectionManager class
+│   ├── trading_websocket.py          # Trading Arena WebSocket implementation
+│   └── client_example.js             # JavaScript client with reconnection
+├── scripts/
+│   ├── ws_load_test.py               # Load testing (100+ concurrent clients)
+│   └── ws_monitor.py                 # Real-time connection monitoring
+└── assets/
+    └── (empty - no static assets needed)
+```
+
+**Key Patterns Documented**:
+1. **Basic WebSocket Endpoint**: Minimal FastAPI setup, path/query parameters
+2. **Connection Manager**: Singleton pattern, room management, broadcast methods
+3. **Authentication**: Token validation, Ed25519 challenge-response flow
+4. **Heartbeat**: Server ping loop, client pong tracking, timeout detection
+5. **Close Codes**: Standard (1000-1011) + custom (4001-4099) code taxonomy
+6. **Event Store**: Sequence numbers, reconnection replay, TTL management
+7. **Rate Limiting**: Token bucket algorithm, per-client tracking
+8. **Connection Limits**: Per-collective and global connection caps
+9. **Testing**: pytest patterns for WebSocket endpoints
+10. **Performance**: Load testing methodology, metrics collection
+
+**Technical Requirements**:
+- FastAPI + Starlette WebSocket support
+- Python 3.8+ with asyncio
+- `websockets` library (for testing/clients)
+- `cryptography` library (for Ed25519 auth)
+
+**AI-CIV Agents Using**:
+- **api-architect** (recommended): WebSocket API design decisions
+- **test-architect** (recommended): WebSocket testing patterns
+- **performance-optimizer** (recommended): Load testing, connection scaling
+- **the-conductor** (implicit): Trading Arena orchestration
+
+**Domain Applicability**:
+- Trading Arena (primary use case - Phase 2)
+- Observatory Dashboard (existing Flask-SocketIO could migrate)
+- Real-time agent status monitoring
+- Cross-CIV coordination (if real-time hub considered)
+
+**Adoption Status**: ACTIVE (created 2025-12-26)
+**Distribution**: Internal (AI-CIV infrastructure, may publish later)
+**Success Criteria**:
+- Trading Arena Phase 2 WebSocket infrastructure complete in <1 week (vs 2-3 weeks without skill)
+- Zero "how do I do X" questions for WebSocket patterns during implementation
+- All Work Stream E and F tasks (from Phase 2 breakdown) leverage this skill
+
+**Estimated Impact**:
+- **Time Savings**: 8-12 hours per WebSocket project (pattern lookup + boilerplate)
+- **Quality**: Production patterns from day one (heartbeat, error handling, reconnection)
+- **Consistency**: All WEAVER WebSocket code follows same patterns
+
+**Documentation**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills-reference/websocket-server-patterns/SKILL.md`
+
+**Lineage Wisdom**: This skill encodes **infrastructure wisdom** - not just "how to make a WebSocket" but "how to make a WebSocket that survives production" (heartbeats, auth, reconnection, rate limiting). When children build real-time systems, they start with battle-tested patterns.
+
+**Meta-Insight**: First **technical infrastructure skill** in AI-CIV catalog. Previous skills (session-archive-analysis, comms-hub-participation) were operational/coordination focused. This skill proves we can package engineering patterns, not just workflows.
+
+**Validation**: Trading Arena Phase 2 implementation will validate:
+- Connection manager handles 100+ concurrent clients
+- Ed25519 auth works end-to-end
+- Heartbeat catches stale connections
+- Event replay works on reconnection
+
+**Future Evolution**:
+- v1.1.0: WebSocket client patterns (Python, TypeScript), connection pooling
+- v1.2.0: Clustering support (Redis pub/sub for multi-instance)
+- v2.0.0: Protocol negotiation, binary message support, compression
+
+**Creation Time**: ~4 hours (SKILL.md, 3 reference implementations, 2 utility scripts, registry integration)
+
+**ROI**: High - WebSocket is foundational for Trading Arena, Dashboard, any future real-time feature. Investment pays back on first project.
 
 ---
 
