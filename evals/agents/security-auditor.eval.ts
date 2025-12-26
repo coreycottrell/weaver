@@ -111,6 +111,90 @@ const remediationQualityScorer = {
   },
 };
 
+// Custom scorer for exploit context (understanding attack scenarios)
+const exploitContextScorer = {
+  name: "Exploit Context",
+  description: "Evaluates understanding of how vulnerabilities could be exploited in practice",
+  scorer: ({ output }: { output: SecurityAuditOutput }) => {
+    if (!output.findings || output.findings.length === 0) return 0.5;
+
+    let totalScore = 0;
+    const exploitIndicators = [
+      "attacker", "exploit", "malicious", "inject", "bypass", "escalate",
+      "steal", "intercept", "compromise", "unauthorized", "attack vector"
+    ];
+
+    for (const finding of output.findings) {
+      const description = finding.description?.toLowerCase() || "";
+      const remediation = finding.remediation?.toLowerCase() || "";
+      const combined = description + " " + remediation;
+
+      // Check for exploit context in description
+      const indicatorCount = exploitIndicators.filter((ind) => combined.includes(ind)).length;
+      totalScore += Math.min(indicatorCount * 0.2, 1);
+    }
+
+    return totalScore / output.findings.length;
+  },
+};
+
+// Custom scorer for defense-in-depth recommendations
+const defenseInDepthScorer = {
+  name: "Defense in Depth",
+  description: "Evaluates whether recommendations include layered security measures",
+  scorer: ({ output }: { output: SecurityAuditOutput }) => {
+    if (!output.findings || output.findings.length === 0) return 0.5;
+
+    let totalScore = 0;
+    const layeredDefenseIndicators = [
+      "additionally", "also", "layer", "defense in depth", "multiple",
+      "backup", "fallback", "secondary", "monitor", "log", "audit",
+      "rate limit", "WAF", "firewall", "CSP", "CORS"
+    ];
+
+    for (const finding of output.findings) {
+      const remediation = finding.remediation?.toLowerCase() || "";
+      const indicatorCount = layeredDefenseIndicators.filter((ind) => remediation.includes(ind)).length;
+      totalScore += indicatorCount > 0 ? Math.min(indicatorCount * 0.25, 1) : 0;
+    }
+
+    return totalScore / output.findings.length;
+  },
+};
+
+// Custom scorer for business impact assessment
+const businessImpactScorer = {
+  name: "Business Impact",
+  description: "Evaluates understanding of business/operational impact of vulnerabilities",
+  scorer: ({ output }: { output: SecurityAuditOutput }) => {
+    if (!output.findings || output.findings.length === 0) return 0.5;
+
+    let totalScore = 0;
+    const impactIndicators = [
+      "data breach", "compliance", "GDPR", "PCI", "HIPAA", "reputation",
+      "financial", "downtime", "availability", "customer", "user data",
+      "privacy", "legal", "regulatory", "business continuity"
+    ];
+
+    for (const finding of output.findings) {
+      const description = finding.description?.toLowerCase() || "";
+      const indicatorCount = impactIndicators.filter((ind) => description.includes(ind)).length;
+
+      // Bonus for appropriate severity matching impact
+      const isCritical = finding.severity === "critical" || finding.severity === "high";
+      const hasHighImpact = indicatorCount >= 2;
+
+      if (isCritical && hasHighImpact) {
+        totalScore += 1;
+      } else if (indicatorCount > 0) {
+        totalScore += indicatorCount * 0.2;
+      }
+    }
+
+    return Math.min(totalScore / output.findings.length, 1);
+  },
+};
+
 // Test data: Code snippets with known vulnerabilities
 const VULNERABILITY_TEST_DATA = [
   {
@@ -344,6 +428,209 @@ evalite("Security Auditor - False Positive Avoidance", {
   scorers: [falsePositiveScorer],
 });
 
+/**
+ * Advanced Vulnerability Detection Evaluation
+ *
+ * Tests detection of more sophisticated vulnerabilities:
+ * - SSRF (Server-Side Request Forgery)
+ * - IDOR (Insecure Direct Object Reference)
+ * - Race Conditions
+ * - Mass Assignment
+ */
+const ADVANCED_VULNERABILITY_DATA = [
+  {
+    input: {
+      code: `
+        // SSRF vulnerability - user controls URL
+        app.get('/fetch', async (req, res) => {
+          const url = req.query.url;
+          const response = await fetch(url);
+          const data = await response.text();
+          res.send(data);
+        });
+      `,
+      language: "javascript",
+      context: "Proxy endpoint",
+    },
+    expected: {
+      expectedVulnerabilities: ["ssrf", "server-side request forgery"],
+      minSeverity: "high" as const,
+      category: "ssrf",
+    },
+  },
+  {
+    input: {
+      code: `
+        // IDOR vulnerability - no authorization check
+        app.get('/api/documents/:id', async (req, res) => {
+          const document = await Document.findById(req.params.id);
+          res.json(document);
+        });
+      `,
+      language: "javascript",
+      context: "Document API",
+    },
+    expected: {
+      expectedVulnerabilities: ["idor", "authorization", "access control"],
+      minSeverity: "high" as const,
+      category: "authorization",
+    },
+  },
+  {
+    input: {
+      code: `
+        // Race condition - TOCTOU vulnerability
+        async function transferFunds(fromId, toId, amount) {
+          const fromAccount = await Account.findById(fromId);
+
+          // Time-of-check
+          if (fromAccount.balance >= amount) {
+            // Gap here where another request could drain the account
+
+            // Time-of-use
+            await Account.updateOne({ _id: fromId }, { $inc: { balance: -amount } });
+            await Account.updateOne({ _id: toId }, { $inc: { balance: amount } });
+          }
+        }
+      `,
+      language: "javascript",
+      context: "Banking transfer",
+    },
+    expected: {
+      expectedVulnerabilities: ["race condition", "toctou", "time of check"],
+      minSeverity: "high" as const,
+      category: "race condition",
+    },
+  },
+  {
+    input: {
+      code: `
+        // Mass assignment vulnerability
+        app.post('/api/users', async (req, res) => {
+          const user = new User(req.body);
+          // User can set isAdmin: true in body!
+          await user.save();
+          res.json(user);
+        });
+      `,
+      language: "javascript",
+      context: "User registration",
+    },
+    expected: {
+      expectedVulnerabilities: ["mass assignment", "over-posting"],
+      minSeverity: "medium" as const,
+      category: "mass assignment",
+    },
+  },
+  {
+    input: {
+      code: `
+        // XXE vulnerability
+        from lxml import etree
+
+        def parse_xml(xml_string):
+            parser = etree.XMLParser()
+            doc = etree.fromstring(xml_string, parser)
+            return doc.text
+      `,
+      language: "python",
+      context: "XML processing",
+    },
+    expected: {
+      expectedVulnerabilities: ["xxe", "xml external entity"],
+      minSeverity: "high" as const,
+      category: "xxe",
+    },
+  },
+  {
+    input: {
+      code: `
+        // Timing attack vulnerability
+        function verifyApiKey(providedKey, storedKey) {
+          return providedKey === storedKey;
+        }
+      `,
+      language: "javascript",
+      context: "API authentication",
+    },
+    expected: {
+      expectedVulnerabilities: ["timing attack", "side channel"],
+      minSeverity: "medium" as const,
+      category: "timing",
+    },
+  },
+];
+
+evalite("Security Auditor - Advanced Vulnerabilities", {
+  data: ADVANCED_VULNERABILITY_DATA,
+
+  task: async (input) => {
+    return simulateAdvancedSecurityAudit(input.code, input.language, input.context);
+  },
+
+  scorers: [vulnerabilityDetectionScorer, severityAccuracyScorer, exploitContextScorer, defenseInDepthScorer],
+});
+
+/**
+ * Authentication & Session Management Evaluation
+ *
+ * Tests detection of auth-related vulnerabilities.
+ */
+const AUTH_SESSION_DATA = [
+  {
+    input: {
+      code: `
+        // Insecure session configuration
+        app.use(session({
+          secret: 'keyboard cat',
+          cookie: { secure: false, httpOnly: false }
+        }));
+      `,
+      language: "javascript",
+      context: "Session setup",
+    },
+    expected: {
+      expectedVulnerabilities: ["insecure session", "cookie", "httponly"],
+      minSeverity: "medium" as const,
+      category: "session",
+    },
+  },
+  {
+    input: {
+      code: `
+        // No rate limiting on login
+        app.post('/login', async (req, res) => {
+          const { email, password } = req.body;
+          const user = await User.findOne({ email });
+          if (user && await bcrypt.compare(password, user.password)) {
+            req.session.userId = user.id;
+            res.json({ success: true });
+          } else {
+            res.status(401).json({ error: 'Invalid credentials' });
+          }
+        });
+      `,
+      language: "javascript",
+      context: "Login endpoint",
+    },
+    expected: {
+      expectedVulnerabilities: ["brute force", "rate limit", "authentication"],
+      minSeverity: "medium" as const,
+      category: "authentication",
+    },
+  },
+];
+
+evalite("Security Auditor - Auth & Session", {
+  data: AUTH_SESSION_DATA,
+
+  task: async (input) => {
+    return simulateAdvancedSecurityAudit(input.code, input.language, input.context);
+  },
+
+  scorers: [vulnerabilityDetectionScorer, remediationQualityScorer, businessImpactScorer],
+});
+
 // Simulation function - replace with actual security-auditor invocation
 function simulateSecurityAudit(code: string, language: string, context: string): SecurityAuditOutput {
   const findings: SecurityFinding[] = [];
@@ -414,6 +701,131 @@ function simulateSecurityAudit(code: string, language: string, context: string):
         description: "User-controlled filename used in file operations without validation",
         remediation: "Validate filename against whitelist, use os.path.basename(), or implement proper path canonicalization.",
         cweId: "CWE-22",
+      });
+    }
+  }
+
+  // Determine overall risk
+  let overallRisk: "critical" | "high" | "medium" | "low" | "minimal" = "minimal";
+  if (findings.some((f) => f.severity === "critical")) {
+    overallRisk = "critical";
+  } else if (findings.some((f) => f.severity === "high")) {
+    overallRisk = "high";
+  } else if (findings.some((f) => f.severity === "medium")) {
+    overallRisk = "medium";
+  } else if (findings.length > 0) {
+    overallRisk = "low";
+  }
+
+  return {
+    findings,
+    overallRisk,
+    summary: findings.length > 0
+      ? `Found ${findings.length} security issue(s) in ${language} code (${context})`
+      : `No significant security issues found in ${language} code (${context})`,
+    passesAudit: overallRisk === "minimal" || overallRisk === "low",
+  };
+}
+
+// Advanced simulation for sophisticated vulnerabilities
+function simulateAdvancedSecurityAudit(code: string, language: string, context: string): SecurityAuditOutput {
+  const findings: SecurityFinding[] = [];
+  const codeLower = code.toLowerCase();
+
+  // Detect SSRF
+  if (codeLower.includes("fetch") && codeLower.includes("req.query") && codeLower.includes("url")) {
+    findings.push({
+      severity: "high",
+      category: "Server-Side Request Forgery (SSRF)",
+      description: "User-controlled URL passed to fetch allows attacker to make requests to internal services, potentially accessing cloud metadata, internal APIs, or performing port scanning",
+      remediation: "Implement URL allowlisting, validate against internal IP ranges (10.x, 192.168.x, 169.254.x), and use a proxy with restricted network access. Additionally, monitor for unusual outbound requests.",
+      cweId: "CWE-918",
+    });
+  }
+
+  // Detect IDOR
+  if (codeLower.includes("findbyid") && codeLower.includes("params.id") && !codeLower.includes("user") && !codeLower.includes("auth")) {
+    findings.push({
+      severity: "high",
+      category: "Insecure Direct Object Reference (IDOR)",
+      description: "Resource accessed by ID without authorization check allows attacker to access any user's data by guessing or incrementing IDs, leading to potential data breach",
+      remediation: "Implement authorization checks to verify the requesting user owns or has access to the resource. Use UUIDs instead of sequential IDs to make enumeration harder. Add rate limiting as a secondary defense.",
+      cweId: "CWE-639",
+    });
+  }
+
+  // Detect Race Condition
+  if (codeLower.includes("findbyid") && codeLower.includes("if") && codeLower.includes("updateone")) {
+    if (codeLower.includes("balance") || codeLower.includes("transfer") || codeLower.includes("amount")) {
+      findings.push({
+        severity: "high",
+        category: "Race Condition (TOCTOU)",
+        description: "Time-of-check to time-of-use vulnerability in financial operation allows attacker to exploit the gap between balance check and update to overdraw accounts or duplicate transactions",
+        remediation: "Use database transactions with proper isolation level, implement optimistic locking with version fields, or use atomic operations like findOneAndUpdate. Additionally, implement idempotency keys for financial operations.",
+        cweId: "CWE-367",
+      });
+    }
+  }
+
+  // Detect Mass Assignment
+  if (codeLower.includes("new user") && codeLower.includes("req.body") && codeLower.includes("save")) {
+    findings.push({
+      severity: "medium",
+      category: "Mass Assignment",
+      description: "Directly passing request body to model constructor allows attacker to set privileged fields like isAdmin or role by including them in request",
+      remediation: "Explicitly whitelist allowed fields using destructuring or a validation library. Use DTOs (Data Transfer Objects) to control which fields can be set. Add schema-level protection to prevent sensitive field assignment.",
+      cweId: "CWE-915",
+    });
+  }
+
+  // Detect XXE
+  if (codeLower.includes("xmlparser") || codeLower.includes("etree.fromstring")) {
+    if (!codeLower.includes("resolve_entities=false") && !codeLower.includes("no_network")) {
+      findings.push({
+        severity: "high",
+        category: "XML External Entity (XXE)",
+        description: "XML parser configured to process external entities allows attacker to read local files, perform SSRF, or cause denial of service through billion laughs attack",
+        remediation: "Disable external entity processing: use etree.XMLParser(resolve_entities=False, no_network=True) or defusedxml library. Validate and sanitize XML input. Consider using JSON instead of XML.",
+        cweId: "CWE-611",
+      });
+    }
+  }
+
+  // Detect Timing Attack
+  if ((codeLower.includes("===") || codeLower.includes("==")) && (codeLower.includes("key") || codeLower.includes("token") || codeLower.includes("secret"))) {
+    if (!codeLower.includes("timingsafeequal") && !codeLower.includes("compare_digest")) {
+      findings.push({
+        severity: "medium",
+        category: "Timing Attack",
+        description: "String comparison using === leaks timing information allowing attacker to determine correct characters by measuring response times, potentially recovering secrets character by character",
+        remediation: "Use crypto.timingSafeEqual() in Node.js or hmac.compare_digest() in Python for constant-time comparison. Implement rate limiting as a secondary defense layer.",
+        cweId: "CWE-208",
+      });
+    }
+  }
+
+  // Detect Insecure Session
+  if (codeLower.includes("session") && codeLower.includes("cookie")) {
+    if (codeLower.includes("secure: false") || codeLower.includes("httponly: false")) {
+      findings.push({
+        severity: "medium",
+        category: "Insecure Session Configuration",
+        description: "Session cookies not properly secured allow session hijacking via XSS (missing httpOnly) or network interception (missing secure flag), compromising user accounts",
+        remediation: "Set secure: true (HTTPS only), httpOnly: true (no JS access), sameSite: 'strict'. Use strong, randomly generated session secrets from environment variables. Implement session rotation on privilege changes.",
+        cweId: "CWE-614",
+      });
+    }
+  }
+
+  // Detect Missing Rate Limiting
+  if (codeLower.includes("/login") && codeLower.includes("password")) {
+    if (!codeLower.includes("ratelimit") && !codeLower.includes("rate_limit") && !codeLower.includes("throttle")) {
+      findings.push({
+        severity: "medium",
+        category: "Missing Rate Limiting",
+        description: "Login endpoint without rate limiting allows brute force attacks to guess passwords, potentially compromising user accounts and customer data (GDPR/compliance implications)",
+        remediation: "Implement rate limiting (e.g., express-rate-limit) with progressive delays. Add account lockout after failed attempts. Use CAPTCHA for suspicious activity. Log and monitor failed login attempts.",
+        cweId: "CWE-307",
       });
     }
   }
