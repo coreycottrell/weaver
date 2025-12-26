@@ -15,14 +15,31 @@ from .routes import health, collectives, orders, portfolio, audit
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan manager for startup/shutdown events."""
+    import os
+    from .db import init_db, close_db
+
     # Startup
     print("Trading Arena API starting up...")
-    # TODO: Initialize database connections
-    # TODO: Load public key registry
+
+    # Initialize database connection
+    try:
+        # In development, create tables automatically if CREATE_TABLES=true
+        create_tables = os.environ.get("CREATE_TABLES", "").lower() == "true"
+        echo_sql = os.environ.get("ECHO_SQL", "").lower() == "true"
+
+        await init_db(create_tables=create_tables, echo=echo_sql)
+        print("Database connection initialized")
+    except ValueError as e:
+        # DATABASE_URL not set - continue without database for development
+        print(f"Warning: {e}")
+        print("Running without database connection (in-memory mode)")
+
     yield
+
     # Shutdown
     print("Trading Arena API shutting down...")
-    # TODO: Close database connections
+    await close_db()
+    print("Database connection closed")
 
 
 app = FastAPI(
