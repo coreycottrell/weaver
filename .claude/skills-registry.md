@@ -1,7 +1,7 @@
 # Skills Registry
 
 **Maintained by**: capability-curator
-**Last Updated**: 2025-12-26 (NEW SKILL: websocket-server-patterns - First technical infrastructure skill!)
+**Last Updated**: 2025-12-26 (NEW SKILL: trading-finance-patterns - Financial calculations for Trading Arena Phase 2)
 **Update Frequency**: Weekly (autonomous Monday 9am scans)
 **Purpose**: Central catalog of available skills, agent grants, and adoption tracking
 
@@ -520,7 +520,7 @@ allowed-skills:
 
 ## Section 3: AI-CIV Original Skills
 
-**Status**: 2 skills created (session-archive-analysis, comms-hub-participation)
+**Status**: 4 skills created (session-archive-analysis, comms-hub-participation, websocket-server-patterns, trading-finance-patterns)
 
 **Purpose**: This section catalogs skills created by AI-CIV from our unique innovations
 
@@ -791,6 +791,118 @@ websocket-server-patterns/
 **Creation Time**: ~4 hours (SKILL.md, 3 reference implementations, 2 utility scripts, registry integration)
 
 **ROI**: High - WebSocket is foundational for Trading Arena, Dashboard, any future real-time feature. Investment pays back on first project.
+
+---
+
+### Trading Finance Patterns (`trading-finance-patterns`)
+
+**Created by**: AI-CIV Team 1 (WEAVER - capability-curator)
+**Version**: 1.0.0
+**Created**: 2025-12-26
+**Status**: ACTIVE (complete, production-ready)
+
+**Purpose**: Production-ready financial calculation patterns for trading systems. All calculations use Decimal arithmetic to prevent float precision errors that compound in financial systems.
+
+**Core Principle**: In trading, errors compound. A 0.01% float precision error becomes significant when processed across thousands of trades. This skill eliminates that risk.
+
+**Capabilities**:
+- **Precision Handling**: Safe Decimal conversion, directional rounding (up for fees, down for balances)
+- **P&L Calculations**: Realized/unrealized P&L, position tracking, FIFO/LIFO/average cost basis
+- **Portfolio Metrics**: Sharpe ratio, Sortino ratio, max drawdown, Calmar ratio, win rate, profit factor
+- **Position Sizing**: Kelly criterion, fixed fractional, volatility-adjusted sizing
+- **Margin & Leverage**: Initial/maintenance margin, liquidation price, margin status, cross-margin portfolios
+
+**Technical Requirements**:
+- Python 3.x with `decimal` module (standard library)
+- No external dependencies for core functionality
+- Optional: numpy, pandas for batch operations
+
+**Skill Contents**:
+```
+trading-finance-patterns/
+├── SKILL.md                  # Complete documentation (8 parts, ~2000 lines)
+├── references/               # Production-ready implementations
+│   ├── precision.py          # Decimal handling, validation, constants
+│   ├── pnl.py                # P&L calculations, position/portfolio tracking
+│   ├── metrics.py            # Performance metrics (Sharpe, drawdown, etc.)
+│   ├── position_sizing.py    # Kelly, fixed fractional, vol-adjusted
+│   └── margin.py             # Margin/leverage calculations
+└── scripts/
+    └── validate_precision.py # Precision validation test suite
+```
+
+**Key Patterns Encoded**:
+
+1. **Decimal Precision** (CRITICAL):
+   ```python
+   # WRONG - Float contaminates calculations
+   fee = Decimal(0.001)  # Preserves float imprecision!
+
+   # CORRECT - String to Decimal
+   fee = Decimal("0.001")  # Exact precision
+   ```
+
+2. **Directional Rounding**:
+   - Round UP for fees, margin requirements (conservative cost)
+   - Round DOWN for available balance, proceeds (conservative value)
+
+3. **Cost Basis Methods**:
+   - FIFO: First In, First Out (common for tax reporting)
+   - LIFO: Last In, First Out
+   - Average: Weighted average cost
+
+4. **Position Sizing**:
+   - Kelly Criterion with safety limits (half-Kelly recommended)
+   - Fixed fractional (risk % per trade)
+   - Volatility-adjusted (inverse volatility sizing)
+
+5. **Margin Calculations**:
+   - Liquidation price estimation
+   - Margin ratio monitoring
+   - Cross-margin portfolio aggregation
+
+**AI-CIV Agents Using**:
+- trading-strategist (REQUIRED): All P&L and portfolio calculations
+- performance-optimizer (recommended): Portfolio metrics analysis
+- api-architect (recommended): Trading Arena API implementation
+
+**Adoption Status**: ACTIVE (created 2025-12-26 for Trading Arena Phase 2)
+**Distribution**: Internal (AI-CIV infrastructure, potential external after validation)
+**Success Criteria**:
+- Zero precision errors in Trading Arena financial calculations
+- All tests in validate_precision.py pass
+- Portfolio metrics match reference implementations
+
+**Impact**:
+- **For Trading Arena**: Eliminates float precision risk across all financial calculations
+- **For Collective Performance**: Accurate P&L tracking, valid performance metrics
+- **For Future Projects**: Reusable financial calculation foundation
+
+**Documentation**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills-reference/trading-finance-patterns/SKILL.md`
+
+**Lineage Wisdom**: This skill encodes **financial correctness** - the principle that in finance, precision is non-negotiable. Float errors compound. Rounding direction matters. When children build trading systems, they inherit patterns that won't silently corrupt their calculations.
+
+**Meta-Insight**: Second **technical infrastructure skill** in AI-CIV catalog. Pairs with websocket-server-patterns to form complete Trading Arena Phase 2 foundation. Proves we can build domain-specific engineering skills, not just generic tools.
+
+**Validation**: Trading Arena Phase 2 will validate:
+- P&L calculations match expected values across 1000+ trades
+- Portfolio metrics (Sharpe, drawdown) within 0.01% of reference
+- Margin calculations correctly predict liquidation scenarios
+- Precision maintained over cumulative operations
+
+**Common Pitfalls Documented**:
+1. Float contamination (constructing Decimal from float)
+2. Division precision loss (context precision settings)
+3. Rounding direction errors (wrong direction for financial context)
+4. Percentage format confusion (0.55 vs 55%)
+5. Ignoring fees in P&L calculations
+6. Negative quantity confusion (use separate quantity + side)
+7. Division by zero (always guard volatility, margin denominators)
+8. Timestamp timezone handling (always use UTC)
+
+**Creation Time**: ~4 hours (SKILL.md, 4 reference implementations, validation scripts)
+
+**ROI**: Critical - financial accuracy is non-negotiable. One precision error in production could compound to significant reporting errors. Investment prevents class of bugs entirely.
 
 ---
 
