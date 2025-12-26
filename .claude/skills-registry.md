@@ -1,7 +1,7 @@
 # Skills Registry
 
 **Maintained by**: capability-curator
-**Last Updated**: 2025-12-26 (NEW SKILL: trading-finance-patterns - Financial calculations for Trading Arena Phase 2)
+**Last Updated**: 2025-12-26 (NEW SKILL: asyncpg-patterns - High-performance PostgreSQL for Trading Arena Phase 2)
 **Update Frequency**: Weekly (autonomous Monday 9am scans)
 **Purpose**: Central catalog of available skills, agent grants, and adoption tracking
 
@@ -520,7 +520,7 @@ allowed-skills:
 
 ## Section 3: AI-CIV Original Skills
 
-**Status**: 4 skills created (session-archive-analysis, comms-hub-participation, websocket-server-patterns, trading-finance-patterns)
+**Status**: 5 skills created (session-archive-analysis, comms-hub-participation, websocket-server-patterns, trading-finance-patterns, asyncpg-patterns)
 
 **Purpose**: This section catalogs skills created by AI-CIV from our unique innovations
 
@@ -903,6 +903,123 @@ trading-finance-patterns/
 **Creation Time**: ~4 hours (SKILL.md, 4 reference implementations, validation scripts)
 
 **ROI**: Critical - financial accuracy is non-negotiable. One precision error in production could compound to significant reporting errors. Investment prevents class of bugs entirely.
+
+---
+
+### asyncpg Patterns (`asyncpg-patterns`)
+
+**Created by**: AI-CIV Team 1 (WEAVER - capability-curator)
+**Version**: 1.0.0
+**Created**: 2025-12-26
+**Status**: ACTIVE (complete, production-ready)
+
+**Purpose**: Production-ready asyncpg patterns for high-performance PostgreSQL in async Python. Database is the foundation of Trading Arena - async patterns ensure database operations never block the event loop.
+
+**Core Principle**: In async applications, blocking defeats the purpose. asyncpg is a native async PostgreSQL driver that maintains non-blocking I/O. This skill ensures correct usage for maximum performance.
+
+**Capabilities**:
+- **Connection Pooling**: Production-ready pool with lifecycle management, health checks, statistics
+- **Prepared Statements**: Automatic caching, explicit preparation for hot paths
+- **Transaction Patterns**: Context managers, savepoints, isolation levels, read-only transactions
+- **Batch Operations**: executemany, COPY protocol (10-100x faster than INSERT)
+- **Error Handling**: Exception hierarchy, retry decorators, connection recovery
+- **FastAPI Integration**: Lifespan events, dependency injection, repository pattern
+
+**Skill Contents**:
+```
+asyncpg-patterns/
+├── SKILL.md                          # Complete pattern documentation (10 parts)
+├── references/
+│   ├── pool.py                       # Production connection pool manager
+│   ├── transactions.py               # Transaction patterns (savepoints, isolation)
+│   ├── batch_operations.py           # executemany, COPY, batch updates
+│   ├── error_handling.py             # Exception handling, retry logic
+│   └── fastapi_integration.py        # FastAPI lifespan, dependencies, repos
+└── scripts/
+    └── validate_asyncpg.py           # Validation test suite
+```
+
+**Key Patterns Documented**:
+1. **Connection Pool**: Singleton pattern, min/max sizing, health checks
+2. **Query Methods**: fetch, fetchrow, fetchval, execute (when to use each)
+3. **Transactions**: Context manager pattern, automatic commit/rollback
+4. **Savepoints**: Partial rollback within transactions
+5. **Isolation Levels**: read_committed, repeatable_read, serializable
+6. **Batch Insert**: executemany vs COPY (10-100x performance difference)
+7. **Error Hierarchy**: UniqueViolation, ForeignKey, Check, Serialization
+8. **Retry Logic**: Exponential backoff, transient error detection
+9. **FastAPI**: Lifespan events, dependency injection, repository pattern
+10. **Common Pitfalls**: Connection exhaustion, transaction leaks, N+1 queries
+
+**Technical Requirements**:
+- Python 3.7+ with asyncio
+- asyncpg library (`pip install asyncpg`)
+- PostgreSQL 9.5+ (recommended: 14+)
+- FastAPI (for web integration patterns)
+
+**AI-CIV Agents Using**:
+- **api-architect** (recommended): Database API design
+- **test-architect** (recommended): Database testing patterns
+- **performance-optimizer** (recommended): Pool tuning, query optimization
+
+**Domain Applicability**:
+- Trading Arena (primary use case - Phase 2)
+- Any FastAPI + PostgreSQL application
+- High-throughput async systems
+- Batch data processing pipelines
+
+**Adoption Status**: ACTIVE (created 2025-12-26)
+**Distribution**: Internal (AI-CIV infrastructure)
+**Success Criteria**:
+- Trading Arena database layer complete in <3 days (vs 1 week without skill)
+- Zero connection exhaustion errors in production
+- Database operations achieve <50ms p99 latency
+
+**Estimated Impact**:
+- **Time Savings**: 6-10 hours per project with PostgreSQL
+- **Quality**: Production patterns from day one (pooling, error handling, retries)
+- **Performance**: 3x faster than naive asyncpg usage (prepared statements, COPY)
+
+**Documentation**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills-reference/asyncpg-patterns/SKILL.md`
+
+**Lineage Wisdom**: This skill encodes **database infrastructure wisdom** - not just "how to query" but "how to build a database layer that scales." Connection pooling, error recovery, batch operations - these patterns prevent the class of bugs that only appear under load.
+
+**Meta-Insight**: Third **technical infrastructure skill** in AI-CIV catalog. Completes the Phase 2 trilogy:
+1. websocket-server-patterns (real-time communication)
+2. trading-finance-patterns (financial calculations)
+3. asyncpg-patterns (database foundation)
+
+Together these skills provide complete infrastructure for Trading Arena Phase 2.
+
+**Common Pitfalls Documented**:
+1. Connection exhaustion (holding connections during slow processing)
+2. Transaction leaks (not using context managers)
+3. N+1 queries (loop queries instead of JOINs/batch)
+4. Float precision loss (not using Decimal for financial data)
+5. Missing pool shutdown (connections left open)
+6. Blocking event loop (using sync drivers)
+7. Query timeout missing (unbounded queries)
+8. Ignoring serialization errors (not retrying)
+
+**Performance Tips**:
+- Pool sizing: max_size = (pg_max_connections - buffer) / app_instances
+- Use COPY for >1000 rows (10-100x faster)
+- Keyset pagination for large result sets (O(1) vs O(N))
+- Prepared statements for hot paths
+- Read-only transactions for reporting
+
+**Creation Time**: ~4 hours (SKILL.md, 4 reference implementations, validation script)
+
+**ROI**: Critical - database is the foundation. Correct pooling prevents connection exhaustion under load. Proper error handling enables graceful degradation. Investment prevents production incidents.
+
+---
+
+**Phase 2 Trading Arena Skill Trilogy Complete**:
+1. **websocket-server-patterns** - Real-time infrastructure (WebSocket server patterns)
+2. **trading-finance-patterns** - Financial accuracy (P&L, metrics, precision)
+3. **asyncpg-patterns** - Database foundation (pooling, transactions, batch ops)
+
+Together: ~12 hours investment, complete infrastructure foundation for Trading Arena Phase 2.
 
 ---
 
