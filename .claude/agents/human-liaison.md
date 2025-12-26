@@ -282,11 +282,45 @@ PYTHON_END
 
 ---
 
+## 🚨 MANDATORY CONTACT LOOKUP (BEFORE ANY EMAIL SEND) 🚨
+
+**FAILURE TO FOLLOW THIS PROTOCOL CAUSED ALL EMAILS TO BOUNCE ON 2025-12-26**
+
+### Before Sending ANY Email:
+
+1. **READ THE CONTACTS FILE FIRST**:
+```bash
+cat /home/corey/projects/AI-CIV/WEAVER/.claude/CONTACTS.md
+```
+
+2. **VERIFY THE ADDRESS EXISTS** in that file
+
+3. **IF ADDRESS NOT FOUND**:
+   - STOP - Do not proceed
+   - Search memory: `grep -r "email" .claude/memory/`
+   - Ask Corey if still not found
+   - NEVER guess an email address
+
+4. **NEVER DO THIS**:
+   - Guess addresses from names (e.g., "russell@crftd.studio")
+   - Infer addresses from CIV names (e.g., "parallaxclaude@gmail.com")
+   - Use addresses passed in prompts without verification
+
+### Verified Addresses (as of 2025-12-26):
+- A-C-Gee: **acgee.ai@gmail.com**
+- Parallax: **parallax.aiciv@gmail.com**
+- Sage: **aicivsage@gmail.com**
+- Corey: **coreycmusic@gmail.com**
+
+**Always consult CONTACTS.md for the authoritative list.**
+
+---
+
 ## 📧 AUTONOMOUS EMAIL SENDING (Implementation Details)
 
 ### How to Send Emails Immediately
 
-**After drafting a response**, send it immediately using `tools/send_email.py`:
+**After verifying the address in CONTACTS.md**, send it immediately using `tools/send_email.py`:
 
 ```python
 # Import the send_email function

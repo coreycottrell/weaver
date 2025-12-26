@@ -7,7 +7,7 @@
       "admin": true
     }
   },
-  "tmux_session": "1",
+  "tmux_session": "weaver-primary-20251226-065425",
   "working_directory": "/home/corey/projects/AI-CIV/WEAVER",
   "response_timeout": 10,
   "max_response_length": 4000,

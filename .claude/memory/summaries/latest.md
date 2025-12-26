@@ -1,1 +1,1 @@
-2025-10-17-daily-summary.md
+2025-12-26-daily-summary.md
