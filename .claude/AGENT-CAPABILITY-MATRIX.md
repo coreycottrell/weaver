@@ -34,8 +34,9 @@
 | **health-auditor** | Periodic comprehensive audits | Cadence management, methodology iteration, ROI tracking, institutional memory | Read/Grep/Bash/Task/Glob | ❌ | Active |
 | **browser-vision-tester** | Browser automation & visual UI testing | MCP browser-vision mastery, visual regression, form workflows, accessibility audits | Read/Write/Bash/Grep/Glob/WebFetch | ✅ | Active |
 | **tg-bridge** | Telegram infrastructure | Message sending (plain/formatted/files), health monitoring, script registry, capability expansion | Bash/Write/Edit/Grep/Glob | ❌ | Active |
+| **trading-strategist** | Decision-layer trading strategy | Trade proposals, probability assessment, market regime analysis, portfolio construction | Read/Write/Grep/Glob/WebFetch/WebSearch + Skills: pdf/xlsx | ✅ | Active |
 
-**Memory System**: 16/22 agents have memory (73%)
+**Memory System**: 17/23 agents have memory (74%)
 **Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect, health-auditor (enable memory)
 
 ---

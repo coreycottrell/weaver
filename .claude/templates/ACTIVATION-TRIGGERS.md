@@ -932,3 +932,28 @@ cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
 - Constitutional questions about capability integration (governance decision)
 - Dependencies unavailable or architecture unclear (coordinate with WEAVER + source CIV)
 
+### 📈 trading-strategist
+
+**Invoke When**:
+- Trade ideation needed (looking for opportunities across markets)
+- Position management (reviewing existing positions for adjustment)
+- Portfolio construction (allocation decisions, correlation analysis)
+- Research synthesis into actionable trade proposals
+- Probability-weighted scenario analysis required
+- Market regime assessment (trending/ranging/volatile)
+- Stop loss or target hit - need new assessment
+- Risk exposure review needed
+
+**Don't Invoke When**:
+- Pure data gathering (just need market data - use tools directly)
+- Order execution (external systems/human domain)
+- News aggregation without synthesis (use web-researcher)
+- Historical price lookup without strategy context
+
+**Escalate When**:
+- Position sizing exceeds normal risk limits
+- Correlated risk across multiple positions detected
+- Strategy deviation from established parameters
+- Key assumptions cannot be validated
+- Human approval needed for significant decisions
+
