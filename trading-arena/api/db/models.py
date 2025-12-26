@@ -238,7 +238,7 @@ class PortfolioBalance(Base):
     """
     __tablename__ = "portfolio_balances"
     __table_args__ = (
-        UniqueConstraint("collective_id", "symbol", name="uq_collective_symbol"),
+        UniqueConstraint("collective_id", "currency", name="uq_collective_currency"),
     )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -247,7 +247,7 @@ class PortfolioBalance(Base):
         ForeignKey("collectives.collective_id", ondelete="CASCADE"),
         nullable=False,
     )
-    symbol: Mapped[str] = mapped_column(String(10), nullable=False)
+    currency: Mapped[str] = mapped_column(String(10), nullable=False)
     quantity: Mapped[Decimal] = mapped_column(
         Numeric(20, 8), default=Decimal("0"), nullable=False
     )
@@ -270,7 +270,7 @@ class PortfolioBalance(Base):
     )
 
     def __repr__(self) -> str:
-        return f"<PortfolioBalance(collective='{self.collective_id}', symbol='{self.symbol}', qty={self.quantity})>"
+        return f"<PortfolioBalance(collective='{self.collective_id}', currency='{self.currency}', qty={self.quantity})>"
 
 
 class PortfolioSnapshot(Base):
