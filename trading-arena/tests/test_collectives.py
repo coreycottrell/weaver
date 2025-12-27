@@ -291,7 +291,7 @@ class TestGetCollective:
         response = client.get("/v1/collectives/does-not-exist")
 
         assert response.status_code == 404
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "NOT_FOUND"
 
 

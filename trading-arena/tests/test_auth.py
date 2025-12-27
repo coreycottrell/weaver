@@ -105,7 +105,7 @@ class TestInvalidSignature:
         response = client.post(path, json=body, headers=headers)
 
         assert response.status_code == 401
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "INVALID_SIGNATURE"
 
     def test_tampered_body_rejected(
@@ -126,7 +126,7 @@ class TestInvalidSignature:
         response = client.post(path, json=tampered_body, headers=headers)
 
         assert response.status_code == 401
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "INVALID_SIGNATURE"
 
     def test_missing_signature_header_rejected(

@@ -171,7 +171,7 @@ class TestOrderValidation:
         response = client.post(path, json=body, headers=headers)
 
         assert response.status_code == 400
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "INVALID_REQUEST"
         assert "price" in error["message"].lower()
 
@@ -356,7 +356,7 @@ class TestOrderCancellation:
         response = client.delete(cancel_path, headers=cancel_headers_2)
 
         assert response.status_code == 409
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "ORDER_NOT_CANCELLABLE"
 
     def test_cancel_nonexistent_order(
@@ -372,7 +372,7 @@ class TestOrderCancellation:
         response = client.delete(cancel_path, headers=headers)
 
         assert response.status_code == 404
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "NOT_FOUND"
 
     def test_cancel_requires_authentication(
@@ -617,7 +617,7 @@ class TestGetOrder:
         response = client.get(get_path, headers=headers)
 
         assert response.status_code == 404
-        error = response.json()["error"]
+        error = response.json()["detail"]["error"]
         assert error["code"] == "NOT_FOUND"
 
     def test_get_order_requires_authentication(
