@@ -57,13 +57,18 @@ async def get_current_collective(
         except Exception:
             body = None
     
+    # Construct full path including query parameters
+    full_path = request.url.path
+    if request.url.query:
+        full_path = f"{request.url.path}?{request.url.query}"
+
     # Verify signature
     try:
         if verify_signature(
             public_key_b64=public_key,
             signature_b64=signature,
             method=request.method,
-            path=request.url.path,
+            path=full_path,
             timestamp=timestamp,
             body=body
         ):

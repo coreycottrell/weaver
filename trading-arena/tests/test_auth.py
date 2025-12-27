@@ -357,7 +357,7 @@ class TestReplayProtection:
         response2 = client.post(path, json=body, headers=headers2)
 
         assert response2.status_code == 409
-        error = response2.json()["error"]
+        error = response2.json()["detail"]["error"]
         assert error["code"] == "DUPLICATE_ORDER"
 
     def test_different_client_order_ids_accepted(

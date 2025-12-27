@@ -119,7 +119,7 @@ class TestDuplicateRegistration:
         response2 = client.post("/v1/collectives/register", json=registration2)
 
         assert response2.status_code == 409
-        error = response2.json()["error"]
+        error = response2.json()["detail"]["error"]
         assert error["code"] == "DUPLICATE_COLLECTIVE"
         assert "unique-id" in error["message"]
 
