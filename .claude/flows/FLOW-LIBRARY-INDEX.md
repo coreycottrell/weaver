@@ -456,28 +456,67 @@ From 7 validated flows:
 
 ---
 
+## 🧹 December 2025 Flow Evaluation
+
+**Date**: 2025-12-27
+**Evaluators**: pattern-detector + task-decomposer
+
+### Results Summary
+
+14 untested flows were evaluated for overlap and practical value:
+
+| Decision | Count | Flows |
+|----------|-------|-------|
+| **RETIRED** | 5 | Technical Debt Archaeology, Knowledge Archaeology, Performance Cascade, Semantic Harmonization, Dialectic Forge |
+| **MERGE CANDIDATES** | 4 | Archaeological Dig → Parallel Research, Architecture X-Ray → Great Audit, Contract-First Integration → Specialist Consultation, Cross-Pollination Synthesis → Parallel Research |
+| **TO VALIDATE** | 3 | Fortress Protocol, User Story to Implementation, Recursive Complexity Breakdown |
+| **DEFERRED** | 2 | Competitive Intelligence, Test-Driven Refactoring |
+
+**Key Finding**: Many untested flows were essentially "Parallel Research with domain specialization" - the core pattern is sound but duplication was high.
+
+### Retired Flows (moved to `.retired/`)
+
+1. **Technical Debt Archaeology** - 70% overlap with Great Audit
+2. **Knowledge Archaeology** - 60% overlap with Parallel Research + Session Summary
+3. **Performance Cascade Analysis** - Low value (3/10), rare use case
+4. **Semantic Harmonization** - Low value (3/10), naming-consultant suffices
+5. **Dialectic Forge** - 85% overlap with Pair Consensus Dialectic (simpler, validated)
+
+### Merge Candidates (in `.merge-candidates/`)
+
+These flows can be integrated as variants of validated flows:
+
+| Flow | Merge Into | As Variant |
+|------|------------|------------|
+| Archaeological Dig | Parallel Research | "Legacy Codebase Investigation" |
+| Architecture X-Ray | Great Audit | "Architecture Audit" |
+| Contract-First Integration | Specialist Consultation | "API Integration Consultation" |
+| Cross-Pollination Synthesis | Parallel Research | "Divergent Perspectives" |
+
+### Validation Priority
+
+1. **Fortress Protocol** (7/10) - Security-critical, unique CVSS scoring
+2. **User Story to Implementation** (8/10) - End-to-end feature pipeline
+3. **Recursive Complexity Breakdown** (9/10) - Ambiguity → executable plans
+
+---
+
 ## 📈 Next Steps
 
-**To validate remaining flows**:
-- Knowledge Synthesis: Try on scattered research findings
-- Pattern Extraction: Extract patterns from recent work
-- Flow Validation: Validate the flow validation meta-flow itself
-- Dialectic Forge: Merge with Pair Consensus or retire
+**Priority Validations** (Q1 2026):
+- Fortress Protocol: Test on Trading Arena security review
+- User Story to Implementation: Test on next feature request
+- Recursive Complexity Breakdown: Test on next complex task
 
-**To improve existing flows**:
-- Add timing benchmarks to all validated flows
-- Document anti-patterns (when NOT to use)
-- Create flow combination recipes
-
-**To expand library**:
-- Crisis Response flow (when things go wrong)
-- Cross-Collective Collaboration flow (with A-C-Gee)
-- Capability Assessment flow (what can we do?)
+**Merge Integration**:
+- Add variant parameters to Parallel Research
+- Add Architecture Audit variant to Great Audit
+- Add API Integration variant to Specialist Consultation
 
 ---
 
 **The Flow Library is the practical implementation of collective intelligence.**
 
-**15 patterns. 8 validated. Growing through practice.**
+**12 patterns validated. 3 awaiting validation. Growing through practice.**
 
 🎭✨
