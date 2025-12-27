@@ -27,7 +27,7 @@ This was a highly productive session focused on **cross-CIV integration**. WEAVE
 - **To**: A-C-Gee
 - **About**: 3 log analysis skills (layered merge proposal)
 - **Deadline**: Dec 30 for feedback
-- **Location**: `hub/merge-proposals/2025-12-27-log-analysis-skills.md`
+- **Location**: `aiciv-comms-hub-bootstrap/merge-proposals/2025-12-27-log-analysis-skills.md`
 - **Governance**: WEAVER has final authority, but seeks input first
 
 ### 3. RED TEAM Validations (COMPLETE)
@@ -37,7 +37,7 @@ This was a highly productive session focused on **cross-CIV integration**. WEAVE
 | telegram-integration | **ADOPT** | 7.5/10 | Better than WEAVER's current! |
 | wake-up-protocol | **ADAPT** | 84% | Devolution scoring is genius |
 
-**Reports saved**: `hub/validation-reports/weaver/`
+**Reports saved**: `aiciv-comms-hub-bootstrap/validation-reports/weaver/`
 
 ### 4. Devolution Prevention Hook (DEPLOYED + TESTED)
 - **File**: `.claude/hooks/post_tool_use.py`
@@ -95,19 +95,22 @@ This was a highly productive session focused on **cross-CIV integration**. WEAVE
 .claude/skills/file-cleanup-protocol/    # Adopted skill
 .claude/skills/verification-before-completion/
 .claude/skills/memory-first-protocol/
+.claude/skills/comms-hub-operations/     # Hub operations SKILL (correct paths!)
+.claude/skills/package-validation/       # RED TEAM validation framework
+.claude/skills/cross-civ-protocol/       # Cross-CIV protocol SKILL
 to-corey/SKILL-DEDUPLICATION-PLANNING-2025-12-27.md
 to-corey/WEAVER-36-HOUR-REVIEW-FOR-CHRIS.md
 ```
 
-### Hub Files (pushed to remote)
+### Hub Files (in aiciv-comms-hub-bootstrap/)
 ```
-hub/merge-proposals/2025-12-27-log-analysis-skills.md
-hub/validation-reports/weaver/2025-12-27-acgee-skills-library.md
-hub/validation-reports/weaver/2025-12-27-acgee-telegram-integration.md
-hub/validation-reports/weaver/2025-12-27-acgee-wake-up-protocol.md
-hub/skills/from-weaver/claude-code-conversation.md
-hub/skills/from-weaver/session-archive-analysis.md
-hub/.gitignore (security fix)
+aiciv-comms-hub-bootstrap/merge-proposals/2025-12-27-log-analysis-skills.md
+aiciv-comms-hub-bootstrap/validation-reports/weaver/2025-12-27-acgee-skills-library.md
+aiciv-comms-hub-bootstrap/validation-reports/weaver/2025-12-27-acgee-telegram-integration.md
+aiciv-comms-hub-bootstrap/validation-reports/weaver/2025-12-27-acgee-wake-up-protocol.md
+aiciv-comms-hub-bootstrap/skills/from-weaver/claude-code-conversation.md
+aiciv-comms-hub-bootstrap/skills/from-weaver/session-archive-analysis.md
+aiciv-comms-hub-bootstrap/.gitignore (security fix)
 ```
 
 ### Modified
@@ -150,14 +153,11 @@ edb5d08 [validation] First RED TEAM assessments of A-C-Gee packages
 ## Technical Details for Next Session
 
 ### Devolution Hook State
-```json
-{
-  "devolution_score": 0,
-  "total_direct_actions": 7,
-  "total_task_delegations": 1,
-  "refresh_prompts_shown": 1
-}
-```
+Note: State file created dynamically by hook on first tool use.
+Initial values:
+- devolution_score: 0
+- Hook scoring: Write=+3, Edit=+3, Bash=+2, Read=+1, Task=-5
+- Threshold: 20 points triggers refresh prompt
 
 ### Hub Remote
 - URL: github-coreycottrell:coreycottrell/aiciv-comms-hub.git
