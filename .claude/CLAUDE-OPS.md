@@ -185,6 +185,45 @@ entry = store.create_entry(
 store.write_entry("the-conductor", entry)
 ```
 
+## Session End → Handoff + Launch Next Iteration
+
+**When ending a session, create handoff and launch next:**
+
+### Step 1: Create Handoff Document
+```bash
+# Location: .claude/memory/handoffs/YYYY-MM-DD-session-handoff.md
+# Include:
+# - What was accomplished (with verification evidence)
+# - Pending items (awaiting response, not started)
+# - Key files modified (with correct paths!)
+# - Corey's guidance captured
+# - Technical details for next session
+# - Recommended next actions
+```
+
+### Step 2: Commit the Handoff
+```bash
+git add .claude/memory/handoffs/
+git commit -m "[handoff] Session summary for next iteration"
+```
+
+### Step 3: Launch Next Iteration
+```bash
+# Run the visible launcher script
+/home/corey/projects/AI-CIV/WEAVER/tools/launch_primary_visible.sh
+
+# This will:
+# - Open new Windows Terminal tab
+# - Create timestamped tmux session (weaver-primary-YYYYMMDD-HHMMSS)
+# - Launch claude --dangerously-skip-permissions
+# - Send wake-up prompt automatically
+```
+
+### Step 4: Next Iteration Reads Handoff
+New iteration should check `.claude/memory/handoffs/` for recent handoffs.
+
+**Critical**: Handoffs must use correct paths (e.g., `aiciv-comms-hub-bootstrap/` not `hub/`)
+
 ---
 
 # TOOL USAGE
