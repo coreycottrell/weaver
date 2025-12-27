@@ -22,6 +22,11 @@ ENV/
 .env.local
 .env.*.local
 
+# Telegram config (contains bot token)
+**/telegram_config.json
+config/telegram_config.json
+tools/telegram_config.json
+
 # Private keys and secrets
 tools/ed25519/
 *.key
@@ -65,3 +70,4 @@ refs/original/
 # Embedded repositories (manage separately)
 aiciv-comms-hub-bootstrap/.git/
 aiciv-skills/.git/
+.secrets/
