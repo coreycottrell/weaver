@@ -43,6 +43,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query, status
 from ..auth.ed25519 import verify_signature, verify_timestamp
 from ..auth.middleware import get_public_key
 from ..websocket.manager import TradingArenaConnectionManager
+from ..websocket.handlers import dispatch_message
 
 logger = logging.getLogger(__name__)
 
@@ -251,13 +252,20 @@ async def handle_inbound_message(
     """
     Handle inbound WebSocket messages from a collective.
 
-    Supported message types:
-        - ping: Heartbeat check, responds with pong
-        - subscribe: Subscribe to additional rooms
-        - unsubscribe: Unsubscribe from rooms
+    Routes messages through two layers:
+        1. Room management (subscribe/unsubscribe) - handled directly
+        2. Trading operations - delegated to message dispatcher (Work Stream E.4)
 
-    Note: Full message handling for trading operations is Work Stream E.4.
-    This handler provides basic protocol support.
+    Supported message types:
+        Room Management:
+            - subscribe: Subscribe to additional rooms
+            - unsubscribe: Unsubscribe from rooms
+
+        Trading Operations (via dispatcher):
+            - get_portfolio, get_balances: Portfolio queries
+            - place_order, cancel_order, get_orders, get_order: Order management
+            - subscribe_market, unsubscribe_market, get_symbols: Market data
+            - ping: Heartbeat
 
     Args:
         manager: The connection manager
@@ -266,15 +274,8 @@ async def handle_inbound_message(
     """
     message_type = data.get("type", "").lower()
 
-    if message_type == "ping":
-        # Respond with pong for heartbeat
-        await manager.send_personal(collective_id, {
-            "type": "pong",
-            "timestamp": data.get("timestamp")
-        })
-
-    elif message_type == "subscribe":
-        # Subscribe to additional room
+    # Room management - handle directly (manager-level operations)
+    if message_type == "subscribe":
         room = data.get("room")
         if room:
             await manager.join_room(collective_id, room)
@@ -282,9 +283,9 @@ async def handle_inbound_message(
                 "type": "subscribed",
                 "room": room
             })
+        return
 
-    elif message_type == "unsubscribe":
-        # Unsubscribe from room
+    if message_type == "unsubscribe":
         room = data.get("room")
         if room:
             await manager.leave_room(collective_id, room)
@@ -292,11 +293,12 @@ async def handle_inbound_message(
                 "type": "unsubscribed",
                 "room": room
             })
+        return
 
-    # Note: Trading-specific message handling (orders, etc.)
-    # will be implemented in Work Stream E.4
-    else:
-        logger.debug(f"Unhandled message type from {collective_id}: {message_type}")
+    # All other messages - dispatch to handlers (Work Stream E.4)
+    # Includes: portfolio, orders, market data, ping
+    response = await dispatch_message(collective_id, data)
+    await manager.send_personal(collective_id, response)
 
 
 # Health check endpoint for WebSocket service
