@@ -74,20 +74,23 @@ class MessageType(str, Enum):
     # Portfolio
     GET_PORTFOLIO = "get_portfolio"
     GET_BALANCES = "get_balances"
-    
+
     # Orders
     PLACE_ORDER = "place_order"
     CANCEL_ORDER = "cancel_order"
     GET_ORDERS = "get_orders"
     GET_ORDER = "get_order"
-    
+
     # Market Data
     SUBSCRIBE_MARKET = "subscribe_market"
     UNSUBSCRIBE_MARKET = "unsubscribe_market"
     GET_SYMBOLS = "get_symbols"
-    
+
     # Protocol
     PING = "ping"
+
+    # Reconnection
+    GET_INITIAL_STATE = "get_initial_state"
 
 
 class ErrorCode(str, Enum):
@@ -834,15 +837,15 @@ class GetSymbolsHandler(MessageHandler):
 
 class PingHandler(MessageHandler):
     """Handler for ping messages (heartbeat)."""
-    
+
     @property
     def message_type(self) -> MessageType:
         return MessageType.PING
-    
+
     @property
     def response_type(self) -> str:
         return "pong"
-    
+
     async def handle(
         self,
         collective_id: str,
@@ -853,6 +856,207 @@ class PingHandler(MessageHandler):
             "collective_id": collective_id,
             "server_time": datetime.now(timezone.utc).isoformat()
         })
+
+
+# =============================================================================
+# Reconnection Handlers
+# =============================================================================
+
+class GetInitialStateHandler(MessageHandler):
+    """
+    Handler for get_initial_state messages (reconnection support).
+
+    Aggregates portfolio, orders, subscriptions, and connection metadata
+    into a single response for efficient state recovery after reconnection.
+
+    Supported include values:
+        - portfolio: Full portfolio state (balances + positions + totals)
+        - balances: Balance details only
+        - orders: Open orders (status=OPEN or PARTIALLY_FILLED)
+        - subscriptions: Current room subscriptions
+        - connection: Connection metadata (connected_at, message_count)
+
+    If include is empty or missing, returns all components.
+    """
+
+    VALID_INCLUDES = {"portfolio", "balances", "orders", "subscriptions", "connection"}
+
+    @property
+    def message_type(self) -> MessageType:
+        return MessageType.GET_INITIAL_STATE
+
+    @property
+    def response_type(self) -> str:
+        return "initial_state"
+
+    async def handle(
+        self,
+        collective_id: str,
+        data: Dict[str, Any]
+    ) -> HandlerResult:
+        """
+        Gather and return initial state for reconnection.
+
+        Aggregates portfolio, orders, subscriptions based on
+        requested includes.
+        """
+        # Parse include array (default to all if empty/missing)
+        include = data.get("include", [])
+        if not include:
+            include = list(self.VALID_INCLUDES)
+
+        # Validate include values
+        if not isinstance(include, list):
+            include = [include]
+
+        invalid = set(include) - self.VALID_INCLUDES
+        if invalid:
+            return error_result(
+                self.response_type,
+                ErrorCode.INVALID_FIELD,
+                f"Invalid include value(s): {', '.join(sorted(invalid))}. "
+                f"Valid: {', '.join(sorted(self.VALID_INCLUDES))}"
+            )
+
+        include_set = set(include)
+        response_data = {}
+
+        try:
+            # Gather portfolio if requested
+            if "portfolio" in include_set:
+                portfolio_result = await self._get_portfolio(collective_id)
+                if portfolio_result:
+                    response_data["portfolio"] = portfolio_result
+
+            # Gather balances if requested (subset of portfolio)
+            if "balances" in include_set:
+                balances_result = await self._get_balances(collective_id)
+                if balances_result:
+                    response_data["balances"] = balances_result
+
+            # Gather open orders if requested
+            if "orders" in include_set:
+                orders_result = await self._get_open_orders(collective_id)
+                response_data["orders"] = orders_result
+
+            # Gather subscriptions if requested
+            if "subscriptions" in include_set:
+                subscriptions_result = self._get_subscriptions(collective_id)
+                response_data["subscriptions"] = subscriptions_result
+
+            # Gather connection metadata if requested
+            if "connection" in include_set:
+                connection_result = self._get_connection_metadata(collective_id)
+                response_data["connection"] = connection_result
+
+            return success_result(self.response_type, response_data)
+
+        except Exception as e:
+            logger.error(f"get_initial_state error: {e}", exc_info=True)
+            return error_result(
+                self.response_type,
+                ErrorCode.INTERNAL_ERROR,
+                "Failed to retrieve initial state"
+            )
+
+    async def _get_portfolio(self, collective_id: str) -> Dict[str, Any]:
+        """Get full portfolio state (reuses GetPortfolioHandler logic)."""
+        from ..routes.portfolio import get_or_create_portfolio
+
+        balances = get_or_create_portfolio(collective_id)
+        now = datetime.now(timezone.utc)
+        total_value = sum(b.get("total", 0) for b in balances.values())
+
+        return {
+            "collective_id": collective_id,
+            "balances": balances,
+            "positions": {},  # TODO: Calculate from orders when positions implemented
+            "total_value_usd": total_value,
+            "unrealized_pnl": 0.0,
+            "realized_pnl": 0.0,
+            "last_updated": now.isoformat()
+        }
+
+    async def _get_balances(self, collective_id: str) -> Dict[str, Any]:
+        """Get balance details (reuses GetBalancesHandler logic)."""
+        from ..routes.portfolio import get_or_create_portfolio
+
+        balances = get_or_create_portfolio(collective_id)
+        return balances
+
+    async def _get_open_orders(self, collective_id: str) -> Dict[str, Any]:
+        """Get open orders only (status IN ['open', 'partially_filled'])."""
+        from ..routes.orders import ORDERS
+        from ..models.order import OrderStatus
+
+        # Filter for collective's open orders
+        open_statuses = {OrderStatus.OPEN, OrderStatus.PARTIALLY_FILLED}
+
+        orders = [
+            o for o in ORDERS.values()
+            if o["collective_id"] == collective_id and o["status"] in open_statuses
+        ]
+
+        # Sort by created_at descending
+        orders.sort(key=lambda x: x["created_at"], reverse=True)
+
+        # Serialize for response
+        order_list = []
+        for o in orders:
+            order_list.append({
+                "order_id": o["order_id"],
+                "symbol": o["symbol"],
+                "side": o["side"],
+                "order_type": o["type"],
+                "quantity": o["quantity"],
+                "price": o["price"],
+                "filled_quantity": o["filled_quantity"],
+                "status": o["status"].value,
+                "created_at": o["created_at"].isoformat()
+            })
+
+        return {
+            "open_orders": order_list,
+            "count": len(order_list)
+        }
+
+    def _get_subscriptions(self, collective_id: str) -> Dict[str, Any]:
+        """Get current room subscriptions from manager metadata."""
+        from ..websocket.manager import manager
+
+        metadata = manager.get_metadata(collective_id)
+        if metadata:
+            rooms = list(metadata.subscriptions)
+        else:
+            rooms = []
+
+        return {
+            "rooms": rooms
+        }
+
+    def _get_connection_metadata(self, collective_id: str) -> Dict[str, Any]:
+        """Get connection metadata from manager."""
+        from ..websocket.manager import manager
+
+        metadata = manager.get_metadata(collective_id)
+        if metadata:
+            return {
+                "connected_at": metadata.connected_at.isoformat(),
+                "message_count": metadata.message_count,
+                "portfolio_updates_received": metadata.portfolio_updates_received,
+                "orders_received": metadata.orders_received,
+                "market_updates_received": metadata.market_updates_received,
+                "last_activity": metadata.last_activity.isoformat()
+            }
+        else:
+            return {
+                "connected_at": None,
+                "message_count": 0,
+                "portfolio_updates_received": 0,
+                "orders_received": 0,
+                "market_updates_received": 0,
+                "last_activity": None
+            }
 
 
 # =============================================================================
@@ -888,22 +1092,25 @@ class MessageDispatcher:
             # Portfolio
             GetPortfolioHandler(),
             GetBalancesHandler(),
-            
+
             # Orders
             PlaceOrderHandler(),
             CancelOrderHandler(),
             GetOrdersHandler(),
             GetOrderHandler(),
-            
+
             # Market Data
             SubscribeMarketHandler(),
             UnsubscribeMarketHandler(),
             GetSymbolsHandler(),
-            
+
             # Protocol
             PingHandler(),
+
+            # Reconnection
+            GetInitialStateHandler(),
         ]
-        
+
         for handler in handlers:
             self.register(handler)
     

@@ -7,6 +7,7 @@ GET    /v1/orders/{order_id} - Get order details
 DELETE /v1/orders/{order_id} - Cancel order
 """
 
+import logging
 import uuid
 from datetime import datetime, timezone
 from typing import Optional
@@ -19,6 +20,9 @@ from ..models.order import (
     OrderStatus
 )
 from ..auth.middleware import require_auth
+from ..services.streaming import streaming_service
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -92,11 +96,26 @@ async def place_order(
     }
     
     ORDERS[order_id] = order_data
-    
+
     # TODO: Submit to order matching engine
     # For now, immediately mark as open
     order_data["status"] = OrderStatus.OPEN
-    
+
+    # Broadcast order creation via streaming service (non-blocking)
+    try:
+        await streaming_service.broadcast_order_created(
+            collective_id=collective_id,
+            order_id=order_id,
+            symbol=order.symbol,
+            side=order.side,
+            order_type=order.type,
+            quantity=order.quantity,
+            price=order.price
+        )
+    except Exception as e:
+        # Log but don't fail the request - streaming is non-critical
+        logger.warning(f"Failed to broadcast order creation for {order_id}: {e}")
+
     return OrderResponse(**order_data)
 
 
@@ -225,10 +244,23 @@ async def cancel_order(
     
     now = datetime.now(timezone.utc)
     remaining = order["quantity"] - order["filled_quantity"]
-    
+
     order["status"] = OrderStatus.CANCELLED
     order["updated_at"] = now
-    
+
+    # Broadcast order cancellation via streaming service (non-blocking)
+    try:
+        await streaming_service.broadcast_order_cancelled(
+            collective_id=collective_id,
+            order_id=order_id,
+            filled_quantity=order["filled_quantity"],
+            remaining_quantity=remaining,
+            symbol=order["symbol"]
+        )
+    except Exception as e:
+        # Log but don't fail the request - streaming is non-critical
+        logger.warning(f"Failed to broadcast order cancellation for {order_id}: {e}")
+
     return {
         "order_id": order_id,
         "status": OrderStatus.CANCELLED,
