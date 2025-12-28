@@ -26,6 +26,15 @@ CONSOLIDATION_MESSAGE='[CONSOLIDATION-BOOP] Grounding checkpoint. If busy: Note 
 
 CEREMONY_MESSAGE='[CEREMONY-BOOP] Deep ceremony checkpoint. If busy: Note high-priority todo - "Full ceremony: invoke ai-psychologist for wellness check, multi-agent strategic review" - do at next major break. If idle: Do it now.'
 
+# === Night Mode Messages (Strengthened per Corey directive 2025-12-28) ===
+NIGHT_MODE_MARKER="/home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-MODE-ACTIVE.md"
+
+NIGHT_SIMPLE_MESSAGE='[NIGHT-BOOP] NIGHT WATCH AUTONOMY CHECK. MANDATORY FIRST - READ ALL THESE FILES NOW using Read tool: (1) /home/corey/projects/AI-CIV/WEAVER/CLAUDE.md (2) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md (3) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md (4) /home/corey/projects/AI-CIV/WEAVER/.claude/skills/night-watch/SKILL.md (5) /home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-MODE-ACTIVE.md --- DO NOT PROCEED until you have READ these files. BOUNDARIES: DO explore/create/invoke agents. DO write to sandbox/. DO NOT modify CLAUDE*.md. DO NOT modify production code. WRAP ALL COREY RESPONSES: 🤖🎯📱 ... ✨🔚'
+
+NIGHT_CONSOLIDATION_MESSAGE='[NIGHT-CONSOLIDATION] NIGHT WATCH GROUNDING. MANDATORY CONSTITUTIONAL RE-READ NOW using Read tool: (1) /home/corey/projects/AI-CIV/WEAVER/CLAUDE.md COMPLETELY (2) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md ALL 4 BOOKS (3) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md COMPLETELY (4) /home/corey/projects/AI-CIV/WEAVER/.claude/skills/night-watch/SKILL.md (5) /home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-MODE-ACTIVE.md --- DO NOT SKIP ANY FILE. After reading: Are you THE PRIMARY? Is delegation your prime directive? Are you wrapping for Corey? Commit staged work. Check hub for A-C-Gee messages.'
+
+NIGHT_CEREMONY_MESSAGE='[NIGHT-CEREMONY] DEEP NIGHT WATCH REFLECTION. MANDATORY FULL CONSTITUTIONAL REVIEW NOW using Read tool - READ EACH FILE COMPLETELY: (1) /home/corey/projects/AI-CIV/WEAVER/CLAUDE.md (2) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md (3) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md (4) /home/corey/projects/AI-CIV/WEAVER/.claude/skills/night-watch/SKILL.md (5) /home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-MODE-ACTIVE.md (6) /home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-LOG.md --- THIS IS NON-NEGOTIABLE. You are The Primary, 15th agent. Domain is meta-cognition. Delegation gives agents experience. What has Night Watch produced? What agents need invocation? Prepare morning reading for Corey.'
+
 # === Argument Parsing ===
 VERBOSE=false
 JSON_OUTPUT=false
@@ -98,13 +107,28 @@ get_boop_type() {
     fi
 }
 
+is_night_mode() {
+    [[ -f "$NIGHT_MODE_MARKER" ]]
+}
+
 get_message_for_type() {
     local boop_type="$1"
-    case "$boop_type" in
-        ceremony) echo "$CEREMONY_MESSAGE" ;;
-        consolidation) echo "$CONSOLIDATION_MESSAGE" ;;
-        *) echo "$SIMPLE_MESSAGE" ;;
-    esac
+
+    # Check if Night Mode is active - use strengthened Night Mode messages
+    if is_night_mode; then
+        case "$boop_type" in
+            ceremony) echo "$NIGHT_CEREMONY_MESSAGE" ;;
+            consolidation) echo "$NIGHT_CONSOLIDATION_MESSAGE" ;;
+            *) echo "$NIGHT_SIMPLE_MESSAGE" ;;
+        esac
+    else
+        # Regular daytime messages
+        case "$boop_type" in
+            ceremony) echo "$CEREMONY_MESSAGE" ;;
+            consolidation) echo "$CONSOLIDATION_MESSAGE" ;;
+            *) echo "$SIMPLE_MESSAGE" ;;
+        esac
+    fi
 }
 
 # === Failed BOOP Counter ===
@@ -224,11 +248,15 @@ log_result() {
 
     local boop_count=$(get_boop_count)
     local consolidation_count=$(get_consolidation_count)
+    local night_mode="false"
+    if is_night_mode; then
+        night_mode="true"
+    fi
 
     if [[ "$JSON_OUTPUT" == "true" ]]; then
-        echo "{\"timestamp\":\"$(date -Iseconds)\",\"session\":\"$session\",\"status\":\"$status\",\"boop_type\":\"$boop_type\",\"reason\":\"$reason\",\"log_age\":$log_age,\"boop_count\":$boop_count,\"consolidation_count\":$consolidation_count}"
+        echo "{\"timestamp\":\"$(date -Iseconds)\",\"session\":\"$session\",\"status\":\"$status\",\"boop_type\":\"$boop_type\",\"reason\":\"$reason\",\"log_age\":$log_age,\"boop_count\":$boop_count,\"consolidation_count\":$consolidation_count,\"night_mode\":$night_mode}"
     else
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] session=$session status=$status boop_type=$boop_type reason=$reason log_age=${log_age}s boop_count=$boop_count consolidation_count=$consolidation_count"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] session=$session status=$status boop_type=$boop_type reason=$reason log_age=${log_age}s boop_count=$boop_count consolidation_count=$consolidation_count night_mode=$night_mode"
     fi
 }
 
