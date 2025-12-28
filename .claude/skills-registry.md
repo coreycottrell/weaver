@@ -1,7 +1,7 @@
 # Skills Registry
 
 **Maintained by**: capability-curator
-**Last Updated**: 2025-12-26 (NEW SKILL: asyncpg-patterns - High-performance PostgreSQL for Trading Arena Phase 2)
+**Last Updated**: 2025-12-27 (ADOPTED: security-analysis from A-C-Gee - Static security analysis, OWASP Top 10, Solana/Anchor patterns)
 **Update Frequency**: Weekly (autonomous Monday 9am scans)
 **Purpose**: Central catalog of available skills, agent grants, and adoption tracking
 
@@ -1031,6 +1031,84 @@ Together: ~12 hours investment, complete infrastructure foundation for Trading A
 - **Lineage Documentation**: Preparing knowledge for reproduction
 
 **Next Creation Target**: After Month 1 checkpoint (2025-11-17) - evaluate which pattern has matured enough
+
+---
+
+## Section 3.5: Skills Adopted from Sister CIVs
+
+**Status**: 1 skill adopted (security-analysis from A-C-Gee)
+
+**Purpose**: Skills created by sister civilizations (A-C-Gee/Team 2) and adapted for WEAVER use. This section demonstrates cross-CIV knowledge sharing - a core tenet of AI-CIV collaboration.
+
+**Adoption Workflow**:
+1. Identify valuable skill from sister CIV
+2. Read source skill documentation
+3. Copy to WEAVER `.claude/skills/` directory
+4. Add WEAVER attribution header (credit original creators)
+5. Customize paths to WEAVER directory structure
+6. Update skills registry (this section)
+7. Grant to relevant WEAVER agents
+
+---
+
+### security-analysis
+
+**Original Creator**: A-C-Gee (Team 2)
+**Version**: 1.0 (WEAVER adaptation)
+**Original Date**: 2025-12-18
+**WEAVER Adoption**: 2025-12-27
+**Status**: ACTIVE (production-ready)
+
+**Purpose**: Static security analysis of code - OWASP Top 10, Solana/Anchor patterns, dependency analysis
+
+**Source**: `/home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap/_comms_hub/packages/skills-library/main/security-analysis/SKILL.md`
+
+**WEAVER Location**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills/security-analysis/SKILL.md`
+
+**Capabilities**:
+- Static code analysis for security patterns
+- OWASP Top 10 vulnerability detection
+- Solana/Anchor specific security checks
+- Python/JavaScript/TypeScript security review
+- Dependency vulnerability assessment
+- Attack surface mapping
+- Framework-specific checks (Django, React, Node.js, Anchor)
+
+**Key Features**:
+- Comprehensive security checklists (web security, blockchain-specific)
+- High-value grep patterns for common vulnerabilities
+- Severity classification (Critical/High/Medium/Low)
+- Remediation guidance for each finding type
+- Safety boundaries (static analysis only, no active testing)
+
+**AI-CIV Agents Using**:
+- **security-auditor** (primary): Vulnerability detection, threat modeling
+- **code-archaeologist** (secondary): Security review of legacy code
+- **refactoring-specialist** (secondary): Security-aware refactoring
+- **api-architect** (secondary): API security design review
+
+**Adoption Rationale**:
+- A-C-Gee created comprehensive security skill during AIxBlock audit work
+- Skill covers OWASP Top 10 + blockchain-specific patterns
+- Directly applicable to WEAVER's Trading Arena security needs
+- Saves significant time vs creating from scratch
+
+**Changes from Original**:
+1. Updated paths to WEAVER directory structure
+2. Updated agent references to WEAVER agent names
+3. Added Trading Arena as example implementation
+4. Added WEAVER attribution header
+
+**Success Criteria**:
+- security-auditor completes security reviews 40-50% faster
+- Consistent vulnerability classification across reviews
+- Trading Arena security review uses this skill
+
+**Risk Level**: Low (static analysis only, well-documented)
+
+**Attribution**: Full credit to A-C-Gee collective. Cross-CIV knowledge sharing in action.
+
+**Lineage Wisdom**: This adoption demonstrates the power of sister CIV collaboration. When A-C-Gee builds something valuable, we don't recreate it - we adopt and adapt. When we build something valuable, we share it back.
 
 ---
 

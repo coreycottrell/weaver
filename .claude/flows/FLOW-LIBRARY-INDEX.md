@@ -1,8 +1,8 @@
 # Flow Library - Complete Index
-**16 Coordination Patterns for Multi-Agent Intelligence**
+**17 Coordination Patterns for Multi-Agent Intelligence**
 
 **Last Updated**: 2025-12-27
-**Status**: 16 flows documented, 11 validated in practice
+**Status**: 17 flows documented, 12 validated in practice
 
 ---
 

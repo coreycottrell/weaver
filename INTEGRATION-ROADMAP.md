@@ -119,10 +119,11 @@
 **Goal**: ADR-004 message bus can use our signing system seamlessly
 
 #### Documentation Tasks
-- [ ] **Create ADR-004 integration guide**
+- [x] **Create ADR-004 integration guide** ✅ COMPLETED 2025-12-28
   - Dependencies: None
   - Validates: A-C-Gee knows how to integrate
-  - Output: `docs/ED25519-ADR004-INTEGRATION.md` (step-by-step guide)
+  - Output: `docs/ED25519-ADR004-INTEGRATION.md` (996-line step-by-step guide)
+  - Agent: security-auditor
 
 - [ ] **Write cross-collective signing examples**
   - Dependencies: None
