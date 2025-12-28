@@ -62,8 +62,8 @@ def send_telegram_message(bot_token: str, user_id: int, message: str) -> bool:
     """
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
 
-    # Telegram message length limit
-    MAX_LENGTH = 4096
+    # Telegram message length limit (with buffer for continuation headers)
+    MAX_LENGTH = 4000  # Leave room for "(continued X/Y)" headers
 
     # Split message if too long
     if len(message) > MAX_LENGTH:
@@ -71,10 +71,23 @@ def send_telegram_message(bot_token: str, user_id: int, message: str) -> bool:
         current_chunk = ""
 
         for line in message.split('\n'):
-            if len(current_chunk) + len(line) + 1 > MAX_LENGTH - 100:
+            # Handle lines longer than MAX_LENGTH by splitting them
+            while len(line) > MAX_LENGTH - 50:
+                # Find a good break point (space)
+                break_point = line[:MAX_LENGTH - 50].rfind(' ')
+                if break_point == -1:
+                    break_point = MAX_LENGTH - 50
+
                 if current_chunk:
                     chunks.append(current_chunk)
-                    current_chunk = line
+                chunks.append(line[:break_point])
+                line = line[break_point:].lstrip()
+                current_chunk = ""
+
+            if len(current_chunk) + len(line) + 1 > MAX_LENGTH:
+                if current_chunk:
+                    chunks.append(current_chunk)
+                current_chunk = line
             else:
                 if current_chunk:
                     current_chunk += '\n' + line
@@ -84,10 +97,14 @@ def send_telegram_message(bot_token: str, user_id: int, message: str) -> bool:
         if current_chunk:
             chunks.append(current_chunk)
 
+        print(f"Message split into {len(chunks)} chunks", file=sys.stderr)
+
         # Send all chunks
+        import time
         for i, chunk in enumerate(chunks):
             if i > 0:
-                chunk = f"(continued {i+1}/{len(chunks)})\n\n{chunk}"
+                chunk = f"({i+1}/{len(chunks)})\n\n{chunk}"
+                time.sleep(0.5)  # Rate limit between chunks
 
             payload = {
                 "chat_id": user_id,

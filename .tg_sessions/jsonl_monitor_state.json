@@ -1,7 +1,7 @@
 {
-  "last_updated": "2025-12-26T11:47:24.396583",
+  "last_updated": "2025-12-27T12:02:54.302097",
   "current_session_file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/48cb34d9-badb-4469-af72-d3b2a28d55ea.jsonl",
-  "last_processed_offset": 3237187,
+  "last_processed_offset": 9158898,
   "sent_message_hashes": [
     "ab5df625bc76dbd4",
     "d5cc36069fa66260",
@@ -36,48 +36,93 @@
     "c8d2dedf845f9e65",
     "ac406c3df9481191",
     "378d538a627dcaf0",
-    "bad7ca01f75fe02c"
+    "bad7ca01f75fe02c",
+    "70e952d581f1f628",
+    "55572d8c39e75d25",
+    "43d0d21afb0e099f",
+    "29f8e0d19d3f0e5c",
+    "7d07d4405b83fe7c",
+    "36f7845d1cae48b1",
+    "1e49859ed9944ff6",
+    "320cb837e73cdbf5",
+    "cf9db023c33443f4",
+    "a2f4fe0da2078db1",
+    "df367a51b271eda3",
+    "3fe015d98da68a51",
+    "e68c4ca48d4cf0ce",
+    "acf64636e881177a",
+    "c7912cb0552a3480",
+    "f04b171fbfa8d070",
+    "49d2717e5e02ce95",
+    "ff445d76e24bcda0",
+    "57ff93f5d1a8d0d9",
+    "c6035605e7e2c30b",
+    "a92cc1e15222f1b0",
+    "2121b196c9a97604",
+    "ca62da722abcf61d",
+    "408c21ba1c920903",
+    "7128cf518b351bba",
+    "bab321d817c81c76",
+    "407c65a656e350ad",
+    "2a1163f884f719eb",
+    "a1964d2f208fb8fa",
+    "b324b0446d9cc4a9",
+    "b01034079749c0a0",
+    "904abc121b8bca23",
+    "c03e830b77a7478c",
+    "62223dd71517cf30",
+    "40cb7a03b698c092",
+    "f3437df3082f272f",
+    "fa0ddcbad8a4008a",
+    "a2816ee38aed0a90",
+    "1d4789c5b542c75d",
+    "56b1ac9db70af02b",
+    "84ee0709f21c8fe7",
+    "5af6766cf6f5465d",
+    "73b7e6e532de4c1b",
+    "f02c7853fbdbd144",
+    "489f4943d1dc77a6"
   ],
   "session_history": [
     {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ad58d75.jsonl",
-      "ended_at": "2025-12-26T11:02:21.560752"
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/48cb34d9-badb-4469-af72-d3b2a28d55ea.jsonl",
+      "ended_at": "2025-12-27T11:23:29.600407"
     },
     {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ab0d680.jsonl",
-      "ended_at": "2025-12-26T11:02:24.562394"
-    },
-    {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ad58d75.jsonl",
-      "ended_at": "2025-12-26T11:02:42.567709"
-    },
-    {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ab0d680.jsonl",
-      "ended_at": "2025-12-26T11:03:19.671396"
-    },
-    {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ad58d75.jsonl",
-      "ended_at": "2025-12-26T11:03:32.635831"
-    },
-    {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ab0d680.jsonl",
-      "ended_at": "2025-12-26T11:04:43.706166"
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-a48121f.jsonl",
+      "ended_at": "2025-12-27T11:24:00.986022"
     },
     {
       "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/48cb34d9-badb-4469-af72-d3b2a28d55ea.jsonl",
-      "ended_at": "2025-12-26T11:16:19.490312"
+      "ended_at": "2025-12-27T11:27:33.384584"
     },
     {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-abbe272.jsonl",
-      "ended_at": "2025-12-26T11:18:50.628984"
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-adf6cd1.jsonl",
+      "ended_at": "2025-12-27T11:29:50.839691"
     },
     {
       "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/48cb34d9-badb-4469-af72-d3b2a28d55ea.jsonl",
-      "ended_at": "2025-12-26T11:45:21.751320"
+      "ended_at": "2025-12-27T11:33:15.480949"
     },
     {
-      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-a248fd4.jsonl",
-      "ended_at": "2025-12-26T11:46:01.829432"
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-a03e9ed.jsonl",
+      "ended_at": "2025-12-27T11:35:22.548916"
+    },
+    {
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/48cb34d9-badb-4469-af72-d3b2a28d55ea.jsonl",
+      "ended_at": "2025-12-27T11:36:13.335135"
+    },
+    {
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ac57e8a.jsonl",
+      "ended_at": "2025-12-27T11:37:50.491350"
+    },
+    {
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/48cb34d9-badb-4469-af72-d3b2a28d55ea.jsonl",
+      "ended_at": "2025-12-27T11:40:16.933071"
+    },
+    {
+      "file": "/home/corey/.claude/projects/-home-corey-projects-AI-CIV-WEAVER/agent-ad4d531.jsonl",
+      "ended_at": "2025-12-27T11:40:54.248713"
     }
   ]
 }

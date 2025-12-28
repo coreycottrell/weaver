@@ -115,6 +115,10 @@ class TelegramBot:
         """Main run loop - polls for TG updates and Claude logs."""
         await self.start()
 
+        # Session refresh counter (check every ~60 seconds)
+        loop_count = 0
+        SESSION_REFRESH_INTERVAL = 120  # loops (at 0.5s = 60 seconds)
+
         try:
             while self._running:
                 # Check for new Telegram messages
@@ -122,6 +126,12 @@ class TelegramBot:
 
                 # Check for new Claude log entries
                 await self._poll_claude_logs()
+
+                # Periodic session refresh - detect new sessions
+                loop_count += 1
+                if loop_count >= SESSION_REFRESH_INTERVAL:
+                    loop_count = 0
+                    await self._refresh_session_if_needed()
 
                 # Small sleep to prevent busy-waiting
                 await asyncio.sleep(0.5)
@@ -132,6 +142,25 @@ class TelegramBot:
             logger.exception(f"Bot error: {e}")
         finally:
             await self.shutdown()
+
+    async def _refresh_session_if_needed(self):
+        """Check if a newer WEAVER session exists and switch to it."""
+        try:
+            new_session = self._detect_weaver_session()
+            if new_session and new_session != self.tmux_session:
+                logger.info(f"Session change detected: {self.tmux_session} -> {new_session}")
+                self.tmux_session = new_session
+                self.tmux_pane = f"{new_session}:0.0"
+                await self._send_message(f"Switched to new session: {new_session}")
+            elif not new_session and self.tmux_session:
+                # Current session may have died, try to find any available
+                logger.warning(f"Current session {self.tmux_session} may be gone, checking...")
+                if not self._check_tmux_session():
+                    logger.error("Session lost! Will retry detection on next cycle.")
+                    self.tmux_session = None
+                    self.tmux_pane = None
+        except Exception as e:
+            logger.error(f"Session refresh error: {e}")
 
     # ========== Telegram Polling ==========
 
@@ -715,9 +744,24 @@ Messages sent: {len(self._sent_ids)}"""
     # ========== tmux Utilities ==========
 
     def _detect_weaver_session(self) -> Optional[str]:
-        """Auto-detect WEAVER tmux session."""
+        """Auto-detect WEAVER tmux session - ALWAYS picks latest available."""
         try:
-            # Method 1: Check config file for session name
+            # Primary: Auto-detect latest weaver-primary-* session
+            result = subprocess.run(
+                ["tmux", "list-sessions", "-F", "#{session_name}"],
+                capture_output=True, text=True, timeout=5
+            )
+
+            if result.returncode == 0:
+                sessions = result.stdout.strip().split('\n')
+                weaver_sessions = [s for s in sessions if s.startswith('weaver-primary-')]
+
+                if weaver_sessions:
+                    latest = sorted(weaver_sessions)[-1]  # Latest by timestamp in name
+                    logger.info(f"Auto-detected latest WEAVER session: {latest}")
+                    return latest
+
+            # Fallback: Check config file (only if no auto-detect worked)
             if CONFIG_FILE.exists():
                 with CONFIG_FILE.open() as f:
                     config = json.load(f)
@@ -728,22 +772,8 @@ Messages sent: {len(self._sent_ids)}"""
                             capture_output=True, timeout=5
                         )
                         if result.returncode == 0:
+                            logger.info(f"Using config fallback session: {session_name}")
                             return session_name
-
-            # Method 2: List sessions and find weaver-primary-*
-            result = subprocess.run(
-                ["tmux", "list-sessions", "-F", "#{session_name}"],
-                capture_output=True, text=True, timeout=5
-            )
-
-            if result.returncode != 0:
-                return None
-
-            sessions = result.stdout.strip().split('\n')
-            weaver_sessions = [s for s in sessions if s.startswith('weaver-primary-')]
-
-            if weaver_sessions:
-                return sorted(weaver_sessions)[-1]  # Latest
 
             return None
 

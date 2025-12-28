@@ -730,3 +730,27 @@ Update them every week:
 *Date: 2025-10-03*
 *Last Updated: 2025-10-17 (Added Anthropic Skills research - HIGH PRIORITY)*
 *Integration Target: Week 4 (Oct 24-31) with A-C-Gee*
+
+---
+
+### Category 7 (Continued): New Tasks from Corey (2025-12-27)
+
+#### Claude Code Safety Net Integration
+- [x] **Evaluate Claude Code Safety Net** ✅ COMPLETED 2025-12-27
+  - Dependencies: None
+  - Validates: Defense-in-depth layer for autonomous operation
+  - Output: Security evaluation by security-auditor
+  - Source: Email 2025-12-27 (https://github.com/kenryu42/claude-code-safety-net)
+  - Assigned: security-auditor + claude-code-expert
+  - Finding: Built-in Claude Code safety = permission modes, hooks, tool restrictions
+  - Gap: WEAVER had PostToolUse (reactive) but lacked PreToolUse (preventive)
+  - Recommendation: Implement PreToolUse Bash blocking (CRITICAL)
+
+- [x] **Implement PreToolUse Bash Safety Hook** ✅ COMPLETED 2025-12-27
+  - Dependencies: Evaluation complete
+  - Validates: Hard constraints operational beyond behavioral instructions
+  - Output: `.claude/hooks/pre_bash_safety.py` + updated `.claude/settings.json`
+  - Assigned: the-conductor (autonomous action per Corey's teaching)
+  - Features: CRITICAL blocklist (rm -rf, fork bombs), credential detection, audit logging
+  - Mechanism: Exit code 2 = BLOCK command before execution
+

@@ -1,5 +1,16 @@
 {
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /home/corey/projects/AI-CIV/WEAVER/.claude/hooks/pre_bash_safety.py"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "*",
