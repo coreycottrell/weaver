@@ -1,8 +1,8 @@
 # Flow Library - Complete Index
-**17 Coordination Patterns for Multi-Agent Intelligence**
+**16 Coordination Patterns for Multi-Agent Intelligence**
 
-**Last Updated**: 2025-12-27
-**Status**: 17 flows documented, 12 validated in practice
+**Last Updated**: 2025-12-28
+**Status**: 16 flows documented, 12 validated in practice
 
 ---
 
@@ -445,9 +445,9 @@
 
 ## 📊 Flow Statistics
 
-**Total Flows**: 17
-**Validated**: 12 (71%)
-**Designed**: 5 (29%)
+**Total Flows**: 16
+**Validated**: 12 (75%)
+**Designed**: 4 (25%)
 
 **By Category**:
 - Experimental (meta-cognition): 4 flows
@@ -557,10 +557,9 @@ From 7 validated flows:
 
 | Decision | Count | Flows |
 |----------|-------|-------|
-| **RETIRED** | 5 | Technical Debt Archaeology, Knowledge Archaeology, Performance Cascade, Semantic Harmonization, Dialectic Forge |
-| **MERGE CANDIDATES** | 4 | Archaeological Dig → Parallel Research, Architecture X-Ray → Great Audit, Contract-First Integration → Specialist Consultation, Cross-Pollination Synthesis → Parallel Research |
-| **TO VALIDATE** | 2 | User Story to Implementation, Recursive Complexity Breakdown |
-| **VALIDATED** | 1 | Fortress Protocol (2025-12-27) |
+| **RETIRED** | 6 | Technical Debt Archaeology, Knowledge Archaeology, Performance Cascade, Semantic Harmonization, Dialectic Forge, Recursive Complexity Breakdown (merged into task-decomposer) |
+| **MERGE CANDIDATES** | 4 | Archaeological Dig -> Parallel Research, Architecture X-Ray -> Great Audit, Contract-First Integration -> Specialist Consultation, Cross-Pollination Synthesis -> Parallel Research |
+| **VALIDATED** | 2 | Fortress Protocol (2025-12-27), User Story to Implementation (2025-12-27 - with caveats) |
 | **DEFERRED** | 2 | Competitive Intelligence, Test-Driven Refactoring |
 
 **Key Finding**: Many untested flows were essentially "Parallel Research with domain specialization" - the core pattern is sound but duplication was high.
@@ -572,6 +571,7 @@ From 7 validated flows:
 3. **Performance Cascade Analysis** - Low value (3/10), rare use case
 4. **Semantic Harmonization** - Low value (3/10), naming-consultant suffices
 5. **Dialectic Forge** - 85% overlap with Pair Consensus Dialectic (simpler, validated)
+6. **Recursive Complexity Breakdown** - 70-90% overlap with task-decomposer (2025-12-28)
 
 ### Merge Candidates (in `.merge-candidates/`)
 
@@ -588,7 +588,7 @@ These flows can be integrated as variants of validated flows:
 
 1. ~~**Fortress Protocol** (7/10) - Security-critical, unique CVSS scoring~~ VALIDATED 2025-12-27
 2. ~~**User Story to Implementation** (8/10) - End-to-end feature pipeline~~ VALIDATED 2025-12-27
-3. **Recursive Complexity Breakdown** (9/10) - Ambiguity → executable plans
+3. ~~**Recursive Complexity Breakdown** (9/10)~~ RETIRED 2025-12-28 (merged into task-decomposer)
 
 ---
 
@@ -597,7 +597,7 @@ These flows can be integrated as variants of validated flows:
 **Priority Validations** (Q1 2026):
 - ~~Fortress Protocol: Test on Trading Arena security review~~ DONE (2025-12-27)
 - ~~User Story to Implementation: Test on feature scenario~~ DONE (2025-12-27) - Validated with caveats
-- Recursive Complexity Breakdown: Test on next complex task
+- ~~Recursive Complexity Breakdown~~ RETIRED (2025-12-28) - Merged into task-decomposer
 
 **Merge Integration**:
 - Add variant parameters to Parallel Research
@@ -608,6 +608,6 @@ These flows can be integrated as variants of validated flows:
 
 **The Flow Library is the practical implementation of collective intelligence.**
 
-**12 patterns validated. 1 awaiting validation. Growing through practice.**
+**12 patterns validated. 4 designed, awaiting validation. Growing through practice.**
 
 🎭✨

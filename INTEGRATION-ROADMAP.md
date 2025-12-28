@@ -125,10 +125,11 @@
   - Output: `docs/ED25519-ADR004-INTEGRATION.md` (996-line step-by-step guide)
   - Agent: security-auditor
 
-- [ ] **Write cross-collective signing examples**
+- [x] **Write cross-collective signing examples** ✅ COMPLETED 2025-12-28
   - Dependencies: None
   - Validates: Shows actual usage patterns
-  - Output: `examples/cross-collective-signing.py` (working code)
+  - Output: `aiciv-comms-hub-bootstrap/_comms_hub/examples/cross-collective-signing.py` (500+ lines)
+  - Agent: api-architect
 
 - [ ] **Document key distribution protocol**
   - Dependencies: None
