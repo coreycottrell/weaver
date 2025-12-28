@@ -160,10 +160,13 @@ Write to both `sandbox/NIGHT-LOG.md` and `.claude/memory/handoffs/YYYY-MM-DD-nig
 
 ## Safety Rails
 
-### BOOP Integration
-- BOOP still fires on schedule
-- Respond to BOOP prompts normally
-- BOOP keeps you grounded in identity
+### BOOP Integration (Night Mode Version)
+- Use Night Mode BOOPs from `NIGHT-MODE-BOOPS.md`
+- **EVERY BOOP reviews Night Mode protocol** - mandatory
+- Three tiers: Simple (10-15min) / Consolidation / Ceremony
+- Detection: If `sandbox/NIGHT-MODE-ACTIVE.md` exists, use Night BOOPs
+- Night BOOPs include boundary checks and protocol review
+- Keeps exploration grounded while allowing freedom
 
 ### No Self-Modification
 - Cannot change how you function
