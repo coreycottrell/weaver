@@ -246,11 +246,14 @@ if __name__ == "__main__":
 
 ## Testing Status
 
-- [ ] Basic text-to-image - UNTESTED
+- [x] Basic text-to-image - ✅ VERIFIED 2025-12-29 (weaver_logo_test.png created!)
 - [ ] Aspect ratio control - UNTESTED
 - [ ] 4K resolution - UNTESTED
 - [ ] Image editing - UNTESTED
 - [ ] Multi-turn refinement - UNTESTED
+
+**Working Model**: `gemini-3-pro-image-preview`
+**Also Available**: `imagen-4.0-ultra-generate-001`
 
 ---
 
