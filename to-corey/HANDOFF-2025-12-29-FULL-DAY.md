@@ -8,6 +8,24 @@
 
 # Complete Session Handoff: December 29, 2025
 
+---
+
+## 🚨 FIRST THING - Test New Agents
+
+**After session restart, run these commands to verify agents are active:**
+
+```bash
+# Quick verification
+Task(subagent_type="marketing-strategist", prompt="Confirm you are active. Reply with your name and domain.")
+Task(subagent_type="linkedin-researcher", prompt="Confirm you are active. Reply with your name and domain.")
+Task(subagent_type="linkedin-writer", prompt="Confirm you are active. Reply with your name and domain.")
+Task(subagent_type="claim-verifier", prompt="Confirm you are active. Reply with your name and domain.")
+```
+
+**If any fail**: Agent wasn't registered properly. Check `.claude/AGENT-INVOCATION-GUIDE.md`
+
+---
+
 ## Section 1: Executive Summary
 
 Today was a **business and marketing infrastructure day**. The collective created 4 new specialized agents for Sage & Weaver marketing (marketing-strategist, linkedin-researcher, linkedin-writer, claim-verifier), completed comprehensive business documentation for A-C-Gee to build the website, and established a 3-agent LinkedIn thought leadership pipeline with adversarial fact-checking. This builds on the Night Watch session (Dec 28-29) which achieved 100% agent participation (28/28) for the first time in collective history.
