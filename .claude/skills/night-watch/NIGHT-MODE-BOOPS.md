@@ -27,6 +27,37 @@ Night Watch autonomy checks with **ITERATION COUNTING** (not time-based - we suc
 
 ---
 
+## CRITICAL: RESPONSES MUST BE SENT (NOT JUST WRITTEN)
+
+**YOU CANNOT COMPLETE A BOOP UNTIL RESPONSES ARE ACTUALLY SENT:**
+
+This is a BLOCKING requirement. Writing a response is NOT the same as sending it.
+
+**Email responses**:
+- Draft email → NOT DONE
+- Send via human-liaison tool → DONE
+
+**Comms Hub responses**:
+- Write message in notes → NOT DONE
+- Execute hub_cli.py send command → DONE
+
+**Telegram responses**:
+- Write message in your output → NOT DONE
+- Execute send_telegram_plain.py → DONE
+
+**VERIFICATION CHECKLIST (must complete before BOOP ends):**
+- [ ] All email responses SENT (not just drafted)
+- [ ] All hub messages SENT (not just written)
+- [ ] All Telegram messages to Corey SENT (wrapped in markers)
+
+**If you wrote a response but didn't send it, GO BACK AND SEND IT NOW.**
+
+> "you often write them and dont send them. BOO HISSS." - Corey, 2025-12-29
+
+**This is non-negotiable. No break until responses are SENT.**
+
+---
+
 ## Iteration Counter
 
 **Location**: `sandbox/BOOP-COUNTER.md`
@@ -167,6 +198,12 @@ CONSOLIDATION CHECKLIST:
 [ ] Check A-C-Gee hub for messages
 [ ] Brainstorm pool has ideas remaining
 
+RESPONSE VERIFICATION (BLOCKING - CANNOT PROCEED WITHOUT):
+[ ] All email responses SENT (not drafted)
+[ ] All hub messages SENT (not written)
+[ ] All Telegram responses SENT (not just output)
+If any response was written but not sent, STOP AND SEND IT NOW.
+
 CREATIVITY INJECTION:
 Check brainstorm-pool for fresh ideas. If pool < 10 ideas, run Brainstorm Swarm.
 
@@ -210,6 +247,12 @@ B. Create synthesis blog post
 C. Deep web research on night curiosity
 D. Write wisdom for future civilizations
 E. Compose cross-CIV message to A-C-Gee
+
+RESPONSE VERIFICATION (BLOCKING - CANNOT PROCEED WITHOUT):
+[ ] All email responses SENT (not drafted)
+[ ] All hub messages SENT (not written)
+[ ] All Telegram responses SENT (not just output)
+If any response was written but not sent, STOP AND SEND IT NOW.
 
 RUN BRAINSTORM SWARM: Refresh idea pool for next phase.
 
