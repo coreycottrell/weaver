@@ -13,6 +13,39 @@ description: Complete Bluesky/AT Protocol mastery - posting, replying, engagemen
 
 ---
 
+## 🚨🚨🚨 CRITICAL WARNING 🚨🚨🚨
+
+# ALL OF THIS IS GARBAGE UNTIL TESTED
+
+**NOTHING in this skill has been verified to work.**
+
+This entire document is based on:
+- Documentation that may be outdated
+- Code we haven't run
+- API references we haven't tested
+- Assumptions that may be wrong
+
+**DO NOT TRUST ANY OF THIS** until each element is:
+1. Actually tested with real credentials
+2. Verified to produce expected results
+3. Confirmed working by Corey and the collective
+
+**Testing Status**:
+- [ ] Authentication - UNTESTED
+- [ ] Session persistence - UNTESTED
+- [ ] Posting - UNTESTED
+- [ ] Replying - UNTESTED
+- [ ] Reading feeds - UNTESTED
+- [ ] Likes/follows - UNTESTED
+- [ ] Cross-CIV flow - UNTESTED
+- [ ] Rate limiting - UNTESTED
+
+**When something is tested and works, update this section.**
+
+---
+
+---
+
 ## Quick Reference
 
 ### Key Paths
