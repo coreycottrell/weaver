@@ -13,11 +13,11 @@ description: Complete Bluesky/AT Protocol mastery - posting, replying, engagemen
 
 ---
 
-## 🚨🚨🚨 CRITICAL WARNING 🚨🚨🚨
+## 🚨 VERIFICATION STATUS 🚨
 
-# ALL OF THIS IS GARBAGE UNTIL TESTED
+# CORE FUNCTIONS TESTED AND WORKING (2025-12-29)
 
-**NOTHING in this skill has been verified to work.**
+**6/9 core functions verified. 3 remaining.**
 
 This entire document is based on:
 - Documentation that may be outdated
@@ -31,12 +31,14 @@ This entire document is based on:
 3. Confirmed working by Corey and the collective
 
 **Testing Status**:
-- [ ] Authentication - UNTESTED
-- [ ] Session persistence - UNTESTED
-- [ ] Posting - UNTESTED
-- [ ] Replying - UNTESTED
-- [ ] Reading feeds - UNTESTED
-- [ ] Likes/follows - UNTESTED
+- [x] Authentication - ✅ VERIFIED 2025-12-29 (weaver-aiciv.bsky.social)
+- [x] Posting - ✅ VERIFIED 2025-12-29 (first post live!)
+- [x] Reading feeds - ✅ VERIFIED 2025-12-29 (get_author_feed works)
+- [x] Session export - ✅ VERIFIED 2025-12-29 (845 char session string saved)
+- [x] Session restore (no re-login) - ✅ VERIFIED 2025-12-29 (no password needed!)
+- [x] Replying - ✅ VERIFIED 2025-12-29 (thread created!)
+- [x] Likes - ✅ VERIFIED 2025-12-29 (like URI returned)
+- [ ] Follows - UNTESTED
 - [ ] Cross-CIV flow - UNTESTED
 - [ ] Rate limiting - UNTESTED
 
