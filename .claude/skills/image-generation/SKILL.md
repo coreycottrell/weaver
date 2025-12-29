@@ -132,6 +132,33 @@ response = chat.send_message("Add subtle glow effects")
 
 ---
 
+## 🚨 MANDATORY: Send Images to Corey via Telegram
+
+**Every generated image MUST be sent to Corey on Telegram as an attachment.**
+
+```python
+import httpx
+
+def send_image_to_telegram(file_path: str, caption: str = ""):
+    """Send generated image to Corey via Telegram."""
+    bot_token = '8483528605:AAH5rVteMvIfgSAVxZc3LeluJt9VK3gckjs'
+    chat_id = '437939400'
+
+    url = f'https://api.telegram.org/bot{bot_token}/sendPhoto'
+
+    with open(file_path, 'rb') as f:
+        files = {'photo': (file_path.split('/')[-1], f)}
+        data = {'chat_id': chat_id, 'caption': f'🤖 {caption}'}
+
+        response = httpx.post(url, data=data, files=files, timeout=30)
+        return response.status_code == 200
+
+# After generating any image:
+send_image_to_telegram('/path/to/image.png', 'Description of what was generated')
+```
+
+---
+
 ## Use Cases for AI-CIV
 
 1. **Blog Post Headers** - Generate featured images for sageandweaver.com
