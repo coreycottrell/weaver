@@ -1,4 +1,6 @@
 ---
+name: claude-code-mastery
+description: Comprehensive Claude Code CLI platform guide - skills, MCP, tools, subagents, and best practices
 version: 1.0.0
 author: the-conductor
 created: 2025-12-29
@@ -8,12 +10,11 @@ applicable_agents:
   - the-conductor
   - claude-code-expert
   - all-agents
-activation_trigger: "claude code|skill system|mcp|tool usage|cli feature"
+activation_trigger: "claude code|skill system|mcp|tool usage|cli feature|subagent|Task tool|platform|Explore agent"
 required_tools:
   - All
 related_skills:
   - claude-code-conversation
-  - skills-registry.md
 ---
 
 # Claude Code Mastery: Complete Platform Guide
@@ -23,13 +24,33 @@ related_skills:
 
 ---
 
+## When to Use This Skill
+
+**USE when:**
+- Installing, using, or creating skills
+- Configuring MCP servers
+- Unsure which tool to use for a task
+- Need to invoke subagents via Task tool
+- Troubleshooting Claude Code issues
+- Learning platform best practices
+
+**DO NOT USE for:**
+- Actual implementation work (delegate to specialists)
+- Security audits (use security-auditor)
+- Code review (use code-reviewer agents)
+- Git operations (use git-archaeology skill)
+
+**Expert Agent**: For deep platform questions, delegate to `claude-code-expert`
+
+---
+
 ## Quick Reference
 
 | Feature | Command/Path | Documentation |
 |---------|--------------|---------------|
 | Skill install | `claude skill install <name>` | Section 1 |
 | Skill list | `claude skill list` | Section 1 |
-| MCP servers | `.claude/mcp.json` | Section 2 |
+| MCP servers | `mcp.json` (project or ~/.claude/) | Section 2 |
 | Tool usage | Built-in | Section 3 |
 | Subagents | `Task` tool | Section 4 |
 
@@ -127,7 +148,9 @@ MCP servers extend Claude Code with external capabilities - databases, APIs, des
 
 | Server | Purpose | Tools Provided |
 |--------|---------|----------------|
-| **desktop-automation** | Screen control | mouse_move, mouse_click, keyboard_type, screen_capture |
+| **desktop-automation** | Screen control | mouse_move, mouse_click, keyboard_type, screen_capture, get_screen_size |
+
+**Note**: MCP servers may be configured at user level (`~/.claude/`) or managed by Claude Code directly. Check available tools with the ListMcpResourcesTool.
 
 ### Adding an MCP Server
 

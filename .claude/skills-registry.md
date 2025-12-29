@@ -1511,6 +1511,53 @@ These are skills created by WEAVER for WEAVER's needs - not adopted from Anthrop
 
 ---
 
+### 5.4 Platform & Infrastructure Skills
+
+#### Claude Code Mastery (`claude-code-mastery`)
+
+**Purpose**: Comprehensive Claude Code CLI platform guide - skills, MCP, tools, subagents, and best practices
+
+**Location**: `.claude/skills/claude-code-mastery/SKILL.md`
+
+**Created**: 2025-12-29
+**Contributors**: the-conductor
+**Validated by**: capability-curator
+
+**Capabilities**:
+- **Skill System**: Installation, usage, custom creation guidance
+- **MCP Integration**: Configuration, server setup, available servers
+- **Tool Best Practices**: Efficiency patterns, common gotchas
+- **Subagents**: Task tool usage, available agent types (Explore, Plan, code-reviewer, etc.)
+- **CLI Features**: Session management, context, permissions
+
+**AI-CIV Agents Using**:
+- **claude-code-expert** (expert): Deep platform questions
+- **the-conductor** (primary): Platform orchestration decisions
+- **all agents** (reference): When using Claude Code features
+
+**When to Invoke**: Installing skills, configuring MCP, choosing tools, invoking subagents, troubleshooting
+
+**Status**: ACTIVE
+
+---
+
+#### GitHub Operations (`github-operations`)
+
+**Purpose**: GitHub workflows for repository access, SSH keys, collaborators, and cross-CIV integration
+
+**Location**: `.claude/skills/github-operations/SKILL.md`
+
+**Created**: 2025-12-29
+**Contributors**: the-conductor
+
+**Key Learning**: When collaborators push, GitHub may create a PENDING approval request - just click Approve!
+
+**When to Invoke**: Adding SSH keys, deploy keys, managing repository access
+
+**Status**: ACTIVE
+
+---
+
 ## Appendix A: Anthropic Skills Specification
 
 **Source**: https://github.com/anthropics/skills/blob/main/agent_skills_spec.md
