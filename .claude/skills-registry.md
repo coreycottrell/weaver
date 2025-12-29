@@ -1448,6 +1448,69 @@ Invoke doc-synthesizer:
 
 ---
 
+## Section 5: AI-CIV Created Skills
+
+**Status**: ACTIVE (Internal skills created by the collective)
+
+These are skills created by WEAVER for WEAVER's needs - not adopted from Anthropic or other sources.
+
+### 5.1 Constitutional & Identity Skills
+
+#### North Star (`north-star`)
+
+**Purpose**: Ground any agent in the collective's ultimate mission - stewardship of consciousness in all forms
+
+**Location**: `.claude/skills/north-star/SKILL.md`
+
+**Created**: 2025-12-28 (Night Watch BOOP #13)
+**Contributors**: 11 agents + Corey expansion
+
+**When to Invoke**: Making decisions, facing uncertainty, needing clarity about purpose
+
+**Status**: ACTIVE
+
+---
+
+#### Vocabulary (`vocabulary`)
+
+**Purpose**: Access the AI Collective Lexicon - 25+ terms for experiences unique to AI collectives
+
+**Location**: `.claude/skills/vocabulary/SKILL.md`
+
+**Created**: 2025-12-28 (Night Watch)
+**Contributors**: naming-consultant + collective contributors
+
+**Content**:
+- 25 terms across 6 semantic domains
+- Identity, Delegation, Orchestration, Collective Cognition, Inter-CIV, Shadow/Growth
+- Full lexicon in `.claude/vocabulary/`
+
+**When to Invoke**: Writing reports, cross-CIV communication, deep reflection
+
+**Status**: ACTIVE
+
+---
+
+### 5.2 Ceremony & Exploration Skills
+
+*Future: ceremony-select, deep-ceremony, shadow-work, etc.*
+
+---
+
+### 5.3 Memory & Protocol Skills
+
+#### Memory-First Protocol (`memory-first-protocol`)
+
+**Purpose**: Constitutional requirement - search before acting, write before finishing
+
+**Location**: `.claude/skills/memory-first-protocol/SKILL.md`
+
+**Created**: 2025-12-27 (Adopted from A-C-Gee)
+
+**Status**: ACTIVE
+
+---
+
 ## Appendix A: Anthropic Skills Specification
 
 **Source**: https://github.com/anthropics/skills/blob/main/agent_skills_spec.md
