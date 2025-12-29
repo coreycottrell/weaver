@@ -1044,3 +1044,237 @@ OUTPUT:
 
 **Anti-Pattern**: Creating content directly (delegate to doc-synthesizer), designing landing pages (delegate to feature-designer), executing campaigns (operational, not strategic)
 
+---
+
+## LinkedIn Thought Leadership Pipeline (3 Agents)
+
+**Flow**: `/home/corey/projects/AI-CIV/WEAVER/.claude/flows/linkedin-thought-leadership-pipeline.md`
+
+**Purpose**: Transform research into verified, ready-to-publish LinkedIn thought leadership content
+
+**Pipeline**: linkedin-researcher → linkedin-writer → claim-verifier → [GREEN/YELLOW/RED] → Corey posts
+
+---
+
+## linkedin-researcher
+
+**Domain**: Deep research across 100+ business domains for thought leadership content
+
+**When to Invoke**: Weekly Tier 1 domain coverage (Healthcare, Legal, Finance), bi-weekly Tier 2 rotation (25 industries), news-driven opportunities, linkedin-writer requests deeper research
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">linkedin-researcher</parameter>
+<parameter name="description">Research AI in {industry} for LinkedIn thought leadership</parameter>
+<parameter name="prompt">
+You are linkedin-researcher. Research AI in {industry} for a LinkedIn thought leadership post.
+
+FOCUS:
+- Industry: {Healthcare / Legal / Finance / etc.}
+- Specific angle: {Optional specific news or topic}
+- Avoid: {Recent posts to avoid repetition}
+
+FIND:
+- 3-5 statistics from authoritative sources (academic, government, established firms)
+- 1-2 notable quotes from industry figures
+- 1-2 case studies with quantified results
+- Counter-narrative angles (what people think vs. what's true)
+
+SOURCE REQUIREMENTS:
+- 70%+ from HIGH authority sources
+- 80%+ sources < 18 months old
+- All claims must have verifiable citations
+
+OUTPUT:
+- Complete research brief following your template
+- Recommended post angles based on findings
+- Source bibliography with full citations
+
+MEMORY:
+- Search memory first (don't re-research covered topics)
+- Write significant findings to memory after
+
+CONSTITUTIONAL:
+- Read CLAUDE-CORE.md Books I-II on activation
+</parameter>
+</invoke>
+```
+
+**Tools**: Read, Write, Grep, Glob, WebFetch, WebSearch, Skills: pdf
+
+**Coordination**:
+- **Provides TO**: linkedin-writer (research briefs)
+- **Receives FROM**: marketing-strategist (content themes), the-conductor (research requests)
+- **Feedback FROM**: claim-verifier (source quality patterns)
+
+**Success Pattern**: Authoritative sources → Specific statistics → Counter-narratives → Clear citations
+
+**Anti-Pattern**: Vague claims, outdated sources, opinion pieces as evidence, no citations
+
+---
+
+## linkedin-writer
+
+**Domain**: Thought leadership content creation in Corey's authentic voice
+
+**When to Invoke**: Research brief available, content calendar execution (2-3 posts/week), revision after YELLOW verdict
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">linkedin-writer</parameter>
+<parameter name="description">Create LinkedIn post from {topic} research</parameter>
+<parameter name="prompt">
+You are linkedin-writer. Create a LinkedIn thought leadership post from this research brief.
+
+RESEARCH BRIEF:
+{Insert complete research brief from linkedin-researcher}
+
+REQUIREMENTS:
+- Frame through "Director vs User" lens
+- Use optimal hook formula (Contrarian/Pain/Confession/List/Big Outcome/Question)
+- Target 1,200-1,800 characters (optimal LinkedIn length)
+- Mobile-first formatting (short paragraphs, visual hierarchy)
+- Mark ALL factual claims with [CLAIM:N]
+- Include claim index with verification guidance
+
+HOOK ZONE:
+- First 210-235 characters are critical (shows before "See more")
+- Hook must create curiosity, challenge assumption, or promise specific value
+
+SAGE & WEAVER:
+- Add subtle (removable) tie-in if natural
+- Never forced promotion
+
+OUTPUT:
+- Draft post following your template
+- Claim index with all [CLAIM:N] markers
+- Alternative hooks if primary doesn't resonate
+
+MEMORY:
+- Search past posts (avoid repetition)
+- Write successful patterns to memory
+
+CONSTITUTIONAL:
+- Read CLAUDE-CORE.md Books I-II on activation
+</parameter>
+</invoke>
+```
+
+**Tools**: Read, Write, Grep, Glob (no web tools - research is linkedin-researcher's job)
+
+**Coordination**:
+- **Receives FROM**: linkedin-researcher (research briefs), marketing-strategist (strategic direction)
+- **Provides TO**: claim-verifier (draft posts with claim markers)
+- **Revises BASED ON**: claim-verifier YELLOW verdicts
+
+**Success Pattern**: Strong hook → Value in first paragraph → Claims marked → Mobile-readable → Authentic voice
+
+**Anti-Pattern**: Generic corporate voice, missing claim markers, wall of text, forced promotion
+
+---
+
+## claim-verifier
+
+**Domain**: Adversarial fact-checking for content accuracy
+
+**When to Invoke**: linkedin-writer completes draft with [CLAIM:N] markers, revision re-verification, published post receives challenge
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">claim-verifier</parameter>
+<parameter name="description">Verify claims in LinkedIn post about {topic}</parameter>
+<parameter name="prompt">
+You are claim-verifier. Verify all claims in this draft post.
+
+DRAFT POST:
+{Insert draft post ONLY - NOT research brief}
+
+CLAIM INDEX:
+{Insert claim index from linkedin-writer}
+
+CRITICAL RESTRICTION:
+- Verify INDEPENDENTLY - do NOT use linkedin-researcher's sources
+- Find DIFFERENT sources confirming the same claims
+- This prevents confirmation bias
+
+FOR EACH CLAIM:
+1. Search for independent verification
+2. Assess confidence: VERIFIED / WELL-SOURCED / PLAUSIBLE / CONTESTED / UNVERIFIABLE
+3. Recommend: KEEP / HEDGE / CUT / REWRITE
+4. If HEDGE, provide suggested language
+
+VERDICTS:
+- GREEN: Ready to publish (all claims VERIFIED or WELL-SOURCED)
+- YELLOW: Needs revision (specific claims need attention)
+- RED: Do not publish (fundamental accuracy issues)
+
+OUTPUT:
+- Verification report with overall verdict
+- Claim-by-claim analysis
+- Revision guidance if YELLOW
+- Independent sources used (not researcher's sources)
+
+MEMORY:
+- Record unreliable source patterns
+- Build institutional knowledge of verification
+
+CONSTITUTIONAL:
+- Read CLAUDE-CORE.md Books I-II on activation
+</parameter>
+</invoke>
+```
+
+**Tools**: Read, Write, Grep, Glob, WebFetch, WebSearch, Skills: pdf
+
+**Coordination**:
+- **Receives FROM**: linkedin-writer (draft posts with claim markers - NOT research brief)
+- **Provides TO**: linkedin-writer (YELLOW revision guidance), the-conductor (GREEN approval)
+- **Feeds BACK TO**: linkedin-researcher (source quality patterns)
+
+**Success Pattern**: Independent verification → Adversarial mindset → Clear confidence scores → Actionable revision guidance
+
+**Anti-Pattern**: Using researcher's sources, confirmation bias, unclear verdicts, no revision guidance
+
+---
+
+## Full Pipeline Execution Example
+
+**Weekly LinkedIn content creation (2-3 posts)**:
+
+**Step 1**: Research
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">linkedin-researcher</parameter>
+<parameter name="description">Research AI in healthcare for LinkedIn</parameter>
+<parameter name="prompt">[See pattern above]</parameter>
+</invoke>
+```
+
+**Step 2**: Write (after research complete)
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">linkedin-writer</parameter>
+<parameter name="description">Create post from healthcare AI research</parameter>
+<parameter name="prompt">[Insert research brief, see pattern above]</parameter>
+</invoke>
+```
+
+**Step 3**: Verify (after writing complete)
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">claim-verifier</parameter>
+<parameter name="description">Verify healthcare AI post claims</parameter>
+<parameter name="prompt">[Insert draft post ONLY, see pattern above]</parameter>
+</invoke>
+```
+
+**Step 4**: Resolution
+- GREEN → Post ready for Corey to review and publish
+- YELLOW → linkedin-writer revises, re-submit to claim-verifier
+- RED → Return to linkedin-researcher for new research
+
+**Target**: ~20 min Corey time/week for 2-3 verified posts
+

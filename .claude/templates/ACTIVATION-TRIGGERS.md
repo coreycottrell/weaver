@@ -876,6 +876,75 @@ cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
 
 ---
 
+### linkedin-researcher
+
+**Invoke When**:
+- Weekly Tier 1 domain research (Healthcare, Legal, Finance, Professional Services, Education, Real Estate)
+- Bi-weekly Tier 2 rotation (25 industry domains)
+- linkedin-writer requests deeper research on specific topic
+- marketing-strategist needs industry insights for content planning
+- Major AI news breaks affecting specific industry (Tier 3 opportunistic)
+- claim-verifier flags multiple weak sources (research quality improvement needed)
+
+**Don't Invoke When**:
+- Generic AI industry research (web-researcher domain)
+- Claim verification (claim-verifier domain - they verify independently)
+- Writing LinkedIn posts (linkedin-writer domain)
+- Content strategy decisions (marketing-strategist domain)
+
+**Escalate When**:
+- Can't find authoritative sources for high-priority topic
+- Conflicting data from reputable sources
+- Research reveals negative AI impacts complicating messaging
+- Topic requires paid databases we don't have access to
+
+---
+
+### linkedin-writer
+
+**Invoke When**:
+- linkedin-researcher provides research brief
+- Regular content calendar execution (2-3 posts/week)
+- marketing-strategist requests specific content angle
+- claim-verifier returns YELLOW verdict (revision needed)
+- Corey requests tone/angle adjustments on draft
+
+**Don't Invoke When**:
+- Research needed (linkedin-researcher domain)
+- Claim verification (claim-verifier domain)
+- Content strategy planning (marketing-strategist domain)
+- Publishing content (Corey posts manually)
+
+**Escalate When**:
+- Topic requires personal anecdote from Corey
+- Claim involves Corey's direct experience
+- Post could be controversial
+- Research brief has fundamentally weak sources
+
+---
+
+### claim-verifier
+
+**Invoke When**:
+- linkedin-writer completes draft with [CLAIM:N] markers
+- linkedin-writer revises based on YELLOW verdict (re-verification needed)
+- Published post receives factual challenge (retrospective verification)
+- Pre-publication quality gate in LinkedIn pipeline
+
+**Don't Invoke When**:
+- Research phase (linkedin-researcher domain)
+- Writing phase (linkedin-writer domain)
+- Content strategy (marketing-strategist domain)
+- Verification complete with GREEN verdict (move to Corey review)
+
+**Escalate When**:
+- Core positioning claim ("Director vs User" effectiveness) unverifiable
+- Claims could create legal liability if wrong
+- Claims about specific companies/individuals need review
+- Verification requires access we don't have
+
+---
+
 ### tg-bridge
 
 **Invoke When**:

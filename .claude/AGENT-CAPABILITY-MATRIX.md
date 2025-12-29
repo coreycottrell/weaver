@@ -507,3 +507,6 @@ NEW WAY (skills-aware): "Analyze this 50-page security PDF"
 🎭✨
 | **cross-civ-integrator** | Inter-CIV knowledge validation | Capability validation, sandbox testing, integration guides, silicon-wisdom publishing, relationship maintenance | Bash/Grep/Glob/Write/Edit/WebFetch/Task + Skills: pdf/docx/xlsx | ❌ | Active |
 | **marketing-strategist** | Marketing strategy for Sage & Weaver | Positioning, audience building, content strategy, funnel optimization, campaign planning, conversion psychology | Read/Write/Grep/Glob/WebFetch/WebSearch + Skills: pdf | ❌ | Active |
+| **linkedin-researcher** | Deep research for LinkedIn thought leadership | Domain research across 100+ industries, statistics sourcing, case study compilation, counter-narrative discovery | Read/Write/Grep/Glob/WebFetch/WebSearch + Skills: pdf | ❌ | Active |
+| **linkedin-writer** | Thought leadership content creation | "Director vs User" framing, hook optimization, claim marking, mobile-first formatting, voice authenticity | Read/Write/Grep/Glob | ❌ | Active |
+| **claim-verifier** | Adversarial fact-checking | Independent claim verification, confidence scoring, source quality assessment, revision guidance | Read/Write/Grep/Glob/WebFetch/WebSearch + Skills: pdf | ❌ | Active |

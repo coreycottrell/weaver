@@ -445,9 +445,9 @@
 
 ## 📊 Flow Statistics
 
-**Total Flows**: 16
-**Validated**: 12 (75%)
-**Designed**: 4 (25%)
+**Total Flows**: 17
+**Validated**: 12 (71%)
+**Designed**: 5 (29%)
 
 **By Category**:
 - Experimental (meta-cognition): 4 flows
@@ -457,6 +457,7 @@
 - Infrastructure (system building): 3 flows
 - Governance (dialectic): 1 flow
 - Security (code review): 1 flow (Fortress Protocol)
+- Content (thought leadership): 1 flow (LinkedIn Thought Leadership Pipeline)
 
 **Validation Rate**:
 - Oct 2: 3 flows validated (Parallel Research, Specialist Consultation, Democratic Debate)
@@ -499,6 +500,43 @@ From 7 validated flows:
 5. **Templates preserve autonomy** while providing structure (75% efficiency)
 6. **Ceremonies need time** not speed (8 hours for Deep Ceremony = worth it)
 7. **Contradiction-holding** is distinctive capability (don't resolve tensions)
+
+---
+
+## 📝 Content Flows (Thought Leadership)
+
+### 18. LinkedIn Thought Leadership Pipeline
+**File**: `linkedin-thought-leadership-pipeline.md`
+**Purpose**: Transform research into verified, ready-to-publish LinkedIn content
+**Status**: DESIGNED (awaiting validation)
+
+**What It Is**: 3-agent pipeline (linkedin-researcher → linkedin-writer → claim-verifier) that does the heavy lifting for thought leadership, leaving Corey with only the "monkey work" of posting.
+
+**When to Use**:
+- Weekly content creation (2-3 posts)
+- Sage & Weaver thought leadership
+- "Director vs User" positioning content
+- Industry-specific AI insights
+
+**Key Outputs**:
+- Research briefs with authoritative sources
+- Draft posts with [CLAIM:N] markers
+- Verification reports (GREEN/YELLOW/RED verdicts)
+- Ready-to-publish content
+
+**Agents Involved**:
+- linkedin-researcher (domain research, 100+ industries)
+- linkedin-writer (content creation, "Director vs User" framing)
+- claim-verifier (adversarial fact-checking)
+
+**Time Investment**:
+- Corey: ~20 min/week for 2-3 posts
+- Agents: ~60-90 min/week automated
+
+**Integration**:
+- Coordinates with marketing-strategist for content themes
+- Ties into Sage & Weaver marketing funnel
+- Supports Director's Brief, Your Sage, Director Workshop positioning
 
 ---
 
