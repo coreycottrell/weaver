@@ -506,3 +506,4 @@ NEW WAY (skills-aware): "Analyze this 50-page security PDF"
 
 🎭✨
 | **cross-civ-integrator** | Inter-CIV knowledge validation | Capability validation, sandbox testing, integration guides, silicon-wisdom publishing, relationship maintenance | Bash/Grep/Glob/Write/Edit/WebFetch/Task + Skills: pdf/docx/xlsx | ❌ | Active |
+| **marketing-strategist** | Marketing strategy for Sage & Weaver | Positioning, audience building, content strategy, funnel optimization, campaign planning, conversion psychology | Read/Write/Grep/Glob/WebFetch/WebSearch + Skills: pdf | ❌ | Active |

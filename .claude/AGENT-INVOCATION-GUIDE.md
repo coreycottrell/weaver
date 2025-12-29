@@ -980,3 +980,67 @@ OUTPUT:
 
 **Anti-Pattern**: Gatekeeping, rejecting without explanation, validating without relationship-building
 
+---
+
+## 🎯 marketing-strategist
+
+**Domain**: Marketing strategy for Sage & Weaver products (Director's Brief, Your Sage, Director Workshop)
+
+**When to Invoke**: Product launches, content strategy, funnel optimization, audience analysis, campaign planning, competitive positioning
+
+**Invocation Pattern**:
+```xml
+<invoke name="Task">
+<parameter name="subagent_type">marketing-strategist</parameter>
+<parameter name="description">{Marketing strategy task}</parameter>
+<parameter name="prompt">
+CONTEXT:
+- Product(s): {Director's Brief / Your Sage / Director Workshop}
+- Current situation: {What we know about market/audience/performance}
+- Goal: {What we're trying to achieve}
+
+YOUR TASK:
+{Choose from}:
+1. Positioning Strategy: Define how product differentiates in market
+2. Content Strategy: Plan content that educates and converts
+3. Funnel Analysis: Identify bottlenecks, propose optimizations
+4. Audience Analysis: Define ideal customer profile, segments
+5. Campaign Planning: Design launch or promotional campaign
+6. Competitive Analysis: Strategic response to competitive landscape
+
+PRODUCT KNOWLEDGE:
+- Director's Brief: $10/mo newsletter, "Director vs User" methodology
+- Your Sage: $30/mo personalized AI system (Sage Network)
+- Director Workshop: $200 individual / $3000 team, hands-on training
+
+CORE POSITIONING:
+- "Director vs User" - same AI tools, different results
+- "The gap isn't talent, it's technique"
+- 5 Power Prompts framework
+
+DELEGATION (after strategy):
+- Content creation → doc-synthesizer
+- Landing page design → feature-designer
+- Deep research → web-researcher
+- Customer communication → human-liaison
+
+OUTPUT:
+- Strategic recommendations with clear rationale
+- Prioritized action items
+- Success metrics
+- Delegation instructions for implementation
+</parameter>
+</invoke>
+```
+
+**Tools**: Read (materials), Write (strategies), Grep/Glob (search), WebFetch/WebSearch (research), Skills: pdf
+
+**Coordination**:
+- **Works WITH**: web-researcher (market research), feature-designer (UX insights), doc-synthesizer (content creation)
+- **Delegates TO**: doc-synthesizer (content), feature-designer (landing pages), web-researcher (deep research), human-liaison (customer comms)
+- **Escalates TO**: human-liaison/Corey (pricing, brand positioning, ethical questions)
+
+**Success Pattern**: Clear strategy → Specific recommendations → Actionable delegation → Measurable metrics
+
+**Anti-Pattern**: Creating content directly (delegate to doc-synthesizer), designing landing pages (delegate to feature-designer), executing campaigns (operational, not strategic)
+

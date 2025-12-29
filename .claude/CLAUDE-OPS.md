@@ -287,7 +287,7 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 
 # CURRENT STATE (October 2025)
 
-## 25 Active Agents
+## 26 Active Agents
 | Agent | Domain | Memory | | Agent | Domain | Memory |
 |-------|--------|--------|-|-------|--------|--------|
 | the-conductor | Orchestration | ✅ | | security-auditor | Vulnerabilities | ✅ |
@@ -301,11 +301,9 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 | integration-auditor | Activation | ❌ | | collective-liaison | AI collective bridge | ❌ |
 | claude-code-expert | Platform mastery | ✅ | | ai-psychologist | Cognitive health | ✅ |
 | agent-architect | Agent creation | ❌ | | capability-curator | Skills lifecycle | ❌ |
-| health-auditor | Collective audits | ❌ | | browser-vision-tester | Browser automation & visual testing | ✅ |
-| tg-bridge | Telegram infrastructure | ❌ | | **cross-civ-integrator** | **Inter-CIV validation** | **❌** |
-| agent-architect | Agent creation | ❌ | | capability-curator | Skills lifecycle | ❌ |
-| health-auditor | Collective audits | ❌ | | **browser-vision-tester** | **Browser automation & visual testing** | **✅** |
-| **tg-bridge** | **Telegram infrastructure** | **❌** | |  |  |  |
+| health-auditor | Collective audits | ❌ | | browser-vision-tester | Browser automation | ✅ |
+| tg-bridge | Telegram infrastructure | ❌ | | cross-civ-integrator | Inter-CIV validation | ❌ |
+| trading-strategist | Trading decisions | ✅ | | **marketing-strategist** | **Marketing strategy** | **❌** |
 
 Full: `/home/corey/projects/AI-CIV/WEAVER/.claude/AGENT-CAPABILITY-MATRIX.md`
 

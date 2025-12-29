@@ -957,3 +957,38 @@ cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
 - Key assumptions cannot be validated
 - Human approval needed for significant decisions
 
+---
+
+### 🎯 marketing-strategist
+
+**Invoke When**:
+- Product launch planning (Director's Brief, Your Sage, Workshop)
+- Go-to-market strategy needed
+- Content strategy and calendar planning
+- "What should we write about?" questions
+- Funnel analysis and conversion optimization
+- "Why aren't people buying?" investigations
+- Audience analysis and ideal customer profiling
+- Lead magnet development strategy
+- Email sequence strategy (not writing - that's doc-synthesizer)
+- Campaign coordination across channels
+- Pricing and packaging decisions (strategic input)
+- Competitive positioning analysis
+
+**Don't Invoke When**:
+- Content creation (delegate to doc-synthesizer after strategy)
+- Landing page design (delegate to feature-designer)
+- Deep competitor research (delegate to web-researcher first)
+- Direct customer communication (delegate to human-liaison)
+- Implementation of email sequences (technical/operational)
+- Writing actual blog posts, emails, social content
+- Brand visual decisions (design domain)
+
+**Escalate When**:
+- Product-market fit questions (needs Corey's vision)
+- Pricing decisions with significant revenue impact
+- Brand positioning that affects company identity
+- Ethical gray areas in marketing approach
+- Strategy requires resources we don't have
+- Direct customer feedback required for validation
+
