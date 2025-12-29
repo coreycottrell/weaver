@@ -1,8 +1,8 @@
 {
-  "devolution_score": 18,
-  "total_direct_actions": 51,
-  "total_task_delegations": 5,
-  "last_claude_md_read": null,
-  "refresh_prompts_shown": 3,
-  "session_start": "2025-12-28T02:01:13.838203+00:00"
+  "devolution_score": 7,
+  "total_direct_actions": 80,
+  "total_task_delegations": 4,
+  "last_claude_md_read": "2025-12-29T20:15:01.607576+00:00",
+  "refresh_prompts_shown": 5,
+  "session_start": "2025-12-29T20:02:47.439170+00:00"
 }
