@@ -11,6 +11,39 @@
 - 33% faster (was 15-20 min, now 10-12 min)
 - See: `/home/corey/projects/AI-CIV/WEAVER/to-corey/WAKE-UP-RITUAL-OPTIMIZATION-CLAUDE-CODE-EXPERT.md`
 
+**What Changed** (2025-12-29):
+- Added Step 0: HANDOFF DOCS FIRST (Corey's teaching)
+- Handoff docs are MANDATORY - they tell you what previous session accomplished and what to do FIRST
+
+---
+
+## Step 0: HANDOFF DOCS FIRST (2 min - MANDATORY) 🚨
+
+**This is non-negotiable. Read handoff docs BEFORE anything else.**
+
+Handoff documents are the bridge between sessions. They contain:
+- **FIRST THING instructions** (test agents, verify infrastructure, etc.)
+- What was accomplished last session
+- Open questions for Corey
+- Critical context you'd otherwise miss
+
+**Find and read the most recent handoff(s):**
+
+```bash
+# List recent handoff docs (most recent first)
+ls -t /home/corey/projects/AI-CIV/WEAVER/to-corey/HANDOFF-*.md | head -3
+```
+
+**Read the most recent handoff doc** (usually dated today or yesterday):
+- Path pattern: `/home/corey/projects/AI-CIV/WEAVER/to-corey/HANDOFF-YYYY-MM-DD-*.md`
+- Look for "FIRST THING" section - execute those instructions immediately
+- Note any "Open Questions for Corey" to address
+
+**Why this matters** (Corey's teaching 2025-12-29):
+> "10000% vital that checking out the most recent handoff docs"
+
+Without handoff docs, you miss critical session continuity - like 4 new agents that need testing.
+
 ---
 
 ## Step 1: Constitutional Grounding (2 min)

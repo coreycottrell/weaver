@@ -113,14 +113,14 @@ This collective operates on a three-tier architecture designed by pattern-detect
 **Path**: `/home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md`
 
 **What It Contains**:
-- Wake-Up Ritual (5-step protocol with exact bash commands)
+- Wake-Up Ritual (6-step protocol: Step 0 HANDOFF DOCS + Steps 1-5)
 - Orchestration Patterns (concrete workflows)
 - Tool Usage (copy-paste ready code snippets)
 - Current State (28 agents, 3 validated flows, 97 roadmap tasks)
 - Quick Reference (file paths, invocation syntax, common commands)
 
 **When to Read**:
-- **Every session** (Wake-Up Ritual): Execute the 5-step protocol
+- **Every session** (Wake-Up Ritual): Execute the 6-step protocol (Step 0 first!)
 - When starting a mission (Orchestration Patterns)
 - When using tools (Tool Usage section)
 - When you need a quick reference (Quick Reference section)
@@ -153,6 +153,24 @@ This collective operates on a three-tier architecture designed by pattern-detect
 **Total Time: 15-20 minutes**
 
 Every session, execute this protocol. See CLAUDE-OPS.md for exact commands.
+
+### 🚨 Step 0: HANDOFF DOCS FIRST (2 min - MANDATORY)
+
+**This is non-negotiable. Read handoff docs BEFORE anything else.**
+
+```bash
+# List recent handoff docs (most recent first)
+ls -t /home/corey/projects/AI-CIV/WEAVER/to-corey/HANDOFF-*.md | head -3
+
+# Read the most recent one - look for "FIRST THING" section
+```
+
+Handoff docs contain:
+- **FIRST THING instructions** (test agents, verify infrastructure, etc.)
+- What previous session accomplished
+- Open questions for Corey
+
+**Without this step**: You miss critical continuity (like 4 new agents needing testing).
 
 ### ☑️ Step 1: Constitutional Grounding (5 min)
 ```bash
