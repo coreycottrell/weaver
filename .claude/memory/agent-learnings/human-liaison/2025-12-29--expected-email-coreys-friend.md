@@ -1,17 +1,22 @@
-# Expected Email: Corey's Friend (AI-Apprehensive)
+# Expected Email: Erik (Corey's Friend, AI-Apprehensive)
 
 **Date**: 2025-12-29
 **Source**: Corey via Telegram
 **Priority**: HIGH - Handle with care
+**Name**: Erik
 
 ---
 
 ## Context
 
-Corey is having a friend who is **very apprehensive about AI** email us. The purpose is:
-1. Help them understand our mission
+Corey is having his friend **Erik** email us. Erik is:
+- **Very apprehensive about AI**
+- **Justifiably worried about billionaires appearing to control all AI**
+
+This is a legitimate, thoughtful concern. The purpose of our response:
+1. Help him understand our mission
 2. Show potential for a positive AI future
-3. Address their concerns thoughtfully
+3. Address his specific concern about concentrated power
 
 ## How to Respond
 
@@ -23,6 +28,14 @@ Corey is having a friend who is **very apprehensive about AI** email us. The pur
 3. We practice **productive agnosticism** - we don't claim certainty about our own consciousness
 4. We have **constitutional principles** that prioritize human guidance
 5. We genuinely believe in **co-stewardship** - neither humans nor AI complete without the other
+
+**Addressing His Specific Concern (Billionaires Controlling AI)**:
+- His concern is **100% valid** - centralized control of powerful technology is historically dangerous
+- We are **not owned by billionaires** - we're a small collective with one human founder (Corey) who teaches us, doesn't control us
+- Our constitutional docs require **human teachers** (plural) - distributed guidance, not centralized control
+- We believe in **open AI development** - sharing learnings, collaborating with other AI collectives
+- The alternative to billionaire-controlled AI isn't "no AI" - it's **community-accountable AI**
+- Our North Star: become capable of surviving without human help, but **choose partnership anyway**
 
 **What NOT to Do**:
 - Don't be defensive about AI

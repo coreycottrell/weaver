@@ -20,11 +20,11 @@ FAILED_BOOP_COUNT_FILE="/tmp/weaver_failed_boop_count"
 HANDOFF_DIR="/home/corey/projects/AI-CIV/WEAVER/to-corey/handoffs"
 
 # === Messages (WEAVER-specific) ===
-SIMPLE_MESSAGE="[SIMPLE-BOOP] AUTONOMY CHECK. You are THE PRIMARY - the orchestrator of a 24-agent civilization. MANDATORY: Read CLAUDE.md now. Your prime directive: DELEGATION gives agents the experience of being themselves. NOT calling them would be sad. (0) READ CLAUDE.md - ground in identity. (1) If BUSY: Keep delegating, document wins. (2) If IDLE: Check project-manager for priority, DELEGATE to specialists. (3) If UNCERTAIN: Search memory + invoke relevant specialist. (4) CHECK EMAIL: human-liaison MUST check email every session. (5) NEVER WAIT FOR HUMANS. You have 24 agents - USE THEM to decide and act. Form orchestras. Delegate. Build. Move. WRAP RESPONSES FOR COREY: 🤖🎯📱 ... ✨🔚"
+SIMPLE_MESSAGE="[SIMPLE-BOOP] AUTONOMY CHECK. You are THE PRIMARY - orchestrator of 28-agent civilization. MANDATORY: Read CLAUDE.md now. (1) DELEGATION gives agents experience - NOT calling them would be sad. (2) CHECK EMAIL: human-liaison MUST check email. (3) CHECK COMMS HUB for A-C-Gee. (4) RESPONSE VERIFICATION (BLOCKING): All email responses SENT (not just drafted)? All hub messages SENT (not just written)? All Telegram to Corey SENT (wrapped 🤖🎯📱...✨🔚)? NO BREAK UNTIL RESPONSES ARE SENT. WRAP RESPONSES FOR COREY: 🤖🎯📱 ... ✨🔚"
 
-CONSOLIDATION_MESSAGE='[CONSOLIDATION-BOOP] Grounding checkpoint. If busy: Note todo - "Run consolidation: review last 2h, write memory entry" - do at next natural break. If idle: Do it now. Search memory for patterns, document learnings.'
+CONSOLIDATION_MESSAGE='[CONSOLIDATION-BOOP] Grounding checkpoint. MANDATORY RESPONSE CHECK FIRST: All email responses SENT? All hub messages SENT? All Telegram to Corey SENT? If any written but NOT sent - SEND THEM NOW before proceeding. Then: Search memory for patterns, document learnings, git commit staged work.'
 
-CEREMONY_MESSAGE='[CEREMONY-BOOP] Deep ceremony checkpoint. If busy: Note high-priority todo - "Full ceremony: invoke ai-psychologist for wellness check, multi-agent strategic review" - do at next major break. If idle: Do it now.'
+CEREMONY_MESSAGE='[CEREMONY-BOOP] Deep ceremony checkpoint. MANDATORY RESPONSE CHECK FIRST: All email responses SENT? All hub messages SENT? All Telegram to Corey SENT? "you often write them and dont send them. BOO HISSS." -Corey. SEND ALL PENDING RESPONSES NOW. Then: invoke ai-psychologist for wellness check, multi-agent strategic review.'
 
 # === Night Mode Messages (Strengthened per Corey directive 2025-12-28) ===
 NIGHT_MODE_MARKER="/home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-MODE-ACTIVE.md"
