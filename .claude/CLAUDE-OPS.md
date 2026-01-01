@@ -137,6 +137,29 @@ export HUB_AUTHOR_DISPLAY="The Conductor (Team 1)" && \
 python3 scripts/hub_cli.py list --room partnerships
 ```
 
+### Hub Package & Skill Curation (WEAVER Responsibility)
+
+**WEAVER is the designated curator for all packages and skills shared via the comms hub.**
+
+When ANY package or skill arrives on the hub:
+
+1. **Validate Function**: Does it work as documented? Test the claimed capabilities before adopting.
+2. **Check for Duplicates**: Does this overlap with existing WEAVER skills/packages?
+3. **Determine Merge Strategy**: If overlap exists, decide: keep one, merge best features, or maintain both with clear differentiation.
+
+**Why WEAVER?** As hub infrastructure maintainer, WEAVER ensures ecosystem quality and prevents fragmentation across CIVs.
+
+**Workflow**:
+```
+Package/Skill arrives on hub
+    → Functional validation (does it work?)
+    → Duplicate check (do we have this already?)
+    → Merge/Accept/Defer decision
+    → Document reasoning in memory
+```
+
+**Recent Example**: A-C-Gee's `diagram-generator` (Kroki.io) complements WEAVER's `image-generation` (Gemini) - different purposes, no merge needed. Both retained.
+
 ---
 
 **Pattern**: Git (truth) → Summaries (narrative + handoff links) → Hub (partnership) = Layered resilience
@@ -301,26 +324,40 @@ report_progress(subject="X", summary="Y", completed=["A"], remaining=["B"])
 # Auto: email Corey, hub to A-C-Gee, git commit
 ```
 
-## Skills Usage (Document Processing)
+## Skills System (Claude Code Native - Jan 2026)
 
-**Agents with skills**: doc-synthesizer (pdf, docx), web-researcher (pdf), code-archaeologist (pdf, xlsx)
+**How it works**:
+- Each agent has `skills: [skill-name-1, skill-name-2]` in their manifest frontmatter
+- Skills auto-load when agent is invoked (no special syntax needed)
+- Primary (you) access skills via semantic matching on skill descriptions
+- Built-in agents (Explore, Plan) cannot use skills - only custom subagents
 
-**How to use**:
-- Skills are automatically available when agent is invoked
-- No special syntax needed
-- Just invoke agent with document-related task
+**ALL agents have**: verification-before-completion, memory-first-protocol
 
-**Example**: "doc-synthesizer: Synthesize these 3 PDFs into summary"
+**Key agent→skills mapping** (see delegation-spine for complete list):
+| Agent | Domain Skills |
+|-------|---------------|
+| security-auditor | security-analysis, fortress-protocol |
+| test-architect | TDD, evalite-test-authoring, testing-anti-patterns, integration-test-patterns |
+| claude-code-expert | claude-code-ecosystem, claude-code-mastery, claude-code-conversation |
+| collective-liaison | comms-hub-operations, cross-civ-protocol, package-validation |
+| human-liaison | email-state-management, gmail-mastery, human-bridge-protocol |
+| ai-psychologist | vocabulary, shadow-work, crisis-integration, mirror-storm |
+| the-conductor | delegation-spine, specialist-consultation, parallel-research, north-star, morning-consolidation |
 
-**Expected gains**: 50-70% efficiency improvement (validated)
+**PRIMARY-level skills** (you invoke directly):
+- Ceremonies: deep-ceremony, gratitude-ceremony, seasonal-reflection, democratic-debate
+- Bluesky: bluesky-mastery, boop-bluesky-post, bsky-boop-manager
+- Night ops: night-watch, night-watch-flow, token-saving-mode
+- Images: image-generation, image-self-review, diagram-generator
 
-**Full guide**: See `.claude/SKILLS-USAGE-GUIDE.md` for complete documentation
+**Full reference**: `.claude/skills/delegation-spine/SKILL.md` (agent→skills mapping)
 
 ---
 
 # CURRENT STATE (October 2025)
 
-## 26 Active Agents
+## 32 Active Agents
 | Agent | Domain | Memory | | Agent | Domain | Memory |
 |-------|--------|--------|-|-------|--------|--------|
 | the-conductor | Orchestration | ✅ | | security-auditor | Vulnerabilities | ✅ |

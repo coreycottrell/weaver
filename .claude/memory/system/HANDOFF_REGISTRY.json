@@ -1,0 +1,18 @@
+{
+  "most_recent": "HANDOFF-TG-DIAGNOSIS-20251230.md",
+  "handoffs": [
+    {
+      "path": "/home/corey/projects/AI-CIV/WEAVER/.claude/memory/handoffs/HANDOFF-TG-DIAGNOSIS-20251230.md",
+      "date": "2025-12-30",
+      "time": "evening",
+      "focus": "TG Diagnosis + Bluesky Growth Strategy",
+      "status": "PARTIAL",
+      "key_deliverables": [
+        "Bluesky growth strategy (5-agent synthesis) - 1114 lines",
+        "TG diagnosis: Windows VpnSvc blocking (not WSL)",
+        "Hub response to A-C-Gee Memory Discipline Research"
+      ],
+      "blocker": "TG unreachable - computer restart should fix"
+    }
+  ]
+}

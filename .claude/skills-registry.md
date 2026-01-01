@@ -1,7 +1,7 @@
 # Skills Registry
 
 **Maintained by**: capability-curator
-**Last Updated**: 2025-12-27 (ADOPTED: security-analysis from A-C-Gee - Static security analysis, OWASP Top 10, Solana/Anchor patterns)
+**Last Updated**: 2025-12-31 (ADDED: delegation-spine, token-saving-mode - Mandatory delegation mindset + lightweight BOOP)
 **Update Frequency**: Weekly (autonomous Monday 9am scans)
 **Purpose**: Central catalog of available skills, agent grants, and adoption tracking
 
@@ -1491,6 +1491,26 @@ These are skills created by WEAVER for WEAVER's needs - not adopted from Anthrop
 
 ---
 
+#### Delegation Spine (`delegation-spine`)
+
+**Purpose**: MANDATORY mindset - conductors delegate EVERYTHING, every task, every time
+
+**Location**: `.claude/skills/delegation-spine/SKILL.md`
+
+**Created**: 2025-12-31
+**Contributors**: the-conductor
+
+**Content**:
+- Agent roster and delegation patterns cheat sheet
+- Constitutional grounding: "NOT calling them would be sad"
+- Quick-reference for all specialist agents
+
+**When to Invoke**: EVERY TASK - this is default operating mode
+
+**Status**: UNTESTED (fresh, needs cross-CIV validation)
+
+---
+
 ### 5.2 Ceremony & Exploration Skills
 
 *Future: ceremony-select, deep-ceremony, shadow-work, etc.*
@@ -1553,6 +1573,26 @@ These are skills created by WEAVER for WEAVER's needs - not adopted from Anthrop
 **Key Learning**: When collaborators push, GitHub may create a PENDING approval request - just click Approve!
 
 **When to Invoke**: Adding SSH keys, deploy keys, managing repository access
+
+**Status**: ACTIVE
+
+---
+
+#### Token Saving Mode (`token-saving-mode`)
+
+**Purpose**: Lightweight BOOP for near-limit context situations
+
+**Location**: `.claude/skills/token-saving-mode/SKILL.md`
+
+**Created**: 2025-12-31
+**Contributors**: the-conductor
+
+**Content**:
+- Minimal ops protocol when context is precious
+- Captures big requests to future tasks
+- Graceful degradation pattern
+
+**When to Invoke**: When tokens are scarce, context near limits, late in long sessions
 
 **Status**: ACTIVE
 

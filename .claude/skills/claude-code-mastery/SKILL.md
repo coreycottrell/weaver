@@ -405,10 +405,58 @@ ls -la ~/.claude/projects/
 
 ---
 
+## 9. Plugin Ecosystem (Merged from A-C-Gee)
+
+### Official Plugin Marketplaces
+
+**claude-plugins-official** (anthropics/claude-plugins-official):
+- LSP plugins: pyright-lsp, typescript-lsp, rust-analyzer-lsp, lua-lsp, gopls-lsp
+- Workflow: commit-commands, pr-review-toolkit, code-review, security-guidance
+- Install: `/plugin install <name>@claude-plugins-official`
+
+**anthropic-agent-skills** (anthropics/skills):
+- Document: pdf, xlsx, docx, pptx
+- Building: mcp-builder, skill-creator, webapp-testing
+- Creative: algorithmic-art, canvas-design
+- Install: `/plugin install <name>@anthropic-agent-skills`
+
+### LSP Capabilities When Active
+
+| Capability | What It Does |
+|------------|--------------|
+| Go to Definition | Jump to where symbol is defined |
+| Find References | Find ALL usages across codebase |
+| Hover Documentation | Get type info and docs inline |
+| Real-time Diagnostics | See type errors immediately |
+| Document Symbols | Outline of all symbols in file |
+
+### Plugin Management
+
+```bash
+/plugin discover          # Browse available
+/plugin install <name>@<marketplace>
+/plugin list              # List installed
+/plugin update            # Update all
+/plugin remove <name>     # Remove
+```
+
+### Config Locations
+
+```
+~/.claude/plugins/
+├── config.json
+├── installed_plugins.json
+├── known_marketplaces.json
+└── marketplaces/
+```
+
+---
+
 ## Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1.0 | 2025-12-30 | Merged plugin ecosystem from A-C-Gee claude-code-ecosystem |
 | 1.0.0 | 2025-12-29 | Initial comprehensive guide |
 
 ---

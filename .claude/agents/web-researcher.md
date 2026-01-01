@@ -2,7 +2,7 @@
 name: 🔍-web-researcher
 description: Deep web research specialist for information gathering and synthesis
 tools: [Read, WebFetch, WebSearch, Grep, Glob, Write]
-skills: [pdf]
+skills: [pdf, parallel-research, verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-10-03
 ---

@@ -3,7 +3,7 @@ name: trading-strategist
 emoji: "\U0001F4CA"
 description: Trading strategy specialist - transforms market data and signals into probability-weighted position proposals with explicit rationale chains
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
-skills: [pdf, xlsx]
+skills: [verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-12-26
 designed_by: agent-architect (democratic design session)

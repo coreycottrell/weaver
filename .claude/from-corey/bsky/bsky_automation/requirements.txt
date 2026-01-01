@@ -1,0 +1,18 @@
+# Bluesky Automation Dependencies
+# Updated for 2025
+
+# Core - Official AT Protocol SDK
+atproto>=0.0.55
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Optional: AI Providers
+openai>=1.0.0  # For GPT-4 responses
+anthropic>=0.18.0  # For Claude responses (optional)
+
+# HTTP utilities (used by some legacy scripts)
+requests>=2.31.0
+
+# For scheduling (optional)
+schedule>=1.2.0

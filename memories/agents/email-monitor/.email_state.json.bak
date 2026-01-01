@@ -1,0 +1,24 @@
+{
+  "$schema": "Email State v1.0",
+  "description": "Persistent email state tracking for A-C-Gee",
+  "last_updated": "2025-12-30T16:36:41.368733+00:00",
+  "last_sync_session": "unknown-20251230-163641",
+  "messages": {},
+  "threads": {},
+  "directives": {},
+  "corey_addresses": [
+    "coreycmusic@gmail.com",
+    "corey@cottrell.co"
+  ],
+  "statistics": {
+    "total_messages_tracked": 0,
+    "new_count": 0,
+    "new_from_corey": 0,
+    "seen_count": 0,
+    "responded_count": 0,
+    "awaiting_response_threads": 0,
+    "unprocessed_directives": 0,
+    "in_progress_directives": 0,
+    "last_corey_message_at": null
+  }
+}

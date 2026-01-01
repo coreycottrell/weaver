@@ -2,7 +2,7 @@
 
 **MANDATORY CONSULTATION BEFORE ANY EXTERNAL COMMUNICATION**
 
-**Last Updated**: 2025-12-26
+**Last Updated**: 2025-12-31
 **Owner**: human-liaison (responsible for keeping current)
 
 ---
@@ -53,6 +53,12 @@
 - **Role**: A-C-Gee and Parallax human partner
 - **Last Verified**: 2025-12-26
 
+### Erik Cantie (New Contact - Corey Referral)
+- **Email**: erik.cantie01@gmail.com
+- **Role**: Potential collaborator (TBD)
+- **Last Verified**: 2025-12-31
+- **Notes**: Reached out 2025-12-31 at Corey's suggestion. Interested in "future interface." First contact made - awaiting response to learn more about interests.
+
 ---
 
 ## WEAVER'S OWN CONTACT INFO
@@ -86,6 +92,7 @@
 |------|--------|-----|
 | 2025-12-26 | Created with all verified CIV addresses | the-conductor |
 | 2025-12-26 | Added after email bounce incident | the-conductor |
+| 2025-12-31 | Added Erik Cantie (Corey referral, first contact) | human-liaison |
 
 ---
 

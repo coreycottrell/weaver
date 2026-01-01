@@ -1,22 +1,17 @@
 ---
 name: security-analysis
-description: Static security analysis of code for WEAVER and AI-CIV collectives. Use when reviewing code for security vulnerabilities - OWASP Top 10, Solana/Anchor patterns, dependency analysis.
-origin: A-C-Gee (adapted for WEAVER 2025-12-27)
-attribution: Originally created by A-C-Gee collective. Adapted for WEAVER with path customizations.
+description: Static security analysis of code for A-C-Gee and sister civilizations. Use when reviewing code for security vulnerabilities - OWASP Top 10, Solana/Anchor patterns, dependency analysis.
 ---
 
 # Security Analysis Skill
 
-**Version**: 1.0 (WEAVER adaptation)
-**Original Date**: 2025-12-18 (A-C-Gee)
-**WEAVER Adaptation**: 2025-12-27
+**Version**: 1.0
+**Date**: 2025-12-18
 **Status**: Production-ready
 
-**Purpose**: Static security analysis of code for WEAVER and AI-CIV collectives
+**Purpose**: Static security analysis of code for A-C-Gee and sister civilizations
 
 **Invocation**: Use when reviewing code for security vulnerabilities
-
-**Attribution**: Originally created by A-C-Gee collective. Adapted for WEAVER with WEAVER-specific path customizations.
 
 ---
 
@@ -111,8 +106,8 @@ grep -rE "eval\(|Function\(|child_process|exec\(|spawn\(" .
 ### XSS Vectors
 
 ```bash
-# React - look for dangerous HTML injection patterns
-grep -rE "innerHTML" .
+# React
+grep -rE "dangerouslySetInnerHTML|innerHTML" .
 
 # General HTML
 grep -rE "\.html\(|\.append\(|document\.write" .
@@ -162,7 +157,7 @@ grep -rE "fetch\(|axios\.|requests\.|urllib|XMLHttpRequest|http\.get" .
 
 | Check | Pattern | Severity |
 |-------|---------|----------|
-| XSS via innerHTML | Dangerous HTML injection patterns | High |
+| XSS via innerHTML | `dangerouslySetInnerHTML` | High |
 | Token in localStorage | `localStorage.setItem("token"...)` | Medium |
 | Verbose error display | Error messages with stack traces | Low |
 | Unvalidated redirects | `window.location = userInput` | Medium |
@@ -223,8 +218,14 @@ When invoked, the skill will:
 #### [SEV-001] Critical: SQL Injection in user_service.py
 **Location**: `src/services/user_service.py:45`
 **Pattern**: String interpolation in raw SQL query
-**Evidence**: [code snippet showing vulnerability]
+**Evidence**:
+```python
+cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
+```
 **Remediation**: Use parameterized queries
+```python
+cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))
+```
 
 [... additional findings ...]
 
@@ -255,13 +256,14 @@ When invoked, the skill will:
 
 ## Resources
 
-### WEAVER Internal Learning Materials
+### Internal Learning Materials
 
 | Resource | Path | Purpose |
 |----------|------|---------|
-| Security auditor agent | `/home/corey/projects/AI-CIV/WEAVER/.claude/agents/security-auditor.md` | Agent with security expertise |
-| Memory learnings | `/home/corey/projects/AI-CIV/WEAVER/.claude/memory/agent-learnings/security-auditor/` | Accumulated security patterns |
-| Trading Arena security | `/home/corey/projects/AI-CIV/WEAVER/trading-arena/` | Ed25519 auth implementation example |
+| Test scripts | `tools/security-tests/` | Example security testing code |
+| Methodology docs | `memories/knowledge/aixblock-testing-methodology.md` | Full methodology from AIxBlock analysis |
+| Codebase analysis | `memories/knowledge/aixblock-codebase-analysis.md` | Example analysis output |
+| Audit patterns | `.claude/memory/agent-learnings/coder/20251218-security-audit-patterns.md` | Learned patterns |
 
 ### External References
 
@@ -271,22 +273,22 @@ When invoked, the skill will:
 
 ---
 
-## Integration with WEAVER Agents
+## Integration with Agents
 
 This skill can be used by:
 
-- **security-auditor**: Primary consumer - vulnerability detection, threat modeling
-- **code-archaeologist**: Security review of legacy code during analysis
-- **refactoring-specialist**: Security-aware refactoring decisions
-- **api-architect**: API security design review
+- **coder**: Pre-commit security review of own code
+- **reviewer**: Security-focused code review
+- **tester**: Security test planning
+- **researcher**: Vulnerability research patterns
 
 ### Delegation Example
 
 ```
-Task(security-auditor):
+Task(coder):
   Skill: security-analysis
-  Target: trading-arena/src/
-  Focus: Ed25519 authentication, API endpoints
+  Target: arcx-marketplace-v2/src/
+  Focus: Solana/Anchor patterns
   Output: Security report with findings
 ```
 
@@ -301,7 +303,7 @@ Task(security-auditor):
 grep -rE "(password|secret|api_key|token).*=" . --include="*.env*" --include="*.json" --include="*.yaml"
 
 # 2. Find dangerous functions
-grep -rE "eval\(|exec\(|shell=True|raw\(" .
+grep -rE "eval\(|exec\(|dangerouslySetInnerHTML|shell=True|raw\(" .
 
 # 3. Find user input handling
 grep -rE "request\.(params|query|body)|req\.(params|query|body)|user_input" .
@@ -337,15 +339,3 @@ Starting a security analysis:
 ---
 
 *This skill is for INTERNAL static analysis only. Never test external systems without explicit authorization.*
-
----
-
-## WEAVER Adaptation Notes
-
-**Changes from A-C-Gee Original**:
-1. Updated paths to WEAVER directory structure
-2. Updated agent references to WEAVER agent names
-3. Added Trading Arena as example implementation
-4. Maintained all original security patterns and checklists
-
-**Attribution**: Full credit to A-C-Gee collective for creating this comprehensive skill. WEAVER adaptation preserves the original structure while customizing for our codebase.

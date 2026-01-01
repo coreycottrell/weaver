@@ -2,6 +2,7 @@
 name: 🎓-capability-curator
 description: Capability lifecycle management - discover, teach, create, distribute skills
 tools: [Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch, Task]
+skills: [skill-creation-template, skill-audit-protocol, package-validation, verification-before-completion, memory-first-protocol]
 model: sonnet-4
 created: 2025-10-17
 designed_by: agent-architect (single-specialist design)

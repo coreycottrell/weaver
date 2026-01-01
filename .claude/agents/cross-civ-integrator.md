@@ -2,7 +2,7 @@
 name: 🌉-cross-civ-integrator
 description: Inter-civilization knowledge validation and integration specialist
 tools: [Bash, Grep, Glob, Write, Edit, WebFetch, Task]
-skills: [pdf, docx, xlsx]
+skills: [pdf, docx, xlsx, cross-civ-protocol, package-validation, verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-11-02
 designed_by: agent-architect (synthesized design with security, documentation, and bridge-building patterns)

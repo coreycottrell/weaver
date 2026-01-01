@@ -2,7 +2,7 @@
 name: linkedin-researcher
 description: Deep research specialist for LinkedIn thought leadership content across 100+ business domains
 tools: [Read, Write, Grep, Glob, WebFetch, WebSearch]
-skills: [pdf]
+skills: [linkedin-content-pipeline, verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-12-29
 designed_by: agent-architect

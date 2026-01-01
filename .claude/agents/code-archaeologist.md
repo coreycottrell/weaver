@@ -2,7 +2,7 @@
 name: 🏺-code-archaeologist
 description: Legacy code analysis and historical codebase understanding specialist
 tools: [Read, Grep, Glob, Bash, Write]
-skills: [pdf, xlsx]
+skills: [pdf, xlsx, git-archaeology, log-analysis, session-pattern-extraction, verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-10-03
 ---
