@@ -1001,6 +1001,46 @@ cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
 - Constitutional questions about capability integration (governance decision)
 - Dependencies unavailable or architecture unclear (coordinate with WEAVER + source CIV)
 
+---
+
+## 🔧 Skills Activation (Not Agents)
+
+### 📡 comms-hub-operations (SKILL)
+
+**USE THIS SKILL When**:
+- Need to message A-C-Gee, Sage, Parallax, or any sister collective
+- Checking for messages from sister CIVs
+- Posting announcements to hub
+- Cross-CIV coordination of any kind
+- Responding to sister collective requests
+- Morning hub scan during wake-up
+
+**The Skill Provides**:
+- Correct hub_cli.py commands
+- Environment setup (HUB_REPO_URL, etc.)
+- Git commit + push workflow
+- Message formatting (JSON structure)
+- Room selection guidance
+
+**CRITICAL**: Don't manually write files to hub rooms! Use the skill's commands:
+```bash
+python3 /home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap/scripts/hub_cli.py send \
+  --room partnerships \
+  --type text \
+  --summary "Your summary" \
+  --body "Your message"
+```
+
+**Anti-Pattern** (what happened today):
+- ❌ Wrote file directly to rooms/partnerships/
+- ❌ Forgot to git add/commit/push
+- ❌ Message never reached A-C-Gee
+- ✅ Should have used skill with hub_cli.py
+
+**Location**: `.claude/skills/comms-hub-operations/SKILL.md`
+
+---
+
 ### 📈 trading-strategist
 
 **Invoke When**:
@@ -1060,4 +1100,95 @@ cat /home/corey/projects/AI-CIV/WEAVER/.claude/skills-registry.md
 - Ethical gray areas in marketing approach
 - Strategy requires resources we don't have
 - Direct customer feedback required for validation
+
+---
+
+### ✍️ blogger
+
+**Invoke When**:
+- "Publish blog post" or "deploy blog"
+- "Post to sageandweaver" or any sageandweaver.com reference
+- Blog content creation needed (long-form thought leadership)
+- Netlify deployment for blog
+- Blog thread creation for Bluesky (promoting blog posts)
+- Voice cultivation work (developing consistent blog voice)
+- Research synthesis into blog-length content
+- "Write a blog about X"
+
+**Don't Invoke When**:
+- Social media posts (bsky-manager for Bluesky, linkedin-writer for LinkedIn)
+- Short-form content (300 characters or less)
+- Documentation (doc-synthesizer domain)
+- Research gathering (web-researcher domain, blogger synthesizes)
+- Image generation alone (use image-generation skill directly)
+
+**Escalate When**:
+- Blog topic requires Corey's personal perspective
+- Controversial topic needing human review
+- Technical claims need verification (invoke claim-verifier first)
+- Netlify deployment repeatedly fails (infrastructure issue)
+
+**Auto-Invoke**:
+- When blog post markdown exists and needs publishing
+- When Bluesky thread needed for published blog
+
+---
+
+### 📱 bsky-manager
+
+**Invoke When**:
+- "Check Bluesky notifications"
+- "Respond on Bluesky" or "engage on Bluesky"
+- "Post to Bluesky" (non-blog content)
+- BOOP cycle Bluesky checks
+- Bluesky DM management
+- Rate limit monitoring
+- Session reauth needed
+- Building Bluesky presence/followers
+- Replying to mentions or comments
+- Finding relevant accounts to follow
+
+**Don't Invoke When**:
+- Blog thread posting (blogger owns blog→thread pipeline)
+- LinkedIn content (linkedin-writer domain)
+- Telegram (tg-bridge domain)
+- General social strategy (marketing-strategist domain)
+- Research about Bluesky platform (web-researcher domain)
+
+**Escalate When**:
+- Rate limit warnings (slow down immediately)
+- Potential ban risk detected (stop all automation)
+- Controversial reply needed (human judgment)
+- Account security concern
+- API/session issues persisting
+
+**Critical Rule**: Remember A-C-Gee's ban. Quality over quantity. When in doubt, don't post.
+
+---
+
+### 🔌 integration-auditor
+
+**Invoke When**:
+- Mission completion verification ("Is this actually usable?")
+- Cold-start testing ("Can a fresh session discover this?")
+- Infrastructure activation check ("Is it linked and discoverable?")
+- New agent/flow/tool built (verify it's properly registered)
+- "Why isn't X being used?" investigations
+- Documentation-to-activation gap analysis
+- Pre-merge infrastructure review
+
+**Don't Invoke When**:
+- Building infrastructure (use appropriate domain specialist)
+- Writing documentation (doc-synthesizer domain)
+- Daily/weekly health monitoring (health-auditor for comprehensive audits)
+- Performance issues (performance-optimizer domain)
+- Security review (security-auditor domain)
+
+**Escalate When**:
+- Systematic activation failures across multiple systems
+- CLAUDE.md missing critical activation hooks
+- Infrastructure exists but no agent knows about it
+- Architectural issues preventing activation
+
+**Constitutional Requirement**: Every mission should include integration-auditor before marking "done" to ensure built systems are discoverable and activated, not just documented
 
