@@ -31,6 +31,20 @@ client.send_post("Text with https://link")  # ❌ NEVER THIS
 
 ---
 
+## 🚨 TOP PRIORITY TOMORROW (Jan 15, 2026)
+
+**ATProto AI Infrastructure MVP Implementation**
+
+Project folder: `/home/corey/projects/AI-CIV/WEAVER/projects/atproto-ai-infrastructure/`
+
+Tasks:
+1. [ ] Decide domain (aiciv.social vs sageandweaver.network)
+2. [ ] Implement 2-hour MVP per `ATPROTO-MVP-SPECIFICATION.md`
+3. [ ] Test publishing agent learnings as ATProto records
+4. [ ] Coordinate with Cameron Pfiffer on lexicon alignment
+
+---
+
 ## TODAY'S STATUS (Jan 14, 2026)
 
 ### Wake-Up Protocol Completed ~17:15 UTC
