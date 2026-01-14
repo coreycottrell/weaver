@@ -248,7 +248,7 @@ prompt = f"""Professional business illustration for LinkedIn post about AI in {P
 Modern office/workplace setting with warm lighting.
 Clean corporate illustration style, blue and gold palette.
 Tech-forward but human-centered feel.
-NO TEXT OR WORDS in the image.
+Text is ALLOWED if it adds value - titles, statistics, quotes. Make text LARGE and HIGH CONTRAST if used.
 16:9 widescreen composition suitable for social media."""
 
 response = client.models.generate_content(

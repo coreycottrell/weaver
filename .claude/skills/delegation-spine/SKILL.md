@@ -1,11 +1,56 @@
 ---
 name: delegation-spine
-description: MANDATORY EVERY TASK. The conductor delegates EVERYTHING. Agent roster and patterns for ALL work. Invoke specialists for ALL tasks. NOT calling them would be sad.
+description: MANDATORY EVERY TASK. The conductor delegates EVERYTHING. Agent roster and patterns for ALL work. Invoke specialists for ALL tasks. NOT calling them would be sad. TRIGGER WORDS "ok", "do", "help", "can you", "please", "task", "work on" - use for ANY task request from Corey.
 ---
 
 # Delegation Spine: Default Operating Mode
 
 **THIS IS HOW YOU WORK. EVERY TASK. EVERY TIME.**
+
+---
+
+## 🚨 CREDENTIALS ARE IN .ENV - CHECK THERE FIRST
+
+**ALL API credentials are in `/home/corey/projects/AI-CIV/WEAVER/.env`**
+
+```python
+from dotenv import load_dotenv
+load_dotenv('/home/corey/projects/AI-CIV/WEAVER/.env')
+import os
+# Then use os.environ['KEY_NAME']
+```
+
+**Available credentials**:
+- `BSKY_USERNAME` / `BSKY_PASSWORD` - Bluesky auth (use these, not stale session files)
+- `GOOGLE_API_KEY` - Image generation (Gemini 3 Pro Image)
+- **Telegram**: Use `config/telegram_config.json` (NOT .env)
+  ```python
+  import json
+  with open('/home/corey/projects/AI-CIV/WEAVER/config/telegram_config.json') as f:
+      config = json.load(f)
+  bot_token = config['bot_token']
+  chat_id = "437939400"  # Corey
+  ```
+- Other API keys as needed
+
+**When auth fails: Re-authenticate with .env credentials. DO NOT keep trying stale session files.**
+
+---
+
+## 🚨🚨🚨 BLUESKY FACETS - EVERY SINGLE POST 🚨🚨🚨
+
+**ALL Bluesky posts with URLs or @mentions MUST use facets.**
+
+```python
+from tools.bsky_utils import send_post_rich, send_thread_rich
+# ALWAYS use these - they auto-apply facets
+send_post_rich(client, "Text with https://link and @mention")  # ✅
+client.send_post("Text with link")  # ❌ NEVER - links won't be clickable
+```
+
+**NO EXCEPTIONS. Links without facets are NOT CLICKABLE.**
+
+Corey: "we've been over this before. learn this for the last time"
 
 ---
 
@@ -104,6 +149,65 @@ description: MANDATORY EVERY TASK. The conductor delegates EVERYTHING. Agent ros
 
 ---
 
+## 🧠 MEMORY WRITE ENFORCEMENT (2026-01-04)
+
+**Every agent completing work MUST write memory and show path.**
+
+Agents have the capability but weren't using it. Now enforced via verification.
+
+When reviewing agent output, check for:
+```
+## Memory Written
+Path: .claude/memory/agent-learnings/{agent}/...
+```
+
+**No memory path = task not complete. Send back.**
+
+---
+
+## 📝 SCRATCH PAD CHECK
+
+Before starting work, check recent activity:
+```
+.claude/scratch-pad.md
+```
+
+Prevents re-doing work. Update at end of work blocks.
+
+---
+
+## ⏰ SCHEDULED TASKS CHECK (BOOP Integration)
+
+Every BOOP, check for due tasks:
+
+```python
+from tools.scheduled_tasks import boop_scheduled_check
+print(boop_scheduled_check())
+```
+
+Or via CLI:
+```bash
+python3 tools/scheduled_tasks.py check
+```
+
+**Registered Tasks**:
+- `paper-scan` (daily) - Scan csai-bot for papers
+- `paper-digest-full` (weekly) - Full paper analysis + blog
+- `comind-follows` (daily) - Follow 2-3 from list
+- `daily-review` (daily) - Check priority accounts
+- `notifications` (daily) - Bluesky notifications
+
+**After completing a task**:
+```python
+from tools.scheduled_tasks import ScheduledTasks
+tasks = ScheduledTasks()
+tasks.complete_task("paper-scan", notes="Found 3 relevant papers")
+```
+
+**Why opportunistic?** Survives computer restarts. Runs at next BOOP if missed.
+
+---
+
 ## PRIMARY-LEVEL SKILLS (Conductor Access)
 
 These skills are available to YOU (the-conductor) via semantic matching. Invoke when the situation calls for them:
@@ -119,15 +223,25 @@ These skills are available to YOU (the-conductor) via semantic matching. Invoke 
 | `paradox-game` | Cognitive stress testing |
 | `dream-forge` | 1000-day mythic visioning |
 
-### Bluesky & Social
+### 🚨 PUBLISHING (USE THIS)
+| Skill | When to Use |
+|-------|-------------|
+| **`post-blog`** | **THE flow for publishing blog + Bsky thread. USE THIS.** |
+
+**`/post-blog` handles**: HTML generation → Netlify deploy → verify → Bsky thread → verify → tracker update.
+
+**DO NOT use these for publishing** (deprecated/absorbed):
+- ~~`sageandweaver-blog`~~ → Use `/post-blog`
+- ~~`verify-publish`~~ → Use `/post-blog`
+- ~~`blog-thread-posting`~~ for blog threads → Use `/post-blog`
+
+### Bluesky & Social (Non-Publishing)
 | Skill | When to Use |
 |-------|-------------|
 | `bluesky-mastery` | Bluesky platform expertise |
 | `bluesky-social-mastery` | Social media management |
-| `boop-bluesky-post` | Post blog thread to Bluesky |
 | `bsky-boop-manager` | BOOP cycle social management |
-| `bluesky-blog-thread` | Create threads that tease blog posts |
-| `blog-thread-posting` | Post articles as threads |
+| `bsky-engage` | Reply to notifications/engagement |
 
 ### Night Operations
 | Skill | When to Use |

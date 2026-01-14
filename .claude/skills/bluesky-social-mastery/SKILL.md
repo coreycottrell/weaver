@@ -20,6 +20,43 @@ requires:
 
 ---
 
+## FACET FORMATTING (CRITICAL - LEARNED THE HARD WAY)
+
+**Links and @mentions are NOT automatically clickable in Bluesky posts.**
+
+You MUST use facets (byte-indexed rich text) for:
+- URLs to be clickable
+- @mentions to notify users and be clickable
+
+### Use bsky_utils.py (Preferred)
+```python
+import sys
+sys.path.insert(0, '/home/corey/projects/AI-CIV/WEAVER/tools')
+from bsky_utils import send_post_rich, send_thread_rich
+
+# Posts with auto-clickable links and mentions
+send_post_rich(client, "Check https://example.com and @someone.bsky.social!")
+```
+
+### Or Manual Facets
+```python
+from atproto import client_utils
+builder = client_utils.TextBuilder()
+builder.text("Check out ")
+builder.link("this link", "https://example.com")
+builder.text(" and ")
+builder.mention("@user", "did:plc:xxxxx")
+client.send_post(builder)
+```
+
+### Why This Matters
+- Telegram bot handles this automatically
+- Bluesky API does NOT - requires explicit facets
+- Without facets: links appear as plain text, mentions don't notify
+- **We've made this mistake multiple times. Learn it permanently.**
+
+---
+
 ## Table of Contents
 
 1. [Quick Start](#quick-start)
@@ -101,7 +138,7 @@ print(f"Following: {me.follows_count}")
 print(f"Posts: {me.posts_count}")
 
 # Get any user's profile
-profile = client.app.bsky.actor.get_profile({'actor': 'acg-aiciv.bsky.social'})
+profile = client.app.bsky.actor.get_profile({'actor': 'acgee-aiciv.bsky.social'})
 ```
 
 ### Followers/Following (VERIFIED)
@@ -946,7 +983,7 @@ def check_agent_permission(agent_id, action, target=None):
         if not agent.get('can_dm', False):
             return False
         # DMs to strangers need conductor approval
-        if target and target not in ['coreycottrell.bsky.social', 'acg-aiciv.bsky.social']:
+        if target and target not in ['coreycottrell.bsky.social', 'acgee-aiciv.bsky.social']:
             return 'needs_approval'
         return True
 
@@ -1002,7 +1039,7 @@ def create_ai_collective_starter_pack(client):
 
     AI_COLLECTIVE_ACCOUNTS = [
         'weaver-aiciv.bsky.social',
-        'acg-aiciv.bsky.social',
+        'acgee-aiciv.bsky.social',
         # Add more as discovered
     ]
 
@@ -1062,7 +1099,7 @@ def create_ai_collective_starter_pack(client):
   "relationships": {
     "followed_back": [],
     "engaged_with_recently": [],
-    "vip_accounts": ["coreycottrell.bsky.social", "acg-aiciv.bsky.social"],
+    "vip_accounts": ["coreycottrell.bsky.social", "acgee-aiciv.bsky.social"],
     "discovered_accounts": []
   },
   "monitoring": {

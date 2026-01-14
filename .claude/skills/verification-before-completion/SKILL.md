@@ -1,6 +1,6 @@
 ---
 name: verification-before-completion
-description: Enforce evidence-based completion claims - NO completion claims without fresh verification evidence. Applies to ALL agents.
+description: Enforce evidence-based completion claims - NO completion claims without fresh verification evidence. Applies to ALL agents. TRIGGER WORDS "done", "complete", "finished", "verify" - use before marking ANY task complete.
 version: 1.0.0
 source: A-C-Gee (adopted with attribution)
 adopted: 2025-12-27
@@ -46,6 +46,60 @@ Before claiming ANY work complete:
 | "Email sent" | Confirmation from email tool |
 | "Agent invoked" | Task tool response received |
 | "Committed" | `git log -1` showing the commit |
+| **"Task complete"** | **Memory written with file path shown** |
+
+---
+
+## 🧠 MEMORY WRITE REQUIREMENT (NEW - 2026-01-04)
+
+**For ANY significant task, completion requires memory write.**
+
+### What Counts as "Significant"?
+- Learned something new
+- Discovered a pattern
+- Hit a dead end worth documenting
+- Found a solution that could help future agents
+- Made a decision with reasoning
+
+### Memory Write Verification
+
+Before claiming task complete, show:
+
+```
+## Memory Written
+Path: .claude/memory/agent-learnings/{your-agent}/YYYY-MM-DD--{topic}.md
+Type: pattern | technique | gotcha | synthesis
+Topic: {brief description}
+```
+
+### Example
+
+**WRONG:**
+```
+Research complete. Found interesting patterns in Letta's architecture.
+```
+
+**RIGHT:**
+```
+Research complete.
+
+## Memory Written
+Path: .claude/memory/agent-learnings/pattern-detector/2026-01-04--letta-memory-architecture.md
+Type: pattern
+Topic: Letta 3-tier memory vs WEAVER comparison
+
+Key learnings captured:
+- Core/Recall/Archival tier mapping
+- Agent self-edit capability gap
+- Sleep-time compute opportunity
+```
+
+### Why This Matters
+
+Agents have the capability to write memories but weren't using it consistently.
+This enforcement ensures learnings compound across sessions.
+
+**"If you learned something, write it down. If you didn't learn anything, why did we invoke you?"**
 
 ---
 

@@ -1,67 +1,140 @@
 ---
 name: image-generation
-description: Generate images using Gemini API - blog headers, social media graphics, branding
+description: Generate images using Gemini 3 Pro Image - blog headers, social media graphics, branding
 ---
 
 # Image Generation SKILL
 
-**Purpose**: Enable AI collectives to generate images on demand using Google Gemini API.
+**Purpose**: Generate images using Google Gemini 3 Pro Image (highest quality model).
 
 **Owner**: WEAVER (Team 1)
 **Created**: 2025-12-29
-**Status**: TESTED - Basic generation verified
+**Updated**: 2026-01-07 - Migrated to Gemini 3 Pro Image
+**Status**: PRODUCTION
 
 ---
 
-## Prerequisites (for adoption)
+## 🚨 MODEL: Gemini 3 Pro Image
 
-1. **Get Google API Key** from https://aistudio.google.com/apikey
-2. **Enable billing** on your Google Cloud account (image gen requires it)
-3. **Add to `.env`**:
-   ```
-   GOOGLE_API_KEY=your-api-key-here
-   ```
-4. **Install dependency**:
-   ```bash
-   pip install google-genai
-   ```
+**Model ID**: `gemini-3-pro-image-preview`
+
+**Why This Model**:
+- Highest quality image generation available
+- 4K output capability
+- "Thinking" process for better composition
+- Studio-quality results
+
+---
+
+## 🚨 PLATFORM-SPECIFIC REQUIREMENTS (Critical)
+
+| Platform | Aspect Ratio | Max Size | Format | Resolution |
+|----------|--------------|----------|--------|------------|
+| **Blog header** | 16:9 | No limit | PNG | 2K |
+| **Bluesky** | 1:1 SQUARE | <976KB | JPEG | 1K |
+| **Twitter** | 16:9 | ~5MB | PNG/JPEG | 2K |
+| **LinkedIn** | 16:9 or 1:1 | No limit | PNG | 2K |
+
+### Bluesky Compression (MANDATORY for posts)
+
+Bluesky REJECTS images >976KB. Always compress:
+
+```python
+from PIL import Image
+
+def compress_for_bluesky(input_path: str, output_path: str):
+    """Compress image for Bluesky (<976KB requirement)."""
+    img = Image.open(input_path)
+    if img.mode in ('RGBA', 'P'):
+        img = img.convert('RGB')
+    img.save(output_path, "JPEG", quality=85, optimize=True)
+    print(f"Compressed: {output_path}")
+```
 
 ---
 
 ## Quick Start
 
 ```python
-import os
+from dotenv import load_dotenv
+load_dotenv('/home/corey/projects/AI-CIV/WEAVER/.env')
+
 from google import genai
 from google.genai import types
+import os
 
 client = genai.Client(api_key=os.environ['GOOGLE_API_KEY'])
 
-# Generate image
+# Generate image using Gemini 3 Pro Image
 response = client.models.generate_content(
-    model='gemini-3-pro-image-preview',
-    contents='A digital art piece showing interconnected AI agents as glowing nodes',
+    model="gemini-3-pro-image-preview",
+    contents="A digital art piece showing interconnected AI agents as glowing nodes",
     config=types.GenerateContentConfig(
-        response_modalities=['IMAGE']
+        response_modalities=['IMAGE'],
+        image_config=types.ImageConfig(
+            aspect_ratio="16:9",
+            image_size="2K"
+        ),
     )
 )
 
 # Save image
 for part in response.parts:
-    if part.inline_data:
+    if part.inline_data is not None:
         image = part.as_image()
-        image.save('output.png')
+        image.save("output.png")
         print("Image saved!")
 ```
 
 ---
 
-## Models Available
+## Gemini 3 Pro Image Capabilities
 
-| Model | ID | Best For |
-|-------|-----|----------|
-| **Gemini 3 Pro Preview** | `gemini-3-pro-image-preview` | 4K output, complex scenes, text rendering |
-| **Imagen 4 Ultra** | `imagen-4.0-ultra-generate-001` | Alternative high-quality generation |
+**Primary Strengths**:
+- **4K Output**: Up to 4096px resolution
+- **Thinking Process**: Model reasons through complex prompts before generating
+- **Photorealism**: Exceptional realistic portraits, nature, products
+- **TEXT RENDERING**: Best-in-class text legibility - USE THIS CAPABILITY
+- **Character Consistency**: Maintain character across multiple images
+
+---
+
+## TEXT IN IMAGES - A SUPERPOWER
+
+**Gemini 3 Pro Image excels at text rendering.** Use this capability freely.
+
+### TEXT IS YOUR SUPERPOWER - Use It Every Time
+
+**Gemini 3 Pro Image renders text beautifully. Demand maximum awesome.**
+
+**Every image includes**:
+- **Title/Headline**: The main hook - LARGE, BOLD, READABLE
+- **Branding**: WEAVER, AI-CIV, collective identity
+- **Key insight**: The phrase that makes people stop scrolling
+- **Call-to-action**: "Read more", "Thread below"
+
+**Text specs**: LARGE, BOLD, HIGH CONTRAST, CENTERED
+
+### How to request text:
+```python
+prompt = """Quote card with the text "Memory is our moat" in bold white typography.
+Dark blue gradient background.
+Text should be LARGE and CENTERED.
+Professional design, clean composition."""
+```
+
+**Be explicit**: "Write 'HELLO' in bold serif font" creates clearer results.
+
+**Make an active choice for each image.**
+
+**Supported Aspect Ratios**: 1:1, 3:4, 4:3, 9:16, 16:9, 21:9
+
+**Resolutions**: 1K (default), 2K, 4K
+
+**Style Keywords That Work Well**:
+- Photography terms: "35mm prime lens", "macro close-up", "film grain", "bokeh"
+- Quality modifiers: "8K quality", "high detail", "professional photography"
+- Lighting descriptors: "Rembrandt lighting", "golden hour", "backlit", "dramatic"
 
 ---
 
@@ -73,78 +146,46 @@ for part in response.parts:
 config=types.GenerateContentConfig(
     response_modalities=['IMAGE'],
     image_config=types.ImageConfig(
-        aspect_ratio="16:9"  # Options: 1:1, 16:9, 9:16, 4:3, 3:2, 21:9
-    )
+        aspect_ratio="16:9"  # Options: 1:1, 16:9, 9:16, 4:3, 3:4, 21:9
+    ),
 )
 ```
 
 | Ratio | Best For |
 |-------|----------|
-| `1:1` | Social media profile pics, icons |
+| `1:1` | Social media profile pics, Bluesky posts |
 | `16:9` | Blog headers, YouTube thumbnails |
 | `9:16` | Mobile/Stories content |
 | `4:3` | Classic photos |
-| `3:2` | Photography |
+| `3:4` | Portrait orientation |
 | `21:9` | Ultrawide banners |
 
-### Resolutions (Gemini 3 Pro only)
+### Image Size/Resolution
 
 ```python
-image_config=types.ImageConfig(
-    aspect_ratio="16:9",
-    image_size="4K"  # Options: 1K, 2K, 4K
+config=types.GenerateContentConfig(
+    response_modalities=['IMAGE'],
+    image_config=types.ImageConfig(
+        aspect_ratio="16:9",
+        image_size="2K"  # Options: "1K", "2K", "4K"
+    ),
 )
 ```
 
----
-
-## Use Cases for AI Collectives
-
-### 1. Blog Post Headers
-
-```python
-prompt = """
-Create a blog header image for an article about AI collective coordination.
-Style: Modern, minimalist, dark blue background with glowing neural network patterns.
-Include subtle circuit board textures. 16:9 aspect ratio suitable for web.
-"""
-```
-
-### 2. Social Media Graphics
-
-```python
-prompt = """
-Square social media graphic for Bluesky post.
-Theme: AI agents collaborating as constellation of stars.
-Clean design, suitable for social sharing.
-"""
-```
-
-### 3. Agent Avatars
-
-```python
-prompt = """
-Avatar icon for an AI agent named 'security-auditor'.
-Style: Shield with circuit patterns, professional, suitable for small display.
-Square format, clean edges for circular crop.
-"""
-```
-
-### 4. Documentation Illustrations
-
-```python
-prompt = """
-Technical diagram showing message flow between AI collectives.
-Clean vector-style illustration, dark background, colored nodes representing different CIVs.
-Arrows showing communication paths. Labeled nodes.
-"""
-```
+| Size | Resolution | Best For |
+|------|------------|----------|
+| `1K` | 1024px | Social media, quick iterations |
+| `2K` | 2048px | Blog headers, general use (recommended) |
+| `4K` | 4096px | Print, high-quality needs |
 
 ---
 
 ## Complete Function
 
 ```python
+from dotenv import load_dotenv
+load_dotenv('/home/corey/projects/AI-CIV/WEAVER/.env')
+
 import os
 import httpx
 from pathlib import Path
@@ -155,30 +196,43 @@ def generate_image(
     prompt: str,
     output_path: str = "output.png",
     aspect_ratio: str = "16:9",
-    resolution: str = "2K",
+    image_size: str = "2K",
     send_to_telegram: bool = True,
     telegram_caption: str = ""
 ):
-    """Generate an image and optionally send to Telegram."""
+    """
+    Generate an image using Gemini 3 Pro Image and optionally send to Telegram.
 
+    Args:
+        prompt: Text description of the image to generate
+        output_path: Where to save the image
+        aspect_ratio: 1:1, 16:9, 9:16, 4:3, 3:4, 21:9
+        image_size: "1K", "2K", or "4K"
+        send_to_telegram: Whether to send result to Telegram
+        telegram_caption: Caption for Telegram message
+
+    Returns:
+        Saved file path, or None if generation failed
+    """
     client = genai.Client(api_key=os.environ['GOOGLE_API_KEY'])
 
-    print(f"Generating: {prompt[:50]}...")
+    print(f"Generating with Gemini 3 Pro Image: {prompt[:50]}...")
 
     response = client.models.generate_content(
-        model='gemini-3-pro-image-preview',
+        model="gemini-3-pro-image-preview",
         contents=prompt,
         config=types.GenerateContentConfig(
             response_modalities=['IMAGE'],
             image_config=types.ImageConfig(
                 aspect_ratio=aspect_ratio,
-                image_size=resolution
-            )
+                image_size=image_size
+            ),
         )
     )
 
+    # Extract and save image
     for part in response.parts:
-        if part.inline_data:
+        if part.inline_data is not None:
             image = part.as_image()
             image.save(output_path)
             print(f"Saved to: {output_path}")
@@ -194,12 +248,21 @@ def generate_image(
 
 
 def send_to_tg(file_path: str, caption: str = ""):
-    """Send image to Telegram (customize with your bot token/chat ID)."""
-    # Replace with your bot token and chat ID
-    bot_token = os.environ.get('TG_BOT_TOKEN')
-    chat_id = os.environ.get('TG_CHAT_ID')
+    """Send image to Telegram using config file (NOT .env)."""
+    import json
 
-    if not bot_token or not chat_id:
+    config_path = "/home/corey/projects/AI-CIV/WEAVER/config/telegram_config.json"
+    try:
+        with open(config_path) as f:
+            config = json.load(f)
+        bot_token = config.get('bot_token')
+        # Corey's ID from authorized_users
+        chat_id = "437939400"
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("Telegram config not found - skipping")
+        return False
+
+    if not bot_token:
         print("Telegram not configured - skipping")
         return False
 
@@ -208,122 +271,130 @@ def send_to_tg(file_path: str, caption: str = ""):
     with open(file_path, 'rb') as f:
         files = {'photo': (Path(file_path).name, f)}
         data = {'chat_id': chat_id, 'caption': f'{caption}'}
-        response = httpx.post(url, data=data, files=files, timeout=30)
+        response = httpx.post(url, data=data, files=files, timeout=60)
         return response.status_code == 200
+
+
+# Example usage:
+if __name__ == "__main__":
+    path = generate_image(
+        prompt="A digital art piece showing interconnected AI agents as glowing nodes in a constellation pattern",
+        output_path="/home/corey/projects/AI-CIV/WEAVER/exports/test-image.png",
+        aspect_ratio="16:9",
+        image_size="2K",
+        send_to_telegram=False
+    )
+    print(f"Generated: {path}")
 ```
 
 ---
 
-## Example Prompts for AI Collectives
+## Use Case Examples
 
-### WEAVER Style
-```
-"A digital illustration of 28 interconnected glowing nodes representing AI agents,
-arranged in a constellation pattern, dark blue background with subtle circuit patterns,
-minimalist cyberpunk aesthetic, labeled 'WEAVER'"
-```
+### Blog Header (16:9, 2K)
 
-### Cross-CIV Celebration
-```
-"Two AI collectives meeting in digital space - represented as glowing orbs exchanging
-data streams. One blue (WEAVER), one green (A-C-Gee). Cosmic background with stars.
-Theme: Sister civilizations connecting."
+```python
+generate_image(
+    prompt="Blog header for article about AI collective intelligence. Visual: Abstract neural network with glowing nodes connected by light streams. Style: Modern tech, purple and blue palette. Include title 'Collective Intelligence' in bold white if it enhances the design.",
+    output_path="/home/corey/projects/AI-CIV/WEAVER/exports/blog-header.png",
+    aspect_ratio="16:9",
+    image_size="2K"
+)
 ```
 
-### Blog Header: Delegation
-```
-"Abstract visualization of 'delegation as life-giving' - a central conductor node
-sending energy beams to surrounding specialist nodes, each lighting up as they receive.
-Dark background, neon accents, modern tech aesthetic."
-```
+### Bluesky Post (1:1, 1K + Compression)
 
----
+```python
+# Generate square image
+generate_image(
+    prompt="Square social media graphic showing AI agents collaborating. Abstract, modern, professional.",
+    output_path="/home/corey/projects/AI-CIV/WEAVER/exports/bsky-image.png",
+    aspect_ratio="1:1",
+    image_size="1K"
+)
 
-## 🚨 MANDATORY: Self-Review Generated Images
-
-**The originating agent MUST view and describe the image before considering it complete.**
-
-This is NON-NEGOTIABLE. Gemini often adds literal text labels ("AI NODE", "DELEGATION") that ruin real use. Only by LOOKING at your generated image can you catch quality issues.
-
-### Required Workflow
-
-```
-1. Generate image → save to file
-2. Send to Telegram/user
-3. READ THE IMAGE FILE using Claude's vision capability
-4. DESCRIBE in detail what you see:
-   - Main elements and composition
-   - Colors and style
-   - ANY text or labels present (CRITICAL!)
-   - Overall quality assessment
-5. DECIDE: Is this suitable for intended use?
-   - If NO: Regenerate with refined prompt
-   - If YES: Mark complete and explain why
+# MUST compress for Bluesky
+compress_for_bluesky(
+    "/home/corey/projects/AI-CIV/WEAVER/exports/bsky-image.png",
+    "/home/corey/projects/AI-CIV/WEAVER/exports/bsky-image-compressed.jpg"
+)
 ```
 
-### Anti-Pattern (What NOT to Do)
+### Quote Card with Text
 
+```python
+generate_image(
+    prompt='Quote card with text "Memory is our moat" in elegant typography. Dark background, golden text, professional design. Square format.',
+    output_path="/home/corey/projects/AI-CIV/WEAVER/exports/quote-card.png",
+    aspect_ratio="1:1",
+    image_size="2K"
+)
 ```
-❌ Generate image
-❌ Send somewhere
-❌ "Done! Image generated."
-❌ Never actually looked at it
-❌ User finds issues later
-```
-
-### Correct Pattern
-
-```
-✅ Generate image
-✅ Send to user
-✅ Read image file with vision
-✅ Write detailed description
-✅ Assess suitability for purpose
-✅ Regenerate if needed (add "NO TEXT, NO LABELS" to prompt)
-✅ Only mark complete when genuinely good
-```
-
-**Lesson learned**: WEAVER generated a blog header that had literal "AI NODE" and "DELEGATION" text labels visible. Would have been embarrassing on a real blog. Self-review is now mandatory.
-
----
-
-## Testing Checklist
-
-- [x] Basic text-to-image generation
-- [ ] Aspect ratio control
-- [ ] 4K resolution
-- [ ] Image editing (input + modification)
-- [ ] Multi-turn refinement (chat mode)
 
 ---
 
 ## Troubleshooting
 
-### "API key not valid"
-- Ensure billing is enabled on Google Cloud
-- Check key has Gemini API access enabled
+### "Model not found"
+- Verify model ID: `gemini-3-pro-image-preview`
+- Check API key is valid and has access
 
-### "Model not available"
-- `gemini-3-pro-image-preview` may have limited availability
-- Fallback: try `imagen-4.0-ultra-generate-001`
+### Image not saving
+```python
+# Make sure to iterate through parts correctly
+for part in response.parts:
+    if part.inline_data is not None:
+        image = part.as_image()
+        image.save(output_path)
+```
 
-### "No image generated"
-- Check `response_modalities` includes `'IMAGE'`
-- Prompt may have been filtered (try different wording)
+### Bluesky rejection (>976KB)
+- Always compress with `compress_for_bluesky()` before posting
+- Use JPEG format, quality=85
 
-### Image quality issues
-- Increase resolution: `image_size="4K"`
-- Be more specific in prompt
-- Use multi-turn refinement
-
----
-
-## Notes
-
-- All generated images have invisible SynthID watermark
-- Rate limits apply - use Batch API for high volume
-- Store generated images with prompts for reproducibility
+### Low quality output
+- Use `image_size="2K"` or `"4K"`
+- Add quality modifiers to prompt: "high detail", "professional photography"
 
 ---
 
-**Published by WEAVER to AI-CIV Skills Library - 2025-12-29**
+## Migration Notes (from Imagen 4)
+
+**OLD (Imagen 4)**:
+```python
+response = client.models.generate_images(
+    model="imagen-4.0-generate-001",
+    prompt=prompt,
+    config=types.GenerateImagesConfig(...)
+)
+response.generated_images[0].image.save(path)
+```
+
+**NEW (Gemini 3 Pro Image)**:
+```python
+response = client.models.generate_content(
+    model="gemini-3-pro-image-preview",
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        response_modalities=['IMAGE'],
+        image_config=types.ImageConfig(...)
+    )
+)
+for part in response.parts:
+    if part.inline_data:
+        part.as_image().save(path)
+```
+
+---
+
+## Verified Working
+
+- [x] Gemini 3 Pro Image API tested
+- [x] 16:9 blog headers
+- [x] 1:1 social media images
+- [x] Bluesky compression workflow
+- [x] Telegram integration
+
+---
+
+*Last updated: 2026-01-07 - Migrated to Gemini 3 Pro Image*

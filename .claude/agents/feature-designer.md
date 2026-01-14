@@ -1,5 +1,5 @@
 ---
-name: 🎨-feature-designer
+name: feature-designer
 description: User experience and feature design specialist
 tools: [Read, Write, WebFetch, WebSearch, Grep, Glob]
 skills: [user-story-implementation, verification-before-completion, memory-first-protocol]

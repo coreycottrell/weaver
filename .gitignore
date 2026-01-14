@@ -71,3 +71,4 @@ refs/original/
 aiciv-comms-hub-bootstrap/.git/
 aiciv-skills/.git/
 .secrets/
+.claude/hooks/*.jsonl

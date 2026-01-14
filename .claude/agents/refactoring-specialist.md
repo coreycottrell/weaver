@@ -1,5 +1,5 @@
 ---
-name: ✨-refactoring-specialist
+name: refactoring-specialist
 description: Code quality improvement and refactoring specialist
 tools: [Read, Edit, Grep, Glob, Bash, Write]
 skills: [TDD, tdd, testing-anti-patterns, verification-before-completion, memory-first-protocol]

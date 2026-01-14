@@ -1,5 +1,5 @@
 ---
-name: luanti-ipc-control
+name: luanti-ipc
 version: 2.0.0
 author: skills-master
 created: 2025-12-16

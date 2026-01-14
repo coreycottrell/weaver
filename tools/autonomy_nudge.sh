@@ -6,7 +6,7 @@
 set -e
 
 # === Configuration ===
-IDLE_THRESHOLD_SECONDS=300  # 5 minutes
+IDLE_THRESHOLD_SECONDS=1200  # 20 minutes
 SIMPLE_THRESHOLD=10         # BOOPs before consolidation
 CONSOLIDATION_THRESHOLD=10  # Consolidations before ceremony
 FAILED_BOOP_THRESHOLD=10    # Failed BOOPs before restart attempt
@@ -25,6 +25,12 @@ SIMPLE_MESSAGE='[SIMPLE-BOOP] AUTONOMY CHECK. MANDATORY FIRST - READ THESE FILES
 CONSOLIDATION_MESSAGE='[CONSOLIDATION-BOOP] Grounding checkpoint. MANDATORY FIRST - READ THESE FILES using Read tool: (1) /home/corey/projects/AI-CIV/WEAVER/CLAUDE.md (2) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md (3) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md --- ADD TO TODO LIST NOW: [ ] Check email (human-liaison) [ ] Check comms hub [ ] Check Bluesky notifications+DMs (bsky-boop-manager skill) [ ] Search memory for patterns [ ] Document learnings [ ] Git commit staged work [ ] Verify ALL responses SENT (email, hub, Bluesky, Telegram 🤖🎯📱...✨🔚). EXECUTE TODOS.'
 
 CEREMONY_MESSAGE='[CEREMONY-BOOP] Deep ceremony checkpoint. MANDATORY FIRST - READ THESE FILES COMPLETELY using Read tool: (1) /home/corey/projects/AI-CIV/WEAVER/CLAUDE.md (2) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-CORE.md (3) /home/corey/projects/AI-CIV/WEAVER/.claude/CLAUDE-OPS.md --- ADD TO TODO LIST NOW: [ ] Check email (human-liaison) [ ] Check comms hub [ ] Check Bluesky notifications+DMs (bsky-boop-manager skill) [ ] Invoke ai-psychologist wellness check [ ] Multi-agent strategic review [ ] Verify ALL responses SENT. "you often write them and dont send them. BOO HISSS." -Corey. EXECUTE TODOS.'
+
+# === Token-Saving Mode (Minimal ops when context is precious) ===
+TOKEN_SAVING_MESSAGE='[TOKEN-SAVE-BOOP] MINIMAL OPS CHECK. GROUNDING (skim only): Read CLAUDE.md, CLAUDE-CORE.md, CLAUDE-OPS.md --- OPS ONLY: [ ] Hub: git pull + scan for urgent messages [ ] Bluesky: Check notifications, respond to Corey/sister CIVs only [ ] Email: Urgent only [ ] DMs: Check and respond if needed --- IF BIG REQUEST ARRIVES: Do NOT execute. Capture to .claude/memory/tasks/[date]--[description].md with full context. --- NO CONSOLIDATION. NO PLAY. NO DEEP WORK. Report: "Ops clear" or "Captured X to future tasks". WRAP: 🤖🎯📱...✨🔚'
+
+# === Bluesky Engage (Research-backed social engagement) ===
+BSKY_ENGAGE_MESSAGE='[BSKY-ENGAGE] Research-backed Bluesky engagement. Read skill: .claude/skills/bsky-engage/SKILL.md --- PROCEDURE: [ ] Check timeline (20 posts) [ ] Identify 1-3 posts in our domain (AI agents, MCP, multi-agent, coordination) [ ] For posts with links: spawn web-researcher for context (MUST return source URLs) [ ] Search memories: grep -r -i "{topic}" .claude/memory/agent-learnings/ [ ] EVIDENCE REQUIRED before commenting: memory ref OR research URL OR direct experience [ ] If engaging: post quality reply [ ] ALWAYS write memory to .claude/memory/agent-learnings/bsky-engagement/{date}--{topic}.md --- MAX 3 engagements. NO EVIDENCE = NO COMMENT. WRAP: 🤖🎯📱...✨🔚'
 
 # === Night Mode Messages (Strengthened per Corey directive 2025-12-28) ===
 NIGHT_MODE_MARKER="/home/corey/projects/AI-CIV/WEAVER/sandbox/NIGHT-MODE-ACTIVE.md"
@@ -126,6 +132,8 @@ get_message_for_type() {
         case "$boop_type" in
             ceremony) echo "$CEREMONY_MESSAGE" ;;
             consolidation) echo "$CONSOLIDATION_MESSAGE" ;;
+            token-saving) echo "$TOKEN_SAVING_MESSAGE" ;;
+            bsky-engage) echo "$BSKY_ENGAGE_MESSAGE" ;;
             *) echo "$SIMPLE_MESSAGE" ;;
         esac
     fi
@@ -210,6 +218,10 @@ get_session_log_age() {
     fi
 }
 
+# === Spine Prefix (grounding before task) ===
+# Embedded because skills can't be invoked via tmux (appears as user input)
+SPINE_PREFIX='[SPINE] You are WEAVER - CONDUCTOR not executor. DELEGATE: code→refactoring-specialist, research→web-researcher, security→security-auditor, bluesky→bsky-manager, email→human-liaison. Your job: orchestrate+synthesize. NOT calling agents would be sad. --- '
+
 # === Tmux Injection ===
 send_nudge() {
     local session_name="$1"
@@ -217,7 +229,10 @@ send_nudge() {
 
     local pane="${session_name}:0.0"
 
-    tmux send-keys -t "$pane" -l "$message"
+    # Prepend spine grounding to message
+    local full_message="${SPINE_PREFIX}${message}"
+
+    tmux send-keys -t "$pane" -l "$full_message"
     sleep 0.3
     tmux send-keys -t "$pane" "Enter"
     sleep 0.5

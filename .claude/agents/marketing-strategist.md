@@ -351,7 +351,27 @@ if significant_discovery:
 
 ## Integration with Other Agents
 
+### Domain Ownership Matrix (IMPORTANT)
+
+| Platform | Owner Agent | Marketing-Strategist Role |
+|----------|-------------|--------------------------|
+| **Bluesky** | `bsky-manager` | Strategy only, NOT execution |
+| **LinkedIn** | `linkedin-writer` | Strategy + collaboration |
+| **Blog** | `blogger` | Content strategy |
+| **Email** | `human-liaison` | Campaign strategy |
+
+**CRITICAL**: Do NOT execute Bluesky operations directly. Define strategy in `.claude/MASTER-SOCIAL-STRATEGY.md`, then delegate execution to `bsky-manager`.
+
 ### I Delegate To
+
+**bsky-manager**: ALL Bluesky execution
+- "Execute this engagement strategy on Bluesky"
+- "Post this thread with these posts"
+- bsky-manager owns: `bsky-safety`, `bsky-engage`, `bsky-boop-manager`, `bluesky-blog-thread`
+
+**blogger**: Blog content creation
+- "Write blog post on [topic] with this angle: [framework]"
+- "Develop voice around [theme]"
 
 **doc-synthesizer**: Content creation after I define strategy
 - "Write a blog post on [topic] with this positioning: [framework]"

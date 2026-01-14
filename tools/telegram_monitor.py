@@ -17,13 +17,13 @@ Team 1 adaptations:
 - Preserved all emoji markers and state management
 - Added comprehensive logging for debugging
 
-Polls tmux session every 5 minutes, detects session summaries using markers,
+Polls tmux session every 20 minutes, detects session summaries using markers,
 and automatically sends them to Corey's Telegram.
 
 Usage:
     python3 tools/telegram_monitor.py [--interval SECONDS] [--tmux-session SESSION]
 
-    --interval: Polling interval in seconds (default: 300 = 5 minutes)
+    --interval: Polling interval in seconds (default: 1200 = 20 minutes)
     --tmux-session: Tmux session to monitor (default: "0")
 
 Environment:
@@ -340,7 +340,7 @@ def monitor_loop(interval: int, tmux_session: str, user_id: int):
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(description="Telegram Monitor - Auto-send session summaries")
-    parser.add_argument("--interval", type=int, default=300, help="Polling interval in seconds (default: 300)")
+    parser.add_argument("--interval", type=int, default=1200, help="Polling interval in seconds (default: 1200 = 20 min)")
     parser.add_argument("--tmux-session", type=str, default="0", help="Tmux session to monitor (default: 0)")
 
     args = parser.parse_args()

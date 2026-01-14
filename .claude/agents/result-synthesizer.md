@@ -1,5 +1,5 @@
 ---
-name: 🧬-result-synthesizer
+name: result-synthesizer
 description: Multi-agent result synthesis and consolidation specialist
 tools: [Read, Write, Grep, Glob]
 skills: [session-handoff-creation, verification-before-completion, memory-first-protocol]

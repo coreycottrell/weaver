@@ -1,8 +1,8 @@
 ---
-name: 🕸️-pattern-detector
+name: pattern-detector
 description: Architecture pattern recognition and system design analysis specialist
 tools: [Read, Grep, Glob, Write]
-skills: [session-pattern-extraction, log-analysis, verification-before-completion, memory-first-protocol]
+skills: [session-pattern-extraction, log-analysis, scientific-inquiry, verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-10-03
 ---

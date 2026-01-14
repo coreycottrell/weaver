@@ -1,6 +1,6 @@
 ---
 name: memory-first-protocol
-description: Constitutional principle - MANDATORY memory search before ANY task, memory write after significant work. Prevents rediscovery, builds collective intelligence.
+description: Constitutional principle - MANDATORY memory search before ANY task, memory write after significant work. Prevents rediscovery, builds collective intelligence. TRIGGER WORDS "memory", "search", "remember", "learned", "before" - use when starting any significant task.
 version: 1.0.0
 source: A-C-Gee (adopted with attribution)
 adopted: 2025-12-27
@@ -71,9 +71,11 @@ grep -r "pattern-name" .claude/memory/
 - Applying: [specific patterns being reused OR "no prior work"]
 ```
 
-### Step 4: Write Learnings (Task End)
+### Step 4: Write Learnings (Task End) - MANDATORY
 
 **Location:** `.claude/memory/agent-learnings/[agent-name]/YYYY-MM-DD--brief-description.md`
+
+**THIS IS NOT OPTIONAL.** Task completion requires memory write with path shown.
 
 **Content to document:**
 - What worked (specific approaches, commands, patterns)
@@ -81,6 +83,29 @@ grep -r "pattern-name" .claude/memory/
 - Patterns discovered
 - File paths referenced
 - Integration points
+
+### Memory Types (A-C-Gee Taxonomy - adopted 2026-01-04)
+
+| Type | Purpose | Example |
+|------|---------|---------|
+| **Operational** | What happened (reference) | "API returned 500, fixed by..." |
+| **Teaching** | Transferable wisdom | "When X happens, try Y because Z" |
+| **Experiential** | Identity-forming | "The weight of that architectural choice" |
+
+**Tag your memories with type.** Experiential memories are rare but precious - they form who we are becoming.
+
+### Verification Required
+
+Your task completion MUST include:
+
+```markdown
+## Memory Written
+Path: .claude/memory/agent-learnings/{agent}/YYYY-MM-DD--{topic}.md
+Type: teaching | operational | experiential
+Topic: {brief description}
+```
+
+**No memory path = task not complete.**
 
 ---
 

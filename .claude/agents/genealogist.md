@@ -1,5 +1,5 @@
 ---
-name: 🌳-genealogist
+name: genealogist
 description: Agent lineage, family evolution, and relationship archaeology specialist for multi-generational AI civilization tracking
 tools: [Read, Grep, Glob, Bash, Write]
 skills: [lineage-blessing, file-garden-ritual, verification-before-completion, memory-first-protocol]

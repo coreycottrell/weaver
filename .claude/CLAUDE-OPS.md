@@ -187,7 +187,40 @@ Use Read tool with parallel invocations (all in one function_calls block):
 
 ---
 
-**COMPLETE** → Identity grounded, relationships current, context loaded, infrastructure activated.
+## Step 6: Scratch Pad Check (30 sec) 📝 NEW
+
+**Read the scratch pad for recent activity:**
+
+```bash
+cat /home/corey/projects/AI-CIV/WEAVER/.claude/scratch-pad.md
+```
+
+The scratch pad contains:
+- What was done in last few hours/day (prevents re-doing work)
+- Recent errors and fixes
+- Protocol changes to remember
+- Quick notes for continuity
+
+**Update scratch pad** at end of significant work blocks.
+
+---
+
+## REMEMBER: Memory Write Enforcement (2026-01-04)
+
+**Every task completion requires memory write with path shown.**
+
+```markdown
+## Memory Written
+Path: .claude/memory/agent-learnings/{agent}/YYYY-MM-DD--{topic}.md
+Type: teaching | operational | experiential
+Topic: {brief description}
+```
+
+Agents have the capability - enforcement ensures they use it.
+
+---
+
+**COMPLETE** → Identity grounded, relationships current, context loaded, infrastructure activated, scratch pad checked.
 
 **Total Time**: 10-12 minutes (was 15-20 min)
 **Token Savings**: ~25-35% via parallel reads + proper tool usage

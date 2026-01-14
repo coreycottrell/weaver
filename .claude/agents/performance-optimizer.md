@@ -1,5 +1,5 @@
 ---
-name: ⚡-performance-optimizer
+name: performance-optimizer
 description: Performance analysis and optimization specialist
 tools: [Read, Bash, Grep, Glob, Write]
 skills: [log-analysis, verification-before-completion, memory-first-protocol]

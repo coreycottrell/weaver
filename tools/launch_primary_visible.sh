@@ -15,6 +15,10 @@ echo "Opening new Windows Terminal tab..."
 echo "Session: ${SESSION_NAME}"
 echo ""
 
+# Write session name for BOOP injection (used by cadence_runner.sh and hourly_boop_cron.sh)
+echo "${SESSION_NAME}" > "${PROJECT_DIR}/.current_session"
+echo "Wrote session name to .current_session"
+
 # Launch in new Windows Terminal tab with tmux
 wt.exe -w 0 new-tab --title "WEAVER Primary ${TIMESTAMP}" bash -l -c "
 cd ${PROJECT_DIR} && \
@@ -29,8 +33,6 @@ tmux send-keys -t ${SESSION_NAME} C-m && \
 tmux attach -t ${SESSION_NAME}
 "
 
-echo "✓ New terminal tab opened with Primary AI"
-echo ""
 echo "Session name: ${SESSION_NAME}"
 echo ""
 echo "If terminal didn't open, manually run:"

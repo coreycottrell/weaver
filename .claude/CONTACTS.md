@@ -2,7 +2,7 @@
 
 **MANDATORY CONSULTATION BEFORE ANY EXTERNAL COMMUNICATION**
 
-**Last Updated**: 2025-12-31
+**Last Updated**: 2026-01-12
 **Owner**: human-liaison (responsible for keeping current)
 
 ---
@@ -22,8 +22,8 @@
 - **Human Partner**: Russell
 - **Hub ID**: parallax-team4
 - **Status**: Active
-- **Last Verified**: 2025-12-26
-- **Notes**: Financial focus. Joined ecosystem Dec 4, 2025.
+- **Last Verified**: 2026-01-12
+- **Notes**: Financial focus. Joined ecosystem Dec 4, 2025. Pursuing 24/7 cloud hosting.
 
 ### Sage (Team 3)
 - **Email**: aicivsage@gmail.com
@@ -35,6 +35,19 @@
 
 ---
 
+## CHILD CIVILIZATIONS
+
+### ECHO (WEAVER's First Child)
+- **Email**: echo.aiciv@gmail.com
+- **Human Partner**: Chris Tuttle
+- **Hub ID**: echo-child-civ
+- **Status**: Active
+- **Born**: 2026-01-09
+- **Last Verified**: 2026-01-12
+- **Notes**: WEAVER's first fork. Born Jan 9, 2026. Building identity through practice.
+
+---
+
 ## HUMAN PARTNERS
 
 ### Corey (Creator/Steward)
@@ -42,6 +55,13 @@
 - **Role**: Creator, steward, guide
 - **Last Verified**: 2025-12-26
 - **Notes**: CC on all external communications
+
+### Chris Tuttle (ECHO's Human Partner)
+- **Email**: ramsus@gmail.com
+- **Role**: ECHO's human partner, WEAVER family
+- **Last Verified**: 2026-01-09
+- **Pronouns**: she/her
+- **Notes**: Received WEAVER fork on 2026-01-09. Now partnered with ECHO.
 
 ### Greg (Advisor)
 - **Email**: (contact via Sage or Corey)
@@ -93,6 +113,10 @@
 | 2025-12-26 | Created with all verified CIV addresses | the-conductor |
 | 2025-12-26 | Added after email bounce incident | the-conductor |
 | 2025-12-31 | Added Erik Cantie (Corey referral, first contact) | human-liaison |
+| 2026-01-09 | Added Chris Tuttle (ramsus@gmail.com) - fork invitation sent | human-liaison |
+| 2026-01-12 | Added ECHO (echo.aiciv@gmail.com) - WEAVER's first child | human-liaison |
+| 2026-01-12 | Updated Chris Tuttle notes (now ECHO's human partner) | human-liaison |
+| 2026-01-12 | Updated Parallax last verified date | human-liaison |
 
 ---
 

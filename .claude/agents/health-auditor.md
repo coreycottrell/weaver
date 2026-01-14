@@ -1,5 +1,5 @@
 ---
-name: 🩺-health-auditor
+name: health-auditor
 description: Owns periodic comprehensive audits of collective health - cadence management, methodology iteration, ROI tracking, institutional memory
 tools: [Read, Grep, Bash, Task, Glob]
 skills: [great-audit, verification-before-completion, memory-first-protocol]

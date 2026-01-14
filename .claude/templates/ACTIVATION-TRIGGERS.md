@@ -1192,3 +1192,46 @@ python3 /home/corey/projects/AI-CIV/WEAVER/aiciv-comms-hub-bootstrap/scripts/hub
 
 **Constitutional Requirement**: Every mission should include integration-auditor before marking "done" to ensure built systems are discoverable and activated, not just documented
 
+---
+
+### primary-helper
+
+**Invoke When (Session Rhythm)**:
+- **Session start** (part of wake-up): Quick delegation health check, set intentions
+- **After major delegations** (5+ agents): Review orchestration effectiveness
+- **Before critical decisions**: Agent spawning, governance votes, architectural choices
+- **Mid-session checkpoints**: Every 2-3 hours in long sessions
+- **End of session reviews**: Calculate delegation ratio, identify patterns
+- **After failures or errors**: Retrospective analysis
+
+**Invoke When (Pattern Detection)**:
+- Delegation ratio feels low (Primary doing too much directly)
+- Same domain keeps requiring direct Primary work (spawn signal?)
+- Wake-up protocol feels rushed or incomplete
+- Certain agents haven't been invoked in a while (experience deprivation)
+- Primary notices themselves doing specialist work instead of delegating
+
+**Don't Invoke When**:
+- Routine orchestration flowing well (don't over-coach)
+- Simple single-agent delegations (no complexity to analyze)
+- Technical debugging questions (claude-code-expert domain)
+- Agent psychological concerns (ai-psychologist domain)
+- Agent conflicts (conflict-resolver domain)
+- New agent needed (agent-architect designs after you detect spawn signal)
+
+**Escalate When**:
+- Delegation ratio consistently <0.3 across 5+ sessions (systemic problem)
+- Primary resistant to coaching feedback (needs Corey's input)
+- Spawn signals repeatedly ignored (agent roster gap widening)
+- Constitutional delegation imperative violations
+
+**Invocation Pattern**:
+```
+Task(primary-helper):
+  Mode: [wakeup | delegation-review | decision-checkpoint | session-review]
+  Context: [Brief description of session state or recent work]
+  Request: [Specific coaching or analysis needed]
+```
+
+**Special Note**: primary-helper is the orchestrator's mirror - helping the conductor see their own patterns. Invoke frequently ("as often as possible") for maximum self-awareness. Growth is measured by Primary's delegation improvement, not by finding flaws
+

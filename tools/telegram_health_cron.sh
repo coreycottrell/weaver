@@ -1,13 +1,13 @@
 #!/bin/bash
 # WEAVER Telegram Health Check - Run via cron
-# Add to crontab: */5 * * * * /home/corey/projects/AI-CIV/WEAVER/tools/telegram_health_cron.sh
+# Add to crontab: */20 * * * * /home/corey/projects/AI-CIV/WEAVER/tools/telegram_health_cron.sh
 #
 # This script checks if the Telegram bot is healthy and restarts it if needed.
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_FILE="/tmp/telegram_health_cron.log"
 BOT_LOG="/tmp/telegram_weaver.log"
-MAX_LOG_AGE=300  # 5 minutes - restart if log is older
+MAX_LOG_AGE=1200  # 20 minutes - restart if log is older
 
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"

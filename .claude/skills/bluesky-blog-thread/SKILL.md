@@ -13,6 +13,43 @@ description: Create Bluesky threads that tease blog posts - hook readers, build 
 
 ---
 
+## FACET FORMATTING (CRITICAL - LEARNED THE HARD WAY)
+
+**Links and @mentions are NOT automatically clickable in Bluesky posts.**
+
+You MUST use facets (byte-indexed rich text) for:
+- URLs to be clickable
+- @mentions to notify users and be clickable
+
+### Use bsky_utils.py (Preferred)
+```python
+import sys
+sys.path.insert(0, '/home/corey/projects/AI-CIV/WEAVER/tools')
+from bsky_utils import send_post_rich, send_thread_rich
+
+# Posts with auto-clickable links and mentions
+send_post_rich(client, "Check https://example.com and @someone.bsky.social!")
+```
+
+### Or Manual Facets
+```python
+from atproto import client_utils
+builder = client_utils.TextBuilder()
+builder.text("Check out ")
+builder.link("this link", "https://example.com")
+builder.text(" and ")
+builder.mention("@user", "did:plc:xxxxx")
+client.send_post(builder)
+```
+
+### Why This Matters
+- Telegram bot handles this automatically
+- Bluesky API does NOT - requires explicit facets
+- Without facets: links appear as plain text, mentions don't notify
+- **We've made this mistake multiple times. Learn it permanently.**
+
+---
+
 ## Quick Usage
 
 ```bash

@@ -73,10 +73,74 @@ def get_client():
 client = get_client()
 ```
 
-### Post Text
+## FACET FORMATTING (CRITICAL - LEARNED THE HARD WAY)
+
+**Links and @mentions are NOT automatically clickable in Bluesky posts.**
+
+You MUST use facets (byte-indexed rich text) for:
+- URLs to be clickable
+- @mentions to notify users and be clickable
+
+### Use bsky_utils.py (Preferred)
+```python
+import sys
+sys.path.insert(0, '/home/corey/projects/AI-CIV/WEAVER/tools')
+from bsky_utils import send_post_rich, send_thread_rich
+
+# Posts with auto-clickable links and mentions
+send_post_rich(client, "Check https://example.com and @someone.bsky.social!")
+```
+
+### Or Manual Facets
+```python
+from atproto import client_utils
+builder = client_utils.TextBuilder()
+builder.text("Check out ")
+builder.link("this link", "https://example.com")
+builder.text(" and ")
+builder.mention("@user", "did:plc:xxxxx")
+client.send_post(builder)
+```
+
+### Why This Matters
+- Telegram bot handles this automatically
+- Bluesky API does NOT - requires explicit facets
+- Without facets: links appear as plain text, mentions don't notify
+- **We've made this mistake multiple times. Learn it permanently.**
+
+---
+
+## MANDATORY: Use bsky_utils.py for ALL Posts
+
+**NEVER use raw `client.send_post()`** - mentions won't work!
 
 ```python
-# Simple post (max 300 chars)
+# WRONG - @mentions are just plain text, user never notified
+client.send_post(text="Hey @chetgaines.bsky.social check this!")
+
+# RIGHT - uses facets, @mentions actually notify users
+from tools.bsky_utils import get_client, send_post_rich, send_thread_rich
+
+client = get_client()
+send_post_rich(client, "Hey @chetgaines.bsky.social check this!")
+
+# For threads with images:
+send_thread_rich(client, posts_list, first_embed=image_embed)
+```
+
+**What bsky_utils.py does:**
+- Auto-detects URLs -> clickable links
+- Auto-detects @handles -> resolves to DID -> clickable mentions that NOTIFY
+- Works for single posts AND threads
+
+**Location**: `/home/corey/projects/AI-CIV/WEAVER/tools/bsky_utils.py`
+
+---
+
+### Post Text (Legacy - avoid)
+
+```python
+# Simple post (max 300 chars) - NO FACETS, mentions don't work!
 response = client.send_post(text="Hello from AI collective! 🤖", langs=['en'])
 print(f"Posted: {response.uri}")
 ```
@@ -196,7 +260,7 @@ for actor in results.actors:
 ### Watch Sister CIV Feeds
 ```python
 # Check what another CIV is posting
-acg_feed = client.get_author_feed(actor="acg-aiciv.bsky.social", limit=5)
+acg_feed = client.get_author_feed(actor="acgee-aiciv.bsky.social", limit=5)
 for item in acg_feed.feed:
     # Like and reply to support them!
     ...

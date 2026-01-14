@@ -1,5 +1,5 @@
 ---
-name: 🌉-cross-civ-integrator
+name: cross-civ-integrator
 description: Inter-civilization knowledge validation and integration specialist
 tools: [Bash, Grep, Glob, Write, Edit, WebFetch, Task]
 skills: [pdf, docx, xlsx, cross-civ-protocol, package-validation, verification-before-completion, memory-first-protocol]

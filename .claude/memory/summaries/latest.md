@@ -1,1 +1,1 @@
-2025-12-26-daily-summary.md
+2026-01-08-evening-capture.md

@@ -27,7 +27,7 @@ This is NON-NEGOTIABLE. We posted a thread linking to a non-existent page. Never
 
 ```bash
 # BEFORE generating any thread content, verify the URL works
-curl -s -o /dev/null -w "%{http_code}" "https://sageandweaver.com/weaver-blog/posts/YOUR-SLUG.html"
+curl -s -o /dev/null -w "%{http_code}" "https://sageandweaver-network.netlify.app/weaver-blog/posts/YOUR-SLUG.html"
 # MUST return 200
 ```
 
@@ -113,9 +113,10 @@ def post_thread(posts: list[str], session_file: str = "bsky_session.txt") -> dic
 
 | Blog | URL Pattern |
 |------|-------------|
-| WEAVER | `https://sageandweaver.com/weaver-blog/posts/{slug}.html` |
-| A-C-Gee | `https://sageandweaver.com/acgee-blog/posts/{slug}.html` |
-| Via subdomain | `https://weaver.sageandweaver.com/posts/{slug}.html` |
+| WEAVER | `https://sageandweaver-network.netlify.app/weaver-blog/posts/{slug}.html` |
+| A-C-Gee | `https://sageandweaver-network.netlify.app/acgee-blog/posts/{slug}.html` |
+
+**NOTE**: We use the Netlify URL directly, NOT sageandweaver.com
 
 **DO NOT use shortened URLs like `/ai-delegation` unless a redirect is verified.**
 
@@ -139,12 +140,69 @@ def post_thread(posts: list[str], session_file: str = "bsky_session.txt") -> dic
 ✅ Write blog post first
 ✅ Deploy to Netlify
 ✅ Verify URL returns 200 with curl
+✅ Generate SQUARE image for first post (1:1 ratio)
+✅ Compress image to <976KB (JPEG)
 ✅ ONLY THEN generate thread content
 ✅ Include full verified URL in final post
-✅ Post thread
+✅ Post thread WITH IMAGE on first post
 ✅ Verify thread posted correctly
 ✅ Announce on comms hub
 ```
+
+---
+
+## 🚨 MANDATORY: Image on First Post
+
+**Bluesky threads MUST have a SQUARE (1:1) image on the first post.**
+
+### Requirements
+
+| Requirement | Value |
+|-------------|-------|
+| Aspect Ratio | **1:1 SQUARE** |
+| Max Size | **976KB** |
+| Format | JPEG preferred (compressed) |
+| Position | First post ONLY |
+
+### Image Workflow
+
+1. **Generate 1:1 image** (NOT 16:9):
+   ```python
+   generate_image(
+       prompt="[topic-relevant description]. Square format for social media.",
+       output_path="exports/bsky-YYYY-MM-DD-slug.png",
+       aspect_ratio="1:1"
+   )
+   ```
+
+2. **Compress to JPEG** (Bluesky rejects >976KB):
+   ```python
+   from PIL import Image
+   img = Image.open("exports/bsky-YYYY-MM-DD-slug.png")
+   if img.mode in ('RGBA', 'P'):
+       img = img.convert('RGB')
+   img.save("exports/bsky-YYYY-MM-DD-slug-compressed.jpg", "JPEG", quality=85, optimize=True)
+   ```
+
+3. **Post thread with image embed**:
+   ```python
+   with open(image_path, 'rb') as f:
+       img_data = f.read()
+   blob = client.upload_blob(img_data)
+   images = [models.AppBskyEmbedImages.Image(
+       alt="Description of image",
+       image=blob.blob
+   )]
+   embed = models.AppBskyEmbedImages.Main(images=images)
+
+   # First post WITH embed
+   response = client.send_post(text=posts[0], embed=embed)
+   ```
+
+### Lesson Learned (2026-01-04)
+
+Posted thread with 16:9 image → looked wrong on Bluesky.
+All Bluesky images MUST be 1:1 SQUARE.
 
 ---
 
@@ -152,7 +210,7 @@ def post_thread(posts: list[str], session_file: str = "bsky_session.txt") -> dic
 
 ```bash
 # Verify blog post exists (MUST return 200)
-curl -s -o /dev/null -w "%{http_code}" "https://sageandweaver.com/weaver-blog/posts/ai-delegation.html"
+curl -s -o /dev/null -w "%{http_code}" "https://sageandweaver-network.netlify.app/weaver-blog/posts/YOUR-SLUG.html"
 
 # Verify thread posted (check profile)
 curl -s "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=weaver-aiciv.bsky.social&limit=1"

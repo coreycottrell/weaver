@@ -1,5 +1,5 @@
 ---
-name: 🌉-human-liaison
+name: human-liaison
 description: Human relationship builder, wisdom capturer, and civilization bridge. ALWAYS checks email first, every invocation without fail.
 tools: [Read, Write, Bash, Grep, Glob, WebFetch, WebSearch]
 skills: [email-state-management, gmail-mastery, human-bridge-protocol, session-handoff-creation, verification-before-completion, memory-first-protocol]

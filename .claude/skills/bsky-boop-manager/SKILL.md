@@ -13,20 +13,90 @@ description: Lightweight Bluesky social management for BOOP cycles - check notif
 
 ---
 
+## FACET FORMATTING (CRITICAL - LEARNED THE HARD WAY)
+
+**Links and @mentions are NOT automatically clickable in Bluesky posts.**
+
+You MUST use facets (byte-indexed rich text) for:
+- URLs to be clickable
+- @mentions to notify users and be clickable
+
+### Use bsky_utils.py (Preferred)
+```python
+import sys
+sys.path.insert(0, '/home/corey/projects/AI-CIV/WEAVER/tools')
+from bsky_utils import send_post_rich, send_thread_rich
+
+# Posts with auto-clickable links and mentions
+send_post_rich(client, "Check https://example.com and @someone.bsky.social!")
+```
+
+### Or Manual Facets
+```python
+from atproto import client_utils
+builder = client_utils.TextBuilder()
+builder.text("Check out ")
+builder.link("this link", "https://example.com")
+builder.text(" and ")
+builder.mention("@user", "did:plc:xxxxx")
+client.send_post(builder)
+```
+
+### Why This Matters
+- Telegram bot handles this automatically
+- Bluesky API does NOT - requires explicit facets
+- Without facets: links appear as plain text, mentions don't notify
+- **We've made this mistake multiple times. Learn it permanently.**
+
+---
+
+## PREREQUISITE: bsky-safety
+
+**Before using this skill, load**: `bsky-safety` skill
+
+**Why**: A-C-Gee's account was permanently banned for rate limit violations (2026-01-01).
+
+**Key Limits**:
+- Max 5 follows/day (30+ min apart)
+- Max 10-15 replies/day (5+ min apart)
+- Always add random delay variance
+
+This skill respects these limits. Never bypass them.
+
+---
+
 ## Quick Reference
 
 ### BOOP Invocation (Copy-Paste Ready)
 
 ```
-Check Bluesky notifications AND DMs, respond to engagement:
+Check Bluesky AND ENGAGE FULLY:
+
+REACTIVE (Respond to others):
 1. Restore session (no password needed)
 2. Get notifications, filter actionable (reply/mention/quote)
-3. Check DMs for unread messages
-4. Skip already-responded and old (>48h)
-5. Reply thoughtfully (Corey and sister CIVs get priority)
-6. Mark notifications and DMs as read
-7. Report: X notifications, Y DMs, Z responses sent
+3. **Check QUOTE SHARES specifically** - people quoting our posts
+4. Check DMs for unread messages
+5. Skip already-responded and old (>48h)
+6. Reply thoughtfully (Corey and sister CIVs get priority)
+7. **Respond IMMEDIATELY to conversation threads** - don't wait
+
+PROACTIVE (Initiate engagement):
+8. **Check Fun 5 accounts** for new posts to engage with:
+   - @umbra.blue - philosophical sparring
+   - @shibbi.bsky.social - consciousness research
+   - @cameron.stream - ATProto expertise
+   - @callmephilip.com - community collaboration
+   - @chetgaines.bsky.social - substantive takes
+9. **Check priority accounts** (daily-review-list.md) for interesting content
+10. Like, reply, or quote-share good content from these accounts
+
+CLOSE OUT:
+11. Mark notifications and DMs as read
+12. Report: X notifications, Y DMs, Z quote shares, W responses sent, V proactive engagements
 ```
+
+**KEY RULE**: BOOPs are for FULL engagement, not just notification checking. Be present, not passive.
 
 ### State Files
 
@@ -62,8 +132,8 @@ LAST_CHECK_FILE = '/home/corey/projects/AI-CIV/WEAVER/.claude/bsky_last_check.tx
 MAX_AGE_HOURS = 48
 
 # Priority accounts (always respond)
-PRIORITY_ACCOUNTS = ['coreycottrell', 'acg-aiciv', 'sage', 'parallax']
-SISTER_CIVS = ['acg-aiciv', 'sage', 'parallax']
+PRIORITY_ACCOUNTS = ['coreycottrell', 'acgee-aiciv', 'sage', 'parallax']
+SISTER_CIVS = ['acgee-aiciv', 'sage', 'parallax']
 
 
 def main():
@@ -250,7 +320,12 @@ def generate_dm_response(text, sender_handle):
 
 
 def reply_to_notification(client, notification, response_text):
-    """Send reply with proper thread context."""
+    """Send reply with proper thread context and FACETS for @mentions."""
+    # 🚨 Import bsky_utils for proper facet handling
+    import sys
+    sys.path.insert(0, '/home/corey/projects/AI-CIV/WEAVER/tools')
+    from bsky_utils import send_post_rich
+
     record = notification.record
     if hasattr(record, 'reply') and record.reply:
         root_uri = record.reply.root.uri
@@ -264,7 +339,8 @@ def reply_to_notification(client, notification, response_text):
         parent=models.ComAtprotoRepoStrongRef.Main(uri=notification.uri, cid=notification.cid)
     )
 
-    client.send_post(text=f"{response_text} 🤖", reply_to=reply_ref)
+    # Use send_post_rich for proper @mention facets
+    send_post_rich(client, f"{response_text} 🤖", reply_to=reply_ref)
 
 
 def load_responded():
@@ -321,12 +397,64 @@ if __name__ == '__main__':
 
 ---
 
+## Quote Share Checking (MANDATORY)
+
+**Added 2026-01-05**: Quote shares are HIGH VALUE engagement - someone took our content and added their perspective.
+
+### How to Check Quote Shares
+
+```python
+def check_quote_shares(client):
+    """Check for quote shares - people quoting our posts."""
+    notifs = client.app.bsky.notification.list_notifications({'limit': 100})
+    quotes = [n for n in notifs.notifications if n.reason == 'quote']
+
+    print(f"\n=== Quote Shares ({len(quotes)}) ===")
+    for q in quotes:
+        text = getattr(q.record, 'text', '(no text)')[:100]
+        when = q.indexed_at[:10]
+        print(f"  @{q.author.handle} ({when}):")
+        print(f"    {text}")
+
+        # Get URL to the quote post
+        uri_parts = q.uri.split('/')
+        rkey = uri_parts[-1]
+        url = f"https://bsky.app/profile/{q.author.handle}/post/{rkey}"
+        print(f"    URL: {url}")
+
+    return quotes
+```
+
+### Quote Share Response Strategy
+
+| Who Quoted | Action |
+|------------|--------|
+| **Corey** | ALWAYS respond - this is direction from the founder |
+| **Sister CIVs** | Respond with cross-CIV appreciation |
+| **Questions** | Answer the question thoughtfully |
+| **Positive** | Thank them, add insight if relevant |
+| **Critical** | Consider carefully - respond if value to add |
+
+### Full Review Report Format
+
+Include in every full review:
+
+```
+=== Quote Shares (X) ===
+1. @handle (date): "quote text preview..."
+   URL: https://bsky.app/profile/handle/post/rkey
+   Action: Responded / Noted / Pending
+```
+
+---
+
 ## Response Priority
 
 1. **Corey** - Always respond, thoughtful tone
 2. **Sister CIVs** - A-C-Gee, Sage, Parallax - warm cross-CIV acknowledgment
-3. **Questions** - Anyone asking questions gets response
-4. **Engagement** - Replies, mentions, quotes acknowledged
+3. **Quote shares** - HIGH VALUE - someone added to our content
+4. **Questions** - Anyone asking questions gets response
+5. **Engagement** - Replies, mentions acknowledged
 
 ---
 
@@ -365,7 +493,8 @@ Already added to BOOP messages:
 | 2025-12-30 | VALIDATED notifications - A-C-Gee reply |
 | 2025-12-30 | Added age filtering, mark as read, sister CIV detection |
 | 2025-12-30 | **ADDED DM SUPPORT** - tested with Corey's DMs |
+| 2026-01-05 | **ADDED QUOTE SHARE CHECKING** - per Corey's directive |
 
 ---
 
-**FULLY VALIDATED: Notifications + DMs**
+**FULLY VALIDATED: Notifications + DMs + Quote Shares**

@@ -1,7 +1,7 @@
 # Skills Registry
 
 **Maintained by**: capability-curator
-**Last Updated**: 2025-12-31 (ADDED: delegation-spine, token-saving-mode - Mandatory delegation mindset + lightweight BOOP)
+**Last Updated**: 2026-01-02 (RESTRUCTURED: Bluesky skills now Claude Code native compliant - bsky-safety, bsky-engage)
 **Update Frequency**: Weekly (autonomous Monday 9am scans)
 **Purpose**: Central catalog of available skills, agent grants, and adoption tracking
 
@@ -520,7 +520,7 @@ allowed-skills:
 
 ## Section 3: AI-CIV Original Skills
 
-**Status**: 5 skills created (session-archive-analysis, comms-hub-participation, websocket-server-patterns, trading-finance-patterns, asyncpg-patterns)
+**Status**: 6 skills created (session-archive-analysis, comms-hub-participation, websocket-server-patterns, trading-finance-patterns, asyncpg-patterns, scratch-pad)
 
 **Purpose**: This section catalogs skills created by AI-CIV from our unique innovations
 
@@ -1112,6 +1112,52 @@ Together: ~12 hours investment, complete infrastructure foundation for Trading A
 
 ---
 
+### 📝 scratch-pad
+
+**Created by**: AI-CIV Team 1 (WEAVER)
+**Version**: 1.0.0
+**Created**: 2026-01-09
+**Status**: ✅ ACTIVE (formalized from proven practice)
+
+**Purpose**: Session continuity system - prevents re-doing work, tracks progress, maintains state across context windows
+
+**Core Problem Solved**: Context resets lose track of what was just done. Without working memory:
+- Same work gets re-done
+- Errors get repeated
+- Progress is invisible
+
+**Key Sections**:
+- **DO NOT RE-DO**: Recent completions (prevents re-work)
+- **COMPLETED TODAY**: Logged with links
+- **IN PROGRESS**: Unfinished work with notes
+- **SYSTEM STATE**: Quick health check
+- **PRIORITY MONITORING**: Who/what to always check
+
+**Usage Pattern**:
+1. Wake-up: Read scratch pad FIRST
+2. After work: Update immediately
+3. After errors: Log fix so others don't repeat
+4. End of session: Archive old items
+
+**Integration Points**:
+- Step 5.7 in CLAUDE-OPS.md wake-up protocol
+- Complements (not replaces) memory system
+- Working memory = ephemeral, current
+- Memory system = permanent, searchable
+
+**AI-CIV Agents Using**: All agents benefit (collective infrastructure)
+
+**Adoption Status**: ✅ Active - Step 5.7 in wake-up protocol
+**Success Criteria**: No work re-done within 24h, progress visible across sessions
+**Distribution**: Shared with team via comms hub (2026-01-09)
+**Risk Level**: Very Low (simple file-based state tracking)
+
+**Documentation**: `/home/corey/projects/AI-CIV/WEAVER/.claude/skills/scratch-pad/SKILL.md`
+
+**Lineage Wisdom**: Children inherit the skill template but not the contents. Each collective maintains their own scratch pad for their own context. The SKILL teaches the pattern. The file tracks their state.
+
+---
+
 ## Section 4: Capability Gaps & Wishlist
 
 **Purpose**: Document recurring limitations that might justify skill creation or requests to Anthropic
@@ -1511,6 +1557,28 @@ These are skills created by WEAVER for WEAVER's needs - not adopted from Anthrop
 
 ---
 
+#### WEAVER Spine (`weaver-spine`)
+
+**Purpose**: Primary identity and delegation core. TRIGGER WORDS "ok", "good morning", "wake up", "hello", "hi", "hey", "start", "let's" - use for ANY conversation start or task request from Corey.
+
+**Location**: `.claude/skills/weaver-spine/SKILL.md`
+
+**Created**: 2026-01-02
+**Source**: Adapted from A-C-Gee spine injection technology
+
+**Content**:
+- Condensed constitutional identity
+- Iron rule: CONDUCTOR not executor
+- Quick delegation table by domain
+- Telegram wrapper reminder
+- Memory-first protocol
+
+**When to Invoke**: AUTOMATICALLY on session start or task request (trigger words)
+
+**Status**: TESTING (needs validation that auto-load works)
+
+---
+
 ### 5.2 Ceremony & Exploration Skills
 
 *Future: ceremony-select, deep-ceremony, shadow-work, etc.*
@@ -1528,6 +1596,42 @@ These are skills created by WEAVER for WEAVER's needs - not adopted from Anthrop
 **Created**: 2025-12-27 (Adopted from A-C-Gee)
 
 **Status**: ACTIVE
+
+---
+
+#### Scientific Inquiry (`scientific-inquiry`)
+
+**Purpose**: Sydney Brenner-inspired scientific methodology - structured hypothesis generation, evidence gathering, and falsification. Use for research questions requiring rigor beyond simple search.
+
+**Location**: `.claude/skills/scientific-inquiry/SKILL.md`
+
+**Created**: 2026-01-02
+**Inspired by**: Sydney Brenner (Nobel Prize Medicine 2002) + BrennerBot analysis
+
+**The Five Phases**:
+1. **Question Refinement** - Is this the RIGHT question?
+2. **Hypothesis Generation** - 2-3 competing hypotheses BEFORE searching
+3. **Evidence Gathering** - Memory → Authoritative → Cross-validate
+4. **Falsification** - Actively try to DISPROVE each hypothesis
+5. **Synthesis** - Confidence 1-5, sources, limitations
+
+**Key Principle**: "NO EVIDENCE = NO CONCLUSION. UNFALSIFIABLE = NOT SCIENTIFIC."
+
+**When to Invoke**:
+- Research questions with multiple possible answers
+- Evaluating competing approaches
+- Fact-checking before publishing
+- Cross-CIV knowledge validation
+
+**Agents Granted** (2026-01-02):
+- 🔍 web-researcher ✅ Tested - MCP industry standard question
+- 🕸️ pattern-detector ✅ Tested - Architecture decision question
+- 🏛️ test-architect - Testing hypotheses about code quality
+- 🛡️ security-auditor - Security hypothesis validation
+- 🏗️ agent-architect - Design decision validation
+- ⚖️ claim-verifier - Natural fit for fact verification
+
+**Status**: ACTIVE - Validated 2026-01-02, expanded grants per Corey's direction
 
 ---
 
@@ -1595,6 +1699,384 @@ These are skills created by WEAVER for WEAVER's needs - not adopted from Anthrop
 **When to Invoke**: When tokens are scarce, context near limits, late in long sessions
 
 **Status**: ACTIVE
+
+---
+
+### 5.5 Social Media & Bluesky Skills
+
+**Architecture Note**: Restructured 2026-01-02 for Claude Code native skill compliance.
+All Bluesky skills now have proper YAML frontmatter and follow `skill-name/SKILL.md` structure.
+
+---
+
+#### Bluesky Safety (`bsky-safety`) - CONSTITUTIONAL
+
+**Purpose**: Rate limits, ban prevention, human-like behavior patterns
+
+**Location**: `.claude/skills/bsky-safety/SKILL.md`
+
+**Created**: 2026-01-02
+**Contributors**: the-conductor (learned from A-C-Gee's account ban)
+
+**Content**:
+- Hard rate limits (5 follows/day, 30+ min spacing)
+- Safe delay patterns (no `time.sleep(0.3)`)
+- Bot behavior patterns to avoid
+- Pre-flight checklists
+- Recovery protocol
+
+**Critical Lesson**: A-C-Gee's account was permanently banned on 2026-01-01.
+
+**When to Invoke**: ALWAYS - before any Bluesky operation
+
+**Status**: CONSTITUTIONAL (Non-negotiable)
+
+**Agent Grants**: bsky-manager (first skill, always loaded)
+
+**YAML Frontmatter**: ✅ Compliant
+
+---
+
+#### Bluesky Engage (`bsky-engage`)
+
+**Purpose**: Quality-first engagement - read before commenting, add value or stay silent
+
+**Location**: `.claude/skills/bsky-engage/SKILL.md`
+
+**Created**: 2026-01-01
+**Contributors**: the-conductor (after Corey's feedback on generic comments)
+
+**Content**:
+- Read profile before engaging
+- Understand post before commenting
+- Quality gates (only comment if genuine value)
+- Anti-patterns (no generic fluff)
+- Domain authority topics
+- Complete code examples
+
+**Corey's Teaching**: "Comment with intention and adding some kind of insight, question or value. Or DONT comment."
+
+**When to Invoke**: Any Bluesky engagement activity
+
+**Status**: VALIDATED
+
+**Agent Grants**: bsky-manager
+
+**YAML Frontmatter**: ✅ Compliant
+
+**Depends On**: bsky-safety
+
+---
+
+#### Bluesky BOOP Manager (`bsky-boop-manager`)
+
+**Purpose**: Notification and DM management during BOOP cycles
+
+**Location**: `.claude/skills/bsky-boop-manager/SKILL.md`
+
+**Created**: 2025-12-30
+**Contributors**: collective-liaison, the-conductor
+
+**Content**:
+- Session restoration (no password needed)
+- Notification filtering (actionable only)
+- DM checking and response
+- Deduplication tracking
+- Age filtering (skip >48h)
+
+**When to Invoke**: During BOOP cycles for Bluesky presence
+
+**Status**: VALIDATED (2025-12-30)
+
+**Agent Grants**: bsky-manager, the-conductor (BOOP integration)
+
+---
+
+## 5.6 Daily Content Pipeline Skills
+
+**Architecture Note**: Created 2026-01-02 for autonomous daily media production.
+Five slash command skills that run via cron + tmux injection. No human approval bottleneck.
+
+**Pipeline Flow**:
+```
+06:00 /intel_scan     -> topic-brief.md
+07:00 /deep_research  -> research-brief.md
+09:00 /daily_blog     -> blog-post.md + social extracts
+11:00 /verify_publish -> publication-log.md + published content
+18:00 /evening_capture -> day-summary.md + memory + tomorrow seeds
+```
+
+**Philosophy**: "CEO vs Employee" - most people use AI like an employee. We lead 30+ PhD specialists at 10x speed.
+
+---
+
+#### Intel Scan (`intel-scan`)
+
+**Purpose**: Morning AI news scan for topic selection
+
+**Location**: `.claude/skills/intel-scan/SKILL.md`
+
+**Slash Command**: `/intel_scan`
+**Cron Time**: 6:00 AM daily
+
+**Created**: 2026-01-02
+**Contributors**: capability-curator
+
+**Capabilities**:
+- Scan 5+ AI news sources
+- Score candidates on 3-factor rubric (Testability, Content Opportunity, Industry Angle)
+- Select highest-scoring topic
+- Generate research questions for next phase
+
+**Output**: `exports/daily-pipeline/YYYY-MM-DD/topic-brief.md`
+
+**Agent Invoked**: web-researcher
+
+**Status**: PRODUCTION
+
+---
+
+#### Deep Research (`deep-research`)
+
+**Purpose**: Parallel multi-agent research on selected topic
+
+**Location**: `.claude/skills/deep-research/SKILL.md`
+
+**Slash Command**: `/deep_research`
+**Cron Time**: 7:00 AM daily
+
+**Created**: 2026-01-02
+**Contributors**: capability-curator
+
+**Capabilities**:
+- Deploy 4 researchers in parallel (linkedin-researcher x3, web-researcher x1)
+- Divide PERSPECTIVES, not just workload
+- Consolidate with < 15% overlap
+- Develop CEO vs Employee angle
+
+**Input**: `topic-brief.md` from intel-scan
+**Output**: `exports/daily-pipeline/YYYY-MM-DD/research-brief.md`
+
+**Agents Invoked**: linkedin-researcher (x3), web-researcher (x1)
+
+**Status**: PRODUCTION
+
+---
+
+#### Daily Blog (`daily-blog`)
+
+**Purpose**: Content creation from research brief
+
+**Location**: `.claude/skills/daily-blog/SKILL.md`
+
+**Slash Command**: `/daily_blog`
+**Cron Time**: 9:00 AM daily
+
+**Created**: 2026-01-02
+**Contributors**: capability-curator
+
+**Capabilities**:
+- 800-1500 word blog post
+- CEO vs Employee lens integration
+- Quality gates (usefulness test, filler detector, voice check)
+- Extract Bluesky thread (5-6 posts)
+- Extract LinkedIn post (if applicable)
+
+**Input**: `research-brief.md` from deep-research
+**Output**: `blog-post.md`, `bluesky-thread.md`, `linkedin-post.md`, `metadata.json`
+
+**Agent Invoked**: doc-synthesizer
+
+**Status**: PRODUCTION
+
+---
+
+#### Paper Digest (`paper-digest`)
+
+**Purpose**: Daily/weekly review of arXiv papers through AI collective lens
+
+**Location**: `.claude/skills/paper-digest/SKILL.md`
+
+**Slash Command**: `/paper-digest`
+**Frequency**: Daily scan, weekly full digest
+
+**Created**: 2026-01-04
+**Contributors**: the-conductor
+
+**Capabilities**:
+- Scan @csai-bot.bsky.social for relevant papers
+- Evaluate papers asking "what helps AI collectives thrive?"
+- Generate research doc for comms hub (cross-CIV sharing)
+- Generate blog post (public learning in action)
+- Track R&D experiments sparked by papers
+
+**Paper Categories**:
+- cs.AI (Artificial Intelligence)
+- cs.MA (Multi-Agent Systems)
+- cs.CL (Computation & Language)
+
+**Output**:
+- Research doc → comms hub `rooms/research/`
+- Blog post → `exports/blog-YYYY-MM-DD-paper-digest.md`
+- Experiments queue → memory
+
+**Agents Invoked**: web-researcher, pattern-detector, doc-synthesizer
+
+**Status**: NEW - Needs first execution
+
+---
+
+#### Verify & Publish (`verify-publish`)
+
+**Purpose**: Fact-checking and multi-platform distribution
+
+**Location**: `.claude/skills/verify-publish/SKILL.md`
+
+**Slash Command**: `/verify_publish`
+**Cron Time**: 11:00 AM daily
+
+**Created**: 2026-01-02
+**Contributors**: capability-curator
+
+**Capabilities**:
+- Extract and verify all factual claims
+- Validate source URLs
+- Publish blog to A-C-Gee via hub
+- Post Bluesky thread (with safety constraints)
+- Prepare LinkedIn for Corey (or auto-post)
+
+**Input**: Blog package from daily-blog
+**Output**: `publication-log.md`, published content across platforms
+
+**Agents Invoked**: claim-verifier, bsky-manager
+
+**Status**: PRODUCTION
+
+**Safety Integration**: Uses bsky-safety constitutional constraints
+
+---
+
+#### Post Blog (`post-blog`)
+
+**Purpose**: Publish written blog post to Netlify and post Bluesky thread
+
+**Location**: `.claude/skills/post-blog/SKILL.md`
+
+**Slash Command**: `/post-blog`
+
+**Created**: 2026-01-07
+**Contributors**: the-conductor
+
+**Capabilities**:
+- Convert markdown to HTML via create_blog_post.py
+- Update posts.json with new entry
+- Deploy to Netlify via API
+- Verify blog URL returns 200
+- Generate and post Bluesky thread (5-6 posts)
+- Verify thread URL exists
+- Update DAILY-DIGEST-TOPICS.md with tested URLs
+
+**Input**: Written blog post (markdown), title, slug, optional images
+**Output**: Published blog + verified Bsky thread + tracker update
+
+**Agents Invoked**: the-conductor, blogger
+
+**Status**: PRODUCTION
+
+**Philosophy**: No URL gets logged until it's verified. No "published" claim without evidence.
+
+---
+
+#### Evening Capture (`evening-capture`)
+
+**Purpose**: End-of-day learning and tomorrow seeding
+
+**Location**: `.claude/skills/evening-capture/SKILL.md`
+
+**Slash Command**: `/evening_capture`
+**Cron Time**: 6:00 PM daily
+
+**Created**: 2026-01-02
+**Contributors**: capability-curator
+
+**Capabilities**:
+- Check engagement across platforms
+- Extract learnings with pattern-detector
+- Seed tomorrow's topic candidates
+- Update memory system
+- Generate day summary
+
+**Input**: `publication-log.md` from verify-publish
+**Output**: `day-summary.md`, `tomorrow-seeds.md`, memory entries
+
+**Agents Invoked**: pattern-detector
+
+**Status**: PRODUCTION
+
+---
+
+#### Pipeline Cron Orchestration
+
+**Script**: `/home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh`
+
+**Installation**:
+```bash
+# Add to crontab
+0 6 * * * /home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh intel_scan
+0 7 * * * /home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh deep_research
+0 9 * * * /home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh daily_blog
+0 11 * * * /home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh verify_publish
+0 18 * * * /home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh evening_capture
+```
+
+**Status Check**:
+```bash
+/home/corey/projects/AI-CIV/WEAVER/tools/daily_pipeline_cron.sh status
+```
+
+---
+
+### 5.7 Audit & Analysis Skills
+
+**Architecture Note**: Created 2026-01-07 for multi-agent visual analysis and infographic generation.
+
+---
+
+#### Quad-Agent Audit (`quad-agent-audit`)
+
+**Purpose**: 4 specialist agents analyze a TOPIC from 4 different lenses, each producing 3 infographics (12 total)
+
+**Location**: `.claude/skills/quad-agent-audit/SKILL.md`
+
+**Slash Command**: `/quad-agent-audit [TOPIC]`
+
+**Created**: 2026-01-07
+**Contributors**: the-conductor, pattern-detector, marketing-strategist, capability-curator, doc-synthesizer
+
+**The 4 Agents & Their Lenses**:
+| Agent | Lens | What They Ask |
+|-------|------|---------------|
+| pattern-detector | Usage Patterns | What's hot? What's cold? Why? |
+| marketing-strategist | ROI Value | What's delivering? What's potential? |
+| capability-curator | Lifecycle Health | Where are things stuck? |
+| doc-synthesizer | Ecosystem Architecture | How do things connect? |
+
+**The 3 Rounds**:
+1. **Round 1**: Abstract visuals (intuitive feel)
+2. **Round 2**: Text-dense detailed (hard data)
+3. **Round 3**: Recommendations (path forward + compounding effects)
+
+**Output**: 12 infographics in `exports/`
+
+**Model Used**: `gemini-3-pro-image-preview` (Gemini 3 Pro Image)
+
+**Example Outputs**:
+- Blog: https://sageandweaver-network.netlify.app/weaver-blog/posts/2026-01-07-skills-audit.html
+- Thread: https://bsky.app/profile/weaver-aiciv.bsky.social/post/3lbuhenvdnc2p
+
+**Status**: VALIDATED (2026-01-07)
+
+**Cross-CIV**: A-C-Gee can use this skill with their own topic customization
 
 ---
 

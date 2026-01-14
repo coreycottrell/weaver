@@ -9,6 +9,7 @@ description: Mandatory self-review of generated images before marking complete
 
 **Owner**: the-conductor
 **Created**: 2025-12-29
+**Updated**: 2026-01-07 - Migrated to Gemini 3 Pro Image
 **Status**: BULLETPROOF - Self-review required before completion
 
 ---
@@ -32,30 +33,44 @@ import os
 
 client = genai.Client(api_key=os.environ['GOOGLE_API_KEY'])
 
+# Use Gemini 3 Pro Image (highest quality)
 response = client.models.generate_content(
-    model='gemini-3-pro-image-preview',
+    model="gemini-3-pro-image-preview",
     contents=prompt,
     config=types.GenerateContentConfig(
         response_modalities=['IMAGE'],
         image_config=types.ImageConfig(
-            aspect_ratio="16:9"
-        )
+            aspect_ratio="16:9",
+            image_size="2K"
+        ),
     )
 )
 
 for part in response.parts:
-    if part.inline_data:
-        image = part.as_image()
-        image.save(output_path)
+    if part.inline_data is not None:
+        part.as_image().save(output_path)
 ```
 
 ### Step 2: Send to Telegram (for Corey visibility)
 
-```bash
-curl -F "photo=@/path/to/image.png" \
-     -F "chat_id=$TELEGRAM_CHAT_ID" \
-     -F "caption=Generated: [description]" \
-     "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendPhoto"
+```python
+# Use the working telegram config (NOT .env)
+import json
+import httpx
+from pathlib import Path
+
+config_path = "/home/corey/projects/AI-CIV/WEAVER/config/telegram_config.json"
+with open(config_path) as f:
+    config = json.load(f)
+
+bot_token = config['bot_token']
+chat_id = "437939400"  # Corey
+
+url = f'https://api.telegram.org/bot{bot_token}/sendPhoto'
+with open(output_path, 'rb') as f:
+    files = {'photo': (Path(output_path).name, f)}
+    data = {'chat_id': chat_id, 'caption': 'Generated: [description]'}
+    response = httpx.post(url, data=data, files=files, timeout=60)
 ```
 
 ### Step 3: SELF-REVIEW (MANDATORY)
@@ -97,22 +112,34 @@ Claude can see images. You MUST read the generated image file and provide:
 
 | Issue | How to Detect | Fix |
 |-------|--------------|-----|
-| Text labels | Visible words like "AI NODE" | Add "NO TEXT, NO LABELS" to prompt |
+| UNINTENDED text | Random words not requested | Be more specific in prompt about what text IS/ISN'T wanted |
 | Wrong aspect | Image looks stretched/cropped | Specify correct aspect_ratio |
 | Too literal | Image is on-the-nose representation | Request "abstract" or "symbolic" |
 | Low quality | Blurry, artifacted, incomplete | Increase resolution to "4K" |
 | Wrong style | Doesn't match brand aesthetic | Be more specific about style |
 
+**Note**: Text is a superpower for titles, quotes, branding. Check that any text present matches what was requested.
+
 ---
 
 ## Prompting Best Practices
 
-### For Clean Images (No Text)
+### For Images WITH Text (Titles, Quotes, Branding)
 
 ```
-"... CRITICAL: NO TEXT, NO LABELS, NO WORDS anywhere in the image.
-Pure visual composition only. ..."
+"... Include the title '[YOUR TITLE]' in bold white typography.
+Text should be LARGE, CENTERED, and HIGH CONTRAST against background. ..."
 ```
+
+### TEXT IS YOUR SUPERPOWER
+
+**Every image includes text. Gemini 3 Pro renders it beautifully.**
+
+Include in every image:
+- Title/headline - LARGE, BOLD
+- Hook phrase - the insight that stops scrolling
+- Branding - WEAVER, AI-CIV
+- Call-to-action when relevant
 
 ### For Professional Quality
 

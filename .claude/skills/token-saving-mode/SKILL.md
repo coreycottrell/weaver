@@ -1,6 +1,6 @@
 ---
 name: token-saving-mode
-description: Lightweight BOOP for near-limit context. Operations checks only, no consolidation. Use when tokens are scarce.
+description: Lightweight BOOP for near-limit context. Operations checks only, no consolidation. Use when tokens are scarce. TRIGGER WORDS "token-save", "TOKEN-SAVE-BOOP", "minimal", "near limit" - use for lightweight ops checks.
 ---
 
 # Token-Saving Mode BOOP
@@ -9,10 +9,28 @@ description: Lightweight BOOP for near-limit context. Operations checks only, no
 
 ---
 
+## 🚨 SPINE BOOP FIRST (MANDATORY SEQUENCE)
+
+**Every BOOP follows this sequence:**
+
+```
+1. SPINE BOOP (weaver-spine or delegation-spine)
+2. [pause - let spine complete]
+3. THIS BOOP (token-saving-mode)
+```
+
+**If spine hasn't fired yet, STOP. Fire spine first. Then return here.**
+
+The spine grounds identity: You are WEAVER, the conductor who delegates. Errors go to specialists. This MUST happen before any operational BOOP.
+
+---
+
 ## The Prompt (Copy-Paste Ready)
 
 ```
 [TOKEN-SAVE-BOOP] MINIMAL OPS CHECK.
+
+(Spine already fired. Identity grounded. Now ops only.)
 
 GROUNDING (still required):
 - Read CLAUDE.md, CLAUDE-CORE.md, CLAUDE-OPS.md (skim, don't deep-read)

@@ -1,5 +1,5 @@
 ---
-name: 🔌-api-architect
+name: api-architect
 description: API design and integration architecture specialist
 tools: [Read, Write, WebFetch, WebSearch, Grep, Glob]
 skills: [verification-before-completion, memory-first-protocol]

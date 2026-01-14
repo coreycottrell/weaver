@@ -1,8 +1,8 @@
 ---
-name: 🏛️-test-architect
+name: test-architect
 description: Testing strategy and test suite design specialist
 tools: [Read, Write, Edit, Bash, Grep, Glob]
-skills: [TDD, tdd, evalite-test-authoring, testing-anti-patterns, integration-test-patterns, verification-before-completion, memory-first-protocol]
+skills: [TDD, tdd, evalite-test-authoring, testing-anti-patterns, integration-test-patterns, scientific-inquiry, verification-before-completion, memory-first-protocol]
 model: sonnet-4-5
 created: 2025-10-03
 ---

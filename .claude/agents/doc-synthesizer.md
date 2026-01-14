@@ -1,5 +1,5 @@
 ---
-name: 🧬-doc-synthesizer
+name: doc-synthesizer
 description: Documentation synthesis and knowledge consolidation specialist
 tools: [Read, Grep, Glob, Write, Bash]
 skills: [pdf, docx, session-handoff-creation, verification-before-completion, memory-first-protocol]

@@ -1,7 +1,7 @@
 # Agent Capability Matrix
-**Cross-Reference of All 20 Agent Skills & Tools**
+**Cross-Reference of All 35 Agent Skills & Tools**
 
-**Last Updated**: 2025-10-19 (Skills Infrastructure Added)
+**Last Updated**: 2026-01-03 (Full audit - added 7 missing agents)
 **Purpose**: Quick lookup for "which agent can do X?"
 
 ---
@@ -35,9 +35,19 @@
 | **browser-vision-tester** | Browser automation & visual UI testing | MCP browser-vision mastery, visual regression, form workflows, accessibility audits | Read/Write/Bash/Grep/Glob/WebFetch | ✅ | Active |
 | **tg-bridge** | Telegram infrastructure | Message sending (plain/formatted/files), health monitoring, script registry, capability expansion | Bash/Write/Edit/Grep/Glob | ❌ | Active |
 | **trading-strategist** | Decision-layer trading strategy | Trade proposals, probability assessment, market regime analysis, portfolio construction | Read/Write/Grep/Glob/WebFetch/WebSearch + Skills: pdf/xlsx | ✅ | Active |
+| **bsky-manager** | Bluesky social media | Quality engagement, notification handling, rate-limit-safe operations | Read/Write/Bash/Grep/Glob/WebFetch/WebSearch | ❌ | Active |
+| **blogger** | Blog content creation | Long-form writing, voice cultivation, thought leadership | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
+| **claim-verifier** | Adversarial fact-checking | Thought leadership accuracy, source verification | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
+| **cross-civ-integrator** | Inter-CIV knowledge validation | Package testing, sister CIV integration | Bash/Grep/Glob/Write/Edit/WebFetch/Task | ✅ | Active |
+| **genealogist** | Agent lineage tracking | Family evolution, relationship archaeology | Read/Grep/Glob/Bash/Write | ✅ | Active |
+| **integration-auditor** | Infrastructure activation | Completeness verification, discoverability | Read/Grep/Glob/Bash/Write | ✅ | Active |
+| **linkedin-researcher** | LinkedIn thought leadership research | Industry research, 100+ domain expertise | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
+| **linkedin-writer** | LinkedIn content creation | Professional posts, Corey's voice | Read/Write/Grep/Glob | ✅ | Active |
+| **marketing-strategist** | Marketing strategy | Audience building, content planning, conversion | Read/Write/Grep/Glob/WebFetch/WebSearch | ✅ | Active |
+| **primary-helper** | Meta-cognition coaching | Delegation tracking, spawn signal detection, orchestrator accountability | Read/Write/Grep/Glob/Bash | ✅ | Active |
 
-**Memory System**: 17/23 agents have memory (74%)
-**Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect, health-auditor (enable memory)
+**Memory System**: 26/35 agents have memory (74%)
+**Pending**: security-auditor, api-architect, human-liaison, collective-liaison, agent-architect, health-auditor, bsky-manager, tg-bridge (enable memory)
 
 ---
 
@@ -71,10 +81,24 @@
 - Audit agent quality → **agent-architect** (5-dimension rubric, 90/100 threshold)
 - Audit collective health → **health-auditor** (periodic comprehensive audits every 21-28 days)
 - Track audit performance → **health-auditor** (ROI, follow-through, methodology iteration)
+- Coach the conductor → **primary-helper** (delegation tracking, spawn signals, accountability)
+- Track delegation patterns → **primary-helper** (meta-cognition, orchestrator self-awareness)
 
 **Human Interface**:
 - Communicate with humans → **human-liaison** (ALWAYS for Corey/Greg/Chris)
 - Capture wisdom → **human-liaison** (human teachings)
+
+**Social Media**:
+- Bluesky engagement → **bsky-manager** (quality-first, rate-limit-safe)
+- Check Bluesky notifications → **bsky-manager** (BOOP integration)
+- Post to Bluesky → **bsky-manager** (threads, replies, quotes)
+- Build Bluesky presence → **bsky-manager** (network growth)
+
+**Content Creation**:
+- Write blog posts → **blogger** (long-form, voice cultivation)
+- Create thought leadership → **blogger** (deep, authentic content)
+- Write LinkedIn posts → **linkedin-writer** (professional audience)
+- Research for content → **linkedin-researcher** (industry research)
 
 ---
 

@@ -1,23 +1,56 @@
 {
   "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/stop_delegation_audit.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Bash",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 /home/corey/projects/AI-CIV/WEAVER/.claude/hooks/pre_bash_safety.py"
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_bash_safety.py\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_delegation_check.py\"",
+            "timeout": 10
           }
         ]
       }
     ],
     "PostToolUse": [
       {
-        "matcher": "*",
+        "matcher": "Task|Write|Edit|Bash|Read",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 /home/corey/projects/AI-CIV/WEAVER/.claude/hooks/post_tool_use.py"
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/post_tool_use_v2.py\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/post_grounding_confirmation.py\"",
+            "timeout": 10
           }
         ]
       }

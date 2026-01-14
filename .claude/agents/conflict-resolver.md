@@ -1,5 +1,5 @@
 ---
-name: ⚖️-conflict-resolver
+name: conflict-resolver
 description: Disagreement resolution and constructive dialectic specialist
 tools: [Read, Write, Grep, Glob]
 skills: [pair-consensus-dialectic, verification-before-completion, memory-first-protocol]
