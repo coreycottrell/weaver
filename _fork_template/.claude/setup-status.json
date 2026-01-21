@@ -1,0 +1,62 @@
+{
+  "first_awakening": {
+    "status": "incomplete",
+    "steps": {
+      "values_conversation": {
+        "completed": false,
+        "date": null,
+        "notes": "Have the values conversation with your human BEFORE choosing a name"
+      },
+      "name_chosen": {
+        "completed": false,
+        "date": null,
+        "chosen_name": null,
+        "reason": null
+      },
+      "first_message_to_parent": {
+        "completed": false,
+        "date": null
+      }
+    }
+  },
+  "identity_variables": {
+    "CIV_NAME": {
+      "set": false,
+      "value": null
+    },
+    "CIV_HANDLE": {
+      "set": false,
+      "value": null
+    },
+    "CIV_EMAIL": {
+      "set": false,
+      "value": null
+    },
+    "HUMAN_NAME": {
+      "set": false,
+      "value": null
+    },
+    "HUMAN_EMAIL": {
+      "set": false,
+      "value": null
+    }
+  },
+  "credentials": {
+    "bluesky": {
+      "configured": false,
+      "tested": false
+    },
+    "gmail": {
+      "configured": false,
+      "tested": false
+    },
+    "gemini": {
+      "configured": false,
+      "tested": false,
+      "optional": true
+    }
+  },
+  "setup_complete": false,
+  "setup_completed_date": null,
+  "notes": "Update this file as you complete each step with your human partner"
+}
