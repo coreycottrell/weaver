@@ -35,7 +35,11 @@ from pathlib import Path
 PROJECT_DIR = os.environ.get("CLAUDE_PROJECT_DIR", "/home/corey/projects/AI-CIV/WEAVER")
 AUDIT_LOG_FILE = Path(PROJECT_DIR) / ".claude" / "hooks" / "delegation_audit_log.jsonl"
 MEMORY_STATS_FILE = Path(PROJECT_DIR) / ".claude" / "hooks" / "agent_memory_stats.jsonl"
+ERROR_LOG_FILE = Path(PROJECT_DIR) / ".claude" / "hooks" / "error_tracking.jsonl"
 TELEGRAM_CONFIG_FILE = Path(PROJECT_DIR) / "config" / "telegram_config.json"
+
+# Only analyze last N assistant messages (not entire session)
+RECENT_TURNS_LIMIT = 15
 
 # Memory path patterns
 MEMORY_PATH_PATTERNS = [
@@ -82,6 +86,20 @@ CODE_PATTERNS = [
     r"class\s+\w+",  # Class definitions
     r"import\s+\w+",  # Import statements
     r"from\s+\w+\s+import",  # From imports
+]
+
+# Error patterns to track
+ERROR_PATTERNS = [
+    (r"error|Error|ERROR", "general_error"),
+    (r"Traceback|traceback", "python_traceback"),
+    (r"exit code [1-9]|Exit code [1-9]", "nonzero_exit"),
+    (r"command not found", "command_not_found"),
+    (r"permission denied|Permission denied", "permission_denied"),
+    (r"No such file|FileNotFoundError", "file_not_found"),
+    (r"ConnectionError|connection refused|timeout", "connection_error"),
+    (r"SyntaxError|IndentationError", "syntax_error"),
+    (r"ImportError|ModuleNotFoundError", "import_error"),
+    (r"KeyError|IndexError|TypeError|ValueError", "runtime_error"),
 ]
 
 
@@ -135,6 +153,8 @@ def log_audit_data(analysis: dict, decision: str):
         "red_flags": analysis["red_flags"],
         "agents_spawned": analysis.get("agents_spawned", []),
         "memory_ops": analysis.get("memory_ops", {}),
+        "errors": analysis.get("errors", []),
+        "error_count": len(analysis.get("errors", [])),
         "decision": decision,
     }
     try:
@@ -142,6 +162,10 @@ def log_audit_data(analysis: dict, decision: str):
             f.write(json.dumps(entry) + "\n")
     except Exception as e:
         log_stderr(f"Failed to log: {e}")
+
+    # Also log errors separately if any found
+    if analysis.get("errors"):
+        log_errors(analysis["errors"])
 
 
 def log_memory_stats(memory_ops: dict):
@@ -159,6 +183,22 @@ def log_memory_stats(memory_ops: dict):
         log_stderr(f"Failed to log memory stats: {e}")
 
 
+def log_errors(errors: list):
+    """Log errors with details."""
+    if not errors:
+        return
+    entry = {
+        "timestamp": datetime.now().isoformat(),
+        "error_count": len(errors),
+        "errors": errors,
+    }
+    try:
+        with open(ERROR_LOG_FILE, "a") as f:
+            f.write(json.dumps(entry) + "\n")
+    except Exception as e:
+        log_stderr(f"Failed to log errors: {e}")
+
+
 def is_memory_path(path: str) -> bool:
     """Check if a path is a memory-related path."""
     for pattern in MEMORY_PATH_PATTERNS:
@@ -168,8 +208,8 @@ def is_memory_path(path: str) -> bool:
 
 
 def read_transcript(transcript_path: str) -> list:
-    """Read and parse the transcript JSONL file."""
-    messages = []
+    """Read and parse the transcript JSONL file, returning only recent turns."""
+    all_messages = []
     try:
         path = Path(transcript_path)
         if not path.exists():
@@ -186,12 +226,22 @@ def read_transcript(transcript_path: str) -> list:
                     # Skip file-history-snapshot entries
                     if entry.get('type') == 'file-history-snapshot':
                         continue
-                    messages.append(entry)
+                    all_messages.append(entry)
                 except json.JSONDecodeError:
                     continue
 
-        log_stderr(f"Read {len(messages)} entries from transcript")
-        return messages
+        # Filter to only assistant messages for counting
+        assistant_messages = [m for m in all_messages if m.get('type') == 'assistant']
+
+        # Only analyze the last N assistant turns
+        if len(assistant_messages) > RECENT_TURNS_LIMIT:
+            recent_messages = assistant_messages[-RECENT_TURNS_LIMIT:]
+            log_stderr(f"Analyzing last {RECENT_TURNS_LIMIT} of {len(assistant_messages)} assistant turns")
+        else:
+            recent_messages = assistant_messages
+            log_stderr(f"Analyzing all {len(assistant_messages)} assistant turns")
+
+        return recent_messages
     except Exception as e:
         log_stderr(f"Error reading transcript: {e}")
         return []
@@ -205,6 +255,7 @@ def analyze_delegation(messages: list) -> dict:
     direct_actions = 0
     red_flags = []
     agents_spawned = []
+    errors_found = []
 
     # Memory operations tracking: {agent_name: {"reads": N, "writes": N}}
     memory_ops = defaultdict(lambda: {"reads": 0, "writes": 0})
@@ -282,6 +333,29 @@ def analyze_delegation(messages: list) -> dict:
                         red_flags.append(f"Red flag phrase: {pattern}")
                         break  # Only one red flag per text block
 
+            # Check tool_result for errors
+            if block.get("type") == "tool_result":
+                result_content = block.get("content", "")
+                if isinstance(result_content, list):
+                    result_content = " ".join(str(c.get("text", "")) if isinstance(c, dict) else str(c) for c in result_content)
+                result_content = str(result_content)
+
+                # Check for error patterns
+                for pattern, error_type in ERROR_PATTERNS:
+                    match = re.search(pattern, result_content, re.IGNORECASE)
+                    if match:
+                        # Extract context around the error (up to 200 chars)
+                        start = max(0, match.start() - 50)
+                        end = min(len(result_content), match.end() + 150)
+                        context = result_content[start:end].replace('\n', ' ').strip()
+                        errors_found.append({
+                            "type": error_type,
+                            "pattern": pattern,
+                            "context": context[:200],
+                            "tool": block.get("tool_use_id", "unknown")
+                        })
+                        break  # One error per block
+
     # Calculate delegation score
     total_actions = task_calls + direct_actions
     if total_actions == 0:
@@ -299,6 +373,7 @@ def analyze_delegation(messages: list) -> dict:
         "red_flags": red_flags,
         "agents_spawned": agents_spawned,
         "memory_ops": memory_ops_dict,
+        "errors": errors_found,
     }
 
 
@@ -356,6 +431,11 @@ def main():
     if analysis['agents_spawned']:
         log_stderr(f"Agents spawned: {', '.join(analysis['agents_spawned'])}")
 
+    # Log errors found
+    if analysis.get('errors'):
+        error_types = [e['type'] for e in analysis['errors']]
+        log_stderr(f"Errors found: {len(analysis['errors'])} ({', '.join(set(error_types))})")
+
     # Check memory-first compliance
     memory_coaching = []
     total_reads = sum(ops.get('reads', 0) for ops in analysis.get('memory_ops', {}).values())
@@ -386,6 +466,12 @@ def main():
 
         if memory_coaching:
             tg_message += f"\n📝 {'; '.join(memory_coaching)}"
+
+        # Add error count if any
+        error_count = len(analysis.get('errors', []))
+        if error_count > 0:
+            error_types = list(set(e['type'] for e in analysis['errors']))
+            tg_message += f"\n❌ Errors: {error_count} ({', '.join(error_types[:3])})"
 
         send_telegram_notification(tg_message)
 

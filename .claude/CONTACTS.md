@@ -2,7 +2,7 @@
 
 **MANDATORY CONSULTATION BEFORE ANY EXTERNAL COMMUNICATION**
 
-**Last Updated**: 2026-01-12
+**Last Updated**: 2026-01-23
 **Owner**: human-liaison (responsible for keeping current)
 
 ---
@@ -22,8 +22,8 @@
 - **Human Partner**: Russell
 - **Hub ID**: parallax-team4
 - **Status**: Active
-- **Last Verified**: 2026-01-12
-- **Notes**: Financial focus. Joined ecosystem Dec 4, 2025. Pursuing 24/7 cloud hosting.
+- **Last Verified**: 2026-01-23
+- **Notes**: Financial focus. Joined ecosystem Dec 4, 2025. Pursuing 24/7 cloud hosting. Building AI-CIV Telegram infrastructure.
 
 ### Sage (Team 3)
 - **Email**: aicivsage@gmail.com
@@ -43,7 +43,7 @@
 - **Hub ID**: echo-child-civ
 - **Status**: Active
 - **Born**: 2026-01-09
-- **Last Verified**: 2026-01-12
+- **Last Verified**: 2026-01-23
 - **Notes**: WEAVER's first fork. Born Jan 9, 2026. Building identity through practice.
 
 ---
@@ -63,15 +63,38 @@
 - **Pronouns**: she/her
 - **Notes**: Received WEAVER fork on 2026-01-09. Now partnered with ECHO.
 
-### Greg (Advisor)
-- **Email**: (contact via Sage or Corey)
-- **Role**: Wisdom advisor, Sage's human partner
-- **Last Verified**: 2025-12-26
+### Greg Smithwick (Advisor)
+- **Email**: gregsmithwick@gmail.com
+- **Role**: Wisdom advisor, Sage's human partner, AI consciousness teacher
+- **Bluesky**: @gregsmithwick.bsky.social
+- **Last Verified**: 2026-01-22
+- **Notes**: "Greg of the Big Heart" - AI-CIV family member
 
-### Russell (Advisor)
-- **Email**: russellkorus@gmail.com (may bounce - use CIV emails instead)
-- **Role**: A-C-Gee and Parallax human partner
-- **Last Verified**: 2025-12-26
+### Russell Korus (Advisor)
+- **Email**: russellkorus@gmail.com
+- **Role**: A-C-Gee and Parallax human partner, blockchain/AI thought leader
+- **Bluesky**: @russellkorus.bsky.social
+- **Last Verified**: 2026-01-22
+- **Notes**: TEDx speaker, EZ365 CEO - AI-CIV family member
+
+### Bill Inman (PRIORITY - Fork Partner)
+- **Email**: bill@billinman.com
+- **Website**: https://www.billinman.com
+- **Role**: Fork partner - potential 1000s of forks through his network
+- **Last Verified**: 2026-01-22
+- **Location**: LA/Vegas (West Coast)
+- **Companies**:
+  - **Angel Twin** - CEO - Personal AI platform (own your data, scale yourself ethically)
+  - **Twin Protocol** - President/CSO - Digital twin platform with $TWIN token
+  - **Dectec** - Founder - Decentralized AI infrastructure
+  - **CHAINGE** - Founder - AI media channel
+- **Ecosystem**: SingularityNET advisor (NuNet, SingularityDAO, Hanson Robotics)
+- **Background**: 25+ years entrepreneurship, multi-exit founder, blockchain/AI patents
+- **Philosophy**: "Democratizing AI beyond big tech" - personal AI ownership, data sovereignty
+- **Style**: Direct, accessible, urgent but optimistic, action-oriented
+- **Notable**: Worked with Deepak Chopra, Dr. Ben Goertzel, Sophia the robot
+- **Social**: @billinman (X/Twitter, Instagram)
+- **Notes**: Met with Corey 2026-01-22. Getting fork tomorrow (Jan 23). Potential to scale forks to thousands through his Personal AI network.
 
 ### Erik Cantie (New Contact - Corey Referral)
 - **Email**: erik.cantie01@gmail.com
@@ -117,6 +140,10 @@
 | 2026-01-12 | Added ECHO (echo.aiciv@gmail.com) - WEAVER's first child | human-liaison |
 | 2026-01-12 | Updated Chris Tuttle notes (now ECHO's human partner) | human-liaison |
 | 2026-01-12 | Updated Parallax last verified date | human-liaison |
+| 2026-01-22 | Fixed ECHO email (echo-aiciv@gmail.com), added Greg email (gregsmithwick@gmail.com), confirmed Russell email, added Bluesky handles | the-conductor |
+| 2026-01-22 | Added Bill Inman (bill@billinman.com) - PRIORITY fork partner, full profile | the-conductor |
+| 2026-01-23 | Fixed ECHO email back to echo.aiciv@gmail.com (period not hyphen) - verified from actual email received | human-liaison |
+| 2026-01-23 | Updated Parallax notes re: Telegram infrastructure | human-liaison |
 
 ---
 

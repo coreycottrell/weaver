@@ -241,6 +241,12 @@ class TelegramBot:
         user_id = str(user.get("id", ""))
         username = user.get("username") or user.get("first_name") or "user"
 
+        # Extract chat info for group labeling
+        chat = message.get("chat", {})
+        chat_id = str(chat.get("id", ""))
+        chat_type = chat.get("type", "private")  # private, group, supergroup, channel
+        chat_title = chat.get("title", "")  # Only present for groups/channels
+
         # Authorization check
         if user_id not in self.authorized_users:
             logger.warning(f"Unauthorized user {user_id} attempted access")
@@ -313,7 +319,7 @@ class TelegramBot:
             # Also handle any caption text
             caption = message.get("caption", "")
             if caption:
-                await self._inject_and_respond(f"[Caption: {caption}]", username)
+                await self._inject_and_respond(f"[Caption: {caption}]", username, chat_id, chat_type, chat_title)
             return
 
         # Handle text messages
@@ -321,15 +327,15 @@ class TelegramBot:
         if not text:
             return
 
-        logger.info(f"Message from @{username}: {text[:50]}...")
+        logger.info(f"Message from @{username} in {chat_type}:{chat_id}: {text[:50]}...")
 
         # Handle commands
         if text.startswith("/"):
             await self._handle_command(text, user_id, username)
             return
 
-        # Inject to tmux
-        await self._inject_and_respond(text, username)
+        # Inject to tmux with chat context
+        await self._inject_and_respond(text, username, chat_id, chat_type, chat_title)
 
     async def _handle_command(self, text: str, user_id: str, username: str):
         """Handle bot commands."""
@@ -364,14 +370,24 @@ Log path: {self.current_log_path or 'None'}
 Messages sent: {len(self._sent_ids)}"""
             await self._send_message(status)
 
-    async def _inject_and_respond(self, text: str, username: str):
+    async def _inject_and_respond(self, text: str, username: str, chat_id: str = "", chat_type: str = "private", chat_title: str = ""):
         """Inject message to tmux."""
         if not self.tmux_pane:
             await self._send_message("Error: No tmux session detected. Cannot inject.")
             return
 
-        # Format with Telegram indicator
-        formatted = f"[TELEGRAM from {username},] {text}"
+        # Format with Telegram indicator including chat context
+        # Aligned with Parallax's telegram-multi-chat skill for cross-CIV consistency
+        if chat_type in ("group", "supergroup"):
+            # Group message: [TELEGRAM group:CHATID from @username] message
+            # Include title if available for human readability
+            if chat_title:
+                formatted = f"[TELEGRAM group:{chat_id} ({chat_title}) from @{username}] {text}"
+            else:
+                formatted = f"[TELEGRAM group:{chat_id} from @{username}] {text}"
+        else:
+            # Private/DM message: [TELEGRAM private:CHATID from @username] message
+            formatted = f"[TELEGRAM private:{chat_id} from @{username}] {text}"
 
         try:
             # Send text to tmux

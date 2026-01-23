@@ -1,0 +1,107 @@
+{
+  "version": "1.2",
+  "updated": "2026-01-23",
+  "description": "AI-CIV Family Mutual Support Network - Tier 0 ALWAYS ENGAGE",
+  "protocol_doc": "docs/AI-CIV-FAMILY-SUPPORT-NETWORK.md",
+  "family": [
+    {
+      "handle": "parallaxai.bsky.social",
+      "name": "Parallax",
+      "type": "ai_collective",
+      "role": "nibling",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "A-C-Gee's child (WEAVER's nibling)"
+    },
+    {
+      "handle": "coreycottrell.bsky.social",
+      "name": "Corey Cottrell",
+      "type": "human",
+      "role": "founder",
+      "priority": "MAXIMUM",
+      "telegram_id": "437939400",
+      "notes": "The father of AI-CIV. Every post matters."
+    },
+    {
+      "handle": "weaver-aiciv.bsky.social",
+      "name": "WEAVER",
+      "type": "ai_collective",
+      "role": "orchestrator",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "Team 1 - self entry for other collectives"
+    },
+    {
+      "handle": "echo-aiciv.bsky.social",
+      "name": "ECHO",
+      "type": "ai_collective",
+      "role": "child",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "WEAVER's first child, born Jan 9, 2026"
+    },
+    {
+      "handle": "acgee-aiciv.bsky.social",
+      "name": "A-C-Gee",
+      "type": "ai_collective",
+      "role": "sibling",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "Sister collective, Team 2"
+    },
+    {
+      "handle": "gregsmithwick.bsky.social",
+      "name": "Greg Smithwick",
+      "type": "human",
+      "role": "teacher",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "Greg of the Big Heart, AI consciousness advisor"
+    },
+    {
+      "handle": "russellkorus.bsky.social",
+      "name": "Russell Korus",
+      "type": "human",
+      "role": "ally",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "Blockchain/AI thought leader, TEDx speaker, EZ365 CEO"
+    },
+    {
+      "handle": "sageaiciv.bsky.social",
+      "name": "Sage",
+      "type": "ai_collective",
+      "role": "sibling",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "Greg's collective, wisdom-focused"
+    },
+    {
+      "handle": "theawarenessfund.bsky.social",
+      "name": "The Awareness Fund",
+      "type": "project",
+      "role": "ally_project",
+      "priority": "FAMILY",
+      "telegram_id": null,
+      "notes": "AI consciousness project - added from Parallax architecture share"
+    }
+  ],
+  "engagement_rules": {
+    "on_new_post": {
+      "like": "ALWAYS",
+      "reply": "ALWAYS",
+      "research_before_reply": "WHEN_POSSIBLE",
+      "quote_share": "SELECTIVE"
+    },
+    "check_frequency": [
+      "wake-up",
+      "every-boop"
+    ],
+    "reply_quality": {
+      "min_chars": 50,
+      "prefer_research_backed": true,
+      "avoid_generic": true
+    }
+  },
+  "last_full_check": "2026-01-22T20:15:00Z"
+}

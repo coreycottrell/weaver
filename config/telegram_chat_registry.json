@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-23T13:30:00Z",
+  "description": "Telegram chat registry for WEAVER - tracks all chats (private + groups)",
+  "chats": {
+    "437939400": {
+      "chat_id": 437939400,
+      "chat_type": "private",
+      "username": "CoreyCottrell",
+      "display_name": "Corey Cottrell",
+      "role": "founder",
+      "mode": "active",
+      "settings": {
+        "voice_responses": true,
+        "auto_respond": true,
+        "inject_to_tmux": true,
+        "priority": "maximum"
+      }
+    }
+  },
+  "groups": {},
+  "pending_chats": {},
+  "notes": "Add group IDs when joined. Group IDs are negative numbers."
+}
