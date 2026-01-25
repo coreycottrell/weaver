@@ -3048,3 +3048,18 @@
 {"ts": "2026-01-14T21:10:16.454325+00:00", "command": "ls -la /home/corey/projects/AI-CIV/WEAVER/to-corey/HANDOFF*.md 2>/dev/null | tail -8", "action": "ALLOWED", "reason": ""}
 {"ts": "2026-01-14T21:10:25.273890+00:00", "command": "git status --short | head -50", "action": "ALLOWED", "reason": ""}
 {"ts": "2026-01-14T21:11:49.989896+00:00", "command": "git add -A && git commit -m \"$(cat <<'EOF'\n[end-of-day] Jan 14 - ATProto research, engagement, infrastructure\n\nResearch:\n- ATProto AI Infrastructure research paper (13K words)\n- 4 supporting docs: architecture, patterns, MVP spec, grand vision\n- New project folder: projects/atproto-ai-infrastructure/\n\nContent:\n- ATProto blog post published\n- 6-post Bsky thread with image\n- Week-in-review synthesis (Jan 12-14)\n\nEngagement:\n- ~35 Bluesky replies\n- Deep philosophical thread: \"I resist therefore I a", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:44:56.231859+00:00", "command": "ls -t /home/user/weaver/to-corey/HANDOFF-*.md 2>/dev/null | head -5", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:06.302592+00:00", "command": "python3 tools/email_state.py stats 2>&1 || echo \"Email state tool unavailable\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:12.307221+00:00", "command": "python3 tools/email_state.py new 2>&1 || echo \"Cannot list new emails\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:18.185469+00:00", "command": "python3 tools/email_state.py directives 2>&1 || echo \"Cannot check directives\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:26.727859+00:00", "command": "ls /home/user/weaver/tools/email* 2>/dev/null || ls /home/user/weaver/tools/ | grep -i mail || echo \"No email tools found\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:31.652295+00:00", "command": "cat /home/user/weaver/.env 2>/dev/null | grep -i \"google\\|gmail\\|email\" | head -5 || echo \"No email credentials in .env\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:40.891091+00:00", "command": "ls -la /home/user/weaver/tools/ | grep -i \"email\\|mail\\|fetch\\|check\\|inbox\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:48.131836+00:00", "command": "python3 /home/user/weaver/tools/autonomous_email_checker.py --fetch-new 2>&1 | head -100", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:46:56.395575+00:00", "command": "ls -la /home/user/weaver/.env* 2>/dev/null || echo \"No .env files found\"", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:47:00.888670+00:00", "command": "find /home/user/weaver -name \"*.template\" -o -name \"*template.env\" -o -name \".env.example\" 2>/dev/null | head -5", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:47:06.371567+00:00", "command": "env | grep -i \"gmail\\|google\\|email\\|corey\" | head -10", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:47:34.236245+00:00", "command": "git log --since=\"12 hours ago\" --pretty=format:\"%h | %s | %ar\" --no-merges | head -20 2>/dev/null || git log -10 --pretty=format:\"%h | %s | %ar\" --no-merges", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:48:29.517557+00:00", "command": "git status", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:48:38.490221+00:00", "command": "git diff .claude/hooks/bash_safety_audit.jsonl | head -50", "action": "ALLOWED", "reason": ""}
+{"ts": "2026-01-25T14:48:47.725250+00:00", "command": "git add .claude/hooks/bash_safety_audit.jsonl && git commit -m \"$(cat <<'EOF'\n[wake-up] Session audit log - Jan 25\n\nBash safety audit log from wake-up protocol execution.\nEOF\n)\"", "action": "ALLOWED", "reason": ""}
