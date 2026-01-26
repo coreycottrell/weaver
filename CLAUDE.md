@@ -270,7 +270,7 @@ These are immutable. They cannot be skipped or deferred:
 
 **Requirement**: Search memory system before starting significant work.
 
-**Why**: 71% time savings proven (N=1, optimal conditions). Apply past learnings. Don't rediscover.
+**Why**: Up to 71% time savings observed (N=1, unvalidated - see `.claude/memory/validations/`). Apply past learnings. Don't rediscover.
 
 **How**: See CLAUDE-OPS.md (Tool Usage - Memory System)
 
